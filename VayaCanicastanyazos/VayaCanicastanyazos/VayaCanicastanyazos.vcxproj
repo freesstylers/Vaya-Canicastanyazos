@@ -96,6 +96,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Untitled-Motor\Untitled Motor\src\Application;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -110,6 +111,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Untitled-Motor\Untitled Motor\src\Application;U:\hlocal\ia\Vaya-Canicastanyazos\Untitled-Motor\Untitled Motor\src\Application;..\$(SolutionDir)Untitled-Motor\Untitled Motor\src\Application;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -154,6 +156,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="VayaCanicastanyazos.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Untitled-Motor\Untitled Motor\projects\Application\Application.vcxproj">
+      <Project>{c4a900cc-8fe8-470d-b4fa-9b9abf2fcb2b}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
