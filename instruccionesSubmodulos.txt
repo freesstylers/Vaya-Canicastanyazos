@@ -1,3 +1,4 @@
+En caso de querer añadir mas submodulos (el motor ya esta añadido y no hace falta hacer esto)
 Añadir submodulo: git submodule add <link_repositorio>
 
 Actualizar submodulo despues de actualizar el repositorio del juego:
