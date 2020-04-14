@@ -3,7 +3,31 @@ Añadir submodulo: git submodule add <link_repositorio>
 Actualizar submodulo despues de actualizar el repositorio del juego:
 git submodule foreach git pull origin master
 
+Si con esto da un error de que es muy largo el archivo ir a: Archivos de Programa\Git\etc\gitconfig
+Ahi, id al apartado core y añadir longpaths = true 
+Si no hay ese apartado, copiar y pegar lo de aqui abajo
+
+[core]
+	longpaths = true
+
+(ESTO NO SE SI HARA FALTA)
+Si es la primera vez que os descargais el motor, hacen falta las librerias (ogre, bullet...). Mi consejo es
+copiar y pegar la carpeta depencencies. Tambien podeis volver a compilar todo
+
+
 Comandos utiles:
 git status			Ver los cambios nuevos
 git diff			Comprobar las diferencias entre nuestro submodulo y el proyecto de github
 git submodule update		Deshace los cambios realizados
+
+CAMBIOS PARA EL MOTOR DENTRO DEL JUEGO (SE ACTUALIZA EL REPO DEL MOTOR)
+-motor primero
+	cd path/to/submodule
+	git add <stuff>
+	git commit -m "comment"
+	git push
+-juego segundo
+	cd /main/project
+	git add path/to/submodule
+	git commit -m "updated my submodule"
+	git push
