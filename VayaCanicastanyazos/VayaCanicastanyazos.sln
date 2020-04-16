@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VayaCanicastanyazos", "VayaCanicastanyazos\VayaCanicastanyazos.vcxproj", "{072A0D0F-FE7E-45A9-BFBA-C1D3DC216CD7}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Application", "Untitled-Motor\Untitled Motor\projects\Application\Application.vcxproj", "{C4A900CC-8FE8-470D-B4FA-9B9ABF2FCB2B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MotorCasaPaco", "Untitled-Motor\MotorCasaPaco\projects\MotorCasaPaco\MotorCasaPaco.vcxproj", "{C4A900CC-8FE8-470D-B4FA-9B9ABF2FCB2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

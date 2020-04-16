@@ -1,0 +1,87 @@
+{
+	"name" : "verticalSlice",
+	"entities" :
+	[
+		
+		{
+			"name" : "bg",
+			"components" : [
+				{
+					"type" : "Skybox",
+					"material" : "blankSky"
+				}
+			]
+		},
+		{
+			"name" : "marble21",
+			"prefab" : "marble",
+			"position" : [1, 20, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [0.1, 0.1, 0.1],
+			"components" : [
+				{
+					"type" : "RigidBody",
+					"mass" : 10
+				}
+			]
+		},
+		{
+			"name" : "barrel",
+			"position" : [30, 40, 0],
+			"rotation" : [70, 0, 70],
+			"scale" : [10, 10, 10],
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "barrel.mesh",
+					"material" : "blank"
+				},
+				{
+					"type" : "RigidBody",
+					"shape" : "mesh",
+					"mass" : 100,
+					"disableDeactivation" : true
+				}
+			]
+		},
+		{
+			"name" : "floor",
+			"prefab" : "floor",
+			"scale" : [4, 0.1, 4]
+		},
+		{
+			"name" : "light",
+			"prefab" : "pointLight"
+		},
+		{
+			"name" : "camera",
+			"position" : [0, 100, 500],
+			"rotation" : [0, 0, 0], 
+			"scale" : [1, 1, 1],
+			"components" : [
+				{
+					"type" : "Camera",
+					"lookAt" : [1, 0.8, 0],
+					"bgColour" : [0.5, 0.5, 0.5, 1]
+				},
+				{
+					"type": "AudioListenerComponent"
+				},   
+				{
+					"type": "SimpleMovement",
+					"speed": 5.0,
+					"rotateSpeed":1.0,
+					"onlycontroller" : false
+				}
+				
+			]
+		}
+	],
+	"UI" :
+	[
+		{
+		"type" : 1,
+		"route" : "Button"
+		}
+	]
+}
