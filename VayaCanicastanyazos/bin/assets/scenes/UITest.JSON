@@ -2,7 +2,55 @@
 	"name" : "verticalSlice",
 	"entities" :
 	[
-		
+		{
+		"name" : "centro",
+		"position" : [0, 0, 0],
+		"rotation" : [0, 0, 0],
+		"scale" : [1, 1, 1],
+		"components" : [		
+				{
+					"type" : "Mesh",
+					"mesh" : "camino_5.mesh",
+					"material" : "blank"
+				},
+				{
+					"type" : "RotateWorld"
+				}
+			]
+		},
+		{
+			"name" : "ini",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "ini_5.mesh",
+					"material" : "blank"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+		},
+		{
+			"name" : "fin",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "fin_5.mesh",
+					"material" : "blank"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+		},
 		{
 			"name" : "bg",
 			"components" : [
@@ -15,7 +63,7 @@
 		{
 			"name" : "marble21",
 			"prefab" : "marble",
-			"position" : [1, 20, 0],
+			"position" : [0, 10, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [0.1, 0.1, 0.1],
 			"components" : [
@@ -33,7 +81,7 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "barrel.mesh",
+					"mesh" : "ini_5.mesh",
 					"material" : "blank"
 				},
 				{
@@ -47,7 +95,13 @@
 		{
 			"name" : "floor",
 			"prefab" : "floor",
-			"scale" : [4, 0.1, 4]
+			"scale" : [4, 0.1, 4],
+			"components" : [
+				{
+					"type" : "RotateWorld"
+				}
+			]
+			
 		},
 		{
 			"name" : "light",
@@ -66,13 +120,7 @@
 				},
 				{
 					"type": "AudioListenerComponent"
-				},   
-				{
-					"type": "SimpleMovement",
-					"speed": 5.0,
-					"rotateSpeed":1.0,
-					"onlycontroller" : false
-				}
+				}   
 				
 			]
 		}
