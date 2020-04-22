@@ -4,7 +4,9 @@
 
 #include "windows.h"
 #include "MotorCasaPaco.h"
-
+#include "Scene/JsonFactoryParser.h"
+#include "RotateWorld.h";
+#include "SimpleMovement.h"
 MotorCasaPaco* motorCasaPaco;
 
 #ifdef  _DEBUG
@@ -35,6 +37,28 @@ WinMain(HINSTANCE hinstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdSh
 		return 0;
 	}
 
+//-----------------------------Factories-----------------------------------------
+	class RotateWorldFactory : public BaseFactory
+	{
+	public:
+		Component* createComponent(json& args) override
+		{
+			return new RotateWorld(args);
+		};
+	};
+
+	class SimpleMovementFactory : public BaseFactory
+	{
+	public:
+		Component* createComponent(json& args) override
+		{
+			return new SimpleMovement(args);
+		};
+	};
+//--------------------------------------------------------------------------------
+
+	JsonFactoryParser::getInstance()->addFactory("RotateWorld", new RotateWorldFactory());
+	JsonFactoryParser::getInstance()->addFactory("SimpleMovement", new SimpleMovementFactory());
 	motorCasaPaco->changeScene("UITest");
 
 	motorCasaPaco->start();
