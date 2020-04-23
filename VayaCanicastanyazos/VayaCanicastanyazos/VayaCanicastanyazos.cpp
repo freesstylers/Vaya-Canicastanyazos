@@ -5,9 +5,9 @@
 #include "windows.h"
 #include "MotorCasaPaco.h"
 #include "Scene/JsonFactoryParser.h"
-#include "RotateWorld.h";
-#include "SimpleMovement.h"
-#include "CameraController.h"
+#include "src/Components/CameraController.h"
+#include "src/Components/RotateWorld.h";
+#include "src/Components/SimpleMovement.h"
 #include "src/Components/ChangeSceneButtonComponent.h"
 #include "src/Components/ExitButtonComponent.h"
 
@@ -21,7 +21,7 @@ public:
 	{
 		return new RotateWorld(args);
 	};
-	};
+};
 
 class SimpleMovementFactory : public BaseFactory
 {
@@ -32,14 +32,14 @@ public:
 	};
 };
 
-class CameraControllerFactory : public BaseFactory
+/*class CameraControllerFactory : public BaseFactory
 {
 public:
 	Component* createComponent(json& args) override
 	{
 		return new CameraController(args);
 	};
-};
+};*/
 
 class ChangeSceneButtonComponentFactory : public BaseFactory
 {
@@ -91,7 +91,7 @@ WinMain(HINSTANCE hinstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdSh
 
 	JsonFactoryParser::getInstance()->addFactory("RotateWorld", new RotateWorldFactory());
 	JsonFactoryParser::getInstance()->addFactory("SimpleMovement", new SimpleMovementFactory());
-	JsonFactoryParser::getInstance()->addFactory("CameraController", new CameraControllerFactory());
+	//JsonFactoryParser::getInstance()->addFactory("CameraController", new CameraControllerFactory());
 	JsonFactoryParser::getInstance()->addFactory("ChangeSceneButtonComponent", new ChangeSceneButtonComponentFactory());
 	JsonFactoryParser::getInstance()->addFactory("ExitButtonComponent", new ExitButtonComponentFactory());
 
