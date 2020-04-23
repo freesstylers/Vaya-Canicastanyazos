@@ -11,5 +11,7 @@ public:
 private:
 	float speed = 20;
 	Vector3 rotation;
+	Entity* camera;
+	Entity* marble;
 };
 
