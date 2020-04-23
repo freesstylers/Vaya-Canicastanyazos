@@ -179,7 +179,8 @@
 				},
 				{
 					"type" : "RigidBody",
-					"mass" : 10
+					"mass" : 10,
+					"disableDeactivation" : true
 				}
 			]
 		},
