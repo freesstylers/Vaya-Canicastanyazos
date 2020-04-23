@@ -39,9 +39,9 @@ void CameraController::update()
 	float rightx = InputManager::getInstance()->GameControllerGetAxisMovement(CONTROLLER_AXIS_RIGHTX, false);
 	float righty = InputManager::getInstance()->GameControllerGetAxisMovement(CONTROLLER_AXIS_RIGHTY, false);
 
-	transform->rotate(Vector3(0, rotationSpeed * -rightx * MotorCasaPaco::getInstance()->DeltaTime(),0));
+	transform->rotate(Vector3(0, rotationSpeed * -rightx * MotorCasaPaco::getInstance()->DeltaTime()/10,0));
 	
 	Transform* cameraTrans = SceneManager::getInstance()->getCurrentScene()->getEntity("camera")->getComponent<Transform>("Transform");
 	Vector3 dir = marbleTrans->getPosition() - cameraTrans->getPosition();
-	cameraTrans->translate(-righty * MotorCasaPaco::getInstance()->DeltaTime()/10 * dir);
+	cameraTrans->translate(-righty * MotorCasaPaco::getInstance()->DeltaTime()/1000 * dir);
 }

@@ -33,17 +33,13 @@ void RotateWorld::update()
 	float x = InputManager::getInstance()->GameControllerGetAxisMovement(CONTROLLER_AXIS_LEFTX, true);
 	float y = InputManager::getInstance()->GameControllerGetAxisMovement(CONTROLLER_AXIS_LEFTY, true);
 
-	Vector3 cameraTrans = camera->getComponent<Transform>("Transform")->getPosition();
 	Transform* transform = getEntity()->getComponent<Transform>("Transform");
 	if (!(x == 0 && y == 0))
 	{
 
-		x = x * 180;
-		y = y * 180;
-		Vector3 cameraLookAt = camera->getComponent<Camera>("Camera")->getLookAt();
-		double angle = Vector3::Angle(cameraLookAt, Vector3(1,0,1));
-		angle = angle * M_PI / 180;
-		Vector3 target(y * acosf(angle), 0, -x * asinf(angle));
+		x = x *90;
+		y = y * 90;
+		Vector3 target(y, 0, -x);
 		
 		Vector3 dir = target - rotation;
 
@@ -53,8 +49,9 @@ void RotateWorld::update()
 
 		dir = Vector3::Normalized(dir);
 
-		//rotation += dir * speed * deltatime * speedmult * 0.1;
+		rotation += dir * speed * deltatime * speedmult * 0.02;
 		transform->rotate(dir);
+		transform->setRotation(rotation);
 	}
 
 }
