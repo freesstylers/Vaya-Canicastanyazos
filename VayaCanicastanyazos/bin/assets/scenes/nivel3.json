@@ -3,10 +3,22 @@
 	"entities" :
 	[
 		{
+			"name" : "centro",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [1, 1, 1],
+			"components" : [		
+				{
+					"type" : "RotateWorld"
+				}
+				]
+			},
+		{
 			"name" : "3_1",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
+			"parent" : "centro",
 			"components" : [
 				{
 					"type" : "Mesh",
@@ -23,6 +35,7 @@
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
+			"parent" : "centro",
 			"components" : [
 				{
 					"type" : "Mesh",
@@ -39,6 +52,7 @@
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
+			"parent" : "centro",
 			"components" : [
 				{
 					"type" : "Mesh",
@@ -55,6 +69,7 @@
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
+			"parent" : "centro",
 			"components" : [
 				{
 					"type" : "Mesh",
@@ -71,6 +86,7 @@
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
+			"parent" : "centro",
 			"components" : [
 				{
 					"type" : "Mesh",
@@ -87,6 +103,7 @@
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
+			"parent" : "centro",
 			"components" : [
 				{
 					"type" : "Mesh",
@@ -103,6 +120,7 @@
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
+			"parent" : "centro",
 			"components" : [
 				{
 					"type" : "Mesh",
@@ -119,6 +137,7 @@
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
+			"parent" : "centro",
 			"components" : [
 				{
 					"type" : "Mesh",
@@ -135,6 +154,7 @@
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
+			"parent" : "centro",
 			"components" : [
 				{
 					"type" : "Mesh",
@@ -151,6 +171,7 @@
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
+			"parent" : "centro",
 			"components" : [
 				{
 					"type" : "Mesh",
@@ -167,6 +188,7 @@
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
+			"parent" : "centro",
 			"components" : [
 				{
 					"type" : "Mesh",
@@ -183,6 +205,7 @@
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
+			"parent" : "centro",
 			"components" : [
 				{
 					"type" : "Mesh",
@@ -207,28 +230,24 @@
 				},
 				{
 					"type" : "RigidBody",
+					"disableDeactivation" : true,
 					"mass" : 10
 				}
 			]
 		},
 		{
 			"name" : "camera",
-			"position" : [0, 50, 70],
+			"position" : [-50, 100, 180],
 			"rotation" : [0, 0, 0], 
 			"scale" : [1, 1, 1],
 			"components" : [
 				{
 					"type" : "Camera",
-					"lookAt" : [1, 0.8, 0],
+					"lookAt" : [-50, 0, 0],
 					"bgColour" : [0, 0, 1, 1]
 				},
 				{
 					"type": "AudioListenerComponent"
-				},
-				{
-					"type": "SimpleMovement",
-					"speed": 5.0,
-					"rotateSpeed": 1.0
 				}
 			]
 		}
@@ -249,7 +268,7 @@
 					"type": "ChangeSceneButtonComponent",
 					"buttonName" : "Ingame/Menu",
 					"sceneName" : "Menu"
-				}
+				}				
 			]
 		}
 	]

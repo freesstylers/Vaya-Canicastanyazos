@@ -168,7 +168,7 @@
 		},
 		{
 			"name" : "ball",
-			"position" : [0, 70, 80],
+			"position" : [0, 70, 50],
 			"rotation" : [0, 0, 0],
 			"scale" : [0.05, 0.05, 0.05],
 			"components" : [
@@ -179,17 +179,16 @@
 				},
 				{
 					"type" : "RigidBody",
-					"mass" : 10,
-					"disableDeactivation" : true
+					"disableDeactivation" : true,
+					"mass" : 10
 				}
 			]
 		},
 		{
 			"name" : "camera",
-			"position" : [0, 100, 100],
+			"position" : [0, 130, 150],
 			"rotation" : [0, 0, 0], 
 			"scale" : [1, 1, 1],
-			"parent" : "pivote",
 			"components" : [
 				{
 					"type" : "Camera",
@@ -198,20 +197,6 @@
 				},
 				{
 					"type": "AudioListenerComponent"
-				}
-			]
-		},
-		{
-			"name" : "pivote",
-			"position" : [0, 70, 80],
-			"rotation" : [0, 0, 0],
-			"scale" : [0.1, 0.1, 0.1],
-			"parent" : "ball",
-			"components" : [
-				{
-					"type" : "CameraController",
-					"rotationSpeed" : 3.0,
-					"marble" : "ball"
 				}
 			]
 		}
@@ -232,7 +217,7 @@
 					"type": "ChangeSceneButtonComponent",
 					"buttonName" : "Ingame/Menu",
 					"sceneName" : "Menu"
-				}
+				}				
 			]
 		}
 	]
