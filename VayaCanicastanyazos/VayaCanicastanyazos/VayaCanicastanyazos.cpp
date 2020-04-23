@@ -59,7 +59,7 @@ WinMain(HINSTANCE hinstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdSh
 
 	JsonFactoryParser::getInstance()->addFactory("RotateWorld", new RotateWorldFactory());
 	JsonFactoryParser::getInstance()->addFactory("SimpleMovement", new SimpleMovementFactory());
-	motorCasaPaco->changeScene("UITest");
+	motorCasaPaco->changeScene("nivel2");
 
 	motorCasaPaco->start();
 

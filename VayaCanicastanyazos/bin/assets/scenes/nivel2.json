@@ -3,14 +3,14 @@
 	"entities" :
 	[
 		{
-			"name" : "ini",
+			"name" : "2_1",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "ini_2.mesh",
+					"mesh" : "2_1.mesh",
 					"material" : "test"
 				},
 				{
@@ -19,14 +19,14 @@
 			]
 		},
 		{
-			"name" : "camino",
+			"name" : "2_2",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "camino_2.mesh",
+					"mesh" : "2_2.mesh",
 					"material" : "test"
 				},
 				{
@@ -35,14 +35,110 @@
 			]
 		},
 		{
-			"name" : "fin",
+			"name" : "2_3",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "fin_2.mesh",
+					"mesh" : "2_3.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+		},
+		{
+			"name" : "2_4",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "2_4.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+		},
+		{
+			"name" : "2_5",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "2_5.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+		},
+		{
+			"name" : "2_6",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "2_6.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+		},
+		{
+			"name" : "2_7",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "2_7.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+		},
+		{
+			"name" : "2_8",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "2_8.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+		},
+		{
+			"name" : "2_9",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "2_9.mesh",
 					"material" : "test"
 				},
 				{
@@ -69,13 +165,13 @@
 		},
 		{
 			"name" : "camera",
-			"position" : [0, 50, 70],
+			"position" : [0, 100, 100],
 			"rotation" : [0, 0, 0], 
 			"scale" : [1, 1, 1],
 			"components" : [
 				{
 					"type" : "Camera",
-					"lookAt" : [1, 0.8, 0],
+					"lookAt" : [1, 1, 0],
 					"bgColour" : [0, 0, 1, 1]
 				},
 				{
