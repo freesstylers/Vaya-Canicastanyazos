@@ -46,9 +46,8 @@ void RotateWorld::update()
 
 		dir = Vector3::Normalized(dir);
 
-		rotation += dir * speed * deltatime * speedmult * 0.5;
-		transform->setRotation(rotation);
-		transform->rotate(transform->getRotation());
+		//rotation += dir * speed * deltatime * speedmult * 0.1;
+		transform->rotate(dir);
 	}
 
 }
