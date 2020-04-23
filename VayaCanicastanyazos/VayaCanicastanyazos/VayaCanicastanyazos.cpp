@@ -8,7 +8,58 @@
 #include "RotateWorld.h";
 #include "SimpleMovement.h"
 #include "CameraController.h"
+#include "src/Components/ChangeSceneButtonComponent.h"
+#include "src/Components/ExitButtonComponent.h"
+
 MotorCasaPaco* motorCasaPaco;
+
+//-----------------------------Factories-----------------------------------------
+class RotateWorldFactory : public BaseFactory
+{
+public:
+	Component* createComponent(json& args) override
+	{
+		return new RotateWorld(args);
+	};
+	};
+
+class SimpleMovementFactory : public BaseFactory
+{
+public:
+	Component* createComponent(json& args) override
+	{
+		return new SimpleMovement(args);
+	};
+};
+
+class CameraControllerFactory : public BaseFactory
+{
+public:
+	Component* createComponent(json& args) override
+	{
+		return new CameraController(args);
+	};
+};
+
+class ChangeSceneButtonComponentFactory : public BaseFactory
+{
+public:
+	Component* createComponent(json& args) override
+	{
+		return new ChangeSceneButtonComponent(args);
+	};
+};
+
+class ExitButtonComponentFactory : public BaseFactory
+{
+public:
+	Component* createComponent(json& args) override
+	{
+		return new ExitButtonComponent(args);
+	};
+};
+//--------------------------------------------------------------------------------
+
 
 #ifdef  _DEBUG
 int main(int argc, char* argv[])
@@ -38,39 +89,18 @@ WinMain(HINSTANCE hinstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdSh
 		return 0;
 	}
 
-//-----------------------------Factories-----------------------------------------
-	class RotateWorldFactory : public BaseFactory
-	{
-	public:
-		Component* createComponent(json& args) override
-		{
-			return new RotateWorld(args);
-		};
-	};
-
-	class SimpleMovementFactory : public BaseFactory
-	{
-	public:
-		Component* createComponent(json& args) override
-		{
-			return new SimpleMovement(args);
-		};
-	};
-
-	class CameraControllerFactory : public BaseFactory
-	{
-	public:
-		Component* createComponent(json& args) override
-		{
-			return new CameraController(args);
-		};
-	};
-//--------------------------------------------------------------------------------
-
 	JsonFactoryParser::getInstance()->addFactory("RotateWorld", new RotateWorldFactory());
 	JsonFactoryParser::getInstance()->addFactory("SimpleMovement", new SimpleMovementFactory());
 	JsonFactoryParser::getInstance()->addFactory("CameraController", new CameraControllerFactory());
-	motorCasaPaco->changeScene("nivel2");
+	JsonFactoryParser::getInstance()->addFactory("ChangeSceneButtonComponent", new ChangeSceneButtonComponentFactory());
+	JsonFactoryParser::getInstance()->addFactory("ExitButtonComponent", new ExitButtonComponentFactory());
+
+	motorCasaPaco->getGUI_Manager()->getInstance()->loadScheme("VayaCanicastanhazos.scheme");
+	motorCasaPaco->getGUI_Manager()->getInstance()->loadScheme("GWEN.scheme");
+	motorCasaPaco->getGUI_Manager()->getInstance()->setMouseCursor("VayaCanicastanhazos/Mouse_Arrow");
+	//motorCasaPaco->changeScene("Menu");
+
+	motorCasaPaco->changeScene("Menu");
 
 	motorCasaPaco->start();
 

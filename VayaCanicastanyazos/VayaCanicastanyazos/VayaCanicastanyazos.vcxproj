@@ -178,6 +178,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CameraController.cpp" />
+    <ClCompile Include="src\Components\ChangeSceneButtonComponent.cpp" />
+    <ClCompile Include="src\Components\ExitButtonComponent.cpp" />
     <ClCompile Include="src\Components\RotateWorld.cpp" />
     <ClCompile Include="src\Components\SimpleMovement.cpp" />
     <ClCompile Include="VayaCanicastanyazos.cpp" />
@@ -189,6 +191,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CameraController.h" />
+    <ClInclude Include="src\Components\ChangeSceneButtonComponent.h" />
+    <ClInclude Include="src\Components\ExitButtonComponent.h" />
     <ClInclude Include="src\Components\RotateWorld.h" />
     <ClInclude Include="src\Components\SimpleMovement.h" />
   </ItemGroup>
