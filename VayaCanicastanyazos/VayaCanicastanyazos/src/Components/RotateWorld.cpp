@@ -24,7 +24,6 @@ void RotateWorld::start()
 {
 	rotation = Vector3(0, 0, 0);
 	camera = SceneManager::getInstance()->getCurrentScene()->getEntity("camera");
-	marble = SceneManager::getInstance()->getCurrentScene()->getEntity("marble21");
 }
 
 void RotateWorld::update()
@@ -36,7 +35,6 @@ void RotateWorld::update()
 
 	Vector3 cameraTrans = camera->getComponent<Transform>("Transform")->getPosition();
 	Transform* transform = getEntity()->getComponent<Transform>("Transform");
-	Vector3 marblepos = marble->getComponent<Transform>("Transform")->getPosition();
 	if (!(x == 0 && y == 0))
 	{
 
