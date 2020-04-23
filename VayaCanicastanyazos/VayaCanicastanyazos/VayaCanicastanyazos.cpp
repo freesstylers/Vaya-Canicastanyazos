@@ -70,7 +70,7 @@ WinMain(HINSTANCE hinstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdSh
 #endif
 {
 
-	try { MotorCasaPaco::setupInstance("Motor Casa Paco"); }
+	try { MotorCasaPaco::setupInstance("Vaya Canicastanhazos"); }
 	catch (const std::exception& e)
 	{
 		throw std::runtime_error("Motor Casa Paco init fail \n" + std::string(e.what()) + "\n");	return 0;

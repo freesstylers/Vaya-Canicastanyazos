@@ -188,5 +188,21 @@
 	
 	"UI" :
 	[
+		{
+			"type" : "layout", 
+			"name" : "Ingame.layout"
+		},
+		{
+			"type" : "entity",
+			"name" : "UI",
+			"components" : 
+			[
+				{
+					"type": "ChangeSceneButtonComponent",
+					"buttonName" : "Ingame/Menu",
+					"sceneName" : "Menu"
+				}
+			]
+		}
 	]
 }

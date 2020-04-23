@@ -33,33 +33,61 @@
 		},
 		{
 			"type" : "entity",
-			"name" : "UI",
+			"name" : "UI_1",
 			"components" : 
 			[
 				{
 					"type": "ChangeSceneButtonComponent",
 					"buttonName" : "MainMenu/Nivel1",
 					"sceneName" : "nivel1"
-				},
+				}
+			]
+		}, 
 
+		{
+			"type" : "entity",
+			"name" : "UI_2",
+			"components" : 
+			[
 				{
 					"type": "ChangeSceneButtonComponent",
 					"buttonName" : "MainMenu/Nivel2",
 					"sceneName" : "nivel2"
-				},
+				}
+			]
+		}, 
 
+		{
+			"type" : "entity",
+			"name" : "UI_3",
+			"components" : 
+			[
 				{
 					"type": "ChangeSceneButtonComponent",
 					"buttonName" : "MainMenu/Nivel3",
 					"sceneName" : "nivel3"
-				},
+				}
+			]
+		}, 
 
+		{
+			"type" : "entity",
+			"name" : "UI_4",
+			"components" : 
+			[
 				{
 					"type": "ChangeSceneButtonComponent",
 					"buttonName" : "MainMenu/Nivel4",
-					"sceneName" : "nivel4"
-				},
+					"sceneName" : "nivel1"
+				}
+			]
+		}, 
 
+		{
+			"type" : "entity",
+			"name" : "UI_5",
+			"components" : 
+			[
 				{
 					"type": "ExitButtonComponent",
 					"buttonName" : "MainMenu/Exit"
