@@ -23,7 +23,7 @@
 				{
 					"type" : "Mesh",
 					"mesh" : "2_1.mesh",
-					"material" : "test"
+					"material" : "wood"
 				},
 				{
 					"type" : "RigidBody"
@@ -40,7 +40,7 @@
 				{
 					"type" : "Mesh",
 					"mesh" : "2_2.mesh",
-					"material" : "test"
+					"material" : "wood"
 				},
 				{
 					"type" : "RigidBody"
@@ -57,7 +57,7 @@
 				{
 					"type" : "Mesh",
 					"mesh" : "2_3.mesh",
-					"material" : "test"
+					"material" : "wood"
 				},
 				{
 					"type" : "RigidBody"
@@ -74,7 +74,7 @@
 				{
 					"type" : "Mesh",
 					"mesh" : "2_4.mesh",
-					"material" : "test"
+					"material" : "wood"
 				},
 				{
 					"type" : "RigidBody"
@@ -91,7 +91,7 @@
 				{
 					"type" : "Mesh",
 					"mesh" : "2_5.mesh",
-					"material" : "test"
+					"material" : "wood"
 				},
 				{
 					"type" : "RigidBody"
@@ -108,7 +108,7 @@
 				{
 					"type" : "Mesh",
 					"mesh" : "2_6.mesh",
-					"material" : "test"
+					"material" : "wood"
 				},
 				{
 					"type" : "RigidBody"
@@ -125,7 +125,7 @@
 				{
 					"type" : "Mesh",
 					"mesh" : "2_7.mesh",
-					"material" : "test"
+					"material" : "wood"
 				},
 				{
 					"type" : "RigidBody"
@@ -142,7 +142,7 @@
 				{
 					"type" : "Mesh",
 					"mesh" : "2_8.mesh",
-					"material" : "test"
+					"material" : "wood"
 				},
 				{
 					"type" : "RigidBody"
@@ -159,7 +159,7 @@
 				{
 					"type" : "Mesh",
 					"mesh" : "2_9.mesh",
-					"material" : "test"
+					"material" : "wood"
 				},
 				{
 					"type" : "RigidBody"

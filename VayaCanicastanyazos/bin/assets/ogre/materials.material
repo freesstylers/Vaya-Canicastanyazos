@@ -42,6 +42,28 @@ material test
 		}
 	}
 }
+material wood
+{
+
+    receive_shadows on
+	
+    technique
+    {
+        pass
+        {
+			scene_blend alpha_blend
+			
+			lighting on
+			
+            texture_unit 
+            {
+                texture wood.jpg
+                tex_address_mode wrap
+				colour_op alpha_blend
+            }
+		}
+	}
+}
 material red
 {
 
