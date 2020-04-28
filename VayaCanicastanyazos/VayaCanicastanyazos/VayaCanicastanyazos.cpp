@@ -5,11 +5,11 @@
 #include "windows.h"
 #include "MotorCasaPaco.h"
 #include "Scene/JsonFactoryParser.h"
-#include "src/Components/CameraController.h"
-#include "src/Components/RotateWorld.h";
-#include "src/Components/SimpleMovement.h"
-#include "src/Components/ChangeSceneButtonComponent.h"
-#include "src/Components/ExitButtonComponent.h"
+#include "Components/CameraController.h"
+#include "Components/RotateWorld.h";
+#include "Components/SimpleMovement.h"
+#include "Components/ChangeSceneButtonComponent.h"
+#include "Components/ExitButtonComponent.h"
 
 MotorCasaPaco* motorCasaPaco;
 
