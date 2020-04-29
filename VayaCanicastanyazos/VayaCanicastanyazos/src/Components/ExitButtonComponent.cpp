@@ -1,4 +1,3 @@
-//#include "Components/ExitButtonComponent.h" Aqui lo de Components no va
 #include "ExitButtonComponent.h"
 #include "MotorCasaPaco.h"
 

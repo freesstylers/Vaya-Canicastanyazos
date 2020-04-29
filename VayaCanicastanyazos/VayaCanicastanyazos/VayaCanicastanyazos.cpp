@@ -11,6 +11,19 @@
 #include "Components/ChangeSceneButtonComponent.h"
 #include "Components/ExitButtonComponent.h"
 
+#include "Components/ChangeFullScreenComponent.h"
+#include "Components/FormatResolutionChangeComponent.h"
+#include "Components/ApplyGraphicChangesComponent.h"
+#include "Components/ChangeVyncComponent.h"
+#include "Components/FSAAChangeComponent.h"
+#include "Components/ShadowsChangeComponent.h"
+#include "Components/ApplyAdvancedGraphicChangesComponent.h"
+#include "Components/RevertGraphicChangesComponent.h"
+
+#include "Components/RevertAdvancedGraphicChangesComponent.h"
+#include "Components/ChangeGammaComponent.h"
+#include "Components/ChangeGraphicSceneComponent.h"
+
 MotorCasaPaco* motorCasaPaco;
 
 //-----------------------------Factories-----------------------------------------
@@ -58,6 +71,106 @@ public:
 		return new ExitButtonComponent(args);
 	};
 };
+
+class ChangeFullScreenComponentFactory : public BaseFactory
+{
+public:
+	Component* createComponent(json& args) override
+	{
+		return new ChangeFullScreenComponent(args);
+	};
+};
+
+class FormatResolutionChangeComponentFactory : public BaseFactory
+{
+public:
+	Component* createComponent(json& args) override
+	{
+		return new FormatResolutionChangeComponent(args);
+	};
+};
+
+class ApplyGraphicChangesComponentFactory : public BaseFactory
+{
+public:
+	Component* createComponent(json& args) override
+	{
+		return new ApplyGraphicChangesComponent(args);
+	};
+};
+
+class ChangeVSyncComponentFactory : public BaseFactory
+{
+public:
+	Component* createComponent(json& args) override
+	{
+		return new ChangeVSyncComponent(args);
+	};
+};
+
+class FSAAChangeComponentFactory : public BaseFactory
+{
+public:
+	Component* createComponent(json& args) override
+	{
+		return new FSAAChangeComponent(args);
+	};
+};
+
+class ShadowsChangeComponentFactory : public BaseFactory
+{
+public:
+	Component* createComponent(json& args) override
+	{
+		return new ShadowsChangeComponent(args);
+	};
+};
+
+class ApplyAdvancedGraphicChangesComponentFactory : public BaseFactory
+{
+public:
+	Component* createComponent(json& args) override
+	{
+		return new ApplyAdvancedGraphicChangesComponent(args);
+	};
+};
+
+class RevertGraphicChangesComponentFactory : public BaseFactory
+{
+public:
+	Component* createComponent(json& args) override
+	{
+		return new RevertGraphicChangesComponent(args);
+	};
+};
+
+class RevertAdvancedGraphicChangesComponentFactory : public BaseFactory
+{
+public:
+	Component* createComponent(json& args) override
+	{
+		return new RevertAdvancedGraphicChangesComponent(args);
+	};
+};
+
+class ChangeGammaComponentFactory : public BaseFactory
+{
+public:
+	Component* createComponent(json& args) override
+	{
+		return new ChangeGammaComponent(args);
+	};
+};
+
+class ChangeGraphicSceneComponentFactory : public BaseFactory
+{
+public:
+	Component* createComponent(json& args) override
+	{
+		return new ChangeGraphicSceneComponent(args);
+	};
+};
+
 //--------------------------------------------------------------------------------
 
 
@@ -94,10 +207,22 @@ WinMain(HINSTANCE hinstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdSh
 	//JsonFactoryParser::getInstance()->addFactory("CameraController", new CameraControllerFactory());
 	JsonFactoryParser::getInstance()->addFactory("ChangeSceneButtonComponent", new ChangeSceneButtonComponentFactory());
 	JsonFactoryParser::getInstance()->addFactory("ExitButtonComponent", new ExitButtonComponentFactory());
+	JsonFactoryParser::getInstance()->addFactory("ChangeFullScreenComponent", new ChangeFullScreenComponentFactory());
+	JsonFactoryParser::getInstance()->addFactory("FormatResolutionChangeComponent", new FormatResolutionChangeComponentFactory());
+	JsonFactoryParser::getInstance()->addFactory("ApplyGraphicChangesComponent", new ApplyGraphicChangesComponentFactory());
+	JsonFactoryParser::getInstance()->addFactory("ChangeVSyncComponent", new ChangeVSyncComponentFactory());
+	JsonFactoryParser::getInstance()->addFactory("FSAAChangeComponent", new FSAAChangeComponentFactory());
+	JsonFactoryParser::getInstance()->addFactory("ShadowsChangeComponent", new ShadowsChangeComponentFactory());
+	JsonFactoryParser::getInstance()->addFactory("ApplyAdvancedGraphicChangesComponent", new ApplyAdvancedGraphicChangesComponentFactory());
+	JsonFactoryParser::getInstance()->addFactory("RevertGraphicChangesComponent", new RevertGraphicChangesComponentFactory());
+	JsonFactoryParser::getInstance()->addFactory("RevertAdvancedGraphicChangesComponent", new RevertAdvancedGraphicChangesComponentFactory());
+	JsonFactoryParser::getInstance()->addFactory("ChangeGammaComponent", new ChangeGammaComponentFactory());
+	JsonFactoryParser::getInstance()->addFactory("ChangeGraphicSceneComponent", new ChangeGraphicSceneComponentFactory());
 
+	motorCasaPaco->getGUI_Manager()->getInstance()->setupDefaultResources();
 	motorCasaPaco->getGUI_Manager()->getInstance()->loadScheme("VayaCanicastanhazos.scheme");
-	motorCasaPaco->getGUI_Manager()->getInstance()->loadScheme("GWEN.scheme");
 	motorCasaPaco->getGUI_Manager()->getInstance()->setMouseCursor("VayaCanicastanhazos/Mouse_Arrow");
+
 	//motorCasaPaco->changeScene("Menu");
 
 	motorCasaPaco->changeScene("Menu");

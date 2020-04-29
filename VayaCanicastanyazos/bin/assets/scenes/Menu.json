@@ -29,7 +29,7 @@
 	[
 		{
 			"type" : "layout", 
-			"name" : "Menu.layout"
+			"name" : "MenuCanicas.layout"
 		},
 		{
 			"type" : "entity",
@@ -91,6 +91,18 @@
 				{
 					"type": "ExitButtonComponent",
 					"buttonName" : "MainMenu/Exit"
+				}
+			]
+		},
+		{
+			"type" : "entity",
+			"name" : "UI_6",
+			"components" : 
+			[
+				{
+					"type": "ChangeSceneButtonComponent",
+					"buttonName" : "MainMenu/Settings",
+					"sceneName" : "GraphicOptions"
 				}
 			]
 		}

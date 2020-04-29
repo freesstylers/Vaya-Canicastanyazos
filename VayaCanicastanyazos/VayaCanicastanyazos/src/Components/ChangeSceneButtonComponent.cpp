@@ -1,6 +1,6 @@
-//#include "Components/ChangeSceneButtonComponent.h" Aqui lo de Components no va
 #include "ChangeSceneButtonComponent.h"
 #include "MotorCasaPaco.h"
+#include "Audio/AudioManager.h"
 
 class Ogre::Root;
 class Ogre::SceneManager;
@@ -17,6 +17,7 @@ ChangeSceneButtonComponent::~ChangeSceneButtonComponent()
 bool ChangeSceneButtonComponent::function(const CEGUI::EventArgs& e)
 {
 	MotorCasaPaco::getInstance()->changeScene(sceneToLoad);
+	AudioManager::getInstance()->playSound("assets/sound/buttonSound.mp3", 0);
 	return true;
 }
 

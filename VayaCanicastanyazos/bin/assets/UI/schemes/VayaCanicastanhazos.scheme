@@ -1,9 +1,10 @@
 <?xml version="1.0"?>
 <GUIScheme name="VayaCanicastanhazos"	version="5">
   <Imageset filename="VayaCanicastanhazos.imageset" />
-  <Font filename="shump-10.font" />
+  <Font filename="shump-normal.font" />
   <LookNFeel filename="VayaCanicastanhazos.looknfeel" />
   <WindowRendererSet filename="CEGUICoreWindowRendererSet" />
-    <FalagardMapping lookNFeel="VayaCanicastanhazos/Mouse_Text"			renderer="Core/Default"			targetType="CEGUI/DefaultWindow"		windowType="VayaCanicastanhazos/Mouse_Text" />
+<FalagardMapping lookNFeel="VayaCanicastanhazos/LeftArrow"			renderer="Core/Button"		targetType="CEGUI/PushButton"		windowType="VayaCanicastanhazos/LeftArrow" />
+  <FalagardMapping lookNFeel="VayaCanicastanhazos/RightArrow"			renderer="Core/Button"		targetType="CEGUI/PushButton"		windowType="VayaCanicastanhazos/RightArrow" />
 
 </GUIScheme>
