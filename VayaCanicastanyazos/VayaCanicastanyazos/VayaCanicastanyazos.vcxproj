@@ -177,7 +177,6 @@
     </PreLinkEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CameraController.cpp" />
     <ClCompile Include="src\Components\ApplyAdvancedGraphicChangesComponent.cpp" />
     <ClCompile Include="src\Components\ApplyGraphicChangesComponent.cpp" />
     <ClCompile Include="src\Components\CameraController.cpp" />
@@ -202,7 +201,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CameraController.h" />
     <ClInclude Include="src\Components\ApplyAdvancedGraphicChangesComponent.h" />
     <ClInclude Include="src\Components\ApplyGraphicChangesComponent.h" />
     <ClInclude Include="src\Components\CameraController.h" />

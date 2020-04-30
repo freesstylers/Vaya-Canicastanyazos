@@ -45,14 +45,14 @@ public:
 	};
 };
 
-/*class CameraControllerFactory : public BaseFactory
+class CameraControllerFactory : public BaseFactory
 {
 public:
 	Component* createComponent(json& args) override
 	{
 		return new CameraController(args);
 	};
-};*/
+};
 
 class ChangeSceneButtonComponentFactory : public BaseFactory
 {
@@ -204,7 +204,7 @@ WinMain(HINSTANCE hinstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdSh
 
 	JsonFactoryParser::getInstance()->addFactory("RotateWorld", new RotateWorldFactory());
 	JsonFactoryParser::getInstance()->addFactory("SimpleMovement", new SimpleMovementFactory());
-	//JsonFactoryParser::getInstance()->addFactory("CameraController", new CameraControllerFactory());
+	JsonFactoryParser::getInstance()->addFactory("CameraController", new CameraControllerFactory());
 	JsonFactoryParser::getInstance()->addFactory("ChangeSceneButtonComponent", new ChangeSceneButtonComponentFactory());
 	JsonFactoryParser::getInstance()->addFactory("ExitButtonComponent", new ExitButtonComponentFactory());
 	JsonFactoryParser::getInstance()->addFactory("ChangeFullScreenComponent", new ChangeFullScreenComponentFactory());
