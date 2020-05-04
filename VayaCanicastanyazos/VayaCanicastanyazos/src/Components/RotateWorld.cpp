@@ -20,10 +20,18 @@ RotateWorld::~RotateWorld()
 
 }
 
+
+void RotateWorld::init(json& args)
+{
+	if (!args["monkey"].is_null())
+		monkey = args["monkey"];
+	if (!args["camName"].is_null())
+		camName = args["camName"];
+}
+
 void RotateWorld::start()
 {
-	rotation = Vector3(0, 0, 0);
-	camera = SceneManager::getInstance()->getCurrentScene()->getEntity("camera");
+	camera = SceneManager::getInstance()->getCurrentScene()->getEntity(camName);
 }
 
 void RotateWorld::update()
@@ -36,8 +44,7 @@ void RotateWorld::update()
 	Transform* transform = getEntity()->getComponent<Transform>("Transform");
 	if (!(x == 0 && y == 0))
 	{
-
-		x = x *90;
+		x = x * 90;
 		y = y * 90;
 		Vector3 target(y, 0, -x);
 		

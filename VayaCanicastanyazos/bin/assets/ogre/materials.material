@@ -12,9 +12,8 @@ material sphereTest
 			
             texture_unit 
             {
-                texture spotlight_image.png
+                texture ball.png
                 tex_address_mode wrap
-				env_map spherical
 				colour_op alpha_blend
             }
 		}

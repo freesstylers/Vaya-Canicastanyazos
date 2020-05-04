@@ -5,12 +5,17 @@ class RotateWorld : public Component
 {
 public:
 	RotateWorld(json& args);
-	virtual void start();
-	virtual void update();
+	void start() override;
+	void update() override;
 	~RotateWorld();
+
+	void init(json& args) override;
 private:
 	float speed = 20;
-	Vector3 rotation;
+	Vector3 rotation = Vector3(0, 0, 0);
 	Entity* camera;
+
+	bool monkey = false;
+	std::string camName = "camera";
 };
 
