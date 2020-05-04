@@ -206,7 +206,8 @@
 	[
 		{
 			"type" : "layout", 
-			"name" : "Ingame.layout"
+			"name" : "Ingame.layout",
+			"visible": true
 		},
 		{
 			"type" : "entity",
