@@ -1,0 +1,859 @@
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 1_1.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 1_2.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 1_3.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 1_4.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 1_5.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 1_6.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 1_7.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 1_8.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 1_9.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 2_1.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 2_2.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 2_3.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 2_4.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 2_5.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 2_6.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 2_7.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 2_8.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 2_9.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 3_1.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 3_10.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 3_11.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 3_12.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 3_2.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 3_3.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 3_4.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 3_5.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 3_6.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 3_7.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 3_8.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to 3_9.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+Exception caught: Cannot find serializer implementation for current version [MeshSerializer_v1.100]Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+Exception caught: Cannot find serializer implementation for current version [MeshSerializer_v1.100]Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to NaveWiterico.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+
+Generating edge lists..
+MeshSerializer writing mesh data to prueba.mesh...
+File header written.
+Writing mesh data...
+Writing submesh...
+Exporting submesh texture aliases...
+Submesh texture aliases exported.
+Submesh exported.
+Exporting bounds information....
+Bounds information exported.
+Exporting submesh name table...
+Submesh name table exported.
+Exporting edge lists...
+Edge lists exported
+Mesh data exported.
+MeshSerializer export successful.
+Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
+Creating resource group General
+Creating resource group Internal
+Creating resource group Autodetect
+Registering ResourceManager for type Material
+Registering ResourceManager for type Skeleton
+Registering ResourceManager for type Mesh
+Exception caught: Cannot find serializer implementation for current version [MeshSerializer_v1.100]Unregistering ResourceManager for type Mesh
+Unregistering ResourceManager for type Skeleton
+Unregistering ResourceManager for type Material
