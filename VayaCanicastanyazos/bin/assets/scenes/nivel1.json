@@ -2,17 +2,26 @@
 	"name" : "test",
 	"entities" :
 	[
+		
+		{
+			"name" : "bg",
+			"components" : [
+				{
+					"type" : "Skybox",
+					"material" : "sky",
+					"skyType" : "box"
+				}
+			]
+		},
 		{
 			"name" : "centro",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [1, 1, 1],
-			"components" : [		
-				{
-					"type" : "RotateWorld"
-				}
-				]
-			},
+			"components" :
+			[
+			]
+		},
 		{
 			"name" : "3_1",
 			"position" : [0, 0, 0],
@@ -232,14 +241,24 @@
 					"type" : "RigidBody",
 					"disableDeactivation" : true,
 					"mass" : 10
+				},
+				{
+					"type" : "FakeRotation"
 				}
 			]
+		},
+		{
+			"name" : "cameraPivot",
+			"position" : [0, 30, 80],
+			"rotation" : [0, 0, 0], 
+			"scale" : [1, 1, 1]
 		},
 		{
 			"name" : "camera",
 			"position" : [0, 100, 180],
 			"rotation" : [0, 0, 0], 
 			"scale" : [1, 1, 1],
+			"parent" : "cameraPivot",
 			"components" : [
 				{
 					"type" : "Camera",

@@ -190,7 +190,7 @@
     <ClCompile Include="src\Components\FSAAChangeComponent.cpp" />
     <ClCompile Include="src\Components\RevertAdvancedGraphicChangesComponent.cpp" />
     <ClCompile Include="src\Components\RevertGraphicChangesComponent.cpp" />
-    <ClCompile Include="src\Components\RotateWorld.cpp" />
+    <ClCompile Include="src\Components\FakeRotation.cpp" />
     <ClCompile Include="src\Components\ShadowsChangeComponent.cpp" />
     <ClCompile Include="src\Components\SimpleMovement.cpp" />
     <ClCompile Include="VayaCanicastanyazos.cpp" />
@@ -214,7 +214,7 @@
     <ClInclude Include="src\Components\FSAAChangeComponent.h" />
     <ClInclude Include="src\Components\RevertAdvancedGraphicChangesComponent.h" />
     <ClInclude Include="src\Components\RevertGraphicChangesComponent.h" />
-    <ClInclude Include="src\Components\RotateWorld.h" />
+    <ClInclude Include="src\Components\FakeRotation.h" />
     <ClInclude Include="src\Components\ShadowsChangeComponent.h" />
     <ClInclude Include="src\Components\SimpleMovement.h" />
   </ItemGroup>
