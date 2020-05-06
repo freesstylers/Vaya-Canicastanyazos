@@ -24,7 +24,10 @@ FakeRotation::~FakeRotation()
 void FakeRotation::init(json& args)
 {
 	if (!args["camName"].is_null())
-		camName = args["camName"];
+	{
+		std::string aux = args["camName"];
+		camName = aux;
+	}
 	if (!args["speed"].is_null())
 		speed = args["speed"];
 }
