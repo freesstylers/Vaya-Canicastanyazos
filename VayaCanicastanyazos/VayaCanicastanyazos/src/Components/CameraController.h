@@ -22,5 +22,11 @@ private:
 	float zoomInLimit;
 	float zoomOutLimit;
 	float zoomSpeed;
+
+	float horizontalLimit;
+	float verticalLimit;
+
+	float prevHorizontal = 0.0f;
+	float prevVertical = 0.0f;
 };
 

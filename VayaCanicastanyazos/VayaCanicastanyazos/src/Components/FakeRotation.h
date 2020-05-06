@@ -11,7 +11,7 @@ public:
 
 	void init(json& args) override;
 private:
-	float speed = 50;
+	float speed = 10;
 	Vector3 rotation = Vector3(0, 0, 0);
 	Entity* camera;
 

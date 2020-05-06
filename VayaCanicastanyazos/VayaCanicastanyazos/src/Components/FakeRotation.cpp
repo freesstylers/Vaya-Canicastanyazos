@@ -25,8 +25,8 @@ void FakeRotation::init(json& args)
 {
 	if (!args["camName"].is_null())
 		camName = args["camName"];
-	if (!args["maxAngle"].is_null())
-		maxAngle = args["maxAngle"];
+	if (!args["speed"].is_null())
+		speed = args["speed"];
 }
 
 void FakeRotation::start()
@@ -42,8 +42,8 @@ void FakeRotation::update()
 
 	float deltatime = MotorCasaPaco::getInstance()->DeltaTime();
 
-	float x = InputManager::getInstance()->GameControllerGetAxisMovement(CONTROLLER_AXIS_LEFTX, true);
-	float y = InputManager::getInstance()->GameControllerGetAxisMovement(CONTROLLER_AXIS_LEFTY, true);
+	float x = -InputManager::getInstance()->GameControllerGetAxisMovement(CONTROLLER_AXIS_LEFTX, true);
+	float y = -InputManager::getInstance()->GameControllerGetAxisMovement(CONTROLLER_AXIS_LEFTY, true);
 
 	Vector3 camLook = transform->getWorldPosition() - camTransform->getWorldPosition();
 	camLook.Y = 0;
@@ -51,6 +51,6 @@ void FakeRotation::update()
 	camOrthoLook = Vector3::Normalized(camOrthoLook);
 	camLook = Vector3::Normalized(camLook);
 
-	getEntity()->getComponent<RigidBody>("RigidBody")->applyForce(ForceType::FORCE, camLook * speed * -y * deltatime);
-	getEntity()->getComponent<RigidBody>("RigidBody")->applyForce(ForceType::FORCE, camOrthoLook * speed * -x * deltatime);
+	getEntity()->getComponent<RigidBody>("RigidBody")->applyForce(ForceType::FORCE, camLook * speed * y * deltatime);
+	getEntity()->getComponent<RigidBody>("RigidBody")->applyForce(ForceType::FORCE, camOrthoLook * speed * x * deltatime);
 }
