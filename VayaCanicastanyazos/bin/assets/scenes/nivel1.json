@@ -227,6 +227,27 @@
 			]
 		},
 		{
+			"name" : "star1",
+			"prefab" : "star",
+			"position" : [0, 10, 50],
+			"rotation" : [0, 0, 0],
+			"scale" : [5, 5, 5]
+		},
+		{
+			"name" : "star2",
+			"prefab" : "star",
+			"position" : [0, 10, -50],
+			"rotation" : [0, 0, 0],
+			"scale" : [5, 5, 5]
+		},
+		{
+			"name" : "star3",
+			"prefab" : "star",
+			"position" : [-100, 10, -50],
+			"rotation" : [0, 0, 0],
+			"scale" : [5, 5, 5]
+		},
+		{
 			"name" : "ball",
 			"position" : [0, 30, 80],
 			"rotation" : [0, 0, 0],
@@ -274,6 +295,10 @@
 					"marble" : "ball"
 				}
 			]
+		},
+		{
+			"name": "GM",
+			"prefab" : "gameManager"
 		}
 	],
 	

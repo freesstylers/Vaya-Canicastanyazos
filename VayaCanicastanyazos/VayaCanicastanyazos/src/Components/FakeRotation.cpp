@@ -50,7 +50,6 @@ void FakeRotation::update()
 	Vector3 camOrthoLook = Quaternion::FromAngleAxis(90, Vector3::Up()) * camLook;
 	camOrthoLook = Vector3::Normalized(camOrthoLook);
 	camLook = Vector3::Normalized(camLook);
-
 	getEntity()->getComponent<RigidBody>("RigidBody")->applyForce(ForceType::FORCE, camLook * speed * -y * deltatime);
 	getEntity()->getComponent<RigidBody>("RigidBody")->applyForce(ForceType::FORCE, camOrthoLook * speed * -x * deltatime);
 }
