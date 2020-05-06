@@ -230,7 +230,6 @@ WinMain(HINSTANCE hinstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdSh
 	JsonFactoryParser::getInstance()->addFactory("ChangeGraphicSceneComponent", new ChangeGraphicSceneComponentFactory());
 	JsonFactoryParser::getInstance()->addFactory("StarCollision", new StarCollisionFactory());
 
-	motorCasaPaco->getGUI_Manager()->getInstance()->setupDefaultResources();
 	motorCasaPaco->getGUI_Manager()->getInstance()->loadScheme("VayaCanicastanhazos.scheme");
 	motorCasaPaco->getGUI_Manager()->getInstance()->setMouseCursor("VayaCanicastanhazos/Mouse_Arrow");
 
