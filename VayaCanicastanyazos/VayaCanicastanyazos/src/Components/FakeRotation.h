@@ -11,13 +11,10 @@ public:
 
 	void init(json& args) override;
 private:
-	float speed = 10;
+	float speed;
 	Vector3 rotation = Vector3(0, 0, 0);
 	Entity* camera;
 
-	bool monkey = false;
 	std::string camName = "camera";
-
-	float maxAngle = 45.0f;
 };
 

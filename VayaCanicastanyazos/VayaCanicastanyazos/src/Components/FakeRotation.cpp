@@ -23,6 +23,8 @@ FakeRotation::~FakeRotation()
 
 void FakeRotation::init(json& args)
 {
+	speed = 5.0f;
+
 	if (!args["camName"].is_null())
 	{
 		std::string aux = args["camName"];
@@ -43,7 +45,7 @@ void FakeRotation::update()
 	Transform* camPivotTransform = camera->getParent()->getComponent<Transform>("Transform");
 	Transform* camTransform = camera->getComponent<Transform>("Transform");
 
-	float deltatime = MotorCasaPaco::getInstance()->DeltaTime();
+	float deltatime = MotorCasaPaco::getInstance()->DeltaTime() * 1000;
 
 	float x = -InputManager::getInstance()->GameControllerGetAxisMovement(CONTROLLER_AXIS_LEFTX, true);
 	float y = -InputManager::getInstance()->GameControllerGetAxisMovement(CONTROLLER_AXIS_LEFTY, true);

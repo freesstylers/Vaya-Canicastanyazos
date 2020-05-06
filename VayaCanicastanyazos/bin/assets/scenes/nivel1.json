@@ -291,7 +291,6 @@
 				},
 				{
 					"type": "CameraController",
-					"rotationSpeed" : 3.0,
 					"marble" : "ball"
 				}
 			]

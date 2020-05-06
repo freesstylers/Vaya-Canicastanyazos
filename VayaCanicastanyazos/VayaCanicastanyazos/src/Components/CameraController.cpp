@@ -18,9 +18,9 @@ CameraController::~CameraController()
 
 void CameraController::init(json& args)
 {
-	rotationSpeed = 2.0f;
+	rotationSpeed = 0.2f;
 
-	zoomSpeed = 1.0f;
+	zoomSpeed = 0.1f;
 	zoomInLimit = 50.0f;
 	zoomOutLimit = 250.0f;
 
@@ -29,11 +29,13 @@ void CameraController::init(json& args)
 
 	marbleName = "ball";
 
+	/*
 	if (!args["rotationSpeed"].is_null())
 		rotationSpeed = args["rotationSpeed"];
 
 	if (!args["zoomSpeed"].is_null())
 		zoomSpeed = args["zoomSpeed"];
+	*/
 	if (!args["zoomInLimit"].is_null())
 		zoomInLimit = args["zoomInLimit"];
 	if (!args["zoomOutLimit"].is_null())
@@ -85,8 +87,11 @@ void CameraController::preupdate()
 
 void CameraController::update()
 {
+
 	Transform* transform = getEntity()->getComponent<Transform>("Transform");
 	Transform* marbleTrans = marble->getComponent<Transform>("Transform");
+
+	float deltatime = MotorCasaPaco::getInstance()->DeltaTime() * 1000;
 
 	//translate camera to follow ball
 	Vector3 ballMovement = marbleTrans->getWorldPosition() - preBallPos;
@@ -95,7 +100,10 @@ void CameraController::update()
 
 	//orbit around ball
 	float rightx = InputManager::getInstance()->GameControllerGetAxisMovement(CONTROLLER_AXIS_RIGHTX, false);
-	transform->rotateAroundPivot(Vector3(0, rotationSpeed * -rightx * MotorCasaPaco::getInstance()->DeltaTime() / 10, 0), marble);
+
+	std::cout << rightx << '\n';
+
+	transform->rotateAroundPivot(Vector3(0, rotationSpeed * -rightx * deltatime, 0), marble);
 
 	getEntity()->getComponent<Camera>("Camera")->lookAt(marbleTrans->getWorldPosition());
 
@@ -108,10 +116,9 @@ void CameraController::update()
 	Vector3 normDir = Vector3::Normalized(dir);
 
 	if (out && Vector3::Distance(dir, normDir) <= zoomOutLimit)
-		transform->translate(-1 * MotorCasaPaco::getInstance()->DeltaTime() * normDir * zoomSpeed);
+		transform->translate(-1 * deltatime * normDir * zoomSpeed);
 	else if (in && Vector3::Distance(dir, normDir) >= zoomInLimit)
-		transform->translate(MotorCasaPaco::getInstance()->DeltaTime() * normDir * zoomSpeed);
-
+		transform->translate(deltatime * normDir * zoomSpeed);
 
 
 
@@ -135,19 +142,21 @@ void CameraController::update()
 	getEntity()->getComponent<Camera>("Camera")->lookAt(marbleTrans->getWorldPosition());
 
 
+
 	//x (horizontal) faked rotation
 
-	//float horizontal = (x * horizontalLimit) - prevHorizontal;
+	/*
+	float horizontal = (x * horizontalLimit) - prevHorizontal;
 
-	//Vector3 horizontalRot = Vector3::Backward() * horizontal;
+	Vector3 horizontalRot = Vector3::Forward() * horizontal;
 
-	//transform->rotate(horizontalRot, TransformSpace::WORLD);
+	transform->rotate(horizontalRot, TransformSpace::LOCAL);
 
-	//prevHorizontal = x * horizontalLimit;
+	prevHorizontal = x * horizontalLimit;
 
-	//getEntity()->getComponent<Camera>("Camera")->lookAt(marbleTrans->getWorldPosition());
+	getEntity()->getComponent<Camera>("Camera")->lookAt(marbleTrans->getWorldPosition());
 
-
+	*/
 	//add lerping to orbit and fake world movement?
 
 
