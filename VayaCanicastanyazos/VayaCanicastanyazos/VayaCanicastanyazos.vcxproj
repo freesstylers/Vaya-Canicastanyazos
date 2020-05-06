@@ -188,11 +188,13 @@
     <ClCompile Include="src\Components\ExitButtonComponent.cpp" />
     <ClCompile Include="src\Components\FormatResolutionChangeComponent.cpp" />
     <ClCompile Include="src\Components\FSAAChangeComponent.cpp" />
+    <ClCompile Include="src\Components\GameManager.cpp" />
     <ClCompile Include="src\Components\RevertAdvancedGraphicChangesComponent.cpp" />
     <ClCompile Include="src\Components\RevertGraphicChangesComponent.cpp" />
     <ClCompile Include="src\Components\FakeRotation.cpp" />
     <ClCompile Include="src\Components\ShadowsChangeComponent.cpp" />
     <ClCompile Include="src\Components\SimpleMovement.cpp" />
+    <ClCompile Include="src\Components\StarCollision.cpp" />
     <ClCompile Include="VayaCanicastanyazos.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -212,11 +214,13 @@
     <ClInclude Include="src\Components\ExitButtonComponent.h" />
     <ClInclude Include="src\Components\FormatResolutionChangeComponent.h" />
     <ClInclude Include="src\Components\FSAAChangeComponent.h" />
+    <ClInclude Include="src\Components\GameManager.h" />
     <ClInclude Include="src\Components\RevertAdvancedGraphicChangesComponent.h" />
     <ClInclude Include="src\Components\RevertGraphicChangesComponent.h" />
     <ClInclude Include="src\Components\FakeRotation.h" />
     <ClInclude Include="src\Components\ShadowsChangeComponent.h" />
     <ClInclude Include="src\Components\SimpleMovement.h" />
+    <ClInclude Include="src\Components\StarCollision.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

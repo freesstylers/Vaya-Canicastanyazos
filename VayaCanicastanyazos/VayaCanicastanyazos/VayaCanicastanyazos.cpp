@@ -23,6 +23,7 @@
 #include "Components/RevertAdvancedGraphicChangesComponent.h"
 #include "Components/ChangeGammaComponent.h"
 #include "Components/ChangeGraphicSceneComponent.h"
+#include "Components/StarCollision.h"
 
 MotorCasaPaco* motorCasaPaco;
 
@@ -171,6 +172,15 @@ public:
 	};
 };
 
+class StarCollisionFactory : public BaseFactory
+{
+public:
+	Component* createComponent(json& args) override
+	{
+		return new StarCollision(args);
+	};
+};
+
 //--------------------------------------------------------------------------------
 
 
@@ -218,8 +228,8 @@ WinMain(HINSTANCE hinstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdSh
 	JsonFactoryParser::getInstance()->addFactory("RevertAdvancedGraphicChangesComponent", new RevertAdvancedGraphicChangesComponentFactory());
 	JsonFactoryParser::getInstance()->addFactory("ChangeGammaComponent", new ChangeGammaComponentFactory());
 	JsonFactoryParser::getInstance()->addFactory("ChangeGraphicSceneComponent", new ChangeGraphicSceneComponentFactory());
+	JsonFactoryParser::getInstance()->addFactory("StarCollision", new StarCollisionFactory());
 
-	motorCasaPaco->getGUI_Manager()->getInstance()->setupDefaultResources();
 	motorCasaPaco->getGUI_Manager()->getInstance()->loadScheme("VayaCanicastanhazos.scheme");
 	motorCasaPaco->getGUI_Manager()->getInstance()->setMouseCursor("VayaCanicastanhazos/Mouse_Arrow");
 
