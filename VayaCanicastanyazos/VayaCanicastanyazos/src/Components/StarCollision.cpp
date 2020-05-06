@@ -23,7 +23,7 @@ void StarCollision::init(json& j)
 
 void StarCollision::OnCollision(Entity* ent)
 {
-	if (ent->getTag() == "star")
+	if (ent->getTag() == "marble")
 	{
 		getEntity()->setEnabled(false);
 		GameManager::getInstance()->addStars(1);

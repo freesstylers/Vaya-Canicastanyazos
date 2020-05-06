@@ -248,25 +248,10 @@
 			"scale" : [5, 5, 5]
 		},
 		{
+			"prefab" : "marble",
 			"name" : "ball",
 			"position" : [0, 30, 80],
-			"rotation" : [0, 0, 0],
-			"scale" : [0.05, 0.05, 0.05],
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "sphere.mesh",
-					"material" : "sphereTest"
-				},
-				{
-					"type" : "RigidBody",
-					"disableDeactivation" : true,
-					"mass" : 10
-				},
-				{
-					"type" : "FakeRotation"
-				}
-			]
+			"rotation" : [0, 0, 0]
 		},
 		{
 			"name" : "cameraPivot",
