@@ -185,9 +185,11 @@
     <ClCompile Include="src\Components\ChangeGraphicSceneComponent.cpp" />
     <ClCompile Include="src\Components\ChangeSceneButtonComponent.cpp" />
     <ClCompile Include="src\Components\ChangeVyncComponent.cpp" />
+    <ClCompile Include="src\Components\DeathZoneComponent.cpp" />
     <ClCompile Include="src\Components\ExitButtonComponent.cpp" />
     <ClCompile Include="src\Components\FormatResolutionChangeComponent.cpp" />
     <ClCompile Include="src\Components\FSAAChangeComponent.cpp" />
+    <ClCompile Include="src\Components\GoalComponent.cpp" />
     <ClCompile Include="src\Components\RevertAdvancedGraphicChangesComponent.cpp" />
     <ClCompile Include="src\Components\RevertGraphicChangesComponent.cpp" />
     <ClCompile Include="src\Components\RotateWorld.cpp" />
@@ -209,9 +211,11 @@
     <ClInclude Include="src\Components\ChangeGraphicSceneComponent.h" />
     <ClInclude Include="src\Components\ChangeSceneButtonComponent.h" />
     <ClInclude Include="src\Components\ChangeVyncComponent.h" />
+    <ClInclude Include="src\Components\DeathZoneComponent.h" />
     <ClInclude Include="src\Components\ExitButtonComponent.h" />
     <ClInclude Include="src\Components\FormatResolutionChangeComponent.h" />
     <ClInclude Include="src\Components\FSAAChangeComponent.h" />
+    <ClInclude Include="src\Components\GoalComponent.h" />
     <ClInclude Include="src\Components\RevertAdvancedGraphicChangesComponent.h" />
     <ClInclude Include="src\Components\RevertGraphicChangesComponent.h" />
     <ClInclude Include="src\Components\RotateWorld.h" />

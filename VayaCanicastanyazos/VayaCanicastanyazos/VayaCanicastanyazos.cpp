@@ -24,6 +24,9 @@
 #include "Components/ChangeGammaComponent.h"
 #include "Components/ChangeGraphicSceneComponent.h"
 
+#include "Components/DeathZoneComponent.h"
+#include "Components/GoalComponent.h"
+
 MotorCasaPaco* motorCasaPaco;
 
 //-----------------------------Factories-----------------------------------------
@@ -171,6 +174,24 @@ public:
 	};
 };
 
+class DeathZoneComponentFactory : public BaseFactory
+{
+public:
+	Component* createComponent(json& args) override
+	{
+		return new DeathZoneComponent(args);
+	};
+};
+
+class GoalComponentFactory : public BaseFactory
+{
+public:
+	Component* createComponent(json& args) override
+	{
+		return new GoalComponent(args);
+	};
+};
+
 //--------------------------------------------------------------------------------
 
 
@@ -218,6 +239,8 @@ WinMain(HINSTANCE hinstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdSh
 	JsonFactoryParser::getInstance()->addFactory("RevertAdvancedGraphicChangesComponent", new RevertAdvancedGraphicChangesComponentFactory());
 	JsonFactoryParser::getInstance()->addFactory("ChangeGammaComponent", new ChangeGammaComponentFactory());
 	JsonFactoryParser::getInstance()->addFactory("ChangeGraphicSceneComponent", new ChangeGraphicSceneComponentFactory());
+	JsonFactoryParser::getInstance()->addFactory("DeathZoneComponent", new DeathZoneComponentFactory());
+	JsonFactoryParser::getInstance()->addFactory("GoalComponent", new GoalComponentFactory());
 
 	motorCasaPaco->getGUI_Manager()->getInstance()->setupDefaultResources();
 	motorCasaPaco->getGUI_Manager()->getInstance()->loadScheme("VayaCanicastanhazos.scheme");

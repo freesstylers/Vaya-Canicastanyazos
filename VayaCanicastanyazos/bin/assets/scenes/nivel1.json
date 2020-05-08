@@ -1,5 +1,5 @@
 {
-	"name" : "test",
+	"name" : "nivel1",
 	"entities" :
 	[
 		{
@@ -181,6 +181,19 @@
 					"type" : "RigidBody",
 					"disableDeactivation" : true,
 					"mass" : 10
+				}
+			]
+		},
+		{
+			"name" : "death",
+			"position" : [0, -100, 1000],
+			"rotation" : [0,0,0],
+			"scale" : [200,10,200],
+			"components" : [
+				{
+					"type" : "DeathZone",
+					"marble" : "ball",
+					"scene" : "nivel2"
 				}
 			]
 		},
