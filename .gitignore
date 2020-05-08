@@ -35,3 +35,8 @@ VayaCanicastanyazos/bin/*.log
 *.vs
 # interm
 interm/
+
+
+!VayaCanicastanyazos/bin/assets/ogre/*.exe
+!VayaCanicastanyazos/bin/assets/ogre/*.dll
+!VayaCanicastanyazos/bin/assets/ogre/*.bat

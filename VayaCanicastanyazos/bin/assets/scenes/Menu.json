@@ -29,7 +29,8 @@
 	[
 		{
 			"type" : "layout", 
-			"name" : "MenuCanicas.layout"
+			"name" : "MenuCanicas.layout",
+			"visible": true
 		},
 		{
 			"type" : "entity",

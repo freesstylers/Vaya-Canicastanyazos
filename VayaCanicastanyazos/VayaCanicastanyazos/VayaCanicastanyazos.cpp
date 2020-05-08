@@ -6,7 +6,7 @@
 #include "MotorCasaPaco.h"
 #include "Scene/JsonFactoryParser.h"
 #include "Components/CameraController.h"
-#include "Components/RotateWorld.h";
+#include "Components/FakeRotation.h";
 #include "Components/SimpleMovement.h"
 #include "Components/ChangeSceneButtonComponent.h"
 #include "Components/ExitButtonComponent.h"
@@ -23,6 +23,7 @@
 #include "Components/RevertAdvancedGraphicChangesComponent.h"
 #include "Components/ChangeGammaComponent.h"
 #include "Components/ChangeGraphicSceneComponent.h"
+#include "Components/StarCollision.h"
 
 #include "Components/DeathZoneComponent.h"
 #include "Components/GoalComponent.h"
@@ -30,12 +31,12 @@
 MotorCasaPaco* motorCasaPaco;
 
 //-----------------------------Factories-----------------------------------------
-class RotateWorldFactory : public BaseFactory
+class FakeRotationFactory : public BaseFactory
 {
 public:
 	Component* createComponent(json& args) override
 	{
-		return new RotateWorld(args);
+		return new FakeRotation(args);
 	};
 };
 
@@ -183,6 +184,15 @@ public:
 	};
 };
 
+class StarCollisionFactory : public BaseFactory
+{
+public:
+	Component* createComponent(json& args) override
+	{
+		return new StarCollision(args)
+	};
+};
+
 class GoalComponentFactory : public BaseFactory
 {
 public:
@@ -223,7 +233,7 @@ WinMain(HINSTANCE hinstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdSh
 		return 0;
 	}
 
-	JsonFactoryParser::getInstance()->addFactory("RotateWorld", new RotateWorldFactory());
+	JsonFactoryParser::getInstance()->addFactory("FakeRotation", new FakeRotationFactory());
 	JsonFactoryParser::getInstance()->addFactory("SimpleMovement", new SimpleMovementFactory());
 	JsonFactoryParser::getInstance()->addFactory("CameraController", new CameraControllerFactory());
 	JsonFactoryParser::getInstance()->addFactory("ChangeSceneButtonComponent", new ChangeSceneButtonComponentFactory());
@@ -241,16 +251,12 @@ WinMain(HINSTANCE hinstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdSh
 	JsonFactoryParser::getInstance()->addFactory("ChangeGraphicSceneComponent", new ChangeGraphicSceneComponentFactory());
 	JsonFactoryParser::getInstance()->addFactory("DeathZoneComponent", new DeathZoneComponentFactory());
 	JsonFactoryParser::getInstance()->addFactory("GoalComponent", new GoalComponentFactory());
+	JsonFactoryParser::getInstance()->addFactory("StarCollision", new StarCollisionFactory());
 
-	motorCasaPaco->getGUI_Manager()->getInstance()->setupDefaultResources();
 	motorCasaPaco->getGUI_Manager()->getInstance()->loadScheme("VayaCanicastanhazos.scheme");
 	motorCasaPaco->getGUI_Manager()->getInstance()->setMouseCursor("VayaCanicastanhazos/Mouse_Arrow");
 
-	//motorCasaPaco->changeScene("Menu");
-
-	motorCasaPaco->changeScene("Menu");
-
-	motorCasaPaco->start();
+	motorCasaPaco->start("Menu");
 
 	delete motorCasaPaco;
 

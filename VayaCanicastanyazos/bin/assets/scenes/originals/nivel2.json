@@ -1,0 +1,225 @@
+{
+	"name" : "test",
+	"entities" :
+	[	
+		{
+		"name" : "centro",
+		"position" : [0, 0, 0],
+		"rotation" : [0, 0, 0],
+		"scale" : [1, 1, 1],
+		"components" : [		
+			{
+				"type" : "RotateWorld"
+			}
+			]
+		},
+		{
+			"name" : "2_1",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "2_1.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+		},
+		{
+			"name" : "2_2",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "2_2.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+		},
+		{
+			"name" : "2_3",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "2_3.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+		},
+		{
+			"name" : "2_4",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "2_4.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+		},
+		{
+			"name" : "2_5",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "2_5.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+		},
+		{
+			"name" : "2_6",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "2_6.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+		},
+		{
+			"name" : "2_7",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "2_7.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+		},
+		{
+			"name" : "2_8",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "2_8.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+		},
+		{
+			"name" : "2_9",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "2_9.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+		},
+		{
+			"name" : "ball",
+			"position" : [0, 70, 50],
+			"rotation" : [0, 0, 0],
+			"scale" : [0.05, 0.05, 0.05],
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "sphere.mesh",
+					"material" : "sphereTest"
+				},
+				{
+					"type" : "RigidBody",
+					"disableDeactivation" : true,
+					"mass" : 10
+				}
+			]
+		},
+		{
+			"name" : "camera",
+			"position" : [0, 130, 150],
+			"rotation" : [0, 0, 0], 
+			"scale" : [1, 1, 1],
+			"components" : [
+				{
+					"type" : "Camera",
+					"lookAt" : [1, 1, 0],
+					"bgColour" : [0, 0, 1, 1]
+				},
+				{
+					"type": "AudioListenerComponent"
+				}
+			]
+		}
+	],
+	
+	"UI" :
+	[
+		{
+			"type" : "layout", 
+			"name" : "Ingame.layout",
+			"visible": true
+		},
+		{
+			"type" : "entity",
+			"name" : "UI",
+			"components" : 
+			[
+				{
+					"type": "ChangeSceneButtonComponent",
+					"buttonName" : "Ingame/Menu",
+					"sceneName" : "Menu"
+				}				
+			]
+		}
+	]
+}
