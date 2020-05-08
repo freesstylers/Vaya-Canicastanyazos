@@ -8,14 +8,15 @@ public:
 	virtual void update();
 	void init(json& args) override;
 	void redefine(json& args) override;
+	void start() override;
 	void preupdate() override;
 	~CameraController();
 
 private:
-	float rotationSpeed;
+	float orbitSpeed;
 	std::string marbleName;
 	Entity* marble;
-	Vector3 cameraOffset;
+	Entity* pivot = nullptr;
 
 	Vector3 preBallPos = Vector3(0, 0, 0);
 
@@ -26,7 +27,12 @@ private:
 	float horizontalLimit;
 	float verticalLimit;
 
-	float prevHorizontal = 0.0f;
-	float prevVertical = 0.0f;
+	float prevX = 0.0f;
+	float prevY = 0.0f;
+	float prevOrbit = 0.0f;
+
+	float horizLerpSpeed;
+	float vertLerpSpeed;
+	float orbitLerpSpeed;
 };
 

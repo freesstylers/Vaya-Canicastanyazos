@@ -6,6 +6,8 @@
 #include "Scene/SceneManager.h"
 #include "Graphics/Camera.h"
 
+#include <cmath>
+
 CameraController::CameraController(json& args) : Component(args)
 {
 
@@ -18,24 +20,26 @@ CameraController::~CameraController()
 
 void CameraController::init(json& args)
 {
-	rotationSpeed = 0.2f;
+	orbitSpeed = 0.2f;
+
+	orbitLerpSpeed = 10.0f;
+	vertLerpSpeed = 8.0f;
+	horizLerpSpeed = 8.0f;
 
 	zoomSpeed = 0.1f;
 	zoomInLimit = 50.0f;
 	zoomOutLimit = 250.0f;
 
-	horizontalLimit = 15.0f;
+	horizontalLimit = 10.0f;
 	verticalLimit = 15.0f;
 
 	marbleName = "ball";
 
-	/*
-	if (!args["rotationSpeed"].is_null())
-		rotationSpeed = args["rotationSpeed"];
+	if (!args["orbitSpeed"].is_null())
+		orbitSpeed = args["orbitSpeed"];
 
 	if (!args["zoomSpeed"].is_null())
 		zoomSpeed = args["zoomSpeed"];
-	*/
 	if (!args["zoomInLimit"].is_null())
 		zoomInLimit = args["zoomInLimit"];
 	if (!args["zoomOutLimit"].is_null())
@@ -46,19 +50,28 @@ void CameraController::init(json& args)
 	if (!args["verticalDegreeLimit"].is_null())
 		verticalLimit = args["verticalDegreeLimit"];
 
+	if (!args["orbitLerpSpeed"].is_null())
+		orbitLerpSpeed = args["orbitLerpSpeed"];
+	if (!args["vertLerpSpeed"].is_null())
+		vertLerpSpeed = args["vertLerpSpeed"];
+	if (!args["horizLerpSpeed"].is_null())
+		horizLerpSpeed = args["horizLerpSpeed"];
+
 	if (!args["marble"].is_null())
-		marbleName = args["marble"];
+	{
+		std::string aux = args["marble"];
+		marbleName = aux;
+	}
 
 	marble = SceneManager::getInstance()->getCurrentScene()->getEntity(marbleName);
-	getEntity()->getComponent<Transform>("Transform")->setInheritedRotation(false);
 
-	cameraOffset = getEntity()->getComponent<Transform>("Transform")->getPosition();
+	//getEntity()->getComponent<Transform>("Transform")->setInheritedRotation(false);
 }
 
 void CameraController::redefine(json& args)
 {
 	if (args["rotationSpeed"].is_null())
-		args["rotationSpeed"] = rotationSpeed;
+		args["rotationSpeed"] = orbitSpeed;
 
 	if (args["zoomSpeed"].is_null())
 		args["zoomSpeed"] = zoomSpeed;
@@ -77,7 +90,23 @@ void CameraController::redefine(json& args)
 	if (args["verticalDegreeLimit"].is_null())
 		args["verticalDegreeLimit"] = verticalLimit;
 
+	if (args["orbitLerpSpeed"].is_null())
+		args["orbitLerpSpeed"] = orbitLerpSpeed;
+	if (args["vertLerpSpeed"].is_null())
+		args["vertLerpSpeed"] = vertLerpSpeed;
+	if (args["horizLerpSpeed"].is_null())
+		args["horizLerpSpeed"] = horizLerpSpeed;
+
 	init(args);
+}
+
+void CameraController::start()
+{
+	pivot = getEntity()->getParent();
+	getEntity()->getComponent<Camera>("Camera")->lookAt(marble->getTransform()->getWorldPosition());
+
+
+	getEntity()->getTransform()->setRotation(Vector3(0, 0, 0));
 }
 
 void CameraController::preupdate()
@@ -89,26 +118,26 @@ void CameraController::update()
 {
 
 	Transform* transform = getEntity()->getComponent<Transform>("Transform");
+	Transform* pivotTransform = pivot->getComponent<Transform>("Transform");
 	Transform* marbleTrans = marble->getComponent<Transform>("Transform");
 
 	float deltatime = MotorCasaPaco::getInstance()->DeltaTime() * 1000;
 
-	//translate camera to follow ball
+//translate camera to follow ball
 	Vector3 ballMovement = marbleTrans->getWorldPosition() - preBallPos;
-	transform->translate(ballMovement);
+	pivotTransform->translate(ballMovement, TransformSpace::WORLD);
 
-
-	//orbit around ball
+//orbit around ball
 	float rightx = InputManager::getInstance()->GameControllerGetAxisMovement(CONTROLLER_AXIS_RIGHTX, false);
 
-	std::cout << rightx << '\n';
+	prevOrbit = Lerp(prevOrbit, rightx, (orbitLerpSpeed) * deltatime / 1000.0f);
+	rightx = prevOrbit;
 
-	transform->rotateAroundPivot(Vector3(0, rotationSpeed * -rightx * deltatime, 0), marble);
+	pivotTransform->rotate(Vector3(0, orbitSpeed * -rightx * deltatime, 0), TransformSpace::WORLD);
 
-	getEntity()->getComponent<Camera>("Camera")->lookAt(marbleTrans->getWorldPosition());
+	transform->lookAt(marbleTrans->getWorldPosition());
 
-
-	//zoom
+//zoom
 	bool out = InputManager::getInstance()->GameControllerIsButtonDown(CONTROLLER_BUTTON_LEFTSHOULDER);
 	bool in = InputManager::getInstance()->GameControllerIsButtonDown(CONTROLLER_BUTTON_RIGHTSHOULDER);
 
@@ -116,51 +145,45 @@ void CameraController::update()
 	Vector3 normDir = Vector3::Normalized(dir);
 
 	if (out && Vector3::Distance(dir, normDir) <= zoomOutLimit)
-		transform->translate(-1 * deltatime * normDir * zoomSpeed);
+		transform->translate(-1 * deltatime * normDir * zoomSpeed, TransformSpace::WORLD);
 	else if (in && Vector3::Distance(dir, normDir) >= zoomInLimit)
-		transform->translate(deltatime * normDir * zoomSpeed);
+		transform->translate(deltatime * normDir * zoomSpeed, TransformSpace::WORLD);
 
-
-
-	//faking world rotation
+//faking world rotation
 
 	float x = InputManager::getInstance()->GameControllerGetAxisMovement(CONTROLLER_AXIS_LEFTX, true);
 	float y = -InputManager::getInstance()->GameControllerGetAxisMovement(CONTROLLER_AXIS_LEFTY, true);
 
-	Vector3 actualRot = Quaternion::ToEuler(transform->getRotation());
 
-	//y (vertical) faked rotation
+	//for convenience, we lerp the input instead of the vectors
+	prevX = Lerp(prevX, x, (horizLerpSpeed) * deltatime / 1000.0f);
+	x = prevX;
 
-	float vert = (y * verticalLimit) - prevVertical;
+	prevY = Lerp(prevY, y, (vertLerpSpeed) * deltatime / 1000.0f);
+	y = prevY;
 
-	Vector3 vertRot = Vector3::Cross(normDir, Vector3::Up()) * vert;
-
-	transform->rotateAroundPivot(vertRot, marble);
-
-	prevVertical = y * verticalLimit;
-
-	getEntity()->getComponent<Camera>("Camera")->lookAt(marbleTrans->getWorldPosition());
+//y (vertical) faked rotation
 
 
+	float vert = (y * verticalLimit);
 
-	//x (horizontal) faked rotation
+	Vector3 vertRot = Vector3::Cross(normDir, Vector3::Backward()) * vert;
 
-	/*
-	float horizontal = (x * horizontalLimit) - prevHorizontal;
+	Vector3 actualPivotRot = Quaternion::ToEuler(pivotTransform->getRotation());
 
-	Vector3 horizontalRot = Vector3::Forward() * horizontal;
+	Vector3 newPivotRot = Vector3(vertRot.X, actualPivotRot.Y, actualPivotRot.Z);
 
-	transform->rotate(horizontalRot, TransformSpace::LOCAL);
+	pivotTransform->setRotation(newPivotRot);
 
-	prevHorizontal = x * horizontalLimit;
-
-	getEntity()->getComponent<Camera>("Camera")->lookAt(marbleTrans->getWorldPosition());
-
-	*/
-	//add lerping to orbit and fake world movement?
+	transform->lookAt(marbleTrans->getWorldPosition());
 
 
+//x (horizontal) faked rotation
 
-	//getEntity()->getComponent<Camera>("Camera")->lookAt(marbleTrans->getWorldPosition());
+	float horizontal = (x * horizontalLimit);
 
+	Vector3 actualCamRot = Quaternion::ToEuler(transform->getRotation());
+	Vector3 newCamRot = Vector3::Forward() * horizontal;
+
+	transform->setRotation(newCamRot);
 }
