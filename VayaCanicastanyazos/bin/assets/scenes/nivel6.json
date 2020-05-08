@@ -1,5 +1,5 @@
 {
-	"name" : "nivel1",
+	"name" : "nivel6",
 	"entities" :
 	[
 		
@@ -23,7 +23,7 @@
 			]
 		},
 		{
-			"name" : "3_1",
+			"name" : "6_1",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -31,143 +31,7 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "3_1.mesh",
-					"material" : "test"
-				},
-				{
-					"type" : "RigidBody"
-				}
-			]
-		},
-		{
-			"name" : "3_2",
-			"position" : [0, 0, 0],
-			"rotation" : [0, 0, 0],
-			"scale" : [10, 10, 10],
-			"parent" : "centro",
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "3_2.mesh",
-					"material" : "test"
-				},
-				{
-					"type" : "RigidBody"
-				}
-			]
-		},
-		{
-			"name" : "3_3",
-			"position" : [0, 0, 0],
-			"rotation" : [0, 0, 0],
-			"scale" : [10, 10, 10],
-			"parent" : "centro",
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "3_3.mesh",
-					"material" : "test"
-				},
-				{
-					"type" : "RigidBody"
-				}
-			]
-		},
-		{
-			"name" : "3_4",
-			"position" : [0, 0, 0],
-			"rotation" : [0, 0, 0],
-			"scale" : [10, 10, 10],
-			"parent" : "centro",
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "3_4.mesh",
-					"material" : "test"
-				},
-				{
-					"type" : "RigidBody"
-				}
-			]
-		},
-		{
-			"name" : "3_5",
-			"position" : [0, 0, 0],
-			"rotation" : [0, 0, 0],
-			"scale" : [10, 10, 10],
-			"parent" : "centro",
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "3_5.mesh",
-					"material" : "test"
-				},
-				{
-					"type" : "RigidBody"
-				}
-			]
-		},
-		{
-			"name" : "3_6",
-			"position" : [0, 0, 0],
-			"rotation" : [0, 0, 0],
-			"scale" : [10, 10, 10],
-			"parent" : "centro",
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "3_6.mesh",
-					"material" : "test"
-				},
-				{
-					"type" : "RigidBody"
-				}
-			]
-		},
-		{
-			"name" : "3_7",
-			"position" : [0, 0, 0],
-			"rotation" : [0, 0, 0],
-			"scale" : [10, 10, 10],
-			"parent" : "centro",
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "3_7.mesh",
-					"material" : "test"
-				},
-				{
-					"type" : "RigidBody"
-				}
-			]
-		},
-		{
-			"name" : "3_8",
-			"position" : [0, 0, 0],
-			"rotation" : [0, 0, 0],
-			"scale" : [10, 10, 10],
-			"parent" : "centro",
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "3_8.mesh",
-					"material" : "test"
-				},
-				{
-					"type" : "RigidBody"
-				}
-			]
-		},
-		{
-			"name" : "3_9",
-			"position" : [0, 0, 0],
-			"rotation" : [0, 0, 0],
-			"scale" : [10, 10, 10],
-			"parent" : "centro",
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "3_9.mesh",
+					"mesh" : "6_1.mesh",
 					"material" : "test"
 				},
 				{
@@ -176,7 +40,7 @@
 			]
         },
         {
-			"name" : "3_10",
+			"name" : "6_2",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -184,7 +48,7 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "3_10.mesh",
+					"mesh" : "6_2.mesh",
 					"material" : "test"
 				},
 				{
@@ -193,7 +57,7 @@
 			]
         },
         {
-			"name" : "3_11",
+			"name" : "6_3",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -201,16 +65,16 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "3_11.mesh",
+					"mesh" : "6_3.mesh",
 					"material" : "test"
 				},
 				{
 					"type" : "RigidBody"
 				}
 			]
-		},
-		{
-			"name" : "3_12",
+        },
+        {
+			"name" : "6_4",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -218,7 +82,330 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "3_12.mesh",
+					"mesh" : "6_4.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+        },
+        {
+			"name" : "6_5",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "6_5.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+        },
+        {
+			"name" : "6_6",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "6_6.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+        },
+        {
+			"name" : "6_7",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "6_7.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+        },
+        {
+			"name" : "6_8",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "6_8.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+        },
+        {
+			"name" : "6_9",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "6_9.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+        },
+        {
+			"name" : "6_10",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "6_10.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+        },
+        {
+			"name" : "6_11",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "6_11.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+        },
+        {
+			"name" : "6_12",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "6_12.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+        },
+        {
+			"name" : "6_13",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "6_13.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+        },
+        {
+			"name" : "6_14",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "6_14.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+        },
+        {
+			"name" : "6_15",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "6_15.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+        },
+        {
+			"name" : "6_16",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "6_16.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+        },
+        {
+			"name" : "6_17",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "6_17.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+        },
+        {
+			"name" : "6_18",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "6_18.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+        },
+        {
+			"name" : "6_19",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "6_19.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+        },
+        {
+			"name" : "6_20",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "6_20.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+        },
+        {
+			"name" : "6_21",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "6_21.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+        },
+        {
+			"name" : "6_22",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "6_22.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				}
+			]
+        },
+        {
+			"name" : "6_23",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "6_23.mesh",
 					"material" : "test"
 				},
 				{
@@ -233,37 +420,11 @@
 			"scale" : [200,10,200],
 			"components" : [
 				{
-					"type" : "Mesh",
-					"mesh" : "cube.mesh",
-					"material" : "test"
-				},
-				{
 					"type" : "DeathZone",
 					"marble" : "ball",
 					"scene" : "nivel2"
 				}
 			]
-		},
-		{
-			"name" : "star1",
-			"prefab" : "star",
-			"position" : [0, 10, 50],
-			"rotation" : [0, 0, 0],
-			"scale" : [5, 5, 5]
-		},
-		{
-			"name" : "star2",
-			"prefab" : "star",
-			"position" : [0, 10, -50],
-			"rotation" : [0, 0, 0],
-			"scale" : [5, 5, 5]
-		},
-		{
-			"name" : "star3",
-			"prefab" : "star",
-			"position" : [-100, 10, -50],
-			"rotation" : [0, 0, 0],
-			"scale" : [5, 5, 5]
 		},
 		{
 			"prefab" : "marble",

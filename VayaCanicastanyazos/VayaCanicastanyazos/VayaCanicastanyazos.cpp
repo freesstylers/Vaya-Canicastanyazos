@@ -189,7 +189,7 @@ class StarCollisionFactory : public BaseFactory
 public:
 	Component* createComponent(json& args) override
 	{
-		return new StarCollision(args)
+		return new StarCollision(args);
 	};
 };
 
