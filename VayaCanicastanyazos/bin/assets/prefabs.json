@@ -12,15 +12,17 @@
 				"mesh" : "sphere.mesh",
 				"material" : "sphereTest"
 			},
-			{
-				"type" : "RigidBody",
-				"disableDeactivation" : true,
-				"mass" : 10
-			},
+      {
+        "type": "RigidBody",
+        "disableDeactivation": true,
+        "mass": 10,
+        "rollingFriction": 0.555,
+        "friction": 0.555
+      },
 			{
 				"type" : "FakeRotation"
 			}
-			]
+		]
 	},
 	
 	"floor" :
