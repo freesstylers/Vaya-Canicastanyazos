@@ -27,6 +27,7 @@
 
 #include "Components/DeathZoneComponent.h"
 #include "Components/GoalComponent.h"
+#include "Components/PauseMenuComponent.h"
 
 MotorCasaPaco* motorCasaPaco;
 
@@ -202,6 +203,15 @@ public:
 	};
 };
 
+class PauseMenuComponentFactory : public BaseFactory
+{
+public:
+	Component* createComponent(json& args) override
+	{
+		return new PauseMenuComponent(args);
+	};
+};
+
 //--------------------------------------------------------------------------------
 
 
@@ -252,6 +262,7 @@ WinMain(HINSTANCE hinstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdSh
 	JsonFactoryParser::getInstance()->addFactory("DeathZoneComponent", new DeathZoneComponentFactory());
 	JsonFactoryParser::getInstance()->addFactory("GoalComponent", new GoalComponentFactory());
 	JsonFactoryParser::getInstance()->addFactory("StarCollision", new StarCollisionFactory());
+	JsonFactoryParser::getInstance()->addFactory("PauseMenuComponent", new PauseMenuComponentFactory());
 
 	motorCasaPaco->getGUI_Manager()->getInstance()->loadScheme("VayaCanicastanhazos.scheme");
 	motorCasaPaco->getGUI_Manager()->getInstance()->setMouseCursor("VayaCanicastanhazos/Mouse_Arrow");

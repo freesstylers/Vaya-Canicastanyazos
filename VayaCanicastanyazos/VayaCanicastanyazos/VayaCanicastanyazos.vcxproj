@@ -191,6 +191,7 @@
     <ClCompile Include="src\Components\FSAAChangeComponent.cpp" />
     <ClCompile Include="src\Components\GoalComponent.cpp" />
     <ClCompile Include="src\Components\GameManager.cpp" />
+    <ClCompile Include="src\Components\PauseMenuComponent.cpp" />
     <ClCompile Include="src\Components\RevertAdvancedGraphicChangesComponent.cpp" />
     <ClCompile Include="src\Components\RevertGraphicChangesComponent.cpp" />
     <ClCompile Include="src\Components\FakeRotation.cpp" />
@@ -219,6 +220,7 @@
     <ClInclude Include="src\Components\FSAAChangeComponent.h" />
     <ClInclude Include="src\Components\GoalComponent.h" />
     <ClInclude Include="src\Components\GameManager.h" />
+    <ClInclude Include="src\Components\PauseMenuComponent.h" />
     <ClInclude Include="src\Components\RevertAdvancedGraphicChangesComponent.h" />
     <ClInclude Include="src\Components\RevertGraphicChangesComponent.h" />
     <ClInclude Include="src\Components\FakeRotation.h" />

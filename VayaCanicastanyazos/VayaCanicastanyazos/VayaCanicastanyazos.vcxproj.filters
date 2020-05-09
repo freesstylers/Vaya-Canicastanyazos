@@ -81,6 +81,9 @@
     <ClCompile Include="src\Components\GameManager.cpp">
       <Filter>Source Files\Components</Filter>
     </ClCompile>
+    <ClCompile Include="src\Components\PauseMenuComponent.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Components\SimpleMovement.h">
@@ -141,6 +144,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Components\GameManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Components\PauseMenuComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

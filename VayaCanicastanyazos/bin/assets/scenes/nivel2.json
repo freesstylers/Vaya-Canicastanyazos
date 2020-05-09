@@ -224,17 +224,24 @@
         }
 			]
 		},
-    {
-      "prefab": "marble",
-      "name": "ball",
-      "position": [ 0, 30, 80 ],
-      "rotation": [ 0, 0, 0 ]
-    },
+		{
+			"prefab" : "marble",
+			"name" : "ball",
+			"position" : [0, 30, 80],
+			"rotation" : [0, 0, 0]
+		},
+		{
+			"name" : "cameraPivot",
+			"position" : [0, 30, 80],
+			"rotation" : [0, 0, 0], 
+			"scale" : [1, 1, 1]
+		},
 		{
 			"name" : "camera",
-			"position" : [0, 100, 180],
+			"position" : [0, 80, 160],
 			"rotation" : [0, 0, 0], 
 			"scale" : [1, 1, 1],
+			"parent" : "cameraPivot",
 			"components" : [
 				{
 					"type" : "Camera",
@@ -246,9 +253,7 @@
 				},
 				{
 					"type": "CameraController",
-					"rotationSpeed" : 3.0,
-					"marble" : "ball",
-					"monkey" : true
+					"marble" : "ball"
 				}
 			]
 		}

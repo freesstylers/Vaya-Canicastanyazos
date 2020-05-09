@@ -321,6 +321,21 @@
 			"visible": true
 		},
 		{
+			"type" : "layout", 
+			"name" : "MenuPausaCanicas.layout",
+			"visible": false
+		},
+		{
+			"type" : "layout", 
+			"name" : "GraphicOptionsMenu.layout",
+			"visible": false
+		},
+		{
+			"type" : "layout", 
+			"name" : "AdvancedOptionsMenu.layout",
+			"visible": false
+		},
+		{
 			"type" : "entity",
 			"name" : "UI",
 			"components" : 
@@ -329,6 +344,21 @@
 					"type": "ChangeSceneButtonComponent",
 					"buttonName" : "Ingame/Menu",
 					"sceneName" : "Menu"
+				},
+				{
+					"type": "PauseMenuComponent",
+					"buttons" :
+					[
+					 "PauseMenu/Return",
+					 "PauseMenu/Reset",
+					 "PauseMenu/Settings",
+					 "PauseMenu/MainMenu",
+					 "PauseMenu/Exit"
+					],
+					"Level" : "nivel1",
+					"MainMenu" : "Menu",
+					"delay" : 0.20,
+					"delayPause" : 0.5					
 				}				
 			]
 		}

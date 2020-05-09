@@ -247,7 +247,7 @@
 		{
 			"prefab" : "marble",
 			"name" : "ball",
-			"position" : [-90, 50, 0],
+			"position" : [0, 30, 80],
 			"rotation" : [0, 0, 0]
 		},
 		{
@@ -258,7 +258,7 @@
 		},
 		{
 			"name" : "camera",
-			"position" : [0, 100, 180],
+			"position" : [0, 80, 160],
 			"rotation" : [0, 0, 0], 
 			"scale" : [1, 1, 1],
 			"parent" : "cameraPivot",
