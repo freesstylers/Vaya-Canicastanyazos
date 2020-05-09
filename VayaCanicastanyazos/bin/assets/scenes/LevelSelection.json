@@ -1,0 +1,157 @@
+{
+	"name" : "test",
+	"entities" :
+	[
+		{
+			"name" : "camera",
+			"position" : [0, 50, 70],
+			"rotation" : [0, 0, 0], 
+			"scale" : [1, 1, 1],
+			"components" : [
+				{
+					"type" : "Camera",
+					"lookAt" : [1, 0.8, 0],
+					"bgColour" : [0, 0, 1, 1]
+				},
+				{
+					"type": "AudioListenerComponent"
+				},
+				{
+					"type": "SimpleMovement",
+					"speed": 5.0,
+					"rotateSpeed": 1.0
+				}
+			]
+		}
+	],
+	
+	"UI" :
+	[
+		{
+			"type" : "layout", 
+			"name" : "LevelSelectionCanicas.layout",
+			"visible": true
+		},
+		{
+			"type" : "entity",
+			"name" : "UI_0",
+			"components" : 
+			[
+				{
+					"type": "ChangeSceneButtonComponent",
+					"buttonName" : "LevelSelection/Atras",
+					"sceneName" : "Menu"
+				}
+			]
+		},
+
+		{
+			"type" : "entity",
+			"name" : "UI_1",
+			"components" : 
+			[
+				{
+					"type": "ChangeSceneButtonComponent",
+					"buttonName" : "LevelSelection/Boton_Nivel_1",
+					"sceneName" : "nivel1"
+				}
+			]
+		}, 
+
+		{
+			"type" : "entity",
+			"name" : "UI_2",
+			"components" : 
+			[
+				{
+					"type": "ChangeSceneButtonComponent",
+					"buttonName" : "LevelSelection/Boton_Nivel_2",
+					"sceneName" : "nivel2"
+				}
+			]
+		}, 
+
+		{
+			"type" : "entity",
+			"name" : "UI_3",
+			"components" : 
+			[
+				{
+					"type": "ChangeSceneButtonComponent",
+					"buttonName" : "LevelSelection/Boton_Nivel_3",
+					"sceneName" : "nivel3"
+				}
+			]
+		}, 
+
+		{
+			"type" : "entity",
+			"name" : "UI_4",
+			"components" : 
+			[
+				{
+					"type": "ChangeSceneButtonComponent",
+					"buttonName" : "LevelSelection/Boton_Nivel_4",
+					"sceneName" : "nivel4"
+				}
+			]
+		}, 
+
+		{
+			"type" : "entity",
+			"name" : "UI_5",
+			"components" : 
+			[
+				{
+					"type": "ChangeSceneButtonComponent",
+					"buttonName" : "LevelSelection/Boton_Nivel_5",
+					"sceneName" : "nivel5"
+				}
+			]
+		}, 
+
+		{
+			"type" : "entity",
+			"name" : "UI_6",
+			"components" : 
+			[
+				{
+					"type": "ChangeSceneButtonComponent",
+					"buttonName" : "LevelSelection/Boton_Nivel_6",
+					"sceneName" : "nivel6"
+				}
+			]
+		}, 
+
+		{
+			"type" : "entity",
+			"name" : "UI_7",
+			"components" : 
+			[
+				{
+					"type": "ChangeSceneButtonComponent",
+					"buttonName" : "LevelSelection/Boton_Nivel_7",
+					"sceneName" : "nivel7"
+				}
+			]
+		}, 
+
+		{
+			"type" : "entity",
+			"name" : "UI_8",
+			"components" : 
+			[
+				{
+					"type": "ChangeSceneButtonComponent",
+					"buttonName" : "LevelSelection/Boton_Nivel_8",
+					"sceneName" : "nivel1"
+				}
+			]
+		},
+
+		{
+			"name": "GM",
+			"prefab" : "gameManager"
+		}
+	]
+}
