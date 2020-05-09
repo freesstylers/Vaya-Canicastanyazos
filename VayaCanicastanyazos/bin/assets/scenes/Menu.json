@@ -79,7 +79,7 @@
 				{
 					"type": "ChangeSceneButtonComponent",
 					"buttonName" : "MainMenu/Nivel4",
-					"sceneName" : "nivel1"
+					"sceneName" : "nivel4"
 				}
 			]
 		}, 
@@ -106,6 +106,10 @@
 					"sceneName" : "GraphicOptions"
 				}
 			]
+		},
+		{
+			"name": "GM",
+			"prefab" : "gameManager"
 		}
 	]
 }
