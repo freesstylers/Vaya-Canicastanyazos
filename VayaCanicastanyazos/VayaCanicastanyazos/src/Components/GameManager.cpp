@@ -89,6 +89,7 @@ void GameManager::saveData(std::string name)
 	std::cout << "Stars: " << levels.find(name)->second.stars << " Time: " << levels.find(name)->second.time << std::endl;
 	stars_ = 0;
 	time = 0;
+	data.close();
 }
 
 void GameManager::readData()
@@ -111,4 +112,5 @@ void GameManager::readData()
 			}
 		}
 	}
+	data.close();
 }
