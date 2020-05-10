@@ -5,11 +5,10 @@ class GoalComponent : public Component
 {
 public:
 	GoalComponent(json& args);
-	void init(json& args) override;
-	void update() override;
 	~GoalComponent();
+	void init(json& args) override;
+	virtual void OnCollision(Entity* ent) override;
 
 private:
-	Entity* marble;
 	std::string scene;
 };

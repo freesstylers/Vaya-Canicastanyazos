@@ -5,10 +5,7 @@ class DeathZoneComponent : public Component
 {
 public:
 	DeathZoneComponent(json& args);
-    void init(json& args) override;
-	void update() override;
 	~DeathZoneComponent();
 
-private:
-	Entity* marble;
+	virtual void OnCollision(Entity* ent) override;
 };

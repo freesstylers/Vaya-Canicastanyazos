@@ -52,7 +52,8 @@
 					"material" : "test"
 				},
 				{
-					"type" : "RigidBody"
+					"type" : "RigidBody",
+					"friction": 0.75
 				}
 			]
         },
@@ -69,7 +70,8 @@
 					"material" : "test"
 				},
 				{
-					"type" : "RigidBody"
+					"type" : "RigidBody",
+					"friction": 0.75
 				}
 			]
         },
@@ -86,7 +88,8 @@
 					"material" : "test"
 				},
 				{
-					"type" : "RigidBody"
+					"type" : "RigidBody",
+					"friction": 0.75
 				}
 			]
         },
@@ -103,7 +106,8 @@
 					"material" : "test"
 				},
 				{
-					"type" : "RigidBody"
+					"type" : "RigidBody",
+					"friction": 0.75
 				}
 			]
         },
@@ -120,7 +124,8 @@
 					"material" : "test"
 				},
 				{
-					"type" : "RigidBody"
+					"type" : "RigidBody",
+					"friction": 0.75
 				}
 			]
         },
@@ -137,7 +142,8 @@
 					"material" : "test"
 				},
 				{
-					"type" : "RigidBody"
+					"type" : "RigidBody",
+					"friction": 0.75
 				}
 			]
         },
@@ -154,7 +160,8 @@
 					"material" : "test"
 				},
 				{
-					"type" : "RigidBody"
+					"type" : "RigidBody",
+					"friction": 0.75
 				}
 			]
         },
@@ -171,7 +178,8 @@
 					"material" : "test"
 				},
 				{
-					"type" : "RigidBody"
+					"type" : "RigidBody",
+					"friction": 0.75
 				}
 			]
         },
@@ -188,7 +196,8 @@
 					"material" : "test"
 				},
 				{
-					"type" : "RigidBody"
+					"type" : "RigidBody",
+					"friction": 0.75
 				}
 			]
         },
@@ -205,7 +214,8 @@
 					"material" : "test"
 				},
 				{
-					"type" : "RigidBody"
+					"type" : "RigidBody",
+					"friction": 0.75
 				}
 			]
         },
@@ -222,37 +232,47 @@
 					"material" : "test"
 				},
 				{
-					"type" : "RigidBody"
+					"type" : "RigidBody",
+					"friction": 0.75
 				}
 			]
 		},
 		{
 			"name" : "death",
+			"prefab" : "deathzone",
 			"position" : [0, -100, 1000],
 			"rotation" : [0,0,0],
-			"scale" : [200,10,200],
+			"scale" : [200,10,200]
+		},
+		{
+			"name" : "goal",
+			"position" : [-80, 10, 100],
+			"rotation" : [0, 0, 0],
+			"scale" : [0.1, 0.1, 0.1],
 			"components" : [
-                {
+				{
 					"type" : "Mesh",
 					"mesh" : "cube.mesh",
 					"material" : "test"
 				},
 				{
-					"type" : "DeathZone",
-					"marble" : "ball",
-					"scene" : "nivel4"
+					"type" : "RigidBody"
+				},
+				{
+					"type" : "GoalComponent",
+					"scene" : "nivel5"
 				}
 			]
 		},
 		{
 			"prefab" : "marble",
 			"name" : "ball",
-			"position" : [0, 30, 80],
+			"position" : [-80, 0, 0],
 			"rotation" : [0, 0, 0]
 		},
 		{
 			"name" : "cameraPivot",
-			"position" : [0, 30, 80],
+			"position" : [-80, 0, 0],
 			"rotation" : [0, 0, 0], 
 			"scale" : [1, 1, 1]
 		},
@@ -265,7 +285,7 @@
 			"components" : [
 				{
 					"type" : "Camera",
-					"lookAt" : [-50, 0, 0],
+					"lookAt" : [0, 0, 0],
 					"bgColour" : [0, 0, 1, 1]
 				},
 				{

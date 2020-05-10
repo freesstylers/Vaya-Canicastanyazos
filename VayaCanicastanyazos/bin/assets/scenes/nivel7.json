@@ -35,7 +35,8 @@
 					"material" : "test"
 				},
 				{
-					"type" : "RigidBody"
+					"type" : "RigidBody",
+					"friction": 0.75
 				}
 			]
         },
@@ -52,7 +53,8 @@
 					"material" : "test"
 				},
 				{
-					"type" : "RigidBody"
+					"type" : "RigidBody",
+					"friction": 0.75
 				}
 			]
         },
@@ -69,7 +71,8 @@
 					"material" : "test"
 				},
 				{
-					"type" : "RigidBody"
+					"type" : "RigidBody",
+					"friction": 0.75
 				}
 			]
         },
@@ -86,7 +89,8 @@
 					"material" : "test"
 				},
 				{
-					"type" : "RigidBody"
+					"type" : "RigidBody",
+					"friction": 0.75
 				}
 			]
         },
@@ -103,7 +107,8 @@
 					"material" : "test"
 				},
 				{
-					"type" : "RigidBody"
+					"type" : "RigidBody",
+					"friction": 0.75
 				}
 			]
         },
@@ -120,7 +125,8 @@
 					"material" : "test"
 				},
 				{
-					"type" : "RigidBody"
+					"type" : "RigidBody",
+					"friction": 0.75
 				}
 			]
         },
@@ -137,38 +143,53 @@
 					"material" : "test"
 				},
 				{
-					"type" : "RigidBody"
+					"type" : "RigidBody",
+					"friction": 0.75
 				}
 			]
 		},
 		{
 			"name" : "death",
-			"position" : [0, -100, 1000],
+			"prefab" : "deathzone",
+			"position" : [0, -350, 1000],
 			"rotation" : [0,0,0],
-			"scale" : [200,10,200],
+			"scale" : [200,10,200]
+		},
+		{
+			"name" : "goal",
+			"position" : [0, -290, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [0.1, 0.1, 0.1],
 			"components" : [
 				{
-					"type" : "DeathZone",
-					"marble" : "ball",
-					"scene" : "nivel2"
+					"type" : "Mesh",
+					"mesh" : "cube.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				},
+				{
+					"type" : "GoalComponent",
+					"scene" : "nivel1"
 				}
 			]
 		},
 		{
 			"prefab" : "marble",
 			"name" : "ball",
-			"position" : [0, 400, -100],
+			"position" : [0, 250, -100],
 			"rotation" : [0, 0, 0]
 		},
 		{
 			"name" : "cameraPivot",
-			"position" : [0, 30, 80],
+			"position" : [0, 250, -100],
 			"rotation" : [0, 0, 0], 
 			"scale" : [1, 1, 1]
 		},
 		{
 			"name" : "camera",
-			"position" : [0, 100, 180],
+			"position" : [0, 300, -150],
 			"rotation" : [0, 0, 0], 
 			"scale" : [1, 1, 1],
 			"parent" : "cameraPivot",

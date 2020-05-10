@@ -1,24 +1,24 @@
-18:06:44: Creating resource group General
-18:06:44: Creating resource group Internal
-18:06:44: Creating resource group Autodetect
-18:06:44: Registering ResourceManager for type Material
-18:06:44: Registering ResourceManager for type Skeleton
-18:06:44: Registering ResourceManager for type Mesh
-18:06:44: MeshSerializer writing mesh data to Star.mesh...
-18:06:44: File header written.
-18:06:44: Writing mesh data...
-18:06:44: Writing submesh...
-18:06:44: Exporting submesh texture aliases...
-18:06:44: Submesh texture aliases exported.
-18:06:44: Submesh exported.
-18:06:44: Exporting bounds information....
-18:06:44: Bounds information exported.
-18:06:44: Exporting submesh name table...
-18:06:44: Submesh name table exported.
-18:06:44: Exporting edge lists...
-18:06:44: Edge lists exported
-18:06:44: Mesh data exported.
-18:06:44: MeshSerializer export successful.
-18:06:44: Unregistering ResourceManager for type Mesh
-18:06:44: Unregistering ResourceManager for type Skeleton
-18:06:44: Unregistering ResourceManager for type Material
+10:03:54: Creating resource group General
+10:03:54: Creating resource group Internal
+10:03:54: Creating resource group Autodetect
+10:03:54: Registering ResourceManager for type Material
+10:03:54: Registering ResourceManager for type Skeleton
+10:03:54: Registering ResourceManager for type Mesh
+10:03:54: MeshSerializer writing mesh data to Star.mesh...
+10:03:54: File header written.
+10:03:54: Writing mesh data...
+10:03:54: Writing submesh...
+10:03:54: Exporting submesh texture aliases...
+10:03:54: Submesh texture aliases exported.
+10:03:54: Submesh exported.
+10:03:54: Exporting bounds information....
+10:03:54: Bounds information exported.
+10:03:54: Exporting submesh name table...
+10:03:54: Submesh name table exported.
+10:03:54: Exporting edge lists...
+10:03:54: Edge lists exported
+10:03:54: Mesh data exported.
+10:03:54: MeshSerializer export successful.
+10:03:54: Unregistering ResourceManager for type Mesh
+10:03:54: Unregistering ResourceManager for type Skeleton
+10:03:54: Unregistering ResourceManager for type Material

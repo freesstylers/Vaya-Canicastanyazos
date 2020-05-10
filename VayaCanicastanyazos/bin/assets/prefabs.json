@@ -85,5 +85,26 @@
 				"type" : "GameManager"
 			}
 		]
+	},
+
+	"deathzone" :
+	{
+		"position" : [0, 0, 0],
+		"rotation" : [0, 0, 0],
+		"scale" : [1, 1, 1],
+		"components" : [
+			{
+				"type" : "Mesh",
+				"mesh" : "1_1.mesh",
+				"material" : "test"
+			},
+			{
+				"type" : "RigidBody"
+			},
+			{
+				"type" : "DeathZoneComponent"
+			}
+		]
 	}
+
 }
