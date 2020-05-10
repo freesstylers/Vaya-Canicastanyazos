@@ -339,12 +339,12 @@
                 </AutoWindow>
             </AutoWindow>
         </Window>
-        <Window type="GWEN/Button" name="Revert" >
+        <Window type="GWEN/Button" name="Back" >
             <Property name="Area" value="{{0.407813,0},{0.875,0},{0.595313,0},{0.969445,0}}" />
             <Property name="Font" value="shump-48" />
             <Property name="Text" value="ATRÁS" />
         </Window>
-        <Window type="GWEN/Button" name="AdvancedOptions" >
+        <Window type="GWEN/Button" name="GraphicOptions" >
             <Property name="Area" value="{{0.296876,0},{0.730556,0},{0.702345,0},{0.825001,0}}" />
             <Property name="Font" value="shump-48" />
             <Property name="Text" value="OPCIONES graficas" />

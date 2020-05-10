@@ -253,10 +253,15 @@
 			"type" : "layout", 
 			"name" : "Ingame.layout",
 			"visible": true
-		},
+		},		
 		{
 			"type" : "layout", 
 			"name" : "MenuPausaCanicas.layout",
+			"visible": false
+		},
+		{
+			"type" : "layout", 
+			"name" : "BasicOptions.layout",
 			"visible": false
 		},
 		{
@@ -289,11 +294,69 @@
 					 "PauseMenu/MainMenu",
 					 "PauseMenu/Exit"
 					],
+					"basicOptionButtons" :
+					[
+					 "BasicOptions/LeftArrow_5",
+					 "BasicOptions/RightArrow_5",
+					 "BasicOptions/LeftArrow_4",
+					 "BasicOptions/RightArrow_4",
+					 "BasicOptions/LeftArrow_3",
+					 "BasicOptions/RightArrow_3",
+					 "BasicOptions/LeftArrow_2",
+					 "BasicOptions/RightArrow_2",
+					 "BasicOptions/LeftArrow_1",
+					 "BasicOptions/RightArrow_1"
+					],
+					"basicExtraButton" : "BasicOptions/GraphicOptions",
+					"basicBackButton" : "BasicOptions/Back",
+					"graphicOptionDownButtons" :
+					[
+					 "GraphicOptions/Apply",
+					 "GraphicOptions/Revert",
+					 "GraphicOptions/Back"
+					],
+					"graphicOptionTopButtons" :
+					[
+					 "GraphicOptions/LeftArrow_5",
+					 "GraphicOptions/RightArrow_5",
+					 "GraphicOptions/LeftArrow_4",
+					 "GraphicOptions/RightArrow_4",
+					 "GraphicOptions/LeftArrow_3",
+					 "GraphicOptions/RightArrow_3",
+					 "GraphicOptions/LeftArrow_2",
+			 		 "GraphicOptions/RightArrow_2",
+				 	 "GraphicOptions/LeftArrow_1",
+					 "GraphicOptions/RightArrow_1"
+					],
+					"graphicOptionExtraButton": "GraphicOptions/AdvancedOptions",
+					"advancedGraphicOptionDownButtons" :
+					[
+					 "AdvancedGraphicOptions/Apply",
+					 "AdvancedGraphicOptions/Revert",
+					 "AdvancedGraphicOptions/Back"
+					],
+					"advancedGraphicOptionTopButtons" :
+					[
+					 "AdvancedGraphicOptions/LeftArrow_7",
+					 "AdvancedGraphicOptions/RightArrow_7",
+					 "AdvancedGraphicOptions/LeftArrow_6",
+					 "AdvancedGraphicOptions/RightArrow_6",
+					 "AdvancedGraphicOptions/LeftArrow_5",
+					 "AdvancedGraphicOptions/RightArrow_5",
+					 "AdvancedGraphicOptions/LeftArrow_4",
+					 "AdvancedGraphicOptions/RightArrow_4",
+					 "AdvancedGraphicOptions/LeftArrow_3",
+					 "AdvancedGraphicOptions/RightArrow_3",
+					 "AdvancedGraphicOptions/LeftArrow_2",
+					 "AdvancedGraphicOptions/RightArrow_2",
+					 "AdvancedGraphicOptions/LeftArrow_1",
+					 "AdvancedGraphicOptions/RightArrow_1"
+					],
 					"Level" : "nivel1",
 					"MainMenu" : "Menu",
 					"delay" : 0.20,
 					"delayPause" : 0.5					
-				}				
+				}		
 			]
 		}
 	]
