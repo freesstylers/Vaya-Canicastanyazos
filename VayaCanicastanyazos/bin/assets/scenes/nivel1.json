@@ -329,11 +329,29 @@
 					 "GraphicOptions/RightArrow_1"
 					],
 					"graphicOptionExtraButton": "GraphicOptions/AdvancedOptions",
+					"graphicOptionTexts" :
+					[
+					 "GraphicOptions/Text_Selector_1",
+					 "GraphicOptions/Text_Selector_2",
+					 "GraphicOptions/Text_Selector_3",
+					 "GraphicOptions/Text_Selector_4",
+					 "GraphicOptions/Text_Selector_5"
+					],
 					"advancedGraphicOptionDownButtons" :
 					[
 					 "AdvancedGraphicOptions/Apply",
 					 "AdvancedGraphicOptions/Revert",
 					 "AdvancedGraphicOptions/Back"
+					],
+					"advancedOptionTexts" :
+					[
+					 "AdvancedGraphicOptions/Text_Selector_1",
+					 "AdvancedGraphicOptions/Text_Selector_2",
+					 "AdvancedGraphicOptions/Text_Selector_3",
+					 "AdvancedGraphicOptions/Text_Selector_4",
+					 "AdvancedGraphicOptions/Text_Selector_5",
+					 "AdvancedGraphicOptions/Text_Selector_6",
+					 "AdvancedGraphicOptions/Text_Selector_7"
 					],
 					"advancedGraphicOptionTopButtons" :
 					[

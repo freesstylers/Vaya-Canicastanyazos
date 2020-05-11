@@ -5,7 +5,30 @@
 
 PauseMenuComponent::PauseMenuComponent(json& args): Component(args)
 {
+	std::vector<std::string> res43;
+	std::vector<std::string> res54;
+	std::vector<std::string> res1610;
+	std::vector<std::string> res169;
 
+	res43.push_back("640 x 480");
+	res43.push_back("800 x 600");
+	res43.push_back("832 x 624");
+	res43.push_back("1024 x 768");
+	res43.push_back("1152 x 872");
+
+	res54.push_back("1280 x 1024");
+
+	res1610.push_back("1280 x 800");
+	res1610.push_back("1680 x 1050");
+
+	res169.push_back("1280 x 720");
+	res169.push_back("1600 x 900");
+	res169.push_back("1920 x 1080");
+
+	resolutions.push_back(res43);
+	resolutions.push_back(res54);
+	resolutions.push_back(res169);
+	resolutions.push_back(res1610);
 }
 
 PauseMenuComponent::~PauseMenuComponent()
@@ -15,7 +38,49 @@ PauseMenuComponent::~PauseMenuComponent()
 
 bool PauseMenuComponent::ReceiveEvent(Event& event)
 {
-	return true;
+	if (event.type == "RESET_GRAPHIC_INFO") {
+		if (MotorCasaPaco::getInstance()->getFullScreen())
+		{
+			GUI_Manager::getInstance()->changeText(graphicTexts[1], "Si");
+		}
+		else
+		{
+			GUI_Manager::getInstance()->changeText(graphicTexts[1], "No");
+		}
+
+		currentFormat = MotorCasaPaco::getInstance()->getScreenProportion();
+		currentRes = MotorCasaPaco::getInstance()->getResolution();
+		ForResPosition = getCurrentPosForRes(currentFormat, currentRes);
+		GUI_Manager::getInstance()->changeText(graphicTexts[3], currentRes);
+		GUI_Manager::getInstance()->changeText(graphicTexts[2], currentFormat);
+
+		if (MotorCasaPaco::getInstance()->getVSync())
+		{
+			GUI_Manager::getInstance()->changeText(graphicTexts[4], "Si");
+		}
+		else
+		{
+			GUI_Manager::getInstance()->changeText(graphicTexts[4], "No");
+		}
+	}
+	else if (event.type == "RESET_ADVANCED_GRAPHIC_INFO")
+	{
+		GUI_Manager::getInstance()->changeText(advancedTexts[2], MotorCasaPaco::getInstance()->getShadows());
+		shadowsPos = getShadowsPosition(MotorCasaPaco::getInstance()->getShadows());
+
+		if (MotorCasaPaco::getInstance()->getGamma())
+		{
+			GUI_Manager::getInstance()->changeText(advancedTexts[1], "Si");
+		}
+		else
+		{
+			GUI_Manager::getInstance()->changeText(advancedTexts[1], "No");
+		}
+
+		GUI_Manager::getInstance()->changeText(advancedTexts[0], "X " + MotorCasaPaco::getInstance()->getFSAA());
+		getFSAAPosition(MotorCasaPaco::getInstance()->getFSAA());
+	}
+	return false;
 }
 
 bool PauseMenuComponent::functionPauseReturn(const CEGUI::EventArgs& e)
@@ -113,21 +178,356 @@ bool PauseMenuComponent::functionGraphicRevert(const CEGUI::EventArgs& e)
 
 bool PauseMenuComponent::functionGraphicBack(const CEGUI::EventArgs& e)
 {
+	MotorCasaPaco::getInstance()->revertGraphicChanges();
 	layoutLayer--;
 	MotorCasaPaco::getInstance()->getGUI_Manager()->setLayoutVisible(2, true); //Opciones Básicas In
 	MotorCasaPaco::getInstance()->getGUI_Manager()->setLayoutVisible(3, false); //Menú de Graficos Out
 	currenPos = 2;
 	MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsXTopButtonsBasic[currentXTopButtons], positionsYBasic[currentYTopButtons]);
+
+	Event evt = Event("RESET_GRAPHIC_INFO");
+	EventManager::getInstance()->EmitEvent(evt);
+
+	return true;
+}
+
+bool PauseMenuComponent::functionGraphicFullScreen(const CEGUI::EventArgs& e)
+{
+	if (MotorCasaPaco::getInstance()->getFullScreen())
+	{
+		MotorCasaPaco::getInstance()->setFullScreen(false);
+		GUI_Manager::getInstance()->changeText(graphicTexts[1], "No");
+	}
+	else
+	{
+		MotorCasaPaco::getInstance()->setFullScreen(true);
+		GUI_Manager::getInstance()->changeText(graphicTexts[1], "Si");
+	}
+
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+
+	return true;
+}
+
+bool PauseMenuComponent::functionGraphicVSync(const CEGUI::EventArgs& e)
+{
+	if (MotorCasaPaco::getInstance()->getVSync())
+	{
+		MotorCasaPaco::getInstance()->setVSync(false);
+		GUI_Manager::getInstance()->changeText(graphicTexts[4], "No");
+	}
+	else
+	{
+		MotorCasaPaco::getInstance()->setVSync(true);
+		GUI_Manager::getInstance()->changeText(graphicTexts[4], "Si");
+	}
+
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+
+	return true;
+}
+
+bool PauseMenuComponent::functionGraphicFormatMore(const CEGUI::EventArgs& e)
+{
+	if (currentFormat == "4 : 3")
+	{
+		currentFormat = "5 : 4";
+		currentRes = resolutions[1][0];
+		ForResPosition = 0;
+	}
+	else if (currentFormat == "5 : 4")
+	{
+		currentFormat = "16 : 9";
+		currentRes = resolutions[2][0];
+		ForResPosition = 0;
+	}
+	else if (currentFormat == "16 : 9")
+	{
+		currentFormat = "16 : 10";
+		currentRes = resolutions[3][0];
+		ForResPosition = 0;
+	}
+	else if (currentFormat == "16 : 10")
+	{
+		currentFormat = "4 : 3";
+		currentRes = resolutions[0][0];
+		ForResPosition = 0;
+	}
+
+	GUI_Manager::getInstance()->changeText(graphicTexts[2], currentFormat);
+	GUI_Manager::getInstance()->changeText(graphicTexts[3], currentRes);
+	MotorCasaPaco::getInstance()->setScreenProportion(currentFormat);
+	MotorCasaPaco::getInstance()->setResolution(currentRes);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+
+	return true;
+}
+
+bool PauseMenuComponent::functionGraphicFormatLess(const CEGUI::EventArgs& e)
+{
+	if (currentFormat == "4 : 3")
+	{
+		currentFormat = "16 : 10";
+		currentRes = resolutions[3][0];
+		ForResPosition = 0;
+	}
+	else if (currentFormat == "5 : 4")
+	{
+		currentFormat = "4 : 3";
+		currentRes = resolutions[0][0];
+		ForResPosition = 0;
+	}
+	else if (currentFormat == "16 : 9")
+	{
+		currentFormat = "5 : 4";
+		currentRes = resolutions[1][0];
+		ForResPosition = 0;
+	}
+	else if (currentFormat == "16 : 10")
+	{
+		currentFormat = "16 : 9";
+		currentRes = resolutions[2][0];
+		ForResPosition = 0;
+	}
+
+	GUI_Manager::getInstance()->changeText(graphicTexts[2], currentFormat);
+	GUI_Manager::getInstance()->changeText(graphicTexts[3], currentRes);
+	MotorCasaPaco::getInstance()->setScreenProportion(currentFormat);
+	MotorCasaPaco::getInstance()->setResolution(currentRes);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+
+	return true;
+}
+
+bool PauseMenuComponent::functionGraphicResolutionMore(const CEGUI::EventArgs& e)
+{
+	if (currentFormat == "4 : 3")
+	{
+		if (currentRes == resolutions[0][4])
+		{
+			currentRes = resolutions[0][0];
+			ForResPosition = 0;
+		}
+		else
+		{
+			currentRes = resolutions[0][ForResPosition + 1];
+			ForResPosition++;
+		}
+	}
+	else if (currentFormat == "5 : 4")
+	{
+		currentRes = currentRes;
+	}
+	else if (currentFormat == "16 : 9")
+	{
+		if (currentRes == resolutions[2][2])
+		{
+			currentRes = resolutions[2][0];
+			ForResPosition = 0;
+		}
+		else
+		{
+			currentRes = resolutions[2][ForResPosition + 1];
+			ForResPosition++;
+		}
+	}
+	else if (currentFormat == "16 : 10")
+	{
+		if (currentRes == resolutions[3][1])
+		{
+			currentRes = resolutions[3][0];
+			ForResPosition = 0;
+		}
+		else
+		{
+			currentRes = resolutions[3][ForResPosition + 1];
+			ForResPosition++;
+		}
+	}
+
+	GUI_Manager::getInstance()->changeText(graphicTexts[3], currentRes);
+	MotorCasaPaco::getInstance()->setResolution(currentRes);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+
+	return true;
+}
+
+bool PauseMenuComponent::functionGraphicResolutionLess(const CEGUI::EventArgs& e)
+{
+	if (currentFormat == "4 : 3")
+	{
+		if (currentRes == resolutions[0][0])
+		{
+			currentRes = resolutions[0][4];
+			ForResPosition = 4;
+		}
+		else
+		{
+			currentRes = resolutions[0][ForResPosition - 1];
+			ForResPosition--;
+		}
+	}
+	else if (currentFormat == "5 : 4")
+	{
+		currentRes = currentRes;
+	}
+	else if (currentFormat == "16 : 9")
+	{
+
+		if (currentRes == resolutions[2][0])
+		{
+			currentRes = resolutions[2][2];
+			ForResPosition = 2;
+		}
+		else
+		{
+			currentRes = resolutions[2][ForResPosition - 1];
+			ForResPosition--;
+		}
+	}
+	else if (currentFormat == "16 : 10")
+	{
+		if (currentRes == resolutions[3][0])
+		{
+			currentRes = resolutions[3][1];
+			ForResPosition = 1;
+		}
+		else
+		{
+			currentRes = resolutions[3][ForResPosition - 1];
+			ForResPosition--;
+		}
+	}
+
+	GUI_Manager::getInstance()->changeText(graphicTexts[3], currentRes);
+	MotorCasaPaco::getInstance()->setResolution(currentRes);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+
+	return true;
+}
+
+bool PauseMenuComponent::functionAdvancedApply(const CEGUI::EventArgs& e)
+{
+	MotorCasaPaco::getInstance()->changeAdvancedGraphicComponents();
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	return true;
+}
+
+bool PauseMenuComponent::functionAdvancedRevert(const CEGUI::EventArgs& e)
+{
+	MotorCasaPaco::getInstance()->revertAdvancedGraphicChanges();
+
+	Event evt = Event("RESET_ADVANCED_GRAPHIC_INFO");
+	EventManager::getInstance()->EmitEvent(evt);
+
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+
 	return true;
 }
 
 bool PauseMenuComponent::functionAdvancedBack(const CEGUI::EventArgs& e)
 {
+	MotorCasaPaco::getInstance()->revertAdvancedGraphicChanges();
 	layoutLayer--;
 	MotorCasaPaco::getInstance()->getGUI_Manager()->setLayoutVisible(3, true); //Opciones Graficos In
 	MotorCasaPaco::getInstance()->getGUI_Manager()->setLayoutVisible(4, false); //Menu Avanzado Out
-	currenPos = 2;
+	currentXTopButtons = 0;
+	currentYTopButtons = tamGraphicTop - 1;
 	MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsXTopButtonsGraphic[currentXTopButtons], positionsYGraphic[currentYTopButtons]);
+	Event evt = Event("RESET_ADVANCED_GRAPHIC_INFO");
+	EventManager::getInstance()->EmitEvent(evt);
+	return true;
+}
+
+bool PauseMenuComponent::functionAdvancedShadowsLess(const CEGUI::EventArgs& e)
+{
+	if (MotorCasaPaco::getInstance()->getShadows() == "No")
+	{
+		shadowsPos = 3;
+	}
+	else
+	{
+		shadowsPos--;
+	}
+
+	MotorCasaPaco::getInstance()->setShadows(shadowValues[shadowsPos]); //Hace el set directamente
+	GUI_Manager::getInstance()->changeText(advancedTexts[2], shadowValues[shadowsPos]);
+
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+
+	return true;
+}
+
+bool PauseMenuComponent::functionAdvancedShadowsMore(const CEGUI::EventArgs& e)
+{
+	if (MotorCasaPaco::getInstance()->getShadows() == "Alto")
+	{
+		shadowsPos = 0;
+	}
+	else
+	{
+		shadowsPos++;
+	}
+
+	MotorCasaPaco::getInstance()->setShadows(shadowValues[shadowsPos]); //Hace el set directamente
+	GUI_Manager::getInstance()->changeText(advancedTexts[2], shadowValues[shadowsPos]);
+
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+
+	return true;
+}
+
+bool PauseMenuComponent::functionAdvancedGamma(const CEGUI::EventArgs& e)
+{
+	if (MotorCasaPaco::getInstance()->getGamma())
+	{
+		MotorCasaPaco::getInstance()->setGamma(false); //Hace el set directamente
+		GUI_Manager::getInstance()->changeText(advancedTexts[1], "No");
+	}
+	else
+	{
+		MotorCasaPaco::getInstance()->setGamma(true); //Hace el set directamente
+		GUI_Manager::getInstance()->changeText(advancedTexts[1], "Si");
+	}
+
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+
+	return true;
+}
+
+bool PauseMenuComponent::functionAdvancedFSAALess(const CEGUI::EventArgs& e)
+{
+	if (MotorCasaPaco::getInstance()->getFSAA() == "0")
+	{
+		fsaaPos = 3;
+	}
+	else
+	{
+		fsaaPos--;
+	}
+
+	MotorCasaPaco::getInstance()->setFSAA(fsaaValues[fsaaPos]); //Hace el set directamente
+	GUI_Manager::getInstance()->changeText(advancedTexts[0], "X " + fsaaValues[fsaaPos]);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+
+	return true;
+}
+
+bool PauseMenuComponent::functionAdvancedFSAAMore(const CEGUI::EventArgs& e)
+{
+	if (MotorCasaPaco::getInstance()->getFSAA() == "8")
+	{
+		fsaaPos = 0;
+	}
+	else
+	{
+		fsaaPos++;
+	}
+
+	MotorCasaPaco::getInstance()->setFSAA(fsaaValues[fsaaPos]); //Hace el set directamente
+	GUI_Manager::getInstance()->changeText(advancedTexts[0], "X " + fsaaValues[fsaaPos]);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+
 	return true;
 }
 
@@ -455,6 +855,19 @@ void PauseMenuComponent::pausedUpdate()
 
 			case 3: //Advanced Graphic Options
 			{
+				if (InputManager::getInstance()->GameControllerIsButtonDown(GameControllerButton::CONTROLLER_BUTTON_B) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_ESCAPE))
+				{
+					MotorCasaPaco::getInstance()->revertAdvancedGraphicChanges();
+					layoutLayer--;
+					MotorCasaPaco::getInstance()->getGUI_Manager()->setLayoutVisible(3, true); //Opciones Graficos In
+					MotorCasaPaco::getInstance()->getGUI_Manager()->setLayoutVisible(4, false); //Menu Avanzado Out
+					currentXTopButtons = 0;
+					currentYTopButtons = tamGraphicTop - 1;
+					MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsXTopButtonsGraphic[currentXTopButtons], positionsYGraphic[currentYTopButtons]);
+					Event evt = Event("RESET_ADVANCED_GRAPHIC_INFO");
+					EventManager::getInstance()->EmitEvent(evt);
+				}
+
 				if (InputManager::getInstance()->GameControllerGetAxisMovement(GameControllerAxis::CONTROLLER_AXIS_LEFTX, true) < -0.7 || InputManager::getInstance()->GameControllerIsButtonDown(GameControllerButton::CONTROLLER_BUTTON_DPAD_LEFT) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_A) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_LEFT))
 				{
 					if (advancedTopDown == 1)
@@ -584,9 +997,110 @@ void PauseMenuComponent::pausedUpdate()
 	}
 }
 
+int PauseMenuComponent::getCurrentPosForRes(std::string currentFormat_, std::string currentRes_)
+{
+	if (currentFormat_ == "4 : 3")
+	{
+		if (currentRes_ == "640 x 480")
+		{
+			return 0;
+		}
+		else if (currentRes_ == "800 x 600")
+		{
+			return 1;
+		}
+		else if (currentRes_ == "832 x 624")
+		{
+			return 2;
+		}
+		else if (currentRes_ == "1024 x 768")
+		{
+			return 3;
+		}
+		else if (currentRes_ == "1152 x 872")
+		{
+			return 4;
+		}
+	}
+	else if (currentFormat_ == "5 : 4")
+	{
+		return 0;
+	}
+	else if (currentFormat_ == "16 : 9")
+	{
+		if (currentRes_ == "1280 x 720")
+		{
+			return 0;
+		}
+		else if (currentRes_ == "1600 x 900")
+		{
+			return 1;
+		}
+		else if (currentRes_ == "1920 x 1080")
+		{
+			return 2;
+		}
+	}
+	else if (currentFormat_ == "16 : 10")
+	{
+		if (currentRes_ == "1280 x 800")
+		{
+			return 0;
+		}
+		else if (currentRes_ == "1650 x 1050")
+		{
+			return 1;
+		}
+	}
+}
+
+int PauseMenuComponent::getShadowsPosition(std::string shadow)
+{
+	if (shadow == "No")
+	{
+		return 0;
+	}
+	else if (shadow == "Bajo")
+	{
+		return 1;
+	}
+	else if (shadow == "Medio")
+	{
+		return 2;
+	}
+	else if (shadow == "Alto")
+	{
+		return 3;
+	}
+}
+
+int PauseMenuComponent::getFSAAPosition(std::string fsaa)
+{
+	if (fsaa == "0")
+	{
+		return 0;
+	}
+	else if (fsaa == "2")
+	{
+		return 1;
+	}
+	else if (fsaa == "4")
+	{
+		return 2;
+	}
+	else if (fsaa == "8")
+	{
+		return 3;
+	}
+}
+
 void PauseMenuComponent::init(json& j)
 {
-	if (!j["delayPause"].is_null() && !j["delay"].is_null() && !j["buttons"].is_null() && j["buttons"].is_array())
+	if (!j["delayPause"].is_null() && !j["delay"].is_null() && !j["buttons"].is_null() && j["buttons"].is_array() && !j["basicOptionButtons"].is_null() && j["basicOptionButtons"].is_array() 
+		&& !j["basicExtraButton"].is_null() && !j["basicBackButton"].is_null() && !j["graphicOptionDownButtons"].is_null() && j["graphicOptionDownButtons"].is_array() && !j["graphicOptionTopButtons"].is_null()
+		&& j["graphicOptionTopButtons"].is_array() && !j["graphicOptionExtraButton"].is_null() && !j["graphicOptionTexts"].is_null() && j["graphicOptionTexts"].is_array() 
+		&& !j["advancedGraphicOptionDownButtons"].is_null() && j["advancedGraphicOptionDownButtons"].is_array() && !j["advancedOptionTexts"].is_null() && j["advancedOptionTexts"].is_array() 
+		&& !j["advancedGraphicOptionTopButtons"].is_null() && j["advancedGraphicOptionTopButtons"].is_array() && !j["Level"].is_null() && !j["MainMenu"].is_null())
 	{
 		/////////////////////////////////////////////////////////
 		//Pause Menu Stuff
@@ -770,13 +1284,13 @@ void PauseMenuComponent::init(json& j)
 			case 0:
 			{
 				auto helperFunctionGraphicBot = std::bind(&PauseMenuComponent::functionGraphicApply, this, std::placeholders::_1);
-				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(back), helperFunctionGraphicBot);
+				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionGraphicBot);
 			}
 			break;
 			case 1:
 			{
 				auto helperFunctionGraphicBot = std::bind(&PauseMenuComponent::functionGraphicRevert, this, std::placeholders::_1);
-				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(back), helperFunctionGraphicBot);
+				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionGraphicBot);
 			}
 			break;
 			case 2:
@@ -794,11 +1308,19 @@ void PauseMenuComponent::init(json& j)
 
 		tamGraphicDown = count;
 
+		//Texts
+		std::vector<std::string> vecText1 = j["graphicOptionTexts"];
+
+		for (std::string name : vecText1)
+		{
+			graphicTexts.push_back(GUI_Manager::getInstance()->getStaticText(name));
+		}
+
 		std::vector<std::string> vec4 = j["graphicOptionTopButtons"];
 
 		count = 0;
 
-		for (std::string name : vec4) //Faltan funciones de los botones
+		for (std::string name : vec4)
 		{
 			if (count < 2)
 			{
@@ -819,52 +1341,64 @@ void PauseMenuComponent::init(json& j)
 			{
 			case 0:
 			{
-
+				auto helperFunctionTopGraphic = std::bind(&PauseMenuComponent::functionGraphicVSync, this, std::placeholders::_1);
+				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopGraphic);			
 			}
 			break;
 			case 1:
 			{
-
+				auto helperFunctionTopGraphic = std::bind(&PauseMenuComponent::functionGraphicVSync, this, std::placeholders::_1);
+				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopGraphic);			
 			}
 			break;
 			case 2:
 			{
-
+				//Resolucion
+				auto helperFunctionTopGraphic = std::bind(&PauseMenuComponent::functionGraphicResolutionLess, this, std::placeholders::_1);
+				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopGraphic);
 			}
 			break;
 			case 3:
 			{
-
+				//Resolucion
+				auto helperFunctionTopGraphic = std::bind(&PauseMenuComponent::functionGraphicResolutionMore, this, std::placeholders::_1);
+				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopGraphic);
 			}
 			break;
 			case 4:
 			{
-
+				//Formato de pantalla 
+				auto helperFunctionTopGraphic = std::bind(&PauseMenuComponent::functionGraphicFormatLess, this, std::placeholders::_1);
+				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopGraphic);
 			}
 			break;
 			case 5:
 			{
-
+				//Formato de pantalla 
+				auto helperFunctionTopGraphic = std::bind(&PauseMenuComponent::functionGraphicFormatMore, this, std::placeholders::_1);
+				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopGraphic);
 			}
 			break;
 			case 6:
 			{
-
+				auto helperFunctionTopGraphic = std::bind(&PauseMenuComponent::functionGraphicFullScreen, this, std::placeholders::_1);
+				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopGraphic);
 			}
 			break;
 			case 7:
 			{
-
+				auto helperFunctionTopGraphic = std::bind(&PauseMenuComponent::functionGraphicFullScreen, this, std::placeholders::_1);
+				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopGraphic);
 			}
 			break;
 			case 8:
 			{
-
+				//Configuraciones predefinidas
 			}
 			break;
 			case 9:
 			{
-
+				//Configuraciones predefinidas
 			}
 			break;
 			}
@@ -903,13 +1437,13 @@ void PauseMenuComponent::init(json& j)
 			{
 			case 0:
 			{
-				auto helperFunctionAdvancedBot = std::bind(&PauseMenuComponent::functionAdvancedBack, this, std::placeholders::_1);
+				auto helperFunctionAdvancedBot = std::bind(&PauseMenuComponent::functionAdvancedApply, this, std::placeholders::_1);
 				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionAdvancedBot);
 			}
 			break;
 			case 1:
 			{
-				auto helperFunctionAdvancedBot = std::bind(&PauseMenuComponent::functionAdvancedBack, this, std::placeholders::_1);
+				auto helperFunctionAdvancedBot = std::bind(&PauseMenuComponent::functionAdvancedRevert, this, std::placeholders::_1);
 				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionAdvancedBot);
 			}
 			break;
@@ -927,6 +1461,15 @@ void PauseMenuComponent::init(json& j)
 		yAdvancedBot = y;
 
 		tamAdvancedDown = count;
+
+		//Texts
+
+		std::vector<std::string> vecText2 = j["advancedOptionTexts"];
+
+		for (std::string name : vecText2)
+		{
+			advancedTexts.push_back(GUI_Manager::getInstance()->getStaticText(name));
+		}
 
 		std::vector<std::string> vec6 = j["advancedGraphicOptionTopButtons"];
 
@@ -993,32 +1536,38 @@ void PauseMenuComponent::init(json& j)
 			break;
 			case 8:
 			{
-
+				auto helperFunctionTopAdvanced = std::bind(&PauseMenuComponent::functionAdvancedShadowsLess, this, std::placeholders::_1);
+				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopAdvanced);
 			}
 			break;
 			case 9:
 			{
-
+				auto helperFunctionTopAdvanced = std::bind(&PauseMenuComponent::functionAdvancedShadowsMore, this, std::placeholders::_1);
+				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopAdvanced);
 			}
 			break;
 			case 10:
 			{
-
+				auto helperFunctionTopAdvanced = std::bind(&PauseMenuComponent::functionAdvancedGamma, this, std::placeholders::_1);
+				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopAdvanced);
 			}
 			break;
 			case 11:
 			{
-
+				auto helperFunctionTopAdvanced = std::bind(&PauseMenuComponent::functionAdvancedGamma, this, std::placeholders::_1);
+				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopAdvanced);
 			}
 			break;
 			case 12:
 			{
-
+				auto helperFunctionTopAdvanced = std::bind(&PauseMenuComponent::functionAdvancedFSAALess, this, std::placeholders::_1);
+				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopAdvanced);
 			}
 			break;
 			case 13:
 			{
-
+				auto helperFunctionTopAdvanced = std::bind(&PauseMenuComponent::functionAdvancedFSAAMore, this, std::placeholders::_1);
+				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopAdvanced);
 			}
 			break;
 			}
@@ -1041,7 +1590,55 @@ void PauseMenuComponent::init(json& j)
 
 		currenPos = 0;
 		layoutLayer = 0;
+
+		//Registrar listeners
+
+		EventManager::getInstance()->RegisterListener(this, "RESET_GRAPHIC_INFO");
+		EventManager::getInstance()->RegisterListener(this, "RESET_ADVANCED_GRAPHIC_INFO");
+
+		//Cosas del motor
+
 		currentTime = MotorCasaPaco::getInstance()->getTime();
+
+		if (MotorCasaPaco::getInstance()->getFullScreen())
+		{
+			GUI_Manager::getInstance()->changeText(graphicTexts[1], "Si");
+		}
+		else
+		{
+			GUI_Manager::getInstance()->changeText(graphicTexts[1], "No");
+		}
+
+
+		if (MotorCasaPaco::getInstance()->getVSync())
+		{
+			GUI_Manager::getInstance()->changeText(graphicTexts[4], "Si");
+		}
+		else
+		{
+			GUI_Manager::getInstance()->changeText(graphicTexts[4], "No");
+		}
+
+		currentFormat = MotorCasaPaco::getInstance()->getScreenProportion();
+		currentRes = MotorCasaPaco::getInstance()->getResolution();
+		ForResPosition = getCurrentPosForRes(currentFormat, currentRes);
+		GUI_Manager::getInstance()->changeText(graphicTexts[3], currentRes);
+		GUI_Manager::getInstance()->changeText(graphicTexts[2], currentFormat);
+
+		shadowsPos = getShadowsPosition(MotorCasaPaco::getInstance()->getShadows());
+		GUI_Manager::getInstance()->changeText(advancedTexts[2], MotorCasaPaco::getInstance()->getShadows());
+
+		if (MotorCasaPaco::getInstance()->getGamma())
+		{
+			GUI_Manager::getInstance()->changeText(advancedTexts[1], "Si");
+		}
+		else
+		{
+			GUI_Manager::getInstance()->changeText(advancedTexts[1], "No");
+		}
+
+		fsaaPos = getFSAAPosition(MotorCasaPaco::getInstance()->getFSAA());
+		GUI_Manager::getInstance()->changeText(advancedTexts[0], "X " + MotorCasaPaco::getInstance()->getFSAA());
 
 		MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(xPause, positionsYPause[currenPos]);
 	}

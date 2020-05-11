@@ -12,26 +12,20 @@ GameManager::~GameManager()
 
 GameManager::GameManager() : Component("GameManager") {
 	EventManager::getInstance()->RegisterListener(this, "finNivel");
-}
-
-void GameManager::init(json& args)
-{
+	EventManager::getInstance()->RegisterListener(this, "changeScene");
 	readData();
 }
 
 GameManager* GameManager::getInstance()
 {
 	if (instance == nullptr)
+	{
 		instance = new GameManager();
+		instance->readData();
+	}
 
 	return instance;
 }
-
-void GameManager::update()
-{
-	time += MotorCasaPaco::getInstance()->DeltaTime();
-}
-
 void GameManager::clean()
 {
 	delete instance;
@@ -41,7 +35,7 @@ bool GameManager::ReceiveEvent(Event& event)
 {
 	if (event.type == "finNivel")
 		saveData(SceneManager::getInstance()->getCurrentScene()->getName());
-	if (event.type == "inicioNivel")
+	if (event.type == "changeScene")
 	{
 		time = MotorCasaPaco::getInstance()->getTime();
 	}
@@ -57,6 +51,10 @@ void GameManager::addStars(int s)
 	stars_ += s;
 }
 
+void GameManager::resetStars()
+{
+	stars_ = 0;
+}
 void GameManager::saveData(std::string name)
 {
 

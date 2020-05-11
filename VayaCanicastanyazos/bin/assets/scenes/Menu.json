@@ -64,7 +64,7 @@
 				{
 					"type": "ChangeSceneButtonComponent",
 					"buttonName" : "MainMenu/Settings",
-					"sceneName" : "BasicOptions"
+					"sceneName" : "OptionsMenu"
 				}
 			]
 		},

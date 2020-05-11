@@ -43,7 +43,7 @@ bool ChangeFullScreenComponent::ReceiveEvent(Event& event)
 			GUI_Manager::getInstance()->changeText(textToChange, "No");
 		}
 	}
-	return false;
+	return true;
 }
 
 void ChangeFullScreenComponent::init(json& j)

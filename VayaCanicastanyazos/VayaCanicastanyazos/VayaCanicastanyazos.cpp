@@ -11,6 +11,7 @@
 #include "Components/ChangeSceneButtonComponent.h"
 #include "Components/ExitButtonComponent.h"
 
+/*
 #include "Components/ChangeFullScreenComponent.h"
 #include "Components/FormatResolutionChangeComponent.h"
 #include "Components/ApplyGraphicChangesComponent.h"
@@ -19,15 +20,19 @@
 #include "Components/ShadowsChangeComponent.h"
 #include "Components/ApplyAdvancedGraphicChangesComponent.h"
 #include "Components/RevertGraphicChangesComponent.h"
-
 #include "Components/RevertAdvancedGraphicChangesComponent.h"
 #include "Components/ChangeGammaComponent.h"
 #include "Components/ChangeGraphicSceneComponent.h"
+*/
+
 #include "Components/StarCollision.h"
 
 #include "Components/DeathZoneComponent.h"
 #include "Components/GoalComponent.h"
+#include "Components/GameManager.h"
+
 #include "Components/PauseMenuComponent.h"
+#include "Components/OptionsMenuComponent.h"
 
 MotorCasaPaco* motorCasaPaco;
 
@@ -77,6 +82,7 @@ public:
 	};
 };
 
+/*
 class ChangeFullScreenComponentFactory : public BaseFactory
 {
 public:
@@ -175,7 +181,7 @@ public:
 		return new ChangeGraphicSceneComponent(args);
 	};
 };
-
+*/
 class DeathZoneComponentFactory : public BaseFactory
 {
 public:
@@ -212,6 +218,15 @@ public:
 	};
 };
 
+class OptionsMenuComponentFactory : public BaseFactory
+{
+public:
+	Component* createComponent(json& args) override
+	{
+		return new OptionsMenuComponent(args);
+	};
+};
+
 //--------------------------------------------------------------------------------
 
 
@@ -225,7 +240,7 @@ WinMain(HINSTANCE hinstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdSh
 {
 
 	try { MotorCasaPaco::setupInstance("Vaya Canicastanhazos"); }
-	catch (const std::exception& e)
+	catch (const std::exception & e)
 	{
 		throw std::runtime_error("Motor Casa Paco init fail \n" + std::string(e.what()) + "\n");	return 0;
 	}
@@ -236,7 +251,7 @@ WinMain(HINSTANCE hinstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdSh
 	{
 		motorCasaPaco->init();
 	}
-	catch (const std::exception& e)
+	catch (const std::exception & e)
 	{
 		std::cout << e.what() << "\n";
 		delete motorCasaPaco;
@@ -248,6 +263,7 @@ WinMain(HINSTANCE hinstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdSh
 	JsonFactoryParser::getInstance()->addFactory("CameraController", new CameraControllerFactory());
 	JsonFactoryParser::getInstance()->addFactory("ChangeSceneButtonComponent", new ChangeSceneButtonComponentFactory());
 	JsonFactoryParser::getInstance()->addFactory("ExitButtonComponent", new ExitButtonComponentFactory());
+	/*
 	JsonFactoryParser::getInstance()->addFactory("ChangeFullScreenComponent", new ChangeFullScreenComponentFactory());
 	JsonFactoryParser::getInstance()->addFactory("FormatResolutionChangeComponent", new FormatResolutionChangeComponentFactory());
 	JsonFactoryParser::getInstance()->addFactory("ApplyGraphicChangesComponent", new ApplyGraphicChangesComponentFactory());
@@ -259,10 +275,12 @@ WinMain(HINSTANCE hinstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdSh
 	JsonFactoryParser::getInstance()->addFactory("RevertAdvancedGraphicChangesComponent", new RevertAdvancedGraphicChangesComponentFactory());
 	JsonFactoryParser::getInstance()->addFactory("ChangeGammaComponent", new ChangeGammaComponentFactory());
 	JsonFactoryParser::getInstance()->addFactory("ChangeGraphicSceneComponent", new ChangeGraphicSceneComponentFactory());
+	*/
 	JsonFactoryParser::getInstance()->addFactory("DeathZoneComponent", new DeathZoneComponentFactory());
 	JsonFactoryParser::getInstance()->addFactory("GoalComponent", new GoalComponentFactory());
 	JsonFactoryParser::getInstance()->addFactory("StarCollision", new StarCollisionFactory());
 	JsonFactoryParser::getInstance()->addFactory("PauseMenuComponent", new PauseMenuComponentFactory());
+	JsonFactoryParser::getInstance()->addFactory("OptionsMenuComponent", new OptionsMenuComponentFactory());
 
 	motorCasaPaco->getGUI_Manager()->getInstance()->loadScheme("VayaCanicastanhazos.scheme");
 	motorCasaPaco->getGUI_Manager()->getInstance()->setMouseCursor("VayaCanicastanhazos/Mouse_Arrow");

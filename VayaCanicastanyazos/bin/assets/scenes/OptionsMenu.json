@@ -1,0 +1,134 @@
+{
+	"name" : "test",
+	"entities" :
+	[
+		{
+			"name" : "camera",
+			"position" : [0, 50, 70],
+			"rotation" : [0, 0, 0], 
+			"scale" : [1, 1, 1],
+			"components" : [
+				{
+					"type" : "Camera",
+					"lookAt" : [1, 0.8, 0],
+					"bgColour" : [0, 0, 1, 1]
+				},
+				{
+					"type": "AudioListenerComponent"
+				},
+				{
+					"type": "SimpleMovement",
+					"speed": 5.0,
+					"rotateSpeed": 1.0
+				}
+			]
+		}
+	],
+	
+	"UI" :
+	[
+		{
+			"type" : "layout", 
+			"name" : "BasicOptions.layout",
+			"visible": true
+		},
+		{
+			"type" : "layout", 
+			"name" : "GraphicOptionsMenu.layout",
+			"visible": false
+		},
+		{
+			"type" : "layout", 
+			"name" : "AdvancedOptionsMenu.layout",
+			"visible": false
+		},
+		{
+			"type" : "entity",
+			"name" : "UI",
+			"components" : 
+			[
+				{
+					"type": "OptionsMenuComponent",
+					"basicOptionButtons" :
+					[
+					 "BasicOptions/LeftArrow_5",
+					 "BasicOptions/RightArrow_5",
+					 "BasicOptions/LeftArrow_4",
+					 "BasicOptions/RightArrow_4",
+					 "BasicOptions/LeftArrow_3",
+					 "BasicOptions/RightArrow_3",
+					 "BasicOptions/LeftArrow_2",
+					 "BasicOptions/RightArrow_2",
+					 "BasicOptions/LeftArrow_1",
+					 "BasicOptions/RightArrow_1"
+					],
+					"basicExtraButton" : "BasicOptions/GraphicOptions",
+					"basicBackButton" : "BasicOptions/Back",
+					"graphicOptionDownButtons" :
+					[
+					 "GraphicOptions/Apply",
+					 "GraphicOptions/Revert",
+					 "GraphicOptions/Back"
+					],
+					"graphicOptionTopButtons" :
+					[
+					 "GraphicOptions/LeftArrow_5",
+					 "GraphicOptions/RightArrow_5",
+					 "GraphicOptions/LeftArrow_4",
+					 "GraphicOptions/RightArrow_4",
+					 "GraphicOptions/LeftArrow_3",
+					 "GraphicOptions/RightArrow_3",
+					 "GraphicOptions/LeftArrow_2",
+			 		 "GraphicOptions/RightArrow_2",
+				 	 "GraphicOptions/LeftArrow_1",
+					 "GraphicOptions/RightArrow_1"
+					],
+					"graphicOptionExtraButton": "GraphicOptions/AdvancedOptions",
+					"graphicOptionTexts" :
+					[
+					 "GraphicOptions/Text_Selector_1",
+					 "GraphicOptions/Text_Selector_2",
+					 "GraphicOptions/Text_Selector_3",
+					 "GraphicOptions/Text_Selector_4",
+					 "GraphicOptions/Text_Selector_5"
+					],
+					"advancedGraphicOptionDownButtons" :
+					[
+					 "AdvancedGraphicOptions/Apply",
+					 "AdvancedGraphicOptions/Revert",
+					 "AdvancedGraphicOptions/Back"
+					],
+					"advancedOptionTexts" :
+					[
+					 "AdvancedGraphicOptions/Text_Selector_1",
+					 "AdvancedGraphicOptions/Text_Selector_2",
+					 "AdvancedGraphicOptions/Text_Selector_3",
+					 "AdvancedGraphicOptions/Text_Selector_4",
+					 "AdvancedGraphicOptions/Text_Selector_5",
+					 "AdvancedGraphicOptions/Text_Selector_6",
+					 "AdvancedGraphicOptions/Text_Selector_7"
+					],
+					"advancedGraphicOptionTopButtons" :
+					[
+					 "AdvancedGraphicOptions/LeftArrow_7",
+					 "AdvancedGraphicOptions/RightArrow_7",
+					 "AdvancedGraphicOptions/LeftArrow_6",
+					 "AdvancedGraphicOptions/RightArrow_6",
+					 "AdvancedGraphicOptions/LeftArrow_5",
+					 "AdvancedGraphicOptions/RightArrow_5",
+					 "AdvancedGraphicOptions/LeftArrow_4",
+					 "AdvancedGraphicOptions/RightArrow_4",
+					 "AdvancedGraphicOptions/LeftArrow_3",
+					 "AdvancedGraphicOptions/RightArrow_3",
+					 "AdvancedGraphicOptions/LeftArrow_2",
+					 "AdvancedGraphicOptions/RightArrow_2",
+					 "AdvancedGraphicOptions/LeftArrow_1",
+					 "AdvancedGraphicOptions/RightArrow_1"
+					],
+					"delay" : 0.20,
+					"delayPause" : 0.5	
+				}
+			]
+		}
+	]
+}

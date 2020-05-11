@@ -1,25 +1,25 @@
 #pragma once
-#ifndef PAUSEMENUCOMPONENT_H
-#define PAUSEMENUCOMPONENT_H
+#ifndef OPTIONSMENUCOMPONENT_H
+#define OPTIONSMENUCOMPONENT_H
 #include "Entity/Component.h"
 #include "GUI/GUI_Manager.h"
 
-class PauseMenuComponent : public Component
+class OptionsMenuComponent : public Component
 {
 
 public:
-	PauseMenuComponent(json& args);
-	~PauseMenuComponent();
+	OptionsMenuComponent(json& args);
+	~OptionsMenuComponent();
 	void init(json& j) override;
 	bool ReceiveEvent(Event& event);
 
-	//Pause Menu
+	/*//Pause Menu
 	bool functionPauseReturn(const CEGUI::EventArgs& e);
 	bool functionPauseReset(const CEGUI::EventArgs& e);
 	bool functionPauseSettings(const CEGUI::EventArgs& e);
 	bool functionPauseMainMenu(const CEGUI::EventArgs& e);
 	bool functionPauseExit(const CEGUI::EventArgs& e);
-	
+	*/
 	//Basic Options
 	bool functionBasicGraphicOptions(const CEGUI::EventArgs& e);
 	bool functionBasicBack(const CEGUI::EventArgs& e);
@@ -49,7 +49,6 @@ public:
 
 
 	void update() override;
-	void pausedUpdate() override;
 
 private:
 	//Delays
@@ -63,13 +62,13 @@ private:
 	float currentYTopButtons;
 	float currentPosDownButtons;
 	//float currentYButtons;
-
+	/*
 	//Pause
 	std::vector<float> positionsYPause;
 	int currenPos;
 	float xPause;
 	int tamPause;
-
+	*/
 	//Basic
 	std::vector<float> positionsYBasic;
 	std::vector<float> positionsXBotButtonsBasic;
@@ -113,10 +112,6 @@ private:
 	std::string fsaaValues[4] = { "0" , "2", "4", "8" };
 	int getFSAAPosition(std::string fsaa);
 	int fsaaPos;
-
-	//Datos de escenas
-	std::string mainMenu;
-	std::string level;
 };
 
 

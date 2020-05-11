@@ -17,10 +17,9 @@ public:
 
 	int getStars();
 	void addStars(int s);
+	void resetStars();
 	void saveData(std::string);
 	void readData();
-	virtual void update() override;
-	virtual void init(json& j) override;
 private:
 	GameManager();
 	static GameManager* instance;

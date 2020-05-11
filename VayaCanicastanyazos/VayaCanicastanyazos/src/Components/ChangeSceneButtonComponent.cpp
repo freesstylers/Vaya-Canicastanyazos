@@ -20,10 +20,8 @@ bool ChangeSceneButtonComponent::function(const CEGUI::EventArgs& e)
 {
 	MotorCasaPaco::getInstance()->changeScene(sceneToLoad);
 	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
-	if(sceneToLoad ==  "Menu")
-		EventManager::getInstance()->EmitEvent("finNivel");
-	else if (sceneToLoad == "nivel1")
-		EventManager::getInstance()->EmitEvent("inicioNivel");
+	if (sceneToLoad == "LevelSelection")
+		GameManager::getInstance();
 	return true;
 }
 
