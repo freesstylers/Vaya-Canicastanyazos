@@ -51,6 +51,8 @@ public:
 	void update() override;
 	void pausedUpdate() override;
 
+	bool optionsAssert(json& j);
+
 private:
 	//Delays
 	float delay;

@@ -997,6 +997,17 @@ void PauseMenuComponent::pausedUpdate()
 	}
 }
 
+bool PauseMenuComponent::optionsAssert(json& j)
+{
+	return (!j["basicOptionButtons"].is_null() && j["basicOptionButtons"].is_array() && !j["basicExtraButton"].is_null() && !j["basicBackButton"].is_null()
+		&& !j["graphicOptionDownButtons"].is_null() && j["graphicOptionDownButtons"].is_array()
+		&& !j["graphicOptionTopButtons"].is_null() && j["graphicOptionTopButtons"].is_array() && !j["graphicOptionExtraButton"].is_null()
+		&& !j["graphicOptionTexts"].is_null() && j["graphicOptionTexts"].is_array()
+		&& !j["advancedGraphicOptionDownButtons"].is_null() && j["advancedGraphicOptionDownButtons"].is_array()
+		&& !j["advancedOptionTexts"].is_null() && j["advancedOptionTexts"].is_array()
+		&& !j["advancedGraphicOptionTopButtons"].is_null() && j["advancedGraphicOptionTopButtons"].is_array());
+}
+
 int PauseMenuComponent::getCurrentPosForRes(std::string currentFormat_, std::string currentRes_)
 {
 	if (currentFormat_ == "4 : 3")
@@ -1096,550 +1107,551 @@ int PauseMenuComponent::getFSAAPosition(std::string fsaa)
 
 void PauseMenuComponent::init(json& j)
 {
-	if (!j["delayPause"].is_null() && !j["delay"].is_null() && !j["buttons"].is_null() && j["buttons"].is_array() && !j["basicOptionButtons"].is_null() && j["basicOptionButtons"].is_array() 
-		&& !j["basicExtraButton"].is_null() && !j["basicBackButton"].is_null() && !j["graphicOptionDownButtons"].is_null() && j["graphicOptionDownButtons"].is_array() && !j["graphicOptionTopButtons"].is_null()
-		&& j["graphicOptionTopButtons"].is_array() && !j["graphicOptionExtraButton"].is_null() && !j["graphicOptionTexts"].is_null() && j["graphicOptionTexts"].is_array() 
-		&& !j["advancedGraphicOptionDownButtons"].is_null() && j["advancedGraphicOptionDownButtons"].is_array() && !j["advancedOptionTexts"].is_null() && j["advancedOptionTexts"].is_array() 
-		&& !j["advancedGraphicOptionTopButtons"].is_null() && j["advancedGraphicOptionTopButtons"].is_array() && !j["Level"].is_null() && !j["MainMenu"].is_null())
-	{
-		/////////////////////////////////////////////////////////
-		//Pause Menu Stuff
+	//Para que el componente funcione bien, hay que asegurarse de que todos estos datos estén presentes en el componente. Si no, el componente fallará.
+	if (!optionsAssert(j) ||
+		j["delayPause"].is_null() || j["delay"].is_null() ||
+		j["buttons"].is_null() || (!j["buttons"].is_null() && !j["buttons"].is_array()) ||
+		j["Level"].is_null() || j["MainMenu"].is_null())
+		return;
 
-		std::vector<std::string> vec = j["buttons"];
 
-		int count = 0;
-		for (std::string name : vec) {
+	/////////////////////////////////////////////////////////
+	//Pause Menu Stuff
 
-			if (count == 0)
-				xPause = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointXAbsolute();
+	std::vector<std::string> vec = j["buttons"];
+
+	int count = 0;
+	for (std::string name : vec) {
+
+		if (count == 0)
+			xPause = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointXAbsolute();
 			
+		float y = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointYAbsolute();
+
+		positionsYPause.push_back(y);
+
+		//Asignacion de funciones
+
+		switch (count)
+		{
+		case 0:
+		{
+			auto helperFunction = std::bind(&PauseMenuComponent::functionPauseReturn, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
+		}
+		break;
+		case 1:
+		{
+			auto helperFunction = std::bind(&PauseMenuComponent::functionPauseReset, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
+		}
+		break;
+		case 2:
+		{
+			auto helperFunction = std::bind(&PauseMenuComponent::functionPauseSettings, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
+		}
+		break;
+		case 3:
+		{
+			auto helperFunction = std::bind(&PauseMenuComponent::functionPauseMainMenu, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
+		}
+		break;
+		case 4:
+		{
+			auto helperFunction = std::bind(&PauseMenuComponent::functionPauseExit, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
+		}
+		break;
+		}
+
+		count++;
+	}
+
+	tamPause = count;
+
+	//////////////////////////////////////////////////////////////
+	//Basic Options Stuff
+
+	std::vector<std::string> vec2 = j["basicOptionButtons"];
+
+	count = 0;
+
+	for (std::string name : vec2)
+	{
+		if (count < 2)
+		{
+			float x = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointXAbsolute();
+			positionsXTopButtonsBasic.push_back(x);
+		}
+
+		if (count % 2 == 0)
+		{
 			float y = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointYAbsolute();
 
-			positionsYPause.push_back(y);
-
-			//Asignacion de funciones
-
-			switch (count)
-			{
-			case 0:
-			{
-				auto helperFunction = std::bind(&PauseMenuComponent::functionPauseReturn, this, std::placeholders::_1);
-				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
-			}
-			break;
-			case 1:
-			{
-				auto helperFunction = std::bind(&PauseMenuComponent::functionPauseReset, this, std::placeholders::_1);
-				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
-			}
-			break;
-			case 2:
-			{
-				auto helperFunction = std::bind(&PauseMenuComponent::functionPauseSettings, this, std::placeholders::_1);
-				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
-			}
-			break;
-			case 3:
-			{
-				auto helperFunction = std::bind(&PauseMenuComponent::functionPauseMainMenu, this, std::placeholders::_1);
-				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
-			}
-			break;
-			case 4:
-			{
-				auto helperFunction = std::bind(&PauseMenuComponent::functionPauseExit, this, std::placeholders::_1);
-				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
-			}
-			break;
-			}
-
-			count++;
+			positionsYBasic.push_back(y);
 		}
 
-		tamPause = count;
+		//Asignacion de funciones
 
-		//////////////////////////////////////////////////////////////
-		//Basic Options Stuff
-
-		std::vector<std::string> vec2 = j["basicOptionButtons"];
-
-		count = 0;
-
-		for (std::string name : vec2)
+		switch (count)
 		{
-			if (count < 2)
-			{
-				float x = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointXAbsolute();
-				positionsXTopButtonsBasic.push_back(x);
-			}
+		case 0:
+		{
+			//auto helperFunction = std::bind(&PauseMenuComponent::functionReturn, this, std::placeholders::_1);
+			//GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
+		}
+		break;
+		case 1:
+		{
 
-			if (count % 2 == 0)
-			{
-				float y = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointYAbsolute();
+		}
+		break;
+		case 2:
+		{
 
-				positionsYBasic.push_back(y);
-			}
+		}
+		break;
+		case 3:
+		{
 
-			//Asignacion de funciones
+		}
+		break;
+		case 4:
+		{
 
-			switch (count)
-			{
-			case 0:
-			{
-				//auto helperFunction = std::bind(&PauseMenuComponent::functionReturn, this, std::placeholders::_1);
-				//GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
-			}
-			break;
-			case 1:
-			{
+		}
+		break;
+		case 5:
+		{
 
-			}
-			break;
-			case 2:
-			{
+		}
+		break;
+		case 6:
+		{
 
-			}
-			break;
-			case 3:
-			{
+		}
+		break;
+		case 7:
+		{
 
-			}
-			break;
-			case 4:
-			{
+		}
+		break;
+		case 8:
+		{
 
-			}
-			break;
-			case 5:
-			{
+		}
+		break;
+		case 9:
+		{
 
-			}
-			break;
-			case 6:
-			{
-
-			}
-			break;
-			case 7:
-			{
-
-			}
-			break;
-			case 8:
-			{
-
-			}
-			break;
-			case 9:
-			{
-
-			}
-			break;
-			}
+		}
+		break;
+		}
 			
-			count++;
-		}
-
-		tamBasicTop = count / 2;
-
-		std::string interm = j["basicExtraButton"];
-		yBasicExtra = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(interm).getCenterPointYAbsolute();
-		xBasicExtra = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(interm).getCenterPointYAbsolute();
-
-		//Assign function
-
-		auto helperFunction = std::bind(&PauseMenuComponent::functionBasicGraphicOptions, this, std::placeholders::_1);
-		GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(interm), helperFunction);
-
-		std::string back = j["basicBackButton"];
-		yBasicBack = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(back).getCenterPointYAbsolute();
-		xBasicBack = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(back).getCenterPointYAbsolute();
-
-		//Assign function
-
-		auto helperFunction1 = std::bind(&PauseMenuComponent::functionBasicBack, this, std::placeholders::_1);
-		GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(back), helperFunction1);
-
-		//////////////////////////////////////////////////////////////
-		//Graphic Options Stuff
-
-		std::vector<std::string> vec3 = j["graphicOptionDownButtons"];
-
-		float y;
-		count = 0;
-
-		for (std::string name : vec3)
-		{
-			float x = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointXAbsolute();
-			
-			if (count == 0)
-				y = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointYAbsolute();
-
-			positionsXBotButtonsGraphic.push_back(x);
-
-			//Asignacion de funciones
-
-			switch (count)
-			{
-			case 0:
-			{
-				auto helperFunctionGraphicBot = std::bind(&PauseMenuComponent::functionGraphicApply, this, std::placeholders::_1);
-				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionGraphicBot);
-			}
-			break;
-			case 1:
-			{
-				auto helperFunctionGraphicBot = std::bind(&PauseMenuComponent::functionGraphicRevert, this, std::placeholders::_1);
-				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionGraphicBot);
-			}
-			break;
-			case 2:
-			{
-				auto helperFunctionGraphicBot = std::bind(&PauseMenuComponent::functionGraphicBack, this, std::placeholders::_1);
-				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionGraphicBot);
-			}
-			break;
-			}
-
-			count++;
-		}
-
-		yGraphicBot = y;
-
-		tamGraphicDown = count;
-
-		//Texts
-		std::vector<std::string> vecText1 = j["graphicOptionTexts"];
-
-		for (std::string name : vecText1)
-		{
-			graphicTexts.push_back(GUI_Manager::getInstance()->getStaticText(name));
-		}
-
-		std::vector<std::string> vec4 = j["graphicOptionTopButtons"];
-
-		count = 0;
-
-		for (std::string name : vec4)
-		{
-			if (count < 2)
-			{
-				float x = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointXAbsolute();
-				positionsXTopButtonsGraphic.push_back(x);
-			}
-
-			if (count % 2 == 0)
-			{
-				y = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointYAbsolute();
-
-				positionsYGraphic.push_back(y);
-			}
-
-			//Asignacion de funciones
-
-			switch (count)
-			{
-			case 0:
-			{
-				auto helperFunctionTopGraphic = std::bind(&PauseMenuComponent::functionGraphicVSync, this, std::placeholders::_1);
-				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopGraphic);			
-			}
-			break;
-			case 1:
-			{
-				auto helperFunctionTopGraphic = std::bind(&PauseMenuComponent::functionGraphicVSync, this, std::placeholders::_1);
-				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopGraphic);			
-			}
-			break;
-			case 2:
-			{
-				//Resolucion
-				auto helperFunctionTopGraphic = std::bind(&PauseMenuComponent::functionGraphicResolutionLess, this, std::placeholders::_1);
-				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopGraphic);
-			}
-			break;
-			case 3:
-			{
-				//Resolucion
-				auto helperFunctionTopGraphic = std::bind(&PauseMenuComponent::functionGraphicResolutionMore, this, std::placeholders::_1);
-				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopGraphic);
-			}
-			break;
-			case 4:
-			{
-				//Formato de pantalla 
-				auto helperFunctionTopGraphic = std::bind(&PauseMenuComponent::functionGraphicFormatLess, this, std::placeholders::_1);
-				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopGraphic);
-			}
-			break;
-			case 5:
-			{
-				//Formato de pantalla 
-				auto helperFunctionTopGraphic = std::bind(&PauseMenuComponent::functionGraphicFormatMore, this, std::placeholders::_1);
-				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopGraphic);
-			}
-			break;
-			case 6:
-			{
-				auto helperFunctionTopGraphic = std::bind(&PauseMenuComponent::functionGraphicFullScreen, this, std::placeholders::_1);
-				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopGraphic);
-			}
-			break;
-			case 7:
-			{
-				auto helperFunctionTopGraphic = std::bind(&PauseMenuComponent::functionGraphicFullScreen, this, std::placeholders::_1);
-				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopGraphic);
-			}
-			break;
-			case 8:
-			{
-				//Configuraciones predefinidas
-			}
-			break;
-			case 9:
-			{
-				//Configuraciones predefinidas
-			}
-			break;
-			}
-
-			count++;
-		}
-
-		tamGraphicTop = count / 2;
-		
-		std::string name = j["graphicOptionExtraButton"];
-		xExtraGraphic = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointXAbsolute();
-		yExtraGraphic = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointYAbsolute();
-
-		auto helperFunction2 = std::bind(&PauseMenuComponent::functionGraphicAdvancedOptions, this, std::placeholders::_1);
-		GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction2);
-
-		//////////////////////////////////////////////////////////////
-		//Advanced Graphic Options Stuff
-
-		std::vector<std::string> vec5 = j["advancedGraphicOptionDownButtons"];
-
-		count = 0;
-
-		for (std::string name : vec5)
-		{
-			float x = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointXAbsolute();
-
-			if (count == 0)
-				y = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointYAbsolute();
-
-			positionsXBotButtonsAdvanced.push_back(x);
-
-			//Asignacion de funciones
-
-			switch (count)
-			{
-			case 0:
-			{
-				auto helperFunctionAdvancedBot = std::bind(&PauseMenuComponent::functionAdvancedApply, this, std::placeholders::_1);
-				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionAdvancedBot);
-			}
-			break;
-			case 1:
-			{
-				auto helperFunctionAdvancedBot = std::bind(&PauseMenuComponent::functionAdvancedRevert, this, std::placeholders::_1);
-				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionAdvancedBot);
-			}
-			break;
-			case 2:
-			{
-				auto helperFunctionAdvancedBot = std::bind(&PauseMenuComponent::functionAdvancedBack, this, std::placeholders::_1);
-				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionAdvancedBot);
-			}
-			break;
-			}
-
-			count++;
-		}
-
-		yAdvancedBot = y;
-
-		tamAdvancedDown = count;
-
-		//Texts
-
-		std::vector<std::string> vecText2 = j["advancedOptionTexts"];
-
-		for (std::string name : vecText2)
-		{
-			advancedTexts.push_back(GUI_Manager::getInstance()->getStaticText(name));
-		}
-
-		std::vector<std::string> vec6 = j["advancedGraphicOptionTopButtons"];
-
-		count = 0;
-
-		for (std::string name : vec6) //Faltan funciones de los botones
-		{
-			if (count < 2)
-			{
-				float x = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointXAbsolute();
-				positionsXTopButtonsAdvanced.push_back(x);
-			}
-
-			if (count % 2 == 0)
-			{
-				y = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointYAbsolute();
-
-				positionsYAdvanced.push_back(y);
-			}
-
-			//Asignacion de funciones
-
-			switch (count)
-			{
-			case 0:
-			{
-
-			}
-			break;
-			case 1:
-			{
-
-			}
-			break;
-			case 2:
-			{
-
-			}
-			break;
-			case 3:
-			{
-
-			}
-			break;
-			case 4:
-			{
-
-			}
-			break;
-			case 5:
-			{
-
-			}
-			break;
-			case 6:
-			{
-
-			}
-			break;
-			case 7:
-			{
-
-			}
-			break;
-			case 8:
-			{
-				auto helperFunctionTopAdvanced = std::bind(&PauseMenuComponent::functionAdvancedShadowsLess, this, std::placeholders::_1);
-				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopAdvanced);
-			}
-			break;
-			case 9:
-			{
-				auto helperFunctionTopAdvanced = std::bind(&PauseMenuComponent::functionAdvancedShadowsMore, this, std::placeholders::_1);
-				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopAdvanced);
-			}
-			break;
-			case 10:
-			{
-				auto helperFunctionTopAdvanced = std::bind(&PauseMenuComponent::functionAdvancedGamma, this, std::placeholders::_1);
-				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopAdvanced);
-			}
-			break;
-			case 11:
-			{
-				auto helperFunctionTopAdvanced = std::bind(&PauseMenuComponent::functionAdvancedGamma, this, std::placeholders::_1);
-				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopAdvanced);
-			}
-			break;
-			case 12:
-			{
-				auto helperFunctionTopAdvanced = std::bind(&PauseMenuComponent::functionAdvancedFSAALess, this, std::placeholders::_1);
-				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopAdvanced);
-			}
-			break;
-			case 13:
-			{
-				auto helperFunctionTopAdvanced = std::bind(&PauseMenuComponent::functionAdvancedFSAAMore, this, std::placeholders::_1);
-				GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopAdvanced);
-			}
-			break;
-			}
-
-			count++;
-		}
-
-		tamAdvancedTop = count / 2;
-
-		//////////////////////////////////////////////////////////////
-
-		std::string interm2 = j["Level"];
-		level = interm2;
-
-		std::string interm3 = j["MainMenu"];
-		mainMenu = interm3;
-
-		delay = j["delay"];
-		delayPause = j["delayPause"];
-
-		currenPos = 0;
-		layoutLayer = 0;
-
-		//Registrar listeners
-
-		EventManager::getInstance()->RegisterListener(this, "RESET_GRAPHIC_INFO");
-		EventManager::getInstance()->RegisterListener(this, "RESET_ADVANCED_GRAPHIC_INFO");
-
-		//Cosas del motor
-
-		currentTime = MotorCasaPaco::getInstance()->getTime();
-
-		if (MotorCasaPaco::getInstance()->getFullScreen())
-		{
-			GUI_Manager::getInstance()->changeText(graphicTexts[1], "Si");
-		}
-		else
-		{
-			GUI_Manager::getInstance()->changeText(graphicTexts[1], "No");
-		}
-
-
-		if (MotorCasaPaco::getInstance()->getVSync())
-		{
-			GUI_Manager::getInstance()->changeText(graphicTexts[4], "Si");
-		}
-		else
-		{
-			GUI_Manager::getInstance()->changeText(graphicTexts[4], "No");
-		}
-
-		currentFormat = MotorCasaPaco::getInstance()->getScreenProportion();
-		currentRes = MotorCasaPaco::getInstance()->getResolution();
-		ForResPosition = getCurrentPosForRes(currentFormat, currentRes);
-		GUI_Manager::getInstance()->changeText(graphicTexts[3], currentRes);
-		GUI_Manager::getInstance()->changeText(graphicTexts[2], currentFormat);
-
-		shadowsPos = getShadowsPosition(MotorCasaPaco::getInstance()->getShadows());
-		GUI_Manager::getInstance()->changeText(advancedTexts[2], MotorCasaPaco::getInstance()->getShadows());
-
-		if (MotorCasaPaco::getInstance()->getGamma())
-		{
-			GUI_Manager::getInstance()->changeText(advancedTexts[1], "Si");
-		}
-		else
-		{
-			GUI_Manager::getInstance()->changeText(advancedTexts[1], "No");
-		}
-
-		fsaaPos = getFSAAPosition(MotorCasaPaco::getInstance()->getFSAA());
-		GUI_Manager::getInstance()->changeText(advancedTexts[0], "X " + MotorCasaPaco::getInstance()->getFSAA());
-
-		MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(xPause, positionsYPause[currenPos]);
+		count++;
 	}
+
+	tamBasicTop = count / 2;
+
+	std::string interm = j["basicExtraButton"];
+	yBasicExtra = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(interm).getCenterPointYAbsolute();
+	xBasicExtra = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(interm).getCenterPointYAbsolute();
+
+	//Assign function
+
+	auto helperFunction = std::bind(&PauseMenuComponent::functionBasicGraphicOptions, this, std::placeholders::_1);
+	GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(interm), helperFunction);
+
+	std::string back = j["basicBackButton"];
+	yBasicBack = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(back).getCenterPointYAbsolute();
+	xBasicBack = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(back).getCenterPointYAbsolute();
+
+	//Assign function
+
+	auto helperFunction1 = std::bind(&PauseMenuComponent::functionBasicBack, this, std::placeholders::_1);
+	GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(back), helperFunction1);
+
+	//////////////////////////////////////////////////////////////
+	//Graphic Options Stuff
+
+	std::vector<std::string> vec3 = j["graphicOptionDownButtons"];
+
+	float y;
+	count = 0;
+
+	for (std::string name : vec3)
+	{
+		float x = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointXAbsolute();
+			
+		if (count == 0)
+			y = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointYAbsolute();
+
+		positionsXBotButtonsGraphic.push_back(x);
+
+		//Asignacion de funciones
+
+		switch (count)
+		{
+		case 0:
+		{
+			auto helperFunctionGraphicBot = std::bind(&PauseMenuComponent::functionGraphicApply, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionGraphicBot);
+		}
+		break;
+		case 1:
+		{
+			auto helperFunctionGraphicBot = std::bind(&PauseMenuComponent::functionGraphicRevert, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionGraphicBot);
+		}
+		break;
+		case 2:
+		{
+			auto helperFunctionGraphicBot = std::bind(&PauseMenuComponent::functionGraphicBack, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionGraphicBot);
+		}
+		break;
+		}
+
+		count++;
+	}
+
+	yGraphicBot = y;
+
+	tamGraphicDown = count;
+
+	//Texts
+	std::vector<std::string> vecText1 = j["graphicOptionTexts"];
+
+	for (std::string name : vecText1)
+	{
+		graphicTexts.push_back(GUI_Manager::getInstance()->getStaticText(name));
+	}
+
+	std::vector<std::string> vec4 = j["graphicOptionTopButtons"];
+
+	count = 0;
+
+	for (std::string name : vec4)
+	{
+		if (count < 2)
+		{
+			float x = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointXAbsolute();
+			positionsXTopButtonsGraphic.push_back(x);
+		}
+
+		if (count % 2 == 0)
+		{
+			y = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointYAbsolute();
+
+			positionsYGraphic.push_back(y);
+		}
+
+		//Asignacion de funciones
+
+		switch (count)
+		{
+		case 0:
+		{
+			auto helperFunctionTopGraphic = std::bind(&PauseMenuComponent::functionGraphicVSync, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopGraphic);			
+		}
+		break;
+		case 1:
+		{
+			auto helperFunctionTopGraphic = std::bind(&PauseMenuComponent::functionGraphicVSync, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopGraphic);			
+		}
+		break;
+		case 2:
+		{
+			//Resolucion
+			auto helperFunctionTopGraphic = std::bind(&PauseMenuComponent::functionGraphicResolutionLess, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopGraphic);
+		}
+		break;
+		case 3:
+		{
+			//Resolucion
+			auto helperFunctionTopGraphic = std::bind(&PauseMenuComponent::functionGraphicResolutionMore, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopGraphic);
+		}
+		break;
+		case 4:
+		{
+			//Formato de pantalla 
+			auto helperFunctionTopGraphic = std::bind(&PauseMenuComponent::functionGraphicFormatLess, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopGraphic);
+		}
+		break;
+		case 5:
+		{
+			//Formato de pantalla 
+			auto helperFunctionTopGraphic = std::bind(&PauseMenuComponent::functionGraphicFormatMore, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopGraphic);
+		}
+		break;
+		case 6:
+		{
+			auto helperFunctionTopGraphic = std::bind(&PauseMenuComponent::functionGraphicFullScreen, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopGraphic);
+		}
+		break;
+		case 7:
+		{
+			auto helperFunctionTopGraphic = std::bind(&PauseMenuComponent::functionGraphicFullScreen, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopGraphic);
+		}
+		break;
+		case 8:
+		{
+			//Configuraciones predefinidas
+		}
+		break;
+		case 9:
+		{
+			//Configuraciones predefinidas
+		}
+		break;
+		}
+
+		count++;
+	}
+
+	tamGraphicTop = count / 2;
+		
+	std::string name = j["graphicOptionExtraButton"];
+	xExtraGraphic = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointXAbsolute();
+	yExtraGraphic = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointYAbsolute();
+
+	auto helperFunction2 = std::bind(&PauseMenuComponent::functionGraphicAdvancedOptions, this, std::placeholders::_1);
+	GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction2);
+
+	//////////////////////////////////////////////////////////////
+	//Advanced Graphic Options Stuff
+
+	std::vector<std::string> vec5 = j["advancedGraphicOptionDownButtons"];
+
+	count = 0;
+
+	for (std::string name : vec5)
+	{
+		float x = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointXAbsolute();
+
+		if (count == 0)
+			y = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointYAbsolute();
+
+		positionsXBotButtonsAdvanced.push_back(x);
+
+		//Asignacion de funciones
+
+		switch (count)
+		{
+		case 0:
+		{
+			auto helperFunctionAdvancedBot = std::bind(&PauseMenuComponent::functionAdvancedApply, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionAdvancedBot);
+		}
+		break;
+		case 1:
+		{
+			auto helperFunctionAdvancedBot = std::bind(&PauseMenuComponent::functionAdvancedRevert, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionAdvancedBot);
+		}
+		break;
+		case 2:
+		{
+			auto helperFunctionAdvancedBot = std::bind(&PauseMenuComponent::functionAdvancedBack, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionAdvancedBot);
+		}
+		break;
+		}
+
+		count++;
+	}
+
+	yAdvancedBot = y;
+
+	tamAdvancedDown = count;
+
+	//Texts
+
+	std::vector<std::string> vecText2 = j["advancedOptionTexts"];
+
+	for (std::string name : vecText2)
+	{
+		advancedTexts.push_back(GUI_Manager::getInstance()->getStaticText(name));
+	}
+
+	std::vector<std::string> vec6 = j["advancedGraphicOptionTopButtons"];
+
+	count = 0;
+
+	for (std::string name : vec6) //Faltan funciones de los botones
+	{
+		if (count < 2)
+		{
+			float x = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointXAbsolute();
+			positionsXTopButtonsAdvanced.push_back(x);
+		}
+
+		if (count % 2 == 0)
+		{
+			y = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointYAbsolute();
+
+			positionsYAdvanced.push_back(y);
+		}
+
+		//Asignacion de funciones
+
+		switch (count)
+		{
+		case 0:
+		{
+
+		}
+		break;
+		case 1:
+		{
+
+		}
+		break;
+		case 2:
+		{
+
+		}
+		break;
+		case 3:
+		{
+
+		}
+		break;
+		case 4:
+		{
+
+		}
+		break;
+		case 5:
+		{
+
+		}
+		break;
+		case 6:
+		{
+
+		}
+		break;
+		case 7:
+		{
+
+		}
+		break;
+		case 8:
+		{
+			auto helperFunctionTopAdvanced = std::bind(&PauseMenuComponent::functionAdvancedShadowsLess, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopAdvanced);
+		}
+		break;
+		case 9:
+		{
+			auto helperFunctionTopAdvanced = std::bind(&PauseMenuComponent::functionAdvancedShadowsMore, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopAdvanced);
+		}
+		break;
+		case 10:
+		{
+			auto helperFunctionTopAdvanced = std::bind(&PauseMenuComponent::functionAdvancedGamma, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopAdvanced);
+		}
+		break;
+		case 11:
+		{
+			auto helperFunctionTopAdvanced = std::bind(&PauseMenuComponent::functionAdvancedGamma, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopAdvanced);
+		}
+		break;
+		case 12:
+		{
+			auto helperFunctionTopAdvanced = std::bind(&PauseMenuComponent::functionAdvancedFSAALess, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopAdvanced);
+		}
+		break;
+		case 13:
+		{
+			auto helperFunctionTopAdvanced = std::bind(&PauseMenuComponent::functionAdvancedFSAAMore, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopAdvanced);
+		}
+		break;
+		}
+
+		count++;
+	}
+
+	tamAdvancedTop = count / 2;
+
+	//////////////////////////////////////////////////////////////
+
+	std::string interm2 = j["Level"];
+	level = interm2;
+
+	std::string interm3 = j["MainMenu"];
+	mainMenu = interm3;
+
+	delay = j["delay"];
+	delayPause = j["delayPause"];
+
+	currenPos = 0;
+	layoutLayer = 0;
+
+	//Registrar listeners
+
+	EventManager::getInstance()->RegisterListener(this, "RESET_GRAPHIC_INFO");
+	EventManager::getInstance()->RegisterListener(this, "RESET_ADVANCED_GRAPHIC_INFO");
+
+	//Cosas del motor
+
+	currentTime = MotorCasaPaco::getInstance()->getTime();
+
+	if (MotorCasaPaco::getInstance()->getFullScreen())
+	{
+		GUI_Manager::getInstance()->changeText(graphicTexts[1], "Si");
+	}
+	else
+	{
+		GUI_Manager::getInstance()->changeText(graphicTexts[1], "No");
+	}
+
+
+	if (MotorCasaPaco::getInstance()->getVSync())
+	{
+		GUI_Manager::getInstance()->changeText(graphicTexts[4], "Si");
+	}
+	else
+	{
+		GUI_Manager::getInstance()->changeText(graphicTexts[4], "No");
+	}
+
+	currentFormat = MotorCasaPaco::getInstance()->getScreenProportion();
+	currentRes = MotorCasaPaco::getInstance()->getResolution();
+	ForResPosition = getCurrentPosForRes(currentFormat, currentRes);
+	GUI_Manager::getInstance()->changeText(graphicTexts[3], currentRes);
+	GUI_Manager::getInstance()->changeText(graphicTexts[2], currentFormat);
+
+	shadowsPos = getShadowsPosition(MotorCasaPaco::getInstance()->getShadows());
+	GUI_Manager::getInstance()->changeText(advancedTexts[2], MotorCasaPaco::getInstance()->getShadows());
+
+	if (MotorCasaPaco::getInstance()->getGamma())
+	{
+		GUI_Manager::getInstance()->changeText(advancedTexts[1], "Si");
+	}
+	else
+	{
+		GUI_Manager::getInstance()->changeText(advancedTexts[1], "No");
+	}
+
+	fsaaPos = getFSAAPosition(MotorCasaPaco::getInstance()->getFSAA());
+	GUI_Manager::getInstance()->changeText(advancedTexts[0], "X " + MotorCasaPaco::getInstance()->getFSAA());
+
+	MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(xPause, positionsYPause[currenPos]);
 }

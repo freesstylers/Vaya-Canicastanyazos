@@ -50,6 +50,8 @@ public:
 
 	void update() override;
 
+	bool optionsAssert(json& j);
+
 private:
 	//Delays
 	float delay;
