@@ -351,7 +351,7 @@
 		},
 		{
 			"name" : "camera",
-			"position" : [-280, 320, 0],
+			"position" : [-200, 350, 80],
 			"rotation" : [0, 0, 0], 
 			"scale" : [1, 1, 1],
 			"parent" : "cameraPivot",

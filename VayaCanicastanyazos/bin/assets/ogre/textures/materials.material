@@ -114,7 +114,7 @@ material sky
 			
             texture_unit 
             {
-                cubic_texture Skyboxpng_front5.png Skyboxpng_back6.png Skyboxpng_left2.png Skyboxpng_right1.png Skyboxpng_top3.png Skyboxpng_bottom4.png separateUV
+                cubic_texture space1_front5.png space1_back6.png space1_left2.png space1_right1.png space1_top3.png space1_bottom4.png separateUV
                 tex_address_mode wrap
             }
 		}

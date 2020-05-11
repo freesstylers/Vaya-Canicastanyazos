@@ -205,13 +205,13 @@
 		},
 		{
 			"name" : "cameraPivot",
-			"position" : [0, 30, 80],
+			"position" : [0, 60, 80],
 			"rotation" : [0, 0, 0], 
 			"scale" : [1, 1, 1]
 		},
 		{
 			"name" : "camera",
-			"position" : [0, 120, 160],
+			"position" : [0, 110, 160],
 			"rotation" : [0, 0, 0], 
 			"scale" : [1, 1, 1],
 			"parent" : "cameraPivot",
