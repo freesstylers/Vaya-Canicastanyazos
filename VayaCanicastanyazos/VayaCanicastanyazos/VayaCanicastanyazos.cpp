@@ -28,6 +28,7 @@
 #include "Components/DeathZoneComponent.h"
 #include "Components/GoalComponent.h"
 #include "Components/PauseMenuComponent.h"
+#include "Components/GameManager.h"
 
 MotorCasaPaco* motorCasaPaco;
 

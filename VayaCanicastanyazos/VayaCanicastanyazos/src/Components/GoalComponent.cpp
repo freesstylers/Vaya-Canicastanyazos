@@ -26,6 +26,7 @@ void GoalComponent::init(json& args) {
 
 void GoalComponent::OnCollision(Entity* ent) {
 	if (ent->getTag() == "marble") {
+		EventManager::getInstance()->EmitEvent("finNivel");
 		MotorCasaPaco::getInstance()->changeScene(scene);
 	}
 }
