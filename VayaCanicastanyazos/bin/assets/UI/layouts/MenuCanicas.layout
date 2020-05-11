@@ -22,17 +22,14 @@
         </Window>
         <Window type="GWEN/Button" name="LevelSelect" >
             <Property name="Area" value="{{0.3675,0},{0.375,0},{0.652656,0},{0.472222,0}}" />
-            <Property name="Font" value="shump-48" />
             <Property name="Text" value="ELEGIR NIVEL" />
         </Window>
         <Window type="GWEN/Button" name="Exit" >
             <Property name="Area" value="{{0.3675,0},{0.775,0},{0.652656,0},{0.872222,0}}" />
-            <Property name="Font" value="shump-48" />
             <Property name="Text" value="SALIR" />
         </Window>
         <Window type="GWEN/Button" name="Settings" >
             <Property name="Area" value="{{0.3675,0},{0.575,0},{0.652656,0},{0.672222,0}}" />
-            <Property name="Font" value="shump-48" />
             <Property name="Text" value="OPCIONES" />
         </Window>
     </Window>

@@ -46,10 +46,11 @@
             <Property name="RiseOnClickEnabled" value="false" />
         </Window>
         <Window type="GWEN/StaticText" name="Text_Option_1" >
-            <Property name="Area" value="{{0.189844,0},{0.179167,0},{0.417188,0},{0.243056,0}}" />
+            <Property name="Area" value="{{0.189844,-175},{0.179167,0},{0.417188,163},{0.243056,0}}" />
             <Property name="Text" value="FILTRO FSAA" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="FrameEnabled" value="false" />
+            <Property name="HorzFormatting" value="CentreAligned" />
             <Property name="BackgroundEnabled" value="false" />
             <Property name="RiseOnClickEnabled" value="false" />
             <AutoWindow namePath="__auto_hscrollbar__" >
@@ -65,10 +66,11 @@
             </AutoWindow>
         </Window>
         <Window type="GWEN/StaticText" name="Text_Option_2" >
-            <Property name="Area" value="{{0.122656,0},{0.269444,0},{0.48125,0},{0.344444,0}}" />
+            <Property name="Area" value="{{0.122656,-88},{0.269444,0},{0.48125,82},{0.344444,0}}" />
             <Property name="Text" value="Corrección gamma" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="FrameEnabled" value="false" />
+            <Property name="HorzFormatting" value="CentreAligned" />
             <Property name="BackgroundEnabled" value="false" />
             <Property name="RiseOnClickEnabled" value="false" />
             <AutoWindow namePath="__auto_hscrollbar__" >
@@ -84,10 +86,11 @@
             </AutoWindow>
         </Window>
         <Window type="GWEN/StaticText" name="Text_Option_3" >
-            <Property name="Area" value="{{0.228125,0},{0.366667,0},{0.401563,0},{0.448611,0}}" />
+            <Property name="Area" value="{{0.228125,-223},{0.366667,0},{0.401563,183},{0.448611,-6}}" />
             <Property name="Text" value="Sombras" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="FrameEnabled" value="false" />
+            <Property name="HorzFormatting" value="CentreAligned" />
             <Property name="BackgroundEnabled" value="false" />
             <Property name="RiseOnClickEnabled" value="false" />
             <AutoWindow namePath="__auto_hscrollbar__" >
@@ -103,10 +106,11 @@
             </AutoWindow>
         </Window>
         <Window type="GWEN/StaticText" name="Text_Option_4" >
-            <Property name="Area" value="{{0.0898438,0},{0.466667,0},{0.514063,0},{0.541667,0}}" />
+            <Property name="Area" value="{{0.0898438,-47},{0.466667,0},{0.514063,40},{0.541667,-5}}" />
             <Property name="Text" value="Distancia de dibujado" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="FrameEnabled" value="false" />
+            <Property name="HorzFormatting" value="CentreAligned" />
             <Property name="BackgroundEnabled" value="false" />
             <Property name="RiseOnClickEnabled" value="false" />
             <AutoWindow namePath="__auto_hscrollbar__" >
@@ -251,6 +255,7 @@
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="TextColours" value="tl:FFFFFFFF tr:FFFFFFFF bl:FFFFFFFF br:FFFFFFFF" />
             <Property name="FrameEnabled" value="false" />
+            <Property name="HorzFormatting" value="CentreAligned" />
             <Property name="BackgroundEnabled" value="false" />
             <Property name="RiseOnClickEnabled" value="false" />
             <AutoWindow namePath="__auto_hscrollbar__" >
@@ -377,10 +382,11 @@
             </AutoWindow>
         </Window>
         <Window type="GWEN/StaticText" name="Text_Option_5" >
-            <Property name="Area" value="{{0.220313,0},{0.565278,0},{0.410937,0},{0.640278,0}}" />
+            <Property name="Area" value="{{0.220313,-211},{0.565278,0},{0.410937,172},{0.640278,-5}}" />
             <Property name="Text" value="REFLEJOS" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="FrameEnabled" value="false" />
+            <Property name="HorzFormatting" value="CentreAligned" />
             <Property name="BackgroundEnabled" value="false" />
             <Property name="RiseOnClickEnabled" value="false" />
             <AutoWindow namePath="__auto_hscrollbar__" >
@@ -396,10 +402,11 @@
             </AutoWindow>
         </Window>
         <Window type="GWEN/StaticText" name="Text_Option_6" >
-            <Property name="Area" value="{{0.252344,0},{0.661111,0},{0.382813,0},{0.736111,0}}" />
+            <Property name="Area" value="{{0.252344,-255},{0.661111,0},{0.382813,210},{0.736111,-5}}" />
             <Property name="Text" value="FILTRO" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="FrameEnabled" value="false" />
+            <Property name="HorzFormatting" value="CentreAligned" />
             <Property name="BackgroundEnabled" value="false" />
             <Property name="RiseOnClickEnabled" value="false" />
             <AutoWindow namePath="__auto_hscrollbar__" >
@@ -415,10 +422,11 @@
             </AutoWindow>
         </Window>
         <Window type="GWEN/StaticText" name="Text_Option_7" >
-            <Property name="Area" value="{{0.194531,0},{0.756944,0},{0.445313,0},{0.831944,0}}" />
+            <Property name="Area" value="{{0.194531,-180},{0.756944,0},{0.445313,129},{0.831944,-2}}" />
             <Property name="Text" value="MOSTRAR FPS" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="FrameEnabled" value="false" />
+            <Property name="HorzFormatting" value="CentreAligned" />
             <Property name="BackgroundEnabled" value="false" />
             <Property name="RiseOnClickEnabled" value="false" />
             <AutoWindow namePath="__auto_hscrollbar__" >

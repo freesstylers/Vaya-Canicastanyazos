@@ -25,8 +25,9 @@ private:
 
 	int getCurrentPos(std::string currentFormat_, std::string currentRes_);
 
-	CEGUI::Window* ResText;
 	CEGUI::Window* ForText;
+	CEGUI::Window* ResText;
+	CEGUI::Window* graphicTexts;
 	std::string currentFormat;
 	std::string currentRes;
 	int currentPos;

@@ -339,11 +339,6 @@
                 </AutoWindow>
             </AutoWindow>
         </Window>
-        <Window type="GWEN/Button" name="Back" >
-            <Property name="Area" value="{{0.407813,0},{0.875,0},{0.595313,0},{0.969445,0}}" />
-            <Property name="Font" value="shump-48" />
-            <Property name="Text" value="ATRÁS" />
-        </Window>
         <Window type="GWEN/Button" name="GraphicOptions" >
             <Property name="Area" value="{{0.296876,0},{0.730556,0},{0.702345,0},{0.825001,0}}" />
             <Property name="Font" value="shump-48" />
@@ -378,6 +373,21 @@
         </Window>
         <Window type="VayaCanicastanhazos/RightArrow" name="RightArrow_5" >
             <Property name="Area" value="{{0.913281,0},{0.577778,0},{0.952344,0},{0.647222,0}}" />
+        </Window>
+        <Window type="GWEN/Button" name="Apply" >
+            <Property name="Area" value="{{0.109375,0},{0.873611,0},{0.296875,0},{0.968056,0}}" />
+            <Property name="Font" value="shump-48" />
+            <Property name="Text" value="Aplicar" />
+        </Window>
+        <Window type="GWEN/Button" name="Back" >
+            <Property name="Area" value="{{0.700781,0},{0.873611,0},{0.888281,0},{0.968056,0}}" />
+            <Property name="Font" value="shump-48" />
+            <Property name="Text" value="Atrás" />
+        </Window>
+        <Window type="GWEN/Button" name="Revert" >
+            <Property name="Area" value="{{0.407813,0},{0.875,0},{0.595313,0},{0.969445,0}}" />
+            <Property name="Font" value="shump-48" />
+            <Property name="Text" value="Revertir" />
         </Window>
     </Window>
 </GUILayout>
