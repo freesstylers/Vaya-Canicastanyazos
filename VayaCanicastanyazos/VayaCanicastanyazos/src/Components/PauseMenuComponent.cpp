@@ -147,6 +147,16 @@ bool PauseMenuComponent::functionBasicBack(const CEGUI::EventArgs& e)
 	return true;
 }
 
+bool PauseMenuComponent::functionBasicApply(const CEGUI::EventArgs& e)
+{
+	return true;
+}
+
+bool PauseMenuComponent::functionBasicRevert(const CEGUI::EventArgs& e)
+{
+	return true;
+}
+
 bool PauseMenuComponent::functionGraphicAdvancedOptions(const CEGUI::EventArgs& e)
 {
 	layoutLayer++;
@@ -619,6 +629,21 @@ void PauseMenuComponent::pausedUpdate()
 						MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsXTopButtonsBasic[currentXTopButtons], positionsYBasic[currentYTopButtons]);
 						currentTime = MotorCasaPaco::getInstance()->getTime();
 					}
+
+					else if (basicTopDown == 0)
+					{
+						if (currentPosDownButtons > 0)
+						{
+							currentPosDownButtons--;
+						}
+						else
+						{
+							currentPosDownButtons = 2;
+						}
+
+						MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsXBotButtonsGraphic[currentPosDownButtons], yGraphicBot);
+						currentTime = MotorCasaPaco::getInstance()->getTime();
+					}
 				}
 				else if (InputManager::getInstance()->GameControllerGetAxisMovement(GameControllerAxis::CONTROLLER_AXIS_LEFTX, true) > 0.7 || InputManager::getInstance()->GameControllerIsButtonDown(GameControllerButton::CONTROLLER_BUTTON_DPAD_RIGHT) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_D) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_RIGHT))
 				{
@@ -634,6 +659,21 @@ void PauseMenuComponent::pausedUpdate()
 						}
 
 						MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsXTopButtonsBasic[currentXTopButtons], positionsYBasic[currentYTopButtons]);
+						currentTime = MotorCasaPaco::getInstance()->getTime();
+					}
+
+					else if (basicTopDown == 0)
+					{
+						if (currentPosDownButtons < 2)
+						{
+							currentPosDownButtons++;
+						}
+						else
+						{
+							currentPosDownButtons = 0;
+						}
+
+						MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsXBotButtonsGraphic[currentPosDownButtons], yGraphicBot);
 						currentTime = MotorCasaPaco::getInstance()->getTime();
 					}
 				}
@@ -661,7 +701,7 @@ void PauseMenuComponent::pausedUpdate()
 					{
 						basicTopDown--;
 						currentPosDownButtons = 1;
-						MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(xBasicBack, yBasicBack);
+						MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsXBotButtonsBasic[1], yBasicBot);
 						currentTime = MotorCasaPaco::getInstance()->getTime();
 					}
 					else if (basicTopDown == 0)
@@ -687,7 +727,7 @@ void PauseMenuComponent::pausedUpdate()
 						{
 							basicTopDown = 0;
 							currentPosDownButtons = 1;
-							MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(xBasicBack, yBasicBack);
+							MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsXBotButtonsBasic[1], yBasicBot);
 							currentTime = MotorCasaPaco::getInstance()->getTime();
 						}
 					}
@@ -999,7 +1039,7 @@ void PauseMenuComponent::pausedUpdate()
 
 bool PauseMenuComponent::optionsAssert(json& j)
 {
-	return (!j["basicOptionButtons"].is_null() && j["basicOptionButtons"].is_array() && !j["basicExtraButton"].is_null() && !j["basicBackButton"].is_null()
+	return (!j["basicOptionButtons"].is_null() && j["basicOptionButtons"].is_array() && !j["basicExtraButton"].is_null() && !j["basicOptionBotButtons"].is_null() && j["basicOptionBotButtons"].is_array()
 		&& !j["graphicOptionDownButtons"].is_null() && j["graphicOptionDownButtons"].is_array()
 		&& !j["graphicOptionTopButtons"].is_null() && j["graphicOptionTopButtons"].is_array() && !j["graphicOptionExtraButton"].is_null()
 		&& !j["graphicOptionTexts"].is_null() && j["graphicOptionTexts"].is_array()
@@ -1264,21 +1304,53 @@ void PauseMenuComponent::init(json& j)
 	auto helperFunction = std::bind(&PauseMenuComponent::functionBasicGraphicOptions, this, std::placeholders::_1);
 	GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(interm), helperFunction);
 
-	std::string back = j["basicBackButton"];
-	yBasicBack = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(back).getCenterPointYAbsolute();
-	xBasicBack = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(back).getCenterPointYAbsolute();
+	std::vector<std::string> vec7 = j["basicOptionBotButtons"];
 
-	//Assign function
+	float y;
+	count = 0;
 
-	auto helperFunction1 = std::bind(&PauseMenuComponent::functionBasicBack, this, std::placeholders::_1);
-	GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(back), helperFunction1);
+	for (std::string name : vec7)
+	{
+		float x = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointXAbsolute();
 
+		if (count == 0)
+			y = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointYAbsolute();
+
+		positionsXBotButtonsBasic.push_back(x);
+
+		//Asignacion de funciones
+
+		switch (count)
+		{
+		case 0:
+		{
+			auto helperFunctionGraphicBot = std::bind(&PauseMenuComponent::functionBasicApply, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionGraphicBot);
+		}
+		break;
+		case 1:
+		{
+			auto helperFunctionGraphicBot = std::bind(&PauseMenuComponent::functionBasicRevert, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionGraphicBot);
+		}
+		break;
+		case 2:
+		{
+			auto helperFunctionGraphicBot = std::bind(&PauseMenuComponent::functionBasicBack, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionGraphicBot);
+		}
+		break;
+		}
+		count++;
+	}
+
+	yBasicBot = y;
+
+	tamBasicBot = count;
 	//////////////////////////////////////////////////////////////
 	//Graphic Options Stuff
 
 	std::vector<std::string> vec3 = j["graphicOptionDownButtons"];
-
-	float y;
 	count = 0;
 
 	for (std::string name : vec3)

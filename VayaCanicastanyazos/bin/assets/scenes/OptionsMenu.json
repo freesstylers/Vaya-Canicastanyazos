@@ -63,7 +63,12 @@
 					 "BasicOptions/RightArrow_1"
 					],
 					"basicExtraButton" : "BasicOptions/GraphicOptions",
-					"basicBackButton" : "BasicOptions/Back",
+					"basicOptionBotButtons" :
+					[
+					 "BasicOptions/Apply",
+					 "BasicOptions/Revert",
+					 "BasicOptions/Back"
+					],
 					"graphicOptionDownButtons" :
 					[
 					 "GraphicOptions/Apply",

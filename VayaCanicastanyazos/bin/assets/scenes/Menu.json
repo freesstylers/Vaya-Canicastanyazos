@@ -41,6 +41,16 @@
 					"type": "ChangeSceneButtonComponent",
 					"buttonName" : "MainMenu/LevelSelect",
 					"sceneName" : "LevelSelection"
+				},
+				{
+					"type": "MainMenuInputComponent",
+					"buttons" :
+					[
+					 "MainMenu/LevelSelect",
+					 "MainMenu/Settings",
+					 "MainMenu/Exit"
+					],
+					"delay" : 0.2
 				}
 			]
 		}, 

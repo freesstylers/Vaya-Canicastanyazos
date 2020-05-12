@@ -23,6 +23,8 @@ public:
 	//Basic Options
 	bool functionBasicGraphicOptions(const CEGUI::EventArgs& e);
 	bool functionBasicBack(const CEGUI::EventArgs& e);
+	bool functionBasicApply(const CEGUI::EventArgs& e);
+	bool functionBasicRevert(const CEGUI::EventArgs& e);
 
 
 	//Graphic Options
@@ -78,9 +80,10 @@ private:
 	std::vector<float> positionsXTopButtonsBasic;
 	float yBasicExtra;
 	float xBasicExtra;	
-	float yBasicBack;
-	float xBasicBack;
+	float yBasicBot;
+	float xBasicBot;
 	int tamBasicTop;
+	int tamBasicBot;
 	int basicTopDown = 2;
 
 	//Graphic
