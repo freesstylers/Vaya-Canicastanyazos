@@ -99,13 +99,15 @@ void GameManager::readData()
 		while (!data.eof())
 		{
 			std::string name;
+			std::string number;
 			int stars;
 			float time;
-			while (data >> name >> stars >> time)
+			while (data >> name >> number >> stars >> time)
 			{
 				LevelInfo lev;
 				lev.stars = stars;
 				lev.time = time;
+				name += " " + number;
 				levels.insert(std::pair<std::string, LevelInfo>(name, lev));
 			}
 		}

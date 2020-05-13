@@ -1,5 +1,5 @@
 {
-	"name" : "nivel5",
+	"name" : "nivel 5",
 	"entities" :
 	[
 		
@@ -333,7 +333,7 @@
 				},
 				{
 					"type" : "GoalComponent",
-					"scene" : "nivel6"
+					"scene" : "nivel 6"
 				}
 			]
 		},
