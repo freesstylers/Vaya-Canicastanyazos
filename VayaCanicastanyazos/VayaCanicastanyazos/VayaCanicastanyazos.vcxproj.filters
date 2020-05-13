@@ -57,6 +57,9 @@
     <ClCompile Include="src\Components\MainMenuInputComponent.cpp">
       <Filter>Source Files\Components</Filter>
     </ClCompile>
+    <ClCompile Include="src\Components\LevelSelectionComponent.cpp">
+      <Filter>Source Files\Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Components\SimpleMovement.h">
@@ -86,13 +89,16 @@
     <ClInclude Include="src\Components\PauseMenuComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Components\OptionsMenuComponent.h">
-      <Filter>Source Files\Components</Filter>
-    </ClInclude>
     <ClInclude Include="src\Components\ChangeSceneButtonComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Components\MainMenuInputComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Components\OptionsMenuComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Components\LevelSelectionComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

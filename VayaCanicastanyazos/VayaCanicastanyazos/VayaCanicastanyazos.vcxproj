@@ -183,6 +183,7 @@
     <ClCompile Include="src\Components\ExitButtonComponent.cpp" />
     <ClCompile Include="src\Components\GoalComponent.cpp" />
     <ClCompile Include="src\Components\GameManager.cpp" />
+    <ClCompile Include="src\Components\LevelSelectionComponent.cpp" />
     <ClCompile Include="src\Components\MainMenuInputComponent.cpp" />
     <ClCompile Include="src\Components\OptionsMenuComponent.cpp" />
     <ClCompile Include="src\Components\PauseMenuComponent.cpp" />
@@ -203,6 +204,7 @@
     <ClInclude Include="src\Components\ExitButtonComponent.h" />
     <ClInclude Include="src\Components\GoalComponent.h" />
     <ClInclude Include="src\Components\GameManager.h" />
+    <ClInclude Include="src\Components\LevelSelectionComponent.h" />
     <ClInclude Include="src\Components\MainMenuInputComponent.h" />
     <ClInclude Include="src\Components\OptionsMenuComponent.h" />
     <ClInclude Include="src\Components\PauseMenuComponent.h" />

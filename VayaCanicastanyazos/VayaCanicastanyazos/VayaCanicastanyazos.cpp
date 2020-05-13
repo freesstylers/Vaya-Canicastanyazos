@@ -19,6 +19,7 @@
 #include "Components/PauseMenuComponent.h"
 #include "Components/OptionsMenuComponent.h"
 #include "Components/MainMenuInputComponent.h"
+#include "Components/LevelSelectionComponent.h"
 
 MotorCasaPaco* motorCasaPaco;
 
@@ -122,6 +123,15 @@ public:
 	};
 };
 
+class LevelSelectionComponentFactory : public BaseFactory
+{
+public:
+	Component* createComponent(json& args) override
+	{
+		return new LevelSelectionComponent(args);
+	};
+};
+
 //--------------------------------------------------------------------------------
 
 
@@ -158,25 +168,13 @@ WinMain(HINSTANCE hinstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdSh
 	JsonFactoryParser::getInstance()->addFactory("CameraController", new CameraControllerFactory());
 	JsonFactoryParser::getInstance()->addFactory("ChangeSceneButtonComponent", new ChangeSceneButtonComponentFactory());
 	JsonFactoryParser::getInstance()->addFactory("ExitButtonComponent", new ExitButtonComponentFactory());
-	/*
-	JsonFactoryParser::getInstance()->addFactory("ChangeFullScreenComponent", new ChangeFullScreenComponentFactory());
-	JsonFactoryParser::getInstance()->addFactory("FormatResolutionChangeComponent", new FormatResolutionChangeComponentFactory());
-	JsonFactoryParser::getInstance()->addFactory("ApplyGraphicChangesComponent", new ApplyGraphicChangesComponentFactory());
-	JsonFactoryParser::getInstance()->addFactory("ChangeVSyncComponent", new ChangeVSyncComponentFactory());
-	JsonFactoryParser::getInstance()->addFactory("FSAAChangeComponent", new FSAAChangeComponentFactory());
-	JsonFactoryParser::getInstance()->addFactory("ShadowsChangeComponent", new ShadowsChangeComponentFactory());
-	JsonFactoryParser::getInstance()->addFactory("ApplyAdvancedGraphicChangesComponent", new ApplyAdvancedGraphicChangesComponentFactory());
-	JsonFactoryParser::getInstance()->addFactory("RevertGraphicChangesComponent", new RevertGraphicChangesComponentFactory());
-	JsonFactoryParser::getInstance()->addFactory("RevertAdvancedGraphicChangesComponent", new RevertAdvancedGraphicChangesComponentFactory());
-	JsonFactoryParser::getInstance()->addFactory("ChangeGammaComponent", new ChangeGammaComponentFactory());
-	JsonFactoryParser::getInstance()->addFactory("ChangeGraphicSceneComponent", new ChangeGraphicSceneComponentFactory());
-	*/
 	JsonFactoryParser::getInstance()->addFactory("DeathZoneComponent", new DeathZoneComponentFactory());
 	JsonFactoryParser::getInstance()->addFactory("GoalComponent", new GoalComponentFactory());
 	JsonFactoryParser::getInstance()->addFactory("StarCollision", new StarCollisionFactory());
 	JsonFactoryParser::getInstance()->addFactory("PauseMenuComponent", new PauseMenuComponentFactory());
 	JsonFactoryParser::getInstance()->addFactory("OptionsMenuComponent", new OptionsMenuComponentFactory());
 	JsonFactoryParser::getInstance()->addFactory("MainMenuInputComponent", new MainMenuInputComponentFactory());
+	JsonFactoryParser::getInstance()->addFactory("LevelSelectionComponent", new LevelSelectionComponentFactory());
 
 	motorCasaPaco->getGUI_Manager()->getInstance()->loadScheme("VayaCanicastanhazos.scheme");
 	motorCasaPaco->getGUI_Manager()->getInstance()->setMouseCursor("VayaCanicastanhazos/Mouse_Arrow");
