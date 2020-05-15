@@ -204,7 +204,8 @@
 				},
 				{
 					"type" : "GoalComponent",
-					"scene" : "nivel 2"
+					"nextLevel" : "nivel 2",
+					"levelSelection" : "LevelSelection"
 				}
 			]
 		},
@@ -272,6 +273,11 @@
 		{
 			"type" : "layout", 
 			"name" : "AdvancedOptionsMenu.layout",
+			"visible": false
+		},
+		{
+			"type" : "layout", 
+			"name" : "levelCompleted.layout",
 			"visible": false
 		},
 		{
