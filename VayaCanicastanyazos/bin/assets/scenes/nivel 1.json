@@ -307,6 +307,14 @@
 					 "BasicOptions/LeftArrow_1",
 					 "BasicOptions/RightArrow_1"
 					],
+					"basicOptionTexts":
+					[
+					 "BasicOptions/Text_Selector_1",
+					 "BasicOptions/Text_Selector_2",
+					 "BasicOptions/Text_Selector_3",
+					 "BasicOptions/Text_Selector_4",
+					 "BasicOptions/Text_Selector_5"
+					],
 					"basicExtraButton" : "BasicOptions/GraphicOptions",
 					"basicOptionBotButtons" :
 					[
