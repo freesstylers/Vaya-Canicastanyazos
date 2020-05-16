@@ -2,6 +2,7 @@
 #ifndef GAMEMANAGER_H
 #define GAMEMANAGER
 #include "Entity/Component.h"
+
 struct LevelInfo
 {
 	int stars;
@@ -15,6 +16,10 @@ public:
 	static GameManager* getInstance();
 	static void clean();
 
+	void pause();
+	bool isPaused();
+	virtual void update() override;
+
 	int getStars();
 	void addStars(int s);
 	void resetStars();
@@ -27,7 +32,9 @@ private:
 	std::map <std::string, LevelInfo> levels;
 	int stars_ = 0;
 	float time = 0;
-
+	float levelTime = 0;
+	bool paused_ = false;
+	bool inLevel_ = false;
 };
 
 #endif // !GAMEMANAGER_H

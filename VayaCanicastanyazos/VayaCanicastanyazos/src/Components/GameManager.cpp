@@ -3,6 +3,8 @@
 #include <sstream>
 #include <fstream>
 #include "Scene/SceneManager.h"
+#include "GUI/GUI_Manager.h"
+
 GameManager* GameManager::instance = 0;
 
 GameManager::~GameManager()
@@ -11,6 +13,8 @@ GameManager::~GameManager()
 }
 
 GameManager::GameManager() : Component("GameManager") {
+	EventManager::getInstance()->RegisterListener(this, "inicioNivel");
+	EventManager::getInstance()->RegisterListener(this, "estrellaCogida");
 	EventManager::getInstance()->RegisterListener(this, "finNivel");
 	EventManager::getInstance()->RegisterListener(this, "changeScene");
 	readData();
@@ -31,13 +35,59 @@ void GameManager::clean()
 	delete instance;
 }
 
+void GameManager::pause()
+{
+	MotorCasaPaco::getInstance()->pause();
+	paused_ = !paused_;
+
+	//Mensaje?
+}
+
+bool GameManager::isPaused()
+{
+	return paused_;
+}
+
+void GameManager::update()
+{
+	if (inLevel_) //Está en nivel
+	{
+		std::cout << "ee\n";
+		//Actualizar tiempo
+	}
+}
+
 bool GameManager::ReceiveEvent(Event& event)
 {
+	if (event.type == "inicioNivel")
+	{
+		inLevel_ = true;
+	}
 	if (event.type == "finNivel")
+	{	
+		inLevel_ = false;
 		saveData(SceneManager::getInstance()->getCurrentScene()->getName());
+	}
 	if (event.type == "changeScene")
 	{
 		time = MotorCasaPaco::getInstance()->getTime();
+	}
+	if (event.type == "estrellaCogida")
+	{
+		int stars = GameManager::getInstance()->getStars();
+
+		switch (stars)
+		{
+		case 1:
+			GUI_Manager::getInstance()->changeImage("Ingame/Colleccionable_1", "VayaCanicastanhazos/Star_Yes");
+			break;
+		case 2:
+			GUI_Manager::getInstance()->changeImage("Ingame/Colleccionable_2", "VayaCanicastanhazos/Star_Yes");
+			break;
+		case 3:
+			GUI_Manager::getInstance()->changeImage("Ingame/Colleccionable_3", "VayaCanicastanhazos/Star_Yes");
+			break;
+		}
 	}
 	return true;
 }

@@ -43,6 +43,7 @@ private:
 
 	std::vector<std::string> levels;
 	std::vector<CEGUI::Window*> texts;
+	std::vector<CEGUI::Window*> records;
 	void assignFunctions(int num, std::string name);
 	void updateTexts(int num);
 

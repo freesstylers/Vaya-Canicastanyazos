@@ -53,6 +53,17 @@
 						"LevelSelection/Boton_Nivel_7",
 						"LevelSelection/Boton_Nivel_8"
 					],
+					"records":
+					[
+						"LevelSelection/Info_1_Text",
+						"LevelSelection/Info_2_Text",
+						"LevelSelection/Info_3_Text",
+						"LevelSelection/Info_4_Text",
+						"LevelSelection/Info_5_Text",
+						"LevelSelection/Info_6_Text",
+						"LevelSelection/Info_7_Text",
+						"LevelSelection/Info_8_Text"
+					],
 					"extraButton" : "LevelSelection/Atras",
 					"leftArrow": "LevelSelection/LeftArrow",
 					"rightArrow": "LevelSelection/RightArrow",

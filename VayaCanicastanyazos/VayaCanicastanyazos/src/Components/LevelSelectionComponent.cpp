@@ -2,6 +2,7 @@
 #include "MotorCasaPaco.h"
 #include "Audio/AudioManager.h"
 #include "Input/InputManager.h"
+#include "Components/GameManager.h"
 
 LevelSelectionComponent::LevelSelectionComponent(json& args): Component(args)
 {
@@ -18,6 +19,7 @@ bool LevelSelectionComponent::functionLoader1(const CEGUI::EventArgs& e)
 {
 	MotorCasaPaco::getInstance()->changeScene(levels[0]);
 	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	EventManager::getInstance()->EmitEvent("inicioNivel");
 	return true;
 }
 
@@ -314,6 +316,8 @@ void LevelSelectionComponent::updateTexts(int num)
 		GUI_Manager::getInstance()->changeText(w, levels[i]);
 		i++;
 	}
+
+	//records stuff
 }
 
 void LevelSelectionComponent::init(json& j)
@@ -364,6 +368,13 @@ void LevelSelectionComponent::init(json& j)
 			texts.push_back(MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getWindowElement());
 
 			count++;
+		}
+
+		std::vector<std::string> vec3 = j["records"];
+
+		for (std::string name : vec3) {
+
+			records.push_back(GUI_Manager::getInstance()->getRoot()->getChild(name).getWindowElement());
 		}
 
 		xLeftArrow = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(j["leftArrow"]).getCenterPointXAbsolute();

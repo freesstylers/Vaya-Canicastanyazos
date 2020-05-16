@@ -2,6 +2,7 @@
 #include "MotorCasaPaco.h"
 #include "Input/InputManager.h"
 #include "Audio/AudioManager.h"
+#include "Components/GameManager.h"
 
 PauseMenuComponent::PauseMenuComponent(json& args): Component(args)
 {
@@ -85,7 +86,7 @@ bool PauseMenuComponent::ReceiveEvent(Event& event)
 
 bool PauseMenuComponent::functionPauseReturn(const CEGUI::EventArgs& e)
 {
-	MotorCasaPaco::getInstance()->pause();
+	GameManager::getInstance()->pause();
 	MotorCasaPaco::getInstance()->getGUI_Manager()->setLayoutVisible(1, false); //El orden de la UI es Ingame/Menu de Pausa/Opciones/Opciones Graficas/Opciones Avanzadas...
 	return true;
 }
@@ -93,7 +94,7 @@ bool PauseMenuComponent::functionPauseReturn(const CEGUI::EventArgs& e)
 bool PauseMenuComponent::functionPauseReset(const CEGUI::EventArgs& e)
 {
 	MotorCasaPaco::getInstance()->changeScene(level);
-	MotorCasaPaco::getInstance()->pause();
+	GameManager::getInstance()->pause();
 	MotorCasaPaco::getInstance()->getGUI_Manager()->setLayoutVisible(1, false); //El orden de la UI es Ingame/Menu de Pausa/Opciones/Opciones Graficas/Opciones Avanzadas...
 	EventManager::getInstance()->EmitEvent("inicioNivel");
 	return true;
@@ -114,14 +115,14 @@ bool PauseMenuComponent::functionPauseSettings(const CEGUI::EventArgs& e)
 bool PauseMenuComponent::functionPauseMainMenu(const CEGUI::EventArgs& e)
 {
 	MotorCasaPaco::getInstance()->changeScene(mainMenu);
-	MotorCasaPaco::getInstance()->pause();
+	GameManager::getInstance()->pause();
 	EventManager::getInstance()->EmitEvent("finNivel");
 	return true;
 }
 
 bool PauseMenuComponent::functionPauseExit(const CEGUI::EventArgs& e)
 {
-	MotorCasaPaco::getInstance()->pause();
+	GameManager::getInstance()->pause();
 	MotorCasaPaco::getInstance()->exit();
 	return true;
 }
@@ -575,7 +576,7 @@ void PauseMenuComponent::update()
 	{
 		if (InputManager::getInstance()->GameControllerIsButtonDown(GameControllerButton::CONTROLLER_BUTTON_START) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_ESCAPE))
 		{
-			MotorCasaPaco::getInstance()->pause();
+			GameManager::getInstance()->pause();
 
 			MotorCasaPaco::getInstance()->getGUI_Manager()->setLayoutVisible(1, true); //El orden de la UI es Ingame/Menu de Pausa/Opciones/Opciones Graficas/Opciones Avanzadas...
 
@@ -596,7 +597,7 @@ void PauseMenuComponent::pausedUpdate()
 				{
 					if (MotorCasaPaco::getInstance()->getTimeDifference(currentTime) > delayPause)
 					{
-						MotorCasaPaco::getInstance()->pause();
+						GameManager::getInstance()->pause();
 
 						MotorCasaPaco::getInstance()->getGUI_Manager()->setLayoutVisible(1, false); //El orden de la UI es Ingame/Menu de Pausa/Opciones/Opciones Graficas/Opciones Avanzadas...
 						
