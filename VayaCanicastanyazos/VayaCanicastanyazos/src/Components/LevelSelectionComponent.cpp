@@ -117,27 +117,127 @@ void LevelSelectionComponent::update()
 {
 	if (MotorCasaPaco::getInstance()->getTimeDifference(currentTime) > delay)
 	{
-		if (InputManager::getInstance()->GameControllerGetAxisMovement(GameControllerAxis::CONTROLLER_AXIS_LEFTY, true) < -0.7 || InputManager::getInstance()->GameControllerIsButtonDown(GameControllerButton::CONTROLLER_BUTTON_DPAD_DOWN) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_S) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_UP))
+		if (InputManager::getInstance()->GameControllerGetAxisMovement(GameControllerAxis::CONTROLLER_AXIS_LEFTX, true) < -0.7 || InputManager::getInstance()->GameControllerIsButtonDown(GameControllerButton::CONTROLLER_BUTTON_DPAD_LEFT) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_A) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_LEFT))
 		{
-			/*if (currenPos < (tam - 1))
-				currenPos++;
+			if (leftArrow)
+			{
+				leftArrow = false;
+				rightArrow = true;
+				MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(xRightArrow, yRightArrow);
+			}
+			else if (rightArrow)
+			{
+				rightArrow = false;
+				posX = positionsX.size() - 1;
+				posY = 0;
+				MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsX[posX], positionsY[posY]);
+			}
 			else
-				currenPos = 0;
+			{
+				if (posX == 0)
+				{
+					leftArrow = true;
+					MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(xLeftArrow, yLeftArrow);
+				}
+				else
+				{
+					posX--;
+					MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsX[posX], positionsY[posY]);
+				}
+			}
 
-			MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsX[currenPos], positionsY[currenPos]);
-			currentTime = MotorCasaPaco::getInstance()->getTime();*/
+			currentTime = MotorCasaPaco::getInstance()->getTime();
 		}
-		else if (InputManager::getInstance()->GameControllerGetAxisMovement(GameControllerAxis::CONTROLLER_AXIS_LEFTY, true) > 0.7 || InputManager::getInstance()->GameControllerIsButtonDown(GameControllerButton::CONTROLLER_BUTTON_DPAD_UP) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_W) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_DOWN))
+		else if (InputManager::getInstance()->GameControllerGetAxisMovement(GameControllerAxis::CONTROLLER_AXIS_LEFTX, true) > 0.7 || InputManager::getInstance()->GameControllerIsButtonDown(GameControllerButton::CONTROLLER_BUTTON_DPAD_RIGHT) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_D) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_RIGHT))
 		{
-			/*if (currenPos > 0)
-				currenPos--;
+			if (leftArrow)
+			{
+				leftArrow = false;
+				posX = 0;
+				posY = 0;
+				MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsX[posX], positionsY[posY]);
+			}
+			else if (rightArrow)
+			{
+				rightArrow = false;
+				leftArrow = true;
+				MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(xLeftArrow, yLeftArrow);
+			}
 			else
-				currenPos = tam - 1;
+			{
+				if (posX < positionsX.size() - 1)
+				{
+					posX++;
+					MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsX[posX], positionsY[posY]);
+				}
+				else
+				{
+					rightArrow = true;
+					MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(xRightArrow, yRightArrow);
+				}
+			}
 
-			MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsX[currenPos], positionsY[currenPos]);
-			currentTime = MotorCasaPaco::getInstance()->getTime();*/
+			currentTime = MotorCasaPaco::getInstance()->getTime();
+		}
+
+
+		if (InputManager::getInstance()->GameControllerGetAxisMovement(GameControllerAxis::CONTROLLER_AXIS_LEFTY, true) < -0.7 || InputManager::getInstance()->GameControllerIsButtonDown(GameControllerButton::CONTROLLER_BUTTON_DPAD_DOWN) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_S) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_DOWN))
+		{
+			if (!leftArrow && !rightArrow)
+			{
+				if (extra)
+				{
+					extra = false;
+					posY = 0;
+					MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsX[posX], positionsY[posY]);
+				}
+				else
+				{
+					if (posY == 1)
+					{
+						extra = true;
+						MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(xExtraButton, yExtraButton);	//Extra
+					}
+					else
+					{
+						posY = 1;
+						MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsX[posX], positionsY[posY]);
+					}
+				}
+			}
+
+			currentTime = MotorCasaPaco::getInstance()->getTime();
+		}
+
+		if (InputManager::getInstance()->GameControllerGetAxisMovement(GameControllerAxis::CONTROLLER_AXIS_LEFTY, true) > 0.7 || InputManager::getInstance()->GameControllerIsButtonDown(GameControllerButton::CONTROLLER_BUTTON_DPAD_UP) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_W) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_UP))
+		{
+			if (!leftArrow && !rightArrow)
+			{
+				if (extra)
+				{
+					extra = false;
+					posY = 1;
+					MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsX[posX], positionsY[posY]);
+				}
+				else
+				{
+					if (posY == 1)
+					{
+						posY = 0;
+						MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsX[posX], positionsY[posY]);
+					}
+					else
+					{
+						extra = true;
+						MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(xExtraButton, yExtraButton);	//Extra
+					}
+				}
+			}
+
+			currentTime = MotorCasaPaco::getInstance()->getTime();
 		}
 	}
+
 
 		//Boton A
 		if (MotorCasaPaco::getInstance()->getInputManager()->GameControllerIsButtonDown(GameControllerButton::CONTROLLER_BUTTON_A) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_SPACE))
@@ -218,7 +318,7 @@ void LevelSelectionComponent::updateTexts(int num)
 
 void LevelSelectionComponent::init(json& j)
 {
-	//if (!j["topButtons"].is_null() && j["topButtons"].is_array() && !j["botButtons"].is_null() && j["botButtons"].is_array() && !j["leftArrow"].is_null() && !j["rightArrow"].is_null() && !j["delay"].is_null())
+	if (!j["topButtons"].is_null() && j["topButtons"].is_array() && !j["botButtons"].is_null() && j["botButtons"].is_array() && !j["leftArrow"].is_null() && !j["rightArrow"].is_null() && !j["delay"].is_null() && !j["extraButton"].is_null())
 	{
 		float x;
 		float y;
@@ -230,11 +330,15 @@ void LevelSelectionComponent::init(json& j)
 		for (std::string name : vec) {
 
 			x = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointXAbsolute();
-			y = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointYAbsolute();
 			
-			positionsXTop.push_back(x);
-			positionsYTop.push_back(y);
+			positionsX.push_back(x);
 
+			if (count == 0)
+			{
+				y = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointYAbsolute();
+
+				positionsY.push_back(y);
+			}
 			assignFunctions(count, name);
 
 			texts.push_back(MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getWindowElement());
@@ -244,13 +348,16 @@ void LevelSelectionComponent::init(json& j)
 
 		std::vector<std::string> vec2 = j["botButtons"];
 
+		count = 0;
+
 		for (std::string name : vec2) {
 
-			x = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointXAbsolute();
-			y = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointYAbsolute();
+			if (count == 0)
+			{
+				y = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointYAbsolute();
 
-			positionsXBot.push_back(x);
-			positionsYBot.push_back(y);
+				positionsY.push_back(y);
+			}
 
 			assignFunctions(count, name);
 
@@ -259,19 +366,22 @@ void LevelSelectionComponent::init(json& j)
 			count++;
 		}
 
-
-
 		xLeftArrow = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(j["leftArrow"]).getCenterPointXAbsolute();
-		yLeftArrow = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(j["leftArrow"]).getCenterPointXAbsolute();
+		yLeftArrow = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(j["leftArrow"]).getCenterPointYAbsolute();
 
 		auto helperFunction = std::bind(&LevelSelectionComponent::functionLeftArrow, this, std::placeholders::_1);
 		GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(j["leftArrow"]), helperFunction);
 
 		xRightArrow = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(j["rightArrow"]).getCenterPointXAbsolute();
-		yRightArrow = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(j["rightArrow"]).getCenterPointXAbsolute();
+		yRightArrow = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(j["rightArrow"]).getCenterPointYAbsolute();
 
 		auto helperFunction1 = std::bind(&LevelSelectionComponent::functionRightArrow, this, std::placeholders::_1);
 		GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(j["rightArrow"]), helperFunction1);
+
+		//ExtraButton
+		xExtraButton = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(j["extraButton"]).getCenterPointXAbsolute();
+		yExtraButton = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(j["extraButton"]).getCenterPointYAbsolute();
+
 
 		delay = j["delay"];
 		currentTime = MotorCasaPaco::getInstance()->getTime();
@@ -281,9 +391,10 @@ void LevelSelectionComponent::init(json& j)
 
 		updateTexts(currentShow);
 		//std::cout << tam << "\n";
-		//posX = MotorCasaPaco::getInstance()->getScreenWidth() / 2;
-		//posY = MotorCasaPaco::getInstance()->getScreenHeight() / 2;
+		
+		posX = 0;
+		posY = 0;
 
-		//MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsX[currenPos], positionsY[currenPos]);*/
+		MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsX[posX], positionsY[posY]);
 	}
 }

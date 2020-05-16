@@ -53,6 +53,7 @@
 						"LevelSelection/Boton_Nivel_7",
 						"LevelSelection/Boton_Nivel_8"
 					],
+					"extraButton" : "LevelSelection/Atras",
 					"leftArrow": "LevelSelection/LeftArrow",
 					"rightArrow": "LevelSelection/RightArrow",
 					"delay" : 0.15

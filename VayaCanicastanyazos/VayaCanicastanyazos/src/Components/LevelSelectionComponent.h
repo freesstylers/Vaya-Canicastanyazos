@@ -25,17 +25,21 @@ public:
 	void update();
 
 private:
-	std::vector<float> positionsXTop;
-	std::vector<float> positionsXBot;
-	std::vector<float> positionsYTop;
-	std::vector<float> positionsYBot;
+	std::vector<float> positionsX;
+	std::vector<float> positionsY;
 	float xLeftArrow;
 	float yLeftArrow;
 	float xRightArrow;
 	float yRightArrow;
+	float xExtraButton;
+	float yExtraButton;
 
 	int posX;
 	int posY;
+	bool leftArrow = false;
+	bool rightArrow = false;
+
+	bool extra = false;
 
 	std::vector<std::string> levels;
 	std::vector<CEGUI::Window*> texts;

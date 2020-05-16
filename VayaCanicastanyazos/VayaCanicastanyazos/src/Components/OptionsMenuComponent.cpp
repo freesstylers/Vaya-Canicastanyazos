@@ -105,11 +105,39 @@ bool OptionsMenuComponent::functionBasicBack(const CEGUI::EventArgs& e)
 
 bool OptionsMenuComponent::functionBasicApply(const CEGUI::EventArgs& e)
 {
+	MotorCasaPaco::getInstance()->changeBasicOptions();
 	return true;
 }
 
 bool OptionsMenuComponent::functionBasicRevert(const CEGUI::EventArgs& e)
 {
+	MotorCasaPaco::getInstance()->revertBasicOptions();
+	return true;
+}
+
+bool OptionsMenuComponent::functionInvertAxisX(const CEGUI::EventArgs& e)
+{
+	MotorCasaPaco::getInstance()->setInvertedAxisX(!MotorCasaPaco::getInstance()->getInvertedAxisX());
+
+	//Update Text
+	if (MotorCasaPaco::getInstance()->getInvertedAxisX())
+		GUI_Manager::getInstance()->changeText(basicTexts[3], "Si");
+	else
+		GUI_Manager::getInstance()->changeText(basicTexts[3], "No");
+
+	return true;
+}
+
+bool OptionsMenuComponent::functionInvertAxisY(const CEGUI::EventArgs& e)
+{
+	MotorCasaPaco::getInstance()->setInvertedAxisY(!MotorCasaPaco::getInstance()->getInvertedAxisY());
+
+	//Update Text
+	if (MotorCasaPaco::getInstance()->getInvertedAxisY())
+		GUI_Manager::getInstance()->changeText(basicTexts[4], "Si");
+	else
+		GUI_Manager::getInstance()->changeText(basicTexts[4], "No");
+
 	return true;
 }
 
@@ -945,7 +973,7 @@ void OptionsMenuComponent::update()
 
 bool OptionsMenuComponent::optionsAssert(json& j)
 {
-	return (!j["basicOptionButtons"].is_null() && j["basicOptionButtons"].is_array() && !j["basicExtraButton"].is_null() && !j["basicOptionBotButtons"].is_null() && j["basicOptionBotButtons"].is_array()
+	return (!j["basicOptionButtons"].is_null() && j["basicOptionButtons"].is_array() && !j["basicOptionTexts"].is_null() && j["basicOptionTexts"].is_array() && !j["basicExtraButton"].is_null() && !j["basicOptionBotButtons"].is_null() && j["basicOptionBotButtons"].is_array()
 		&& !j["graphicOptionDownButtons"].is_null() && j["graphicOptionDownButtons"].is_array()
 		&& !j["graphicOptionTopButtons"].is_null() && j["graphicOptionTopButtons"].is_array() && !j["graphicOptionExtraButton"].is_null()
 		&& !j["graphicOptionTexts"].is_null() && j["graphicOptionTexts"].is_array()
@@ -1086,23 +1114,26 @@ void OptionsMenuComponent::init(json& j)
 		{
 		case 0:
 		{
-			//auto helperFunction = std::bind(&PauseMenuComponent::functionReturn, this, std::placeholders::_1);
-			//GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
+			auto helperFunction = std::bind(&OptionsMenuComponent::functionInvertAxisY, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
 		}
 		break;
 		case 1:
 		{
-
+			auto helperFunction = std::bind(&OptionsMenuComponent::functionInvertAxisY, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
 		}
 		break;
 		case 2:
 		{
-
+			auto helperFunction = std::bind(&OptionsMenuComponent::functionInvertAxisX, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
 		}
 		break;
 		case 3:
 		{
-
+			auto helperFunction = std::bind(&OptionsMenuComponent::functionInvertAxisX, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
 		}
 		break;
 		case 4:
@@ -1141,6 +1172,13 @@ void OptionsMenuComponent::init(json& j)
 	}
 
 	tamBasicTop = count / 2;
+
+	std::vector<std::string> vecTextBasic = j["basicOptionTexts"];
+
+	for (std::string name : vecTextBasic)
+	{
+		basicTexts.push_back(GUI_Manager::getInstance()->getStaticText(name));
+	}
 
 	std::string interm = j["basicExtraButton"];
 	yBasicExtra = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(interm).getCenterPointYAbsolute();
@@ -1572,5 +1610,16 @@ void OptionsMenuComponent::init(json& j)
 	//Basic Options
 	currentXTopButtons = 0;
 	currentYTopButtons = tamBasicTop - 1;
+
+	if (MotorCasaPaco::getInstance()->getInvertedAxisX())
+		GUI_Manager::getInstance()->changeText(basicTexts[3], "Si");
+	else
+		GUI_Manager::getInstance()->changeText(basicTexts[3], "No");
+
+	if (MotorCasaPaco::getInstance()->getInvertedAxisY())
+		GUI_Manager::getInstance()->changeText(basicTexts[4], "Si");
+	else
+		GUI_Manager::getInstance()->changeText(basicTexts[4], "No");
+
 	MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsXTopButtonsBasic[currentXTopButtons], positionsYBasic[currentYTopButtons]);
 }

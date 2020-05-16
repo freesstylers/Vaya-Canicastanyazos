@@ -204,7 +204,8 @@
 				},
 				{
 					"type" : "GoalComponent",
-					"scene" : "nivel 2"
+					"nextLevel" : "nivel 2",
+					"levelSelection" : "LevelSelection"
 				}
 			]
 		},
@@ -275,6 +276,11 @@
 			"visible": false
 		},
 		{
+			"type" : "layout", 
+			"name" : "levelCompleted.layout",
+			"visible": false
+		},
+		{
 			"type" : "entity",
 			"name" : "UI",
 			"components" : 
@@ -306,6 +312,14 @@
 					 "BasicOptions/RightArrow_2",
 					 "BasicOptions/LeftArrow_1",
 					 "BasicOptions/RightArrow_1"
+					],
+					"basicOptionTexts":
+					[
+					 "BasicOptions/Text_Selector_1",
+					 "BasicOptions/Text_Selector_2",
+					 "BasicOptions/Text_Selector_3",
+					 "BasicOptions/Text_Selector_4",
+					 "BasicOptions/Text_Selector_5"
 					],
 					"basicExtraButton" : "BasicOptions/GraphicOptions",
 					"basicOptionBotButtons" :
