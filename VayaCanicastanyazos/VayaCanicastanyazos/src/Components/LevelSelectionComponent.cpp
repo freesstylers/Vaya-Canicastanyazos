@@ -318,6 +318,103 @@ void LevelSelectionComponent::updateTexts(int num)
 	}
 
 	//records stuff
+	std::map <std::string, LevelInfo> levels_ = GameManager::getInstance()->getLevels();
+
+	if (currentShow == 0)
+	{
+		int j = 1;
+		int count = 0;
+
+		for (auto it = levels_.begin(); it != levels_.end(); it++)
+		{
+			if (j < 9)
+			{
+				int stars = it->second.stars;
+				int time = it->second.time;
+
+				std::string str = "LevelSelection/Info_" + std::to_string(j) + "_Star_";
+
+				for (int k = 1; k <= stars; k++)
+				{
+					GUI_Manager::getInstance()->changeImage(str + std::to_string(k), "VayaCanicastanhazos/Star_Yes");
+				}
+
+				std::string t;
+
+				if (time < 60)
+				{
+					if (time < 10)
+						t = "00:0" + std::to_string(time);
+					else
+						t = "00:" + std::to_string(time);
+				}
+
+				GUI_Manager::getInstance()->changeText(records[j - 1], t);
+
+				count++;
+				j++;
+			}
+			else
+				break;
+		}
+
+		while (count < 8)
+		{
+			GUI_Manager::getInstance()->changeText(records[count], "--:--");
+			count++;
+		}
+	}
+
+	else if (currentShow == 1)
+	{
+		int j = 0;
+		int count = 1;
+
+		for (auto it = levels_.begin(); it != levels_.end(); it++)
+		{
+			if (j > 9 && j < 17)
+			{
+				int stars = it->second.stars;
+				int time = it->second.time;
+
+				std::string str = "LevelSelection/Info_" + std::to_string(j-8) + "_Star_";
+
+				for (int k = 1; k <= stars; k++)
+				{
+					GUI_Manager::getInstance()->changeImage(str + std::to_string(k), "VayaCanicastanhazos/Star_Yes");
+				}
+
+				std::string t;
+
+				if (time < 60)
+				{
+					if (time < 10)
+						t = "00:0" + std::to_string(time);
+					else
+						t = "00:" + std::to_string(time);
+				}
+
+				GUI_Manager::getInstance()->changeText(records[j - 9], t);
+				
+				count++;
+			}
+
+			j++;
+		}
+
+		while (count < 9)
+		{
+			std::string str = "LevelSelection/Info_" + std::to_string(count) + "_Star_";
+
+			for (int k = 1; k <= 3; k++)
+			{
+				GUI_Manager::getInstance()->changeImage(str + std::to_string(k), "VayaCanicastanhazos/Star_No");
+			}
+
+			GUI_Manager::getInstance()->changeText(records[count-1], "--:--");
+			count++;
+		}
+	}
 }
 
 void LevelSelectionComponent::init(json& j)

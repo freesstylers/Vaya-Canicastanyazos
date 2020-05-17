@@ -164,3 +164,8 @@ void GameManager::readData()
 	}
 	data.close();
 }
+
+std::map<std::string, LevelInfo> GameManager::getLevels()
+{
+	return levels;
+}

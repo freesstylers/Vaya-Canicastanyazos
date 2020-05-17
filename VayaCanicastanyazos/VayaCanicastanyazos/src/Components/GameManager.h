@@ -25,6 +25,8 @@ public:
 	void resetStars();
 	void saveData(std::string);
 	void readData();
+	std::map <std::string, LevelInfo> getLevels();
+
 private:
 	GameManager();
 	static GameManager* instance;
