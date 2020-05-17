@@ -75,10 +75,6 @@
 					"sceneName" : "Menu"
 				}
 			]
-		},
-		{
-			"name": "GM",
-			"prefab" : "gameManager"
 		}
 	]
 }

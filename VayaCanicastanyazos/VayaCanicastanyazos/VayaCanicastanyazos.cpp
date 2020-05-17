@@ -132,6 +132,15 @@ public:
 	};
 };
 
+class GameManagerFactory : public BaseFactory
+{
+public:
+	Component* createComponent(json& args) override
+	{
+		return GameManager::getInstance();
+	};
+};
+
 //--------------------------------------------------------------------------------
 
 
@@ -175,6 +184,7 @@ WinMain(HINSTANCE hinstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdSh
 	JsonFactoryParser::getInstance()->addFactory("OptionsMenuComponent", new OptionsMenuComponentFactory());
 	JsonFactoryParser::getInstance()->addFactory("MainMenuInputComponent", new MainMenuInputComponentFactory());
 	JsonFactoryParser::getInstance()->addFactory("LevelSelectionComponent", new LevelSelectionComponentFactory());
+	JsonFactoryParser::getInstance()->addFactory("GameManager", new GameManagerFactory());
 
 	motorCasaPaco->getGUI_Manager()->getInstance()->loadScheme("VayaCanicastanhazos.scheme");
 	motorCasaPaco->getGUI_Manager()->getInstance()->setMouseCursor("VayaCanicastanhazos/Mouse_Arrow");

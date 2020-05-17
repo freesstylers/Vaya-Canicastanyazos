@@ -32,6 +32,7 @@ private:
 	static GameManager* instance;
 	virtual bool ReceiveEvent(Event& event) override;
 	std::map <std::string, LevelInfo> levels;
+	std::string updateIngameText(float ingameTime);
 	int stars_ = 0;
 	float time = 0;
 	float levelTime = 0;

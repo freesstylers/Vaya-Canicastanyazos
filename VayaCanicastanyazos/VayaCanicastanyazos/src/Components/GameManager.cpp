@@ -39,7 +39,7 @@ void GameManager::pause()
 {
 	MotorCasaPaco::getInstance()->pause();
 	paused_ = !paused_;
-
+	time = MotorCasaPaco::getInstance()->getTime();
 	//Mensaje?
 }
 
@@ -52,8 +52,11 @@ void GameManager::update()
 {
 	if (inLevel_) //Está en nivel
 	{
-		std::cout << "ee\n";
-		//Actualizar tiempo
+		levelTime += MotorCasaPaco::getInstance()->getTimeDifference(time);
+		time = MotorCasaPaco::getInstance()->getTime();
+		std::string s = updateIngameText(levelTime);
+
+		GUI_Manager::getInstance()->changeText(GUI_Manager::getInstance()->getStaticText("Ingame/Timer_Text"), s);
 	}
 }
 
@@ -62,6 +65,8 @@ bool GameManager::ReceiveEvent(Event& event)
 	if (event.type == "inicioNivel")
 	{
 		inLevel_ = true;
+		//time = MotorCasaPaco::getInstance()->getTime();
+		levelTime = 0;
 	}
 	if (event.type == "finNivel")
 	{	
@@ -91,6 +96,42 @@ bool GameManager::ReceiveEvent(Event& event)
 	}
 	return true;
 }
+
+std::string GameManager::updateIngameText(float ingameTime)
+{
+	int min = 0, sec = 0;
+	std::string ret;
+
+	if (ingameTime > 60)	//Minutos
+	{
+		min = int(ingameTime) % 60;
+		sec = ingameTime - 60 * min;
+	}
+	else
+	{
+		sec = ingameTime;
+	}
+
+	if (min > 0)
+	{
+		if (min > 9)
+		{
+			ret = std::to_string(min) + ":" + std::to_string(sec);
+		}
+		else
+			ret = "0" + std::to_string(min) + ":" + std::to_string(sec);
+	}
+	else
+	{
+		if (sec > 9)
+			ret = "00:" + std::to_string(sec);
+		else
+			ret = "00:0" + std::to_string(sec);
+
+	}
+
+	return ret;
+}
 int GameManager::getStars()
 {
 	return stars_;
@@ -107,7 +148,6 @@ void GameManager::resetStars()
 }
 void GameManager::saveData(std::string name)
 {
-
 	if (levels.find(name) != levels.end())
 	{
 		if(levels.find(name)->second.stars < stars_)
