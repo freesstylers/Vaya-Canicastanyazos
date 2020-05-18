@@ -26,6 +26,8 @@ public:
 	void saveData(std::string);
 	void readData();
 	std::map <std::string, LevelInfo> getLevels();
+	float getLevelTime();
+	float getTimeFromLevel(int level);
 
 private:
 	GameManager();

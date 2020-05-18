@@ -68,14 +68,14 @@ bool GameManager::ReceiveEvent(Event& event)
 		//time = MotorCasaPaco::getInstance()->getTime();
 		levelTime = 0;
 	}
-	if (event.type == "finNivel")
+	if (event.type == "finNivel")	//Esto ahora mismo esta complicado, porque al tocar la meta se guarda, y con la pantalla de final de nivel se esta guardando todo el rato. Booleano de control?
 	{	
 		inLevel_ = false;
 		saveData(SceneManager::getInstance()->getCurrentScene()->getName());
 	}
 	if (event.type == "changeScene")
 	{
-		time = MotorCasaPaco::getInstance()->getTime();
+		time = MotorCasaPaco::getInstance()->getTime(); //Este es el que se guarda de momento, con el que está comentado pues como que no va
 	}
 	if (event.type == "estrellaCogida")
 	{
@@ -208,4 +208,16 @@ void GameManager::readData()
 std::map<std::string, LevelInfo> GameManager::getLevels()
 {
 	return levels;
+}
+
+float GameManager::getLevelTime()
+{
+	return levelTime;
+}
+
+float GameManager::getTimeFromLevel(int level) //Sacar del archivo guardado
+{
+	std::string l = "nivel " + std::to_string(level);
+
+	return levels.find(l)->second.time;
 }
