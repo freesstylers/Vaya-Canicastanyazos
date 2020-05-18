@@ -137,7 +137,7 @@ class GameManagerFactory : public BaseFactory
 public:
 	Component* createComponent(json& args) override
 	{
-		return GameManager::getInstance();
+		return (Component*)GameManager::getInstance();
 	};
 };
 
