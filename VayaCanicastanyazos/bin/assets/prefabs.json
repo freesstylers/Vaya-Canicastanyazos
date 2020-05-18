@@ -44,16 +44,16 @@
 		]
 	},
 	
-	"pointLight" :
+	"sunlight" :
 	{
-		"position" : [100, 100, 0],
-		"components" : [
-			{
-				"type" : "Light",
-				"lightType" : "directional",
-				"lightDir"  : [1, -0.5, 0]
-			}
-		]
+		"position" : [0, 0, 0],
+			"components" : [
+				{
+					"type" : "Light",
+					"lightType" : "directional",
+					"lightDir"  : [0.7, -0.7, 0]
+				}
+			]
 	},
 	
 	"star" :

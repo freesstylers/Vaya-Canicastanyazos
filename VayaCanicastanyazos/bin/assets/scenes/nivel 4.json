@@ -14,6 +14,27 @@
 			]
 		},
 		{
+			"name" : "light",
+			"components" : [
+				{
+					"type" : "Light",
+					"lightType" : "directional",
+					"lightDir"  : [0.7, -0.7, 0]
+				}
+			]
+		},
+		{
+			"name" : "light2",
+			"position" : [-80, -20, 20],
+			"components" : [
+				{
+					"type" : "Light",
+					"lightType" : "point",
+					"lightDir"  : [-0.7, -0.7, 0]
+				}
+			]
+		},
+		{
 			"name" : "centro",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
@@ -296,7 +317,7 @@
 		},
 		{
 			"name" : "camera",
-			"position" : [-80, 30, 40],
+			"position" : [-80, 50, 80],
 			"rotation" : [0, 0, 0], 
 			"scale" : [1, 1, 1],
 			"parent" : "cameraPivot",
