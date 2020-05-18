@@ -449,8 +449,6 @@ void LevelSelectionComponent::init(json& j)
 
 		std::vector<std::string> vec2 = j["botButtons"];
 
-		count = 0;
-
 		for (std::string name : vec2) {
 
 			if (count == 0)

@@ -22,15 +22,15 @@ std::string tostring(const std::string& name) {
 
 bool GoalComponent::functionBasicNextLevel(const CEGUI::EventArgs& e)
 {
-	MotorCasaPaco::getInstance()->changeScene(nextLevel);
 	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0); //Bastante cursed porque como que se stackea
+	MotorCasaPaco::getInstance()->changeScene(nextLevel);
 	return true;
 }
 
 bool GoalComponent::functionBasicLevelSelection(const CEGUI::EventArgs& e)
 {
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0); //Bastante cursed porque como que se stackea
 	MotorCasaPaco::getInstance()->changeScene(levelSelection);
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
 	return true;
 }
 
@@ -53,6 +53,21 @@ void GoalComponent::setLayout()
 		auto helperFunctionTopGraphic1 = std::bind(&GoalComponent::functionBasicNextLevel, this, std::placeholders::_1);
 		GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton("levelCompleted/NextLevel"), helperFunctionTopGraphic1);
 
+		int stars = GameManager::getInstance()->getStars();
+
+		std::string id = "levelCompleted/Star";
+		int i = 1;
+
+		while (i <= stars)
+		{
+			GUI_Manager::getInstance()->changeImage(id + std::to_string(i), "VayaCanicastanhazos/Star_Yes");
+		}
+
+		//Update Text
+		GUI_Manager::getInstance()->changeText(GUI_Manager::getInstance()->getStaticText("levelCompleted/Time"), "Tiempo: " + std::to_string(GameManager::getInstance()->getLevelTime()));
+		GUI_Manager::getInstance()->changeText(GUI_Manager::getInstance()->getStaticText("levelCompleted/Record"), "Record: " + std::to_string(GameManager::getInstance()->getTimeFromLevel(1))); //El 1 está de stub, habría que meter un campo level en el componente?
+
+		
 		//Falta el texto, y actualizar las estrellas
 	}
 }
@@ -63,10 +78,6 @@ void GoalComponent::OnCollision(Entity* ent) {
 		
 		setLayout();
 		GUI_Manager::getInstance()->setLayoutVisible(0, false);
-
-		//Update Text
-		GUI_Manager::getInstance()->changeText(GUI_Manager::getInstance()->getStaticText("levelCompleted/Time"), std::to_string(GameManager::getInstance()->getLevelTime()));
-		GUI_Manager::getInstance()->changeText(GUI_Manager::getInstance()->getStaticText("levelCompleted/Record"), std::to_string(GameManager::getInstance()->getTimeFromLevel(1))); //El 1 está de stub, habría que meter un campo level en el componente?
 
 		GUI_Manager::getInstance()->setLayoutVisible(GUI_Manager::getInstance()->getLayouts().size() - 1, true);
 	}
