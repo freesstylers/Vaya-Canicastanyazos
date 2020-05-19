@@ -1,0 +1,453 @@
+{
+	"name" : "nivel9",
+	"entities" :
+	[
+		
+		{
+			"name" : "bg",
+			"components" : [
+				{
+					"type" : "Skybox",
+					"material" : "sky",
+					"skyType" : "box"
+				}
+			]
+		},
+		{
+			"name" : "centro",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [1, 1, 1],
+			"components" :
+			[
+			]
+		},
+		{
+			"name" : "9_1",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "9_1.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+        },
+        {
+			"name" : "9_2",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "9_2.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+        },
+        {
+			"name" : "9_3",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "9_3.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+        },
+        {
+			"name" : "9_4",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "9_4.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+        },
+        {
+			"name" : "9_5",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "9_5.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+        },
+        {
+			"name" : "9_6",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "9_6.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+        },
+        {
+			"name" : "9_7",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "9_7.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+        },
+        {
+			"name" : "9_8",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "9_8.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+        },
+        {
+			"name" : "9_9",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "9_9.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+        },
+        {
+			"name" : "9_10",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "9_10.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+        },
+        {
+			"name" : "9_11",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "9_11.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+        },
+        {
+			"name" : "9_12",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "9_12.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+        },
+        {
+			"name" : "9_13",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "9_13.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+        },
+        {
+			"name" : "9_14",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "9_14.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+        },
+        {
+			"name" : "9_15",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "9_15.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+        },
+        {
+			"name" : "9_16",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "9_16.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+        },
+        {
+			"name" : "9_17",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "9_17.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+        },
+        {
+			"name" : "9_18",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "9_18.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+        },
+        {
+			"name" : "9_19",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "9_19.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+		{
+			"name" : "death",
+			"prefab" : "deathzone",
+			"position" : [0, -350, 1000],
+			"rotation" : [0,0,0],
+			"scale" : [200,10,200]
+		},
+		{
+			"name" : "goal",
+			"position" : [0, -290, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [0.1, 0.1, 0.1],
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "cube.mesh",
+					"material" : "test"
+				},
+				{
+					"type" : "RigidBody"
+				},
+				{
+					"type" : "GoalComponent",
+					"scene" : "nivel1"
+				}
+			]
+		},
+		{
+			"prefab" : "marble",
+			"name" : "ball",
+			"position" : [0, 250, -100],
+			"rotation" : [0, 0, 0]
+		},
+		{
+			"name" : "cameraPivot",
+			"position" : [0, 250, -100],
+			"rotation" : [0, 0, 0], 
+			"scale" : [1, 1, 1]
+		},
+		{
+			"name" : "camera",
+			"position" : [0, 300, -20],
+			"rotation" : [0, 0, 0], 
+			"scale" : [1, 1, 1],
+			"parent" : "cameraPivot",
+			"components" : [
+				{
+					"type" : "Camera",
+					"lookAt" : [-50, 0, 0],
+					"bgColour" : [0, 0, 1, 1]
+				},
+				{
+					"type": "AudioListenerComponent"
+				},
+				{
+					"type": "CameraController",
+					"marble" : "ball"
+				}
+			]
+		},
+		{
+			"name": "GM",
+			"prefab" : "gameManager"
+		}
+	],
+	
+	"UI" :
+	[
+		{
+			"type" : "layout", 
+			"name" : "Ingame.layout",
+			"visible": true
+		},
+		{
+			"type" : "entity",
+			"name" : "UI",
+			"components" : 
+			[
+				{
+					"type": "ChangeSceneButtonComponent",
+					"buttonName" : "Ingame/Menu",
+					"sceneName" : "Menu"
+				}				
+			]
+		}
+	]
+}
