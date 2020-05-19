@@ -11,9 +11,18 @@ public:
 	virtual void OnCollision(Entity* ent) override;
 	bool functionBasicNextLevel(const CEGUI::EventArgs& e);
 	bool functionBasicLevelSelection(const CEGUI::EventArgs& e);
+	void pausedUpdate() override;
 
 private:
 	void setLayout();
 	std::string nextLevel;
 	std::string levelSelection;
+	bool set = false;
+	bool completed = false;
+
+	float currentTime;
+	float delay;
+	int menuPos = 0;
+	float yPos;
+	float xPos [2] = {};
 };

@@ -39,7 +39,7 @@ void GameManager::pause()
 {
 	MotorCasaPaco::getInstance()->pause();
 	paused_ = !paused_;
-	levelTime = MotorCasaPaco::getInstance()->getTime();
+
 	//Mensaje?
 }
 
@@ -94,7 +94,8 @@ bool GameManager::ReceiveEvent(Event& event)
 			break;
 		}
 	}
-	return true;
+
+	return false;
 }
 
 std::string GameManager::updateIngameText(float ingameTime)
@@ -102,33 +103,16 @@ std::string GameManager::updateIngameText(float ingameTime)
 	int min = 0, sec = 0;
 	std::string ret;
 
-	if (ingameTime > 60)	//Minutos
-	{
-		min = int(ingameTime) % 60;
-		sec = ingameTime - 60 * min;
-	}
-	else
-	{
-		sec = ingameTime;
-	}
+	min = ingameTime / 60;
+	sec = (int)ingameTime % 60;
 
-	if (min > 0)
-	{
-		if (min > 9)
-		{
-			ret = std::to_string(min) + ":" + std::to_string(sec);
-		}
-		else
-			ret = "0" + std::to_string(min) + ":" + std::to_string(sec);
-	}
-	else
-	{
-		if (sec > 9)
-			ret = "00:" + std::to_string(sec);
-		else
-			ret = "00:0" + std::to_string(sec);
+	std::string mins = std::to_string(min);
+	if (min < 10) mins = std::string("0") + mins;
 
-	}
+	std::string secs = std::to_string(sec);
+	if (sec < 10) secs = std::string("0") + secs;
+
+	ret = mins + std::string(":") + secs;
 
 	return ret;
 }
@@ -150,10 +134,16 @@ void GameManager::saveData(std::string name)
 {
 	if (levels.find(name) != levels.end())
 	{
-		if(levels.find(name)->second.stars < stars_)
+		if (levels.find(name)->second.stars < stars_) //Conseguir más estrellas, siempre se guarda
+		{
 			levels.find(name)->second.stars = stars_;
 
-		levels.find(name)->second.time = levelTime;
+			levels.find(name)->second.time = levelTime;
+
+		}
+
+		else if (levels.find(name)->second.time > levelTime) //Si no, el tiempo es criterio
+			levels.find(name)->second.time = levelTime;
 	}
 	else
 	{
@@ -176,7 +166,7 @@ void GameManager::saveData(std::string name)
 	}
 	std::cout << "Stars: " << levels.find(name)->second.stars << " Time: " << levels.find(name)->second.time << std::endl;
 	stars_ = 0;
-	levelTime = 0;
+	//levelTime = 0;
 	data.close();
 }
 

@@ -92,7 +92,7 @@ bool OptionsMenuComponent::functionBasicGraphicOptions(const CEGUI::EventArgs& e
 	currentYTopButtons = tamGraphicTop - 1;
 	MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsXTopButtonsGraphic[currentXTopButtons], positionsYGraphic[currentYTopButtons]);
 
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
 	return true;
 }
 
@@ -100,22 +100,22 @@ bool OptionsMenuComponent::functionBasicBack(const CEGUI::EventArgs& e)
 {
 	MotorCasaPaco::getInstance()->changeScene("Menu");
 
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);	
-	
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
+
 	return true;
 }
 
 bool OptionsMenuComponent::functionBasicApply(const CEGUI::EventArgs& e)
 {
 	MotorCasaPaco::getInstance()->changeBasicOptions();
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
 	return true;
 }
 
 bool OptionsMenuComponent::functionBasicRevert(const CEGUI::EventArgs& e)
 {
 	MotorCasaPaco::getInstance()->revertBasicOptions();
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
 	return true;
 }
 
@@ -129,7 +129,7 @@ bool OptionsMenuComponent::functionInvertAxisX(const CEGUI::EventArgs& e)
 	else
 		GUI_Manager::getInstance()->changeText(basicTexts[3], "No");
 
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
 
 	return true;
 }
@@ -144,7 +144,7 @@ bool OptionsMenuComponent::functionInvertAxisY(const CEGUI::EventArgs& e)
 	else
 		GUI_Manager::getInstance()->changeText(basicTexts[4], "No");
 
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
 
 	return true;
 }
@@ -157,21 +157,22 @@ bool OptionsMenuComponent::functionGraphicAdvancedOptions(const CEGUI::EventArgs
 	currentXTopButtons = 0;
 	currentYTopButtons = tamAdvancedTop - 1;
 	MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsXTopButtonsAdvanced[currentXTopButtons], positionsYAdvanced[currentYTopButtons]);
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
 	return true;
 }
 
 bool OptionsMenuComponent::functionGraphicApply(const CEGUI::EventArgs& e)
 {
 	MotorCasaPaco::getInstance()->changeGraphicComponents();
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
 	return true;
 }
 
 bool OptionsMenuComponent::functionGraphicRevert(const CEGUI::EventArgs& e)
 {
 	MotorCasaPaco::getInstance()->revertGraphicChanges();
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
+
 
 	Event evt = Event("RESET_GRAPHIC_INFO");
 	EventManager::getInstance()->EmitEvent(evt);
@@ -192,7 +193,7 @@ bool OptionsMenuComponent::functionGraphicBack(const CEGUI::EventArgs& e)
 	Event evt = Event("RESET_GRAPHIC_INFO");
 	EventManager::getInstance()->EmitEvent(evt);
 
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
 
 	return true;
 }
@@ -210,7 +211,7 @@ bool OptionsMenuComponent::functionGraphicFullScreen(const CEGUI::EventArgs& e)
 		GUI_Manager::getInstance()->changeText(graphicTexts[1], "Si");
 	}
 
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
 
 	return true;
 }
@@ -230,12 +231,12 @@ bool OptionsMenuComponent::functionGraphicVSync(const CEGUI::EventArgs& e)
 			GUI_Manager::getInstance()->changeText(graphicTexts[4], "Si");
 		}
 
-		AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+		AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
 	}
 	else
 	{
 		MotorCasaPaco::getInstance()->setVSync(false);
-		AudioManager::getInstance()->playMusic("assets/sound/errorSound.mp3", 0);
+		AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
 		GUI_Manager::getInstance()->changeText(graphicTexts[4], "No");
 	}
 
@@ -273,7 +274,7 @@ bool OptionsMenuComponent::functionGraphicFormatMore(const CEGUI::EventArgs& e)
 	GUI_Manager::getInstance()->changeText(graphicTexts[3], currentRes);
 	MotorCasaPaco::getInstance()->setScreenProportion(currentFormat);
 	MotorCasaPaco::getInstance()->setResolution(currentRes);
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
 
 	return true;
 }
@@ -309,7 +310,7 @@ bool OptionsMenuComponent::functionGraphicFormatLess(const CEGUI::EventArgs& e)
 	GUI_Manager::getInstance()->changeText(graphicTexts[3], currentRes);
 	MotorCasaPaco::getInstance()->setScreenProportion(currentFormat);
 	MotorCasaPaco::getInstance()->setResolution(currentRes);
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
 
 	return true;
 }
@@ -362,7 +363,7 @@ bool OptionsMenuComponent::functionGraphicResolutionMore(const CEGUI::EventArgs&
 
 	GUI_Manager::getInstance()->changeText(graphicTexts[3], currentRes);
 	MotorCasaPaco::getInstance()->setResolution(currentRes);
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
 
 	return true;
 }
@@ -416,7 +417,7 @@ bool OptionsMenuComponent::functionGraphicResolutionLess(const CEGUI::EventArgs&
 
 	GUI_Manager::getInstance()->changeText(graphicTexts[3], currentRes);
 	MotorCasaPaco::getInstance()->setResolution(currentRes);
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
 
 	return true;
 }
@@ -424,7 +425,7 @@ bool OptionsMenuComponent::functionGraphicResolutionLess(const CEGUI::EventArgs&
 bool OptionsMenuComponent::functionAdvancedApply(const CEGUI::EventArgs& e)
 {
 	MotorCasaPaco::getInstance()->changeAdvancedGraphicComponents();
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
 	return true;
 }
 
@@ -435,7 +436,7 @@ bool OptionsMenuComponent::functionAdvancedRevert(const CEGUI::EventArgs& e)
 	Event evt = Event("RESET_ADVANCED_GRAPHIC_INFO");
 	EventManager::getInstance()->EmitEvent(evt);
 
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
 
 	return true;
 }
@@ -452,7 +453,7 @@ bool OptionsMenuComponent::functionAdvancedBack(const CEGUI::EventArgs& e)
 	Event evt = Event("RESET_ADVANCED_GRAPHIC_INFO");
 	EventManager::getInstance()->EmitEvent(evt);
 
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
 	return true;
 }
 
@@ -470,7 +471,7 @@ bool OptionsMenuComponent::functionAdvancedShadowsLess(const CEGUI::EventArgs& e
 	MotorCasaPaco::getInstance()->setShadows(shadowValues[shadowsPos]); //Hace el set directamente
 	GUI_Manager::getInstance()->changeText(advancedTexts[2], shadowValues[shadowsPos]);
 
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
 
 	return true;
 }
@@ -489,7 +490,7 @@ bool OptionsMenuComponent::functionAdvancedShadowsMore(const CEGUI::EventArgs& e
 	MotorCasaPaco::getInstance()->setShadows(shadowValues[shadowsPos]); //Hace el set directamente
 	GUI_Manager::getInstance()->changeText(advancedTexts[2], shadowValues[shadowsPos]);
 
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
 
 	return true;
 }
@@ -507,7 +508,7 @@ bool OptionsMenuComponent::functionAdvancedGamma(const CEGUI::EventArgs& e)
 		GUI_Manager::getInstance()->changeText(advancedTexts[1], "Si");
 	}
 
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
 
 	return true;
 }
@@ -525,7 +526,7 @@ bool OptionsMenuComponent::functionAdvancedFSAALess(const CEGUI::EventArgs& e)
 
 	MotorCasaPaco::getInstance()->setFSAA(fsaaValues[fsaaPos]); //Hace el set directamente
 	GUI_Manager::getInstance()->changeText(advancedTexts[0], "X " + fsaaValues[fsaaPos]);
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
 
 	return true;
 }
@@ -543,7 +544,7 @@ bool OptionsMenuComponent::functionAdvancedFSAAMore(const CEGUI::EventArgs& e)
 
 	MotorCasaPaco::getInstance()->setFSAA(fsaaValues[fsaaPos]); //Hace el set directamente
 	GUI_Manager::getInstance()->changeText(advancedTexts[0], "X " + fsaaValues[fsaaPos]);
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
 
 	return true;
 }
@@ -1511,55 +1512,23 @@ void OptionsMenuComponent::init(json& j)
 		break;
 		case 4:
 		{
-
+			auto helperFunctionTopAdvanced = std::bind(&OptionsMenuComponent::functionAdvancedGamma, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopAdvanced);
 		}
 		break;
 		case 5:
 		{
-
+			auto helperFunctionTopAdvanced = std::bind(&OptionsMenuComponent::functionAdvancedGamma, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopAdvanced);
 		}
 		break;
 		case 6:
-		{
-
-		}
-		break;
-		case 7:
-		{
-
-		}
-		break;
-		case 8:
-		{
-			auto helperFunctionTopAdvanced = std::bind(&OptionsMenuComponent::functionAdvancedShadowsLess, this, std::placeholders::_1);
-			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopAdvanced);
-		}
-		break;
-		case 9:
-		{
-			auto helperFunctionTopAdvanced = std::bind(&OptionsMenuComponent::functionAdvancedShadowsMore, this, std::placeholders::_1);
-			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopAdvanced);
-		}
-		break;
-		case 10:
-		{
-			auto helperFunctionTopAdvanced = std::bind(&OptionsMenuComponent::functionAdvancedGamma, this, std::placeholders::_1);
-			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopAdvanced);
-		}
-		break;
-		case 11:
-		{
-			auto helperFunctionTopAdvanced = std::bind(&OptionsMenuComponent::functionAdvancedGamma, this, std::placeholders::_1);
-			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopAdvanced);
-		}
-		break;
-		case 12:
 		{
 			auto helperFunctionTopAdvanced = std::bind(&OptionsMenuComponent::functionAdvancedFSAALess, this, std::placeholders::_1);
 			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopAdvanced);
 		}
 		break;
-		case 13:
+		case 7:
 		{
 			auto helperFunctionTopAdvanced = std::bind(&OptionsMenuComponent::functionAdvancedFSAAMore, this, std::placeholders::_1);
 			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionTopAdvanced);

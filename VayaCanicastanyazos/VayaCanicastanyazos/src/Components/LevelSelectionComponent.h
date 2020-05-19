@@ -44,7 +44,10 @@ private:
 	std::vector<std::string> levels;
 	std::vector<CEGUI::Window*> texts;
 	std::vector<CEGUI::Window*> records;
+	std::vector<std::string> recordsText = std::vector<std::string>(16);
 	void assignFunctions(int num, std::string name);
+
+	void storeTexts();
 	void updateTexts(int num);
 
 	int currentShow;

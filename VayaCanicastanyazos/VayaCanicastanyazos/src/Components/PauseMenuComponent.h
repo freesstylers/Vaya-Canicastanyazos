@@ -74,6 +74,7 @@ private:
 	int currenPos;
 	float xPause;
 	int tamPause;
+	bool disabled = false;
 
 	//Basic
 	std::vector<float> positionsYBasic;

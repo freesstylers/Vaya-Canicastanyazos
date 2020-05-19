@@ -3,6 +3,8 @@
 #include "Audio/AudioManager.h"
 #include "Input/InputManager.h"
 #include "Components/GameManager.h"
+#include "Scene/SceneManager.h"
+#include "Graphics/Mesh.h"
 
 LevelSelectionComponent::LevelSelectionComponent(json& args): Component(args)
 {
@@ -18,57 +20,80 @@ LevelSelectionComponent::~LevelSelectionComponent()
 bool LevelSelectionComponent::functionLoader1(const CEGUI::EventArgs& e)
 {
 	MotorCasaPaco::getInstance()->changeScene(levels[0]);
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
+	AudioManager::getInstance()->pauseChannel(1);
+	AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 2, true);
 	EventManager::getInstance()->EmitEvent("inicioNivel");
 	return true;
 }
 
 bool LevelSelectionComponent::functionLoader2(const CEGUI::EventArgs& e)
 {
-	MotorCasaPaco::getInstance()->changeScene(levels[1]);
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	MotorCasaPaco::getInstance()->changeScene(levels[1]);	
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
+	AudioManager::getInstance()->pauseChannel(1);
+	AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 2, true);
+	EventManager::getInstance()->EmitEvent("inicioNivel");
 	return true;
 }
 
 bool LevelSelectionComponent::functionLoader3(const CEGUI::EventArgs& e)
 {
-	MotorCasaPaco::getInstance()->changeScene(levels[2]);
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	MotorCasaPaco::getInstance()->changeScene(levels[2]);	
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
+	AudioManager::getInstance()->pauseChannel(1);
+	AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 2, true);
+	EventManager::getInstance()->EmitEvent("inicioNivel");
 	return true;
 }
 
 bool LevelSelectionComponent::functionLoader4(const CEGUI::EventArgs& e)
 {
 	MotorCasaPaco::getInstance()->changeScene(levels[3]);
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
+	AudioManager::getInstance()->pauseChannel(1);
+	AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 2, true);
+	EventManager::getInstance()->EmitEvent("inicioNivel");
 	return true;
 }
 
 bool LevelSelectionComponent::functionLoader5(const CEGUI::EventArgs& e)
 {
 	MotorCasaPaco::getInstance()->changeScene(levels[4]);
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
+	AudioManager::getInstance()->pauseChannel(1);
+	AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 2, true);
+	EventManager::getInstance()->EmitEvent("inicioNivel");
 	return true;
 }
 
 bool LevelSelectionComponent::functionLoader6(const CEGUI::EventArgs& e)
 {
 	MotorCasaPaco::getInstance()->changeScene(levels[5]);
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
+	AudioManager::getInstance()->pauseChannel(1);
+	AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 2, true);
+	EventManager::getInstance()->EmitEvent("inicioNivel");
 	return true;
 }
 
 bool LevelSelectionComponent::functionLoader7(const CEGUI::EventArgs& e)
 {
 	MotorCasaPaco::getInstance()->changeScene(levels[6]);
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
+	AudioManager::getInstance()->pauseChannel(1);
+	AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 2, true);
+	EventManager::getInstance()->EmitEvent("inicioNivel");
 	return true;
 }
 
 bool LevelSelectionComponent::functionLoader8(const CEGUI::EventArgs& e)
 {
 	MotorCasaPaco::getInstance()->changeScene(levels[7]);
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
+	AudioManager::getInstance()->pauseChannel(1);
+	AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 2, true);
+	EventManager::getInstance()->EmitEvent("inicioNivel");
 	return true;
 }
 
@@ -307,6 +332,49 @@ void LevelSelectionComponent::assignFunctions(int num, std::string name)
 	}
 }
 
+void LevelSelectionComponent::storeTexts()
+{
+	std::map <std::string, LevelInfo> levels_ = GameManager::getInstance()->getLevels();
+
+	for (auto it = levels_.begin(); it != levels_.end(); it++)
+	{
+		std::string name = it->first;
+		std::size_t position = name.find(" ");      
+		std::string levelNumber = name.substr(position);
+
+		int pos = std::stoi(levelNumber) - 1;
+		int level = std::stoi(levelNumber);
+
+		int time = it->second.time;
+
+		int min = 0, sec = 0;
+		std::string ret;
+
+		min = time / 60;
+		sec = (int)time % 60;
+
+		std::string mins = std::to_string(min);
+		if (min < 10) mins = std::string("0") + mins;
+
+		std::string secs = std::to_string(sec);
+		if (sec < 10) secs = std::string("0") + secs;
+
+		ret = mins + std::string(":") + secs;
+
+		recordsText[pos] = ret;
+	}
+
+	for (int i = 1; i < 9; i++)
+	{
+		std::string str = "LevelSelection/Info_" + std::to_string(i) + "_Star_";
+
+		for (int k = 1; k <= 3; k++)
+		{
+			GUI_Manager::getInstance()->changeImage(str + std::to_string(k), "VayaCanicastanhazos/Star_No");
+		}
+	}
+}
+
 void LevelSelectionComponent::updateTexts(int num)
 {
 	int i = 0;
@@ -320,100 +388,120 @@ void LevelSelectionComponent::updateTexts(int num)
 	//records stuff
 	std::map <std::string, LevelInfo> levels_ = GameManager::getInstance()->getLevels();
 
+	storeTexts();
+
 	if (currentShow == 0)
 	{
-		int j = 1;
-		int count = 0;
+		std::map <std::string, LevelInfo> levels_ = GameManager::getInstance()->getLevels();
 
-		for (auto it = levels_.begin(); it != levels_.end(); it++)
+		for (auto it = levels_.begin(); it != levels_.end(); it++) //Stars
 		{
-			if (j < 9)
+			std::string name = it->first;
+			std::size_t position = name.find(" ");
+			std::string levelNumber = name.substr(position);
+			int level = std::stoi(levelNumber);
+
+			levelNumber.erase(levelNumber.begin());
+
+
+			if (level < 9)
 			{
 				int stars = it->second.stars;
-				int time = it->second.time;
 
-				std::string str = "LevelSelection/Info_" + std::to_string(j) + "_Star_";
+				std::string str = "LevelSelection/Info_" + levelNumber + "_Star_";
 
 				for (int k = 1; k <= stars; k++)
 				{
 					GUI_Manager::getInstance()->changeImage(str + std::to_string(k), "VayaCanicastanhazos/Star_Yes");
 				}
-
-				std::string t;
-
-				if (time < 60)
-				{
-					if (time < 10)
-						t = "00:0" + std::to_string(time);
-					else
-						t = "00:" + std::to_string(time);
-				}
-
-				GUI_Manager::getInstance()->changeText(records[j - 1], t);
-
-				count++;
-				j++;
 			}
-			else
-				break;
 		}
 
-		while (count < 8)
+		//Texts
+		for (int j = 0; j < 8; j++)
 		{
-			GUI_Manager::getInstance()->changeText(records[count], "--:--");
-			count++;
+			if (recordsText[j] != "")
+				GUI_Manager::getInstance()->changeText(records[j], recordsText[j]);
+			else
+				GUI_Manager::getInstance()->changeText(records[j], "--:--");
 		}
+
+		//Miniaturas
+		/*
+		for (int k = 1; k < 9; k++)
+		{
+			//Estos a invisible
+
+			std::string ent = "mini_" + std::to_string(k);
+
+			//MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent)->getComponent<Mesh>("Mesh")->onDeactivated(); //Esto no va, hay que mirarlo
+
+			MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent)->getTransform()->scale(Vector3(0, 0, 0));
+			
+			//Estos a visible
+			std::string ent2 = "mini_" + std::to_string(k+8);
+
+			MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent)->getTransform()->scale(Vector3(1,1,1));
+		}
+		*/
+
 	}
 
 	else if (currentShow == 1)
 	{
-		int j = 0;
-		int count = 1;
+		std::map <std::string, LevelInfo> levels_ = GameManager::getInstance()->getLevels();
 
-		for (auto it = levels_.begin(); it != levels_.end(); it++)
+		for (auto it = levels_.begin(); it != levels_.end(); it++) //Stars
 		{
-			if (j > 9 && j < 17)
+			std::string name = it->first;
+			std::size_t position = name.find(" ");
+			std::string levelNumber = name.substr(position);
+
+			int level = std::stoi(levelNumber) - 8;
+
+			levelNumber.erase(levelNumber.begin());
+
+
+			if (level > 8)
 			{
 				int stars = it->second.stars;
-				int time = it->second.time;
 
-				std::string str = "LevelSelection/Info_" + std::to_string(j-8) + "_Star_";
+				std::string str = "LevelSelection/Info_" + std::to_string(level) + "_Star_";
 
 				for (int k = 1; k <= stars; k++)
 				{
 					GUI_Manager::getInstance()->changeImage(str + std::to_string(k), "VayaCanicastanhazos/Star_Yes");
 				}
-
-				std::string t;
-
-				if (time < 60)
-				{
-					if (time < 10)
-						t = "00:0" + std::to_string(time);
-					else
-						t = "00:" + std::to_string(time);
-				}
-
-				GUI_Manager::getInstance()->changeText(records[j - 9], t);
-				
-				count++;
 			}
-
-			j++;
 		}
 
-		while (count < 9)
+		//Texts
+		for (int j = 0; j < 8; j++)
 		{
-			std::string str = "LevelSelection/Info_" + std::to_string(count) + "_Star_";
-
-			for (int k = 1; k <= 3; k++)
-			{
-				GUI_Manager::getInstance()->changeImage(str + std::to_string(k), "VayaCanicastanhazos/Star_No");
-			}
-
-			GUI_Manager::getInstance()->changeText(records[count-1], "--:--");
-			count++;
+			if (recordsText[j+8] != "")
+				GUI_Manager::getInstance()->changeText(records[j], recordsText[j+8]);
+			else
+				GUI_Manager::getInstance()->changeText(records[j], "--:--");
 		}
+
+		/*
+		//Miniaturas
+		for (int k = 1; k < 9; k++)
+		{
+			//Estos a invisible
+			
+			std::string ent = "mini_" + std::to_string(k+8);
+
+			//MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent)->getComponent<Mesh>("Mesh")->onDeactivated(); //Esto no va, hay que mirarlo
+			
+			MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent)->getTransform()->scale(Vector3(0, 0, 0));
+
+			//Estos a visible
+			std::string ent2 = "mini_" + std::to_string(k);
+
+			MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent2)->getTransform()->scale(Vector3(1, 1, 1));
+		}
+		*/
 	}
 }
 
@@ -451,7 +539,7 @@ void LevelSelectionComponent::init(json& j)
 
 		for (std::string name : vec2) {
 
-			if (count == 0)
+			if (count == 4)
 			{
 				y = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointYAbsolute();
 
@@ -502,5 +590,15 @@ void LevelSelectionComponent::init(json& j)
 		posY = 0;
 
 		MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsX[posX], positionsY[posY]);
+
+		if (!AudioManager::getInstance()->isPlayingChannel(1))
+		{
+			std::cout << "no suena" << "\n";
+			//AudioManager::getInstance()->playMusic("assets/sound/Menu_Music.mp3", 1, true);
+		}
+		else
+		{
+			std::cout << "suena" << "\n";
+		}
 	}
 }
