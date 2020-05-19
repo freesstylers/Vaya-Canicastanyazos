@@ -23,7 +23,10 @@ public:
 	//Basic Options
 	bool functionBasicGraphicOptions(const CEGUI::EventArgs& e);
 	bool functionBasicBack(const CEGUI::EventArgs& e);
-
+	bool functionBasicApply(const CEGUI::EventArgs& e);
+	bool functionBasicRevert(const CEGUI::EventArgs& e);
+	bool functionInvertAxisX(const CEGUI::EventArgs& e);
+	bool functionInvertAxisY(const CEGUI::EventArgs& e);
 
 	//Graphic Options
 	bool functionGraphicAdvancedOptions(const CEGUI::EventArgs& e);
@@ -76,11 +79,13 @@ private:
 	std::vector<float> positionsYBasic;
 	std::vector<float> positionsXBotButtonsBasic;
 	std::vector<float> positionsXTopButtonsBasic;
+	std::vector<CEGUI::Window*> basicTexts;
 	float yBasicExtra;
 	float xBasicExtra;	
-	float yBasicBack;
-	float xBasicBack;
+	float yBasicBot;
+	float xBasicBot;
 	int tamBasicTop;
+	int tamBasicBot;
 	int basicTopDown = 2;
 
 	//Graphic

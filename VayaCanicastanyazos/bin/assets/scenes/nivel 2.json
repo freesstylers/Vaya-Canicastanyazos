@@ -1,5 +1,5 @@
 {
-	"name" : "nivel2",
+	"name" : "nivel 2",
 	"entities" :
 	[
     {
@@ -8,6 +8,10 @@
       "rotation": [ 0, 0, 0 ],
       "scale": [ 1, 1, 1 ]
     },
+		{
+			"name" : "light",
+			"prefab" : "sunlight"
+		},
     {
       "name": "2_1",
       "position": [ 0, 0, 0 ],
@@ -199,7 +203,7 @@
 				},
 				{
 					"type" : "GoalComponent",
-					"scene" : "nivel3"
+					"scene" : "nivel 3"
 				}
 			]
 		},

@@ -23,7 +23,7 @@ FakeRotation::~FakeRotation()
 
 void FakeRotation::init(json& args)
 {
-	speed = 10.0f;
+	speed = 500.0f;
 
 	if (!args["camName"].is_null())
 	{
@@ -56,6 +56,6 @@ void FakeRotation::update()
 	camOrthoLook = Vector3::Normalized(camOrthoLook);
 	camLook = Vector3::Normalized(camLook);
 
-	getEntity()->getComponent<RigidBody>("RigidBody")->applyForce(ForceType::FORCE, camLook * speed * y * deltatime);
-	getEntity()->getComponent<RigidBody>("RigidBody")->applyForce(ForceType::FORCE, camOrthoLook * speed * x * deltatime);
+	getEntity()->getComponent<RigidBody>("RigidBody")->applyForce(ForceType::FORCE, camLook * speed * y);
+	getEntity()->getComponent<RigidBody>("RigidBody")->applyForce(ForceType::FORCE, camOrthoLook * speed * x);
 }

@@ -91,6 +91,8 @@ bool OptionsMenuComponent::functionBasicGraphicOptions(const CEGUI::EventArgs& e
 	currentXTopButtons = 0;
 	currentYTopButtons = tamGraphicTop - 1;
 	MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsXTopButtonsGraphic[currentXTopButtons], positionsYGraphic[currentYTopButtons]);
+
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
 	return true;
 }
 
@@ -103,6 +105,50 @@ bool OptionsMenuComponent::functionBasicBack(const CEGUI::EventArgs& e)
 	return true;
 }
 
+bool OptionsMenuComponent::functionBasicApply(const CEGUI::EventArgs& e)
+{
+	MotorCasaPaco::getInstance()->changeBasicOptions();
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	return true;
+}
+
+bool OptionsMenuComponent::functionBasicRevert(const CEGUI::EventArgs& e)
+{
+	MotorCasaPaco::getInstance()->revertBasicOptions();
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+	return true;
+}
+
+bool OptionsMenuComponent::functionInvertAxisX(const CEGUI::EventArgs& e)
+{
+	MotorCasaPaco::getInstance()->setInvertedAxisX(!MotorCasaPaco::getInstance()->getInvertedAxisX());
+
+	//Update Text
+	if (MotorCasaPaco::getInstance()->getInvertedAxisX())
+		GUI_Manager::getInstance()->changeText(basicTexts[3], "Si");
+	else
+		GUI_Manager::getInstance()->changeText(basicTexts[3], "No");
+
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+
+	return true;
+}
+
+bool OptionsMenuComponent::functionInvertAxisY(const CEGUI::EventArgs& e)
+{
+	MotorCasaPaco::getInstance()->setInvertedAxisY(!MotorCasaPaco::getInstance()->getInvertedAxisY());
+
+	//Update Text
+	if (MotorCasaPaco::getInstance()->getInvertedAxisY())
+		GUI_Manager::getInstance()->changeText(basicTexts[4], "Si");
+	else
+		GUI_Manager::getInstance()->changeText(basicTexts[4], "No");
+
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+
+	return true;
+}
+
 bool OptionsMenuComponent::functionGraphicAdvancedOptions(const CEGUI::EventArgs& e)
 {
 	layoutLayer++;
@@ -111,6 +157,7 @@ bool OptionsMenuComponent::functionGraphicAdvancedOptions(const CEGUI::EventArgs
 	currentXTopButtons = 0;
 	currentYTopButtons = tamAdvancedTop - 1;
 	MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsXTopButtonsAdvanced[currentXTopButtons], positionsYAdvanced[currentYTopButtons]);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
 	return true;
 }
 
@@ -145,6 +192,8 @@ bool OptionsMenuComponent::functionGraphicBack(const CEGUI::EventArgs& e)
 	Event evt = Event("RESET_GRAPHIC_INFO");
 	EventManager::getInstance()->EmitEvent(evt);
 
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
+
 	return true;
 }
 
@@ -168,18 +217,27 @@ bool OptionsMenuComponent::functionGraphicFullScreen(const CEGUI::EventArgs& e)
 
 bool OptionsMenuComponent::functionGraphicVSync(const CEGUI::EventArgs& e)
 {
-	if (MotorCasaPaco::getInstance()->getVSync())
+	if (MotorCasaPaco::getInstance()->getFullScreen())
 	{
-		MotorCasaPaco::getInstance()->setVSync(false);
-		GUI_Manager::getInstance()->changeText(graphicTexts[4], "No");
+		if (MotorCasaPaco::getInstance()->getVSync())
+		{
+			MotorCasaPaco::getInstance()->setVSync(false);
+			GUI_Manager::getInstance()->changeText(graphicTexts[4], "No");
+		}
+		else
+		{
+			MotorCasaPaco::getInstance()->setVSync(true);
+			GUI_Manager::getInstance()->changeText(graphicTexts[4], "Si");
+		}
+
+		AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
 	}
 	else
 	{
-		MotorCasaPaco::getInstance()->setVSync(true);
-		GUI_Manager::getInstance()->changeText(graphicTexts[4], "Si");
+		MotorCasaPaco::getInstance()->setVSync(false);
+		AudioManager::getInstance()->playMusic("assets/sound/errorSound.mp3", 0);
+		GUI_Manager::getInstance()->changeText(graphicTexts[4], "No");
 	}
-
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
 
 	return true;
 }
@@ -393,6 +451,8 @@ bool OptionsMenuComponent::functionAdvancedBack(const CEGUI::EventArgs& e)
 	MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsXTopButtonsGraphic[currentXTopButtons], positionsYGraphic[currentYTopButtons]);
 	Event evt = Event("RESET_ADVANCED_GRAPHIC_INFO");
 	EventManager::getInstance()->EmitEvent(evt);
+
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0);
 	return true;
 }
 
@@ -524,6 +584,21 @@ void OptionsMenuComponent::update()
 					MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsXTopButtonsBasic[currentXTopButtons], positionsYBasic[currentYTopButtons]);
 					currentTime = MotorCasaPaco::getInstance()->getTime();
 				}
+
+				else if (basicTopDown == 0)
+				{
+					if (currentPosDownButtons > 0)
+					{
+						currentPosDownButtons--;
+					}
+					else
+					{
+						currentPosDownButtons = 2;
+					}
+
+					MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsXBotButtonsGraphic[currentPosDownButtons], yGraphicBot);
+					currentTime = MotorCasaPaco::getInstance()->getTime();
+				}
 			}
 			else if (InputManager::getInstance()->GameControllerGetAxisMovement(GameControllerAxis::CONTROLLER_AXIS_LEFTX, true) > 0.7 || InputManager::getInstance()->GameControllerIsButtonDown(GameControllerButton::CONTROLLER_BUTTON_DPAD_RIGHT) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_D) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_RIGHT))
 			{
@@ -539,6 +614,21 @@ void OptionsMenuComponent::update()
 					}
 
 					MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsXTopButtonsBasic[currentXTopButtons], positionsYBasic[currentYTopButtons]);
+					currentTime = MotorCasaPaco::getInstance()->getTime();
+				}
+
+				else if (basicTopDown == 0)
+				{
+					if (currentPosDownButtons < 2)
+					{
+						currentPosDownButtons++;
+					}
+					else
+					{
+						currentPosDownButtons = 0;
+					}
+
+					MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsXBotButtonsGraphic[currentPosDownButtons], yGraphicBot);
 					currentTime = MotorCasaPaco::getInstance()->getTime();
 				}
 			}
@@ -566,7 +656,7 @@ void OptionsMenuComponent::update()
 				{
 					basicTopDown--;
 					currentPosDownButtons = 1;
-					MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(xBasicBack, yBasicBack);
+					MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsXBotButtonsBasic[1], yBasicBot);
 					currentTime = MotorCasaPaco::getInstance()->getTime();
 				}
 				else if (basicTopDown == 0)
@@ -592,7 +682,7 @@ void OptionsMenuComponent::update()
 					{
 						basicTopDown = 0;
 						currentPosDownButtons = 1;
-						MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(xBasicBack, yBasicBack);
+						MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsXBotButtonsBasic[1], yBasicBot);
 						currentTime = MotorCasaPaco::getInstance()->getTime();
 					}
 				}
@@ -750,7 +840,7 @@ void OptionsMenuComponent::update()
 				}
 				else if (graphicTopDown == 0)
 				{
-					graphicTopDown++;
+					graphicTopDown = 2;
 					currentYTopButtons = 0;
 					currentXTopButtons = 0;
 					MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(xExtraGraphic, yExtraGraphic); //Extra Button
@@ -905,7 +995,7 @@ void OptionsMenuComponent::update()
 
 bool OptionsMenuComponent::optionsAssert(json& j)
 {
-	return (!j["basicOptionButtons"].is_null() && j["basicOptionButtons"].is_array() && !j["basicExtraButton"].is_null() && !j["basicBackButton"].is_null()
+	return (!j["basicOptionButtons"].is_null() && j["basicOptionButtons"].is_array() && !j["basicOptionTexts"].is_null() && j["basicOptionTexts"].is_array() && !j["basicExtraButton"].is_null() && !j["basicOptionBotButtons"].is_null() && j["basicOptionBotButtons"].is_array()
 		&& !j["graphicOptionDownButtons"].is_null() && j["graphicOptionDownButtons"].is_array()
 		&& !j["graphicOptionTopButtons"].is_null() && j["graphicOptionTopButtons"].is_array() && !j["graphicOptionExtraButton"].is_null()
 		&& !j["graphicOptionTexts"].is_null() && j["graphicOptionTexts"].is_array()
@@ -1046,23 +1136,26 @@ void OptionsMenuComponent::init(json& j)
 		{
 		case 0:
 		{
-			//auto helperFunction = std::bind(&PauseMenuComponent::functionReturn, this, std::placeholders::_1);
-			//GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
+			auto helperFunction = std::bind(&OptionsMenuComponent::functionInvertAxisY, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
 		}
 		break;
 		case 1:
 		{
-
+			auto helperFunction = std::bind(&OptionsMenuComponent::functionInvertAxisY, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
 		}
 		break;
 		case 2:
 		{
-
+			auto helperFunction = std::bind(&OptionsMenuComponent::functionInvertAxisX, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
 		}
 		break;
 		case 3:
 		{
-
+			auto helperFunction = std::bind(&OptionsMenuComponent::functionInvertAxisX, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
 		}
 		break;
 		case 4:
@@ -1102,6 +1195,13 @@ void OptionsMenuComponent::init(json& j)
 
 	tamBasicTop = count / 2;
 
+	std::vector<std::string> vecTextBasic = j["basicOptionTexts"];
+
+	for (std::string name : vecTextBasic)
+	{
+		basicTexts.push_back(GUI_Manager::getInstance()->getStaticText(name));
+	}
+
 	std::string interm = j["basicExtraButton"];
 	yBasicExtra = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(interm).getCenterPointYAbsolute();
 	xBasicExtra = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(interm).getCenterPointYAbsolute();
@@ -1111,21 +1211,56 @@ void OptionsMenuComponent::init(json& j)
 	auto helperFunction = std::bind(&OptionsMenuComponent::functionBasicGraphicOptions, this, std::placeholders::_1);
 	GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(interm), helperFunction);
 
-	std::string back = j["basicBackButton"];
-	yBasicBack = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(back).getCenterPointYAbsolute();
-	xBasicBack = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(back).getCenterPointYAbsolute();
+	std::vector<std::string> vec7 = j["basicOptionBotButtons"];
 
-	//Assign function
+	float y;
+	count = 0;
 
-	auto helperFunction1 = std::bind(&OptionsMenuComponent::functionBasicBack, this, std::placeholders::_1);
-	GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(back), helperFunction1);
+	for (std::string name : vec7)
+	{
+		float x = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointXAbsolute();
+
+		if (count == 0)
+			y = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointYAbsolute();
+
+		positionsXBotButtonsBasic.push_back(x);
+
+		//Asignacion de funciones
+
+		switch (count)
+		{
+		case 0:
+		{
+			auto helperFunctionGraphicBot = std::bind(&OptionsMenuComponent::functionBasicApply, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionGraphicBot);
+		}
+		break;
+		case 1:
+		{
+			auto helperFunctionGraphicBot = std::bind(&OptionsMenuComponent::functionBasicRevert, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionGraphicBot);
+		}
+		break;
+		case 2:
+		{
+			auto helperFunctionGraphicBot = std::bind(&OptionsMenuComponent::functionBasicBack, this, std::placeholders::_1);
+			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunctionGraphicBot);
+		}
+		break;
+		}
+
+		count++;
+	}
+
+	yBasicBot = y;
+
+	tamBasicBot = count;
 
 	//////////////////////////////////////////////////////////////
 	//Graphic Options Stuff
 
 	std::vector<std::string> vec3 = j["graphicOptionDownButtons"];
 
-	float y;
 	count = 0;
 
 	for (std::string name : vec3)
@@ -1497,5 +1632,16 @@ void OptionsMenuComponent::init(json& j)
 	//Basic Options
 	currentXTopButtons = 0;
 	currentYTopButtons = tamBasicTop - 1;
+
+	if (MotorCasaPaco::getInstance()->getInvertedAxisX())
+		GUI_Manager::getInstance()->changeText(basicTexts[3], "Si");
+	else
+		GUI_Manager::getInstance()->changeText(basicTexts[3], "No");
+
+	if (MotorCasaPaco::getInstance()->getInvertedAxisY())
+		GUI_Manager::getInstance()->changeText(basicTexts[4], "Si");
+	else
+		GUI_Manager::getInstance()->changeText(basicTexts[4], "No");
+
 	MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsXTopButtonsBasic[currentXTopButtons], positionsYBasic[currentYTopButtons]);
 }

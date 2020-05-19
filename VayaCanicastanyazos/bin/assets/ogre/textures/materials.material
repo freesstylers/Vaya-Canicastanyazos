@@ -31,11 +31,10 @@ material test
 			scene_blend alpha_blend
 			
 			lighting on
+			depth_bias 1
 			
             texture_unit 
             {
-                filtering anisotropic //defines the type of filter
-                max_anisotropy 4 //sets level of filtering
                 texture white_plaster.png
                 tex_address_mode wrap
 				colour_op alpha_blend

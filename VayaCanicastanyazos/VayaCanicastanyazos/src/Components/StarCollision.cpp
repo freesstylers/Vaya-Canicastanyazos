@@ -29,15 +29,12 @@ void StarCollision::OnCollision(Entity* ent)
 		
 		GameManager::getInstance()->addStars(1);
 		
-		if (GameManager::getInstance()->getStars() == 1)
-			GUI_Manager::getInstance()->changeImage("Ingame/Colleccionable_1", "VayaCanicastanhazos/Star_Yes");
-		else if (GameManager::getInstance()->getStars() == 2)
-			GUI_Manager::getInstance()->changeImage("Ingame/Colleccionable_2", "VayaCanicastanhazos/Star_Yes");
-		else if (GameManager::getInstance()->getStars() == 3)
-			GUI_Manager::getInstance()->changeImage("Ingame/Colleccionable_3", "VayaCanicastanhazos/Star_Yes");
+		EventManager::getInstance()->EmitEvent("estrellaCogida");
 
 		AudioManager::getInstance()->playSound("assets/sound/402Cry.wav", 0);
 		std::cout << GameManager::getInstance()->getStars() << std::endl;
+
+		SceneManager::getInstance()->getCurrentScene()->deleteEntity(getEntity()->getName());
 	}
 }
 
