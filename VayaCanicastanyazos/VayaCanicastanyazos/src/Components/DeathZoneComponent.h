@@ -7,5 +7,9 @@ public:
 	DeathZoneComponent(json& args);
 	~DeathZoneComponent();
 
-	virtual void OnCollision(Entity* ent) override;
+	virtual void init(json& args) override;
+	virtual void update() override;
+
+private:
+	Entity* marble;
 };

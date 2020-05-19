@@ -189,7 +189,7 @@ WinMain(HINSTANCE hinstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdSh
 	motorCasaPaco->getGUI_Manager()->getInstance()->loadScheme("VayaCanicastanhazos.scheme");
 	motorCasaPaco->getGUI_Manager()->getInstance()->setMouseCursor("VayaCanicastanhazos/Mouse_Arrow");
 
-	motorCasaPaco->start("Menu");
+	motorCasaPaco->start("nivel 11");
 
 	delete motorCasaPaco;
 

@@ -401,13 +401,6 @@
 			]
 		},
 		{
-			"name" : "death",
-			"prefab" : "deathzone",
-			"position" : [0, -350, 1000],
-			"rotation" : [0,0,0],
-			"scale" : [200,10,200]
-		},
-		{
 			"name" : "goal",
 			"position" : [0, -290, 0],
 			"rotation" : [0, 0, 0],
@@ -430,18 +423,30 @@
 		{
 			"prefab" : "marble",
 			"name" : "ball",
-			"position" : [0, 250, -100],
+			"position" : [0, 100, 200],
 			"rotation" : [0, 0, 0]
 		},
 		{
+			"name" : "death",
+			"position" : [0, -350, 0],
+			"rotation" : [0,0,0],
+			"scale" : [0,0,0],
+			"components" : [
+				{
+					"type" : "DeathZoneComponent",
+					"entity" : "ball"
+				}
+			]
+		},
+		{
 			"name" : "cameraPivot",
-			"position" : [0, 250, -100],
+			"position" : [0, 100, 200],
 			"rotation" : [0, 0, 0], 
 			"scale" : [1, 1, 1]
 		},
 		{
 			"name" : "camera",
-			"position" : [0, 300, -20],
+			"position" : [0, 150, 270],
 			"rotation" : [0, 0, 0], 
 			"scale" : [1, 1, 1],
 			"parent" : "cameraPivot",
@@ -459,6 +464,10 @@
 					"marble" : "ball"
 				}
 			]
+		},
+		{
+			"name" : "light",
+			"prefab" : "sunlight"
 		},
 		{
 			"name": "GM",

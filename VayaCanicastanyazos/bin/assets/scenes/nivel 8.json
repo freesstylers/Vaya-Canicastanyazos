@@ -275,15 +275,8 @@
 			]
 		},
 		{
-			"name" : "death",
-			"prefab" : "deathzone",
-			"position" : [0, -350, 1000],
-			"rotation" : [0,0,0],
-			"scale" : [200,10,200]
-		},
-		{
 			"name" : "goal",
-			"position" : [0, -290, 0],
+			"position" : [0, 10, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [0.1, 0.1, 0.1],
 			"components" : [
@@ -297,32 +290,44 @@
 				},
 				{
 					"type" : "GoalComponent",
-					"scene" : "nivel1"
+					"scene" : "nivel 9"
 				}
 			]
 		},
 		{
 			"prefab" : "marble",
 			"name" : "ball",
-			"position" : [0, 250, -100],
+			"position" : [-200, 0, 0],
 			"rotation" : [0, 0, 0]
 		},
 		{
+			"name" : "death",
+			"position" : [0, -350, 0],
+			"rotation" : [0,0,0],
+			"scale" : [0,0,0],
+			"components" : [
+				{
+					"type" : "DeathZoneComponent",
+					"entity" : "ball"
+				}
+			]
+		},
+		{
 			"name" : "cameraPivot",
-			"position" : [0, 250, -100],
+			"position" : [-200, 0, 0],
 			"rotation" : [0, 0, 0], 
 			"scale" : [1, 1, 1]
 		},
 		{
 			"name" : "camera",
-			"position" : [0, 300, -20],
+			"position" : [-200, 20, 70],
 			"rotation" : [0, 0, 0], 
 			"scale" : [1, 1, 1],
 			"parent" : "cameraPivot",
 			"components" : [
 				{
 					"type" : "Camera",
-					"lookAt" : [-50, 0, 0],
+					"lookAt" : [0, 0, 0],
 					"bgColour" : [0, 0, 1, 1]
 				},
 				{
@@ -333,6 +338,10 @@
 					"marble" : "ball"
 				}
 			]
+		},
+		{
+			"name" : "light",
+			"prefab" : "sunlight"
 		},
 		{
 			"name": "GM",

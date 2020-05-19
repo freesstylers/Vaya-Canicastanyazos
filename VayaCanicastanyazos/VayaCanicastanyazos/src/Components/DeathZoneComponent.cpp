@@ -14,10 +14,16 @@ DeathZoneComponent::~DeathZoneComponent() {
 
 }
 
-void DeathZoneComponent::OnCollision(Entity* ent) {
-	if (ent->getTag() == "marble") {
+void DeathZoneComponent::init(json& args) {
+	if (!args["entity"].is_null())
+	{
+		marble = SceneManager::getInstance()->getCurrentScene()->getEntity(args["entity"]);
+	}
+}
+
+void DeathZoneComponent::update() {
+	if (marble->getTransform()->getPosition().Y < getEntity()->getTransform()->getPosition().Y) {
 		MotorCasaPaco::getInstance()->changeScene(MotorCasaPaco::getInstance()->getSceneManager()->getCurrentScene()->getName());
-		GameManager::getInstance()->resetStars();
 	}
 }
 
