@@ -15,15 +15,15 @@ DeathZoneComponent::~DeathZoneComponent() {
 }
 
 void DeathZoneComponent::init(json& args) {
-	if (!args["entity"].is_null())
+	if (!args["marble"].is_null())
 	{
-		marble = SceneManager::getInstance()->getCurrentScene()->getEntity(args["entity"]);
+		marble = SceneManager::getInstance()->getCurrentScene()->getEntity(args["marble"]);
 	}
 }
 
 void DeathZoneComponent::update() {
-	if (marble->getTransform()->getPosition().Y < getEntity()->getTransform()->getPosition().Y) {
-		MotorCasaPaco::getInstance()->changeScene(MotorCasaPaco::getInstance()->getSceneManager()->getCurrentScene()->getName());
+	if (marble->getTransform()->getPosition().Y < Component::getEntity()->getTransform()->getPosition().Y) {
+		SceneManager::getInstance()->changeScene(SceneManager::getInstance()->getCurrentScene()->getName());
 	}
 }
 

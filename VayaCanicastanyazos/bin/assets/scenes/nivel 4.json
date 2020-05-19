@@ -277,18 +277,6 @@
 			]
 		},
 		{
-			"name" : "death",
-			"position" : [0, -130, 0],
-			"rotation" : [0,0,0],
-			"scale" : [0,0,0],
-			"components" : [
-				{
-					"type" : "DeathZoneComponent",
-					"entity" : "ball"
-				}
-			]
-		},
-		{
 			"name" : "goal",
 			"position" : [-180, -65, 30],
 			"rotation" : [0, 0, 0],
@@ -304,7 +292,8 @@
 				},
 				{
 					"type" : "GoalComponent",
-					"scene" : "nivel 5"
+					"nextLevel" : "nivel 5",
+					"levelSelection" : "LevelSelection"
 				}
 			]
 		},
@@ -313,6 +302,18 @@
 			"name" : "ball",
 			"position" : [-80, 0, 0],
 			"rotation" : [0, 0, 0]
+		},
+		{
+			"name" : "death",
+			"position" : [0, -130, 0],
+			"rotation" : [0,0,0],
+			"scale" : [0,0,0],
+			"components" : [
+				{
+					"type" : "DeathZoneComponent",
+					"entity" : "ball"
+				}
+			]
 		},
 		{
 			"name" : "cameraPivot",

@@ -186,18 +186,6 @@
 			]
     	},
 		{
-			"name" : "death",
-			"position" : [0, -100, 0],
-			"rotation" : [0,0,0],
-			"scale" : [0,0,0],
-			"components" : [
-				{
-					"type" : "DeathZoneComponent",
-					"entity" : "ball"
-				}
-			]
-		},
-		{
 			"name" : "goal",
 			"position" : [0, 10, -80],
 			"rotation" : [0, 0, 0],
@@ -223,6 +211,18 @@
 			"name" : "ball",
 			"position" : [0, 30, 80],
 			"rotation" : [0, 0, 0]
+		},
+		{
+			"name" : "death",
+			"position" : [0, -100, 0],
+			"rotation" : [0,0,0],
+			"scale" : [0,0,0],
+			"components" : [
+				{
+					"type" : "DeathZoneComponent",
+					"entity" : "ball"
+				}
+			]
 		},
 		{
 			"name" : "cameraPivot",

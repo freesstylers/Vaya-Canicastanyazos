@@ -290,7 +290,8 @@
 				},
 				{
 					"type" : "GoalComponent",
-					"scene" : "nivel 9"
+					"nextLevel" : "nivel 9",
+					"levelSelection" : "LevelSelection"
 				}
 			]
 		},
@@ -308,7 +309,7 @@
 			"components" : [
 				{
 					"type" : "DeathZoneComponent",
-					"entity" : "ball"
+					"marble" : "ball"
 				}
 			]
 		},

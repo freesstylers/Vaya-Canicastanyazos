@@ -578,7 +578,8 @@
 				},
 				{
 					"type" : "GoalComponent",
-					"scene" : "nivel1"
+					"nextLevel" : "nivel 1",
+					"levelSelection" : "LevelSelection"
 				}
 			]
 		},

@@ -208,7 +208,8 @@
 				},
 				{
 					"type" : "GoalComponent",
-					"scene" : "nivel 3"
+					"nextLevel" : "nivel 3",
+					"levelSelection" : "LevelSelection"
 				}
 			]
 		},
