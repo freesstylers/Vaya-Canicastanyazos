@@ -52,8 +52,7 @@ void GameManager::update()
 {
 	if (inLevel_) //Está en nivel
 	{
-		levelTime += MotorCasaPaco::getInstance()->getTimeDifference(prevtime);
-		prevtime = MotorCasaPaco::getInstance()->getTime();
+		levelTime += MotorCasaPaco::getInstance()->DeltaTime();
 		std::string s = updateIngameText(levelTime);
 
 		GUI_Manager::getInstance()->changeText(GUI_Manager::getInstance()->getStaticText("Ingame/Timer_Text"), s);
@@ -76,7 +75,6 @@ bool GameManager::ReceiveEvent(Event& event)
 	if (event.type == "changeScene")
 	{
 		inLevel_ = true;
-		prevtime = MotorCasaPaco::getInstance()->getTime(); //Este es el que se guarda de momento, con el que está comentado pues como que no va
 		levelTime = 0;
 	}
 	if (event.type == "estrellaCogida")
