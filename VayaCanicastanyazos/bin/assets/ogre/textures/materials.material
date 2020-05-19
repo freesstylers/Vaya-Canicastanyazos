@@ -113,7 +113,7 @@ material sky
 			
             texture_unit 
             {
-                cubic_texture space1_front5.png space1_back6.png space1_left2.png space1_right1.png space1_top3.png space1_bottom4.png separateUV
+                cubic_texture poggerinos_front5.png poggerinos_back6.png poggerinos_left2.png poggerinos_right1.png poggerinos_top3.png poggerinos_bottom4.png separateUV
                 tex_address_mode wrap
             }
 		}
