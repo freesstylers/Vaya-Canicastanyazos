@@ -1,5 +1,5 @@
 {
-	"name" : "nivel11",
+	"name" : "nivel 11",
 	"entities" :
 	[
 		
@@ -597,7 +597,7 @@
 			"components" : [
 				{
 					"type" : "DeathZoneComponent",
-					"entity" : "ball"
+					"marble" : "ball"
 				}
 			]
 		},

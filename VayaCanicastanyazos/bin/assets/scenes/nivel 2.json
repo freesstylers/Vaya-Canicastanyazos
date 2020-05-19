@@ -188,7 +188,7 @@
 			"components" : [
 				{
 					"type" : "DeathZoneComponent",
-					"entity" : "ball"
+					"marble" : "ball"
 				}
 			]
 		},
