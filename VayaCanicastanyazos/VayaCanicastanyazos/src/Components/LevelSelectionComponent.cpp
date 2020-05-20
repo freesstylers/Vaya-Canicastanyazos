@@ -430,7 +430,6 @@ void LevelSelectionComponent::updateTexts(int num)
 		
 		for (int k = 1; k < 9; k++)
 		{
-			//Estos lejos
 			if (minis1far)
 			{
 
@@ -447,11 +446,12 @@ void LevelSelectionComponent::updateTexts(int num)
 
 			std::string ent = "mini_" + std::to_string(k + 8);
 
-			Vector3 pos = MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent)->getTransform()->getPosition();
+			//Vector3 pos = MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent)->getTransform()->getPosition();
 
-			MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent)->getTransform()->setPosition(Vector3(pos.X, pos.Y + 200, pos.Z));
+			//MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent)->getTransform()->setPosition(Vector3(pos.X, pos.Y + 200, pos.Z));
 
-			
+			MotorCasaPaco::getInstance()->getSceneManager()->getCurrentScene()->getEntity(ent)->setEnabled(false);
+			//MotorCasaPaco::getInstance()->getSceneManager()->getCurrentScene()->getEntity(ent)->getComponent<Mesh>("Mesh")->setEnabled(false);
 		}
 		
 
