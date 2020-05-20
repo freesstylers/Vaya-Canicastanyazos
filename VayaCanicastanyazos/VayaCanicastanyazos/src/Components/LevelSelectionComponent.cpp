@@ -430,7 +430,6 @@ void LevelSelectionComponent::updateTexts(int num)
 		
 		for (int k = 1; k < 9; k++)
 		{
-			//Estos lejos
 			if (minis1far)
 			{
 
@@ -446,7 +445,6 @@ void LevelSelectionComponent::updateTexts(int num)
 			std::string ent = "mini_" + std::to_string(k + 8);
 
 			SceneManager::getInstance()->getCurrentScene()->getEntity(ent)->getComponent<Mesh>("Mesh")->setEnabled(false);
-
 		}
 		
 
