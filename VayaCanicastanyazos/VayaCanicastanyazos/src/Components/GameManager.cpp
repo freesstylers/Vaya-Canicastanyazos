@@ -58,6 +58,25 @@ void GameManager::update()
 
 		GUI_Manager::getInstance()->changeText(GUI_Manager::getInstance()->getStaticText("Ingame/Timer_Text"), s);
 	}
+
+	//Cosas de comentaristas
+
+	/*
+	
+	Para cambiar la imagen, se llama a
+
+	GUI_Manager::getInstance()->changeImage("Ingame/Colleccionable_1", "VayaCanicastanhazos/Star_Yes");
+
+	En la primera, hay que llamar al nombre de la imagen en el layout, en este caso "Ingame/Yayo1" o "Ingame/Yayo2" en el primer argumento
+	Y en el segundo, el nombre de la imagen en el ImageSet, en este caso "VayaCanicastanhazos/Yayo 1" o "VayaCanicastanhazos/Yayo 2", o "VayaCanicastanhazos/Blank" para ponerla transparente
+
+	Para los textos, se llama a
+
+	GUI_Manager::getInstance()->changeText(GUI_Manager::getInstance()->getStaticText("Ingame/Timer_Text"), s);
+
+	con el primer string se llama al string del nivel, en este caso "Ingame/Subtitulos" o "Ingame/Subtitulos2", y el segundo (s) en el ejemplo, es el string que se pondrá de texto.
+
+	*/
 }
 
 bool GameManager::ReceiveEvent(Event& event)
