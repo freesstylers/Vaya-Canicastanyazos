@@ -116,11 +116,56 @@ void GoalComponent::setLayout()
 
 		//Update Text
 		GUI_Manager::getInstance()->changeText(GUI_Manager::getInstance()->getStaticText("levelCompleted/Time"), "Tiempo: " + std::to_string(GameManager::getInstance()->getLevelTime()));
+		
+
+		std::string s;
+		int r = rand() % 3;
+
+		switch (r)
+		{
+		case 0:
+			s = "VayaCanicastanhazos/Bocadillo_Izq_1";
+			break;
+		case 1:
+			s = "VayaCanicastanhazos/Bocadillo_Izq_2";
+			break;
+		case 2:
+			s = "VayaCanicastanhazos/Bocadillo_Izq_3";
+			break;
+		case 3:
+			s = "VayaCanicastanhazos/Bocadillo_Izq_4";
+			break;
+		default:
+			break;
+		}
+
+		GUI_Manager::getInstance()->changeImage("levelCompleted/TextoYayo1", s);
+
+		r = rand() % 3;
+
+		switch (r)
+		{
+		case 0:
+			s = "VayaCanicastanhazos/Bocadillo_Dcha_1";
+			break;
+		case 1:
+			s = "VayaCanicastanhazos/Bocadillo_Dcha_2";
+			break;
+		case 2:
+			s = "VayaCanicastanhazos/Bocadillo_Dcha_3";
+			break;
+		case 3:
+			s = "VayaCanicastanhazos/Bocadillo_Dcha_4";
+			break;
+		default:
+			break;
+		}
+
+		GUI_Manager::getInstance()->changeImage("levelCompleted/TextoYayo2", s);
 
 
 		xPos[0] = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild("levelCompleted/Selection").getCenterPointXAbsolute();
 		yPos = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild("levelCompleted/Selection").getCenterPointYAbsolute();
-
 		xPos[1] = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild("levelCompleted/NextLevel").getCenterPointXAbsolute();
 
 		//Falta el texto, y actualizar las estrellas
