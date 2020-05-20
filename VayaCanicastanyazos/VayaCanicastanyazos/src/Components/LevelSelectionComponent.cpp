@@ -437,9 +437,7 @@ void LevelSelectionComponent::updateTexts(int num)
 				//Estos cerca
 				std::string ent2 = "mini_" + std::to_string(k);
 
-				Vector3 pos2 = MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent2)->getTransform()->getPosition();
-
-				MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent2)->getTransform()->setPosition(Vector3(pos2.X, pos2.Y - 200, pos2.Z));
+				SceneManager::getInstance()->getCurrentScene()->getEntity(ent2)->getComponent<Mesh>("Mesh")->setEnabled(true);
 
 				if (k == 8)
 					minis1far = false;
@@ -447,11 +445,8 @@ void LevelSelectionComponent::updateTexts(int num)
 
 			std::string ent = "mini_" + std::to_string(k + 8);
 
-			Vector3 pos = MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent)->getTransform()->getPosition();
+			SceneManager::getInstance()->getCurrentScene()->getEntity(ent)->getComponent<Mesh>("Mesh")->setEnabled(false);
 
-			MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent)->getTransform()->setPosition(Vector3(pos.X, pos.Y + 200, pos.Z));
-
-			
 		}
 		
 
@@ -502,17 +497,13 @@ void LevelSelectionComponent::updateTexts(int num)
 
 			std::string ent = "mini_" + std::to_string(k + 8);
 
-			Vector3 pos = MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent)->getTransform()->getPosition();
-
-			MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent)->getTransform()->setPosition(Vector3(pos.X, pos.Y - 200, pos.Z));
+			SceneManager::getInstance()->getCurrentScene()->getEntity(ent)->getComponent<Mesh>("Mesh")->setEnabled(true);
 
 
 			//Estos cerca
 			std::string ent2 = "mini_" + std::to_string(k);
 
-			Vector3 pos2 = MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent2)->getTransform()->getPosition();
-
-			MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent2)->getTransform()->setPosition(Vector3(pos2.X, pos2.Y + 200, pos2.Z));
+			SceneManager::getInstance()->getCurrentScene()->getEntity(ent2)->getComponent<Mesh>("Mesh")->setEnabled(false);
 
 			if (k == 8)
 				minis1far = true;
