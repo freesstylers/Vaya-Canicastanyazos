@@ -101,13 +101,13 @@ bool LevelSelectionComponent::functionLeftArrow(const CEGUI::EventArgs& e)
 {
 	if (currentShow == 0)
 	{
-		levels = { "nivel 9", "nivel 10", "nivel 11", "nivel 12", "nivel 13", "nivel 14", "nivel 15", "nivel 16" };
+		levels = { "nivel 10", "nivel 11", "nivel 1", "nivel 2", "nivel 3", "nivel 4", "nivel 5", "nivel 7" };
 		currentShow = 1;
 	}
 
 	else if (currentShow == 1)
 	{
-		levels = { "nivel 1", "nivel 2", "nivel 3", "nivel 4", "nivel 5", "nivel 6", "nivel 7", "nivel 8" };
+		levels = { "nivel 1", "nivel 2", "nivel 3", "nivel 4", "nivel 5", "nivel 7", "nivel 8", "nivel 9" };
 		currentShow = 0;
 	}
 
@@ -120,7 +120,7 @@ bool LevelSelectionComponent::functionRightArrow(const CEGUI::EventArgs& e)
 {
 	if (currentShow == 0)
 	{
-		levels = { "nivel 9", "nivel 10", "nivel 11", "nivel 12", "nivel 13", "nivel 14", "nivel 15", "nivel 16" };
+		levels = { "nivel 10", "nivel 11", "nivel 1", "nivel 2", "nivel 3", "nivel 4", "nivel 5", "nivel 7" };
 		currentShow = 1;
 	}
 
@@ -208,7 +208,7 @@ void LevelSelectionComponent::update()
 		}
 
 
-		if (InputManager::getInstance()->GameControllerGetAxisMovement(GameControllerAxis::CONTROLLER_AXIS_LEFTY, true) < -0.7 || InputManager::getInstance()->GameControllerIsButtonDown(GameControllerButton::CONTROLLER_BUTTON_DPAD_DOWN) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_S) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_DOWN))
+		if (InputManager::getInstance()->GameControllerGetAxisMovement(GameControllerAxis::CONTROLLER_AXIS_LEFTY, true) > 0.7 || InputManager::getInstance()->GameControllerIsButtonDown(GameControllerButton::CONTROLLER_BUTTON_DPAD_DOWN) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_S) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_DOWN))
 		{
 			if (!leftArrow && !rightArrow)
 			{
@@ -236,7 +236,7 @@ void LevelSelectionComponent::update()
 			currentTime = MotorCasaPaco::getInstance()->getTime();
 		}
 
-		if (InputManager::getInstance()->GameControllerGetAxisMovement(GameControllerAxis::CONTROLLER_AXIS_LEFTY, true) > 0.7 || InputManager::getInstance()->GameControllerIsButtonDown(GameControllerButton::CONTROLLER_BUTTON_DPAD_UP) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_W) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_UP))
+		if (InputManager::getInstance()->GameControllerGetAxisMovement(GameControllerAxis::CONTROLLER_AXIS_LEFTY, true) < -0.7 || InputManager::getInstance()->GameControllerIsButtonDown(GameControllerButton::CONTROLLER_BUTTON_DPAD_UP) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_W) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_UP))
 		{
 			if (!leftArrow && !rightArrow)
 			{
@@ -427,23 +427,33 @@ void LevelSelectionComponent::updateTexts(int num)
 		}
 
 		//Miniaturas
-		/*
+		
 		for (int k = 1; k < 9; k++)
 		{
-			//Estos a invisible
+			//Estos lejos
+			if (minis1far)
+			{
 
-			std::string ent = "mini_" + std::to_string(k);
+				//Estos cerca
+				std::string ent2 = "mini_" + std::to_string(k);
 
-			//MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent)->getComponent<Mesh>("Mesh")->onDeactivated(); //Esto no va, hay que mirarlo
+				Vector3 pos2 = MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent2)->getTransform()->getPosition();
 
-			MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent)->getTransform()->scale(Vector3(0, 0, 0));
+				MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent2)->getTransform()->setPosition(Vector3(pos2.X, pos2.Y - 200, pos2.Z));
+
+				if (k == 8)
+					minis1far = false;
+			}
+
+			std::string ent = "mini_" + std::to_string(k + 8);
+
+			Vector3 pos = MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent)->getTransform()->getPosition();
+
+			MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent)->getTransform()->setPosition(Vector3(pos.X, pos.Y + 200, pos.Z));
+
 			
-			//Estos a visible
-			std::string ent2 = "mini_" + std::to_string(k+8);
-
-			MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent)->getTransform()->scale(Vector3(1,1,1));
 		}
-		*/
+		
 
 	}
 
@@ -484,24 +494,29 @@ void LevelSelectionComponent::updateTexts(int num)
 				GUI_Manager::getInstance()->changeText(records[j], "--:--");
 		}
 
-		/*
 		//Miniaturas
+		
 		for (int k = 1; k < 9; k++)
 		{
-			//Estos a invisible
-			
-			std::string ent = "mini_" + std::to_string(k+8);
+			//Estos lejos
 
-			//MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent)->getComponent<Mesh>("Mesh")->onDeactivated(); //Esto no va, hay que mirarlo
-			
-			MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent)->getTransform()->scale(Vector3(0, 0, 0));
+			std::string ent = "mini_" + std::to_string(k + 8);
 
-			//Estos a visible
+			Vector3 pos = MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent)->getTransform()->getPosition();
+
+			MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent)->getTransform()->setPosition(Vector3(pos.X, pos.Y - 200, pos.Z));
+
+
+			//Estos cerca
 			std::string ent2 = "mini_" + std::to_string(k);
 
-			MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent2)->getTransform()->scale(Vector3(1, 1, 1));
+			Vector3 pos2 = MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent2)->getTransform()->getPosition();
+
+			MotorCasaPaco::getInstance()->getSceneManager()->getInstance()->getCurrentScene()->getEntity(ent2)->getTransform()->setPosition(Vector3(pos2.X, pos2.Y + 200, pos2.Z));
+
+			if (k == 8)
+				minis1far = true;
 		}
-		*/
 	}
 }
 
@@ -581,7 +596,7 @@ void LevelSelectionComponent::init(json& j)
 		currentTime = MotorCasaPaco::getInstance()->getTime();
 		
 		currentShow = 0;
-		levels = { "nivel 1", "nivel 2", "nivel 3", "nivel 4", "nivel 5", "nivel 6", "nivel 7", "nivel 8" };
+		levels = { "nivel 1", "nivel 2", "nivel 3", "nivel 4", "nivel 5", "nivel 7", "nivel 8", "nivel 9" };
 
 		updateTexts(currentShow);
 		//std::cout << tam << "\n";
@@ -590,15 +605,5 @@ void LevelSelectionComponent::init(json& j)
 		posY = 0;
 
 		MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsX[posX], positionsY[posY]);
-
-		if (!AudioManager::getInstance()->isPlayingChannel(1))
-		{
-			std::cout << "no suena" << "\n";
-			//AudioManager::getInstance()->playMusic("assets/sound/Menu_Music.mp3", 1, true);
-		}
-		else
-		{
-			std::cout << "suena" << "\n";
-		}
 	}
 }

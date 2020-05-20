@@ -17,6 +17,7 @@ GameManager::GameManager() : Component("GameManager") {
 	EventManager::getInstance()->RegisterListener(this, "estrellaCogida");
 	EventManager::getInstance()->RegisterListener(this, "finNivel");
 	EventManager::getInstance()->RegisterListener(this, "changeScene");
+	EventManager::getInstance()->RegisterListener(this, "nivelCompletado");
 	readData();
 }
 
@@ -70,6 +71,9 @@ bool GameManager::ReceiveEvent(Event& event)
 	if (event.type == "finNivel" && inLevel_)	//Esto ahora mismo esta complicado, porque al tocar la meta se guarda, y con la pantalla de final de nivel se esta guardando todo el rato. Booleano de control?
 	{
 		inLevel_ = false;
+	}
+	if (event.type == "nivelCompletado")
+	{
 		saveData(SceneManager::getInstance()->getCurrentScene()->getName());
 	}
 	if (event.type == "changeScene")
@@ -164,7 +168,7 @@ void GameManager::saveData(std::string name)
 			data << std::to_string(it.second.time) << "\n";
 		}
 	}
-	std::cout << "Stars: " << levels.find(name)->second.stars << " Time: " << levels.find(name)->second.time << std::endl;
+	//std::cout << "Stars: " << levels.find(name)->second.stars << " Time: " << levels.find(name)->second.time << std::endl;
 	stars_ = 0;
 	//levelTime = 0;
 	data.close();

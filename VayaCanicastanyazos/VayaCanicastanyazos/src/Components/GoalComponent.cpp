@@ -34,46 +34,50 @@ bool GoalComponent::functionBasicLevelSelection(const CEGUI::EventArgs& e)
 	GameManager::getInstance()->pause();
 	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
 	MotorCasaPaco::getInstance()->changeScene(levelSelection);
+	AudioManager::getInstance()->pauseChannel(2);
 	AudioManager::getInstance()->playMusic("assets/sound/Menu_Music.mp3", 1, true);
 	return true;
 }
 
 void GoalComponent::pausedUpdate()
 {
-	if (MotorCasaPaco::getInstance()->getTimeDifference(currentTime) > delay)
+	if (completed)
 	{
-		//Mando y tal
-
-		if (InputManager::getInstance()->GameControllerGetAxisMovement(GameControllerAxis::CONTROLLER_AXIS_LEFTX, true) < -0.7 || InputManager::getInstance()->GameControllerIsButtonDown(GameControllerButton::CONTROLLER_BUTTON_DPAD_LEFT) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_A) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_LEFT))
+		if (MotorCasaPaco::getInstance()->getTimeDifference(currentTime) > delay)
 		{
-			if (menuPos == 0)
-				menuPos = 1;
-			else
-				menuPos = 0;
+			//Mando y tal
 
-			MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(xPos[menuPos], yPos);
-			currentTime = MotorCasaPaco::getInstance()->getTime();
+			if (InputManager::getInstance()->GameControllerGetAxisMovement(GameControllerAxis::CONTROLLER_AXIS_LEFTX, true) < -0.7 || InputManager::getInstance()->GameControllerIsButtonDown(GameControllerButton::CONTROLLER_BUTTON_DPAD_LEFT) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_A) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_LEFT))
+			{
+				if (menuPos == 0)
+					menuPos = 1;
+				else
+					menuPos = 0;
 
+				MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(xPos[menuPos], yPos);
+				currentTime = MotorCasaPaco::getInstance()->getTime();
+
+			}
+			else if (InputManager::getInstance()->GameControllerGetAxisMovement(GameControllerAxis::CONTROLLER_AXIS_LEFTX, true) > 0.7 || InputManager::getInstance()->GameControllerIsButtonDown(GameControllerButton::CONTROLLER_BUTTON_DPAD_RIGHT) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_D) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_RIGHT))
+			{
+				if (menuPos == 0)
+					menuPos = 1;
+				else
+					menuPos = 0;
+
+				MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(xPos[menuPos], yPos);
+				currentTime = MotorCasaPaco::getInstance()->getTime();
+			}
 		}
-		else if (InputManager::getInstance()->GameControllerGetAxisMovement(GameControllerAxis::CONTROLLER_AXIS_LEFTX, true) > 0.7 || InputManager::getInstance()->GameControllerIsButtonDown(GameControllerButton::CONTROLLER_BUTTON_DPAD_RIGHT) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_D) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_RIGHT))
+
+		if (MotorCasaPaco::getInstance()->getInputManager()->GameControllerIsButtonDown(GameControllerButton::CONTROLLER_BUTTON_A) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_SPACE))
 		{
-			if (menuPos == 0)
-				menuPos = 1;
-			else
-				menuPos = 0;
-
-			MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(xPos[menuPos], yPos);
-			currentTime = MotorCasaPaco::getInstance()->getTime();
+			MotorCasaPaco::getInstance()->getInputManager()->injectLeftMouseButtonDown();
 		}
-	}
-
-	if (MotorCasaPaco::getInstance()->getInputManager()->GameControllerIsButtonDown(GameControllerButton::CONTROLLER_BUTTON_A) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_SPACE))
-	{
-		MotorCasaPaco::getInstance()->getInputManager()->injectLeftMouseButtonDown();
-	}
-	else
-	{
-		MotorCasaPaco::getInstance()->getInputManager()->injectLeftMouseButtonUp();
+		else
+		{
+			MotorCasaPaco::getInstance()->getInputManager()->injectLeftMouseButtonUp();
+		}
 	}
 }
 
@@ -107,11 +111,11 @@ void GoalComponent::setLayout()
 		while (i <= stars)
 		{
 			GUI_Manager::getInstance()->changeImage(id + std::to_string(i), "VayaCanicastanhazos/Star_Yes");
+			i++;
 		}
 
 		//Update Text
 		GUI_Manager::getInstance()->changeText(GUI_Manager::getInstance()->getStaticText("levelCompleted/Time"), "Tiempo: " + std::to_string(GameManager::getInstance()->getLevelTime()));
-		GUI_Manager::getInstance()->changeText(GUI_Manager::getInstance()->getStaticText("levelCompleted/Record"), "Record: " + std::to_string(GameManager::getInstance()->getTimeFromLevel(1))); //El 1 está de stub, habría que meter un campo level en el componente?
 
 
 		xPos[0] = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild("levelCompleted/Selection").getCenterPointXAbsolute();
@@ -135,16 +139,25 @@ void GoalComponent::OnCollision(Entity* ent) {
 	{
 		if (ent->getTag() == "marble") {
 
-			Event evt = Event("finNivel");
+			Event evt = Event("nivelCompletado");
 			EventManager::getInstance()->EmitEvent(evt);
+
+			Event evt2 = Event("finNivel");
+			EventManager::getInstance()->EmitEvent(evt2);
+
+			std::size_t position = nextLevel.find(" ");
+			std::string levelNumber = nextLevel.substr(position);
+			int level = std::stoi(levelNumber);
+
+			GUI_Manager::getInstance()->changeText(GUI_Manager::getInstance()->getStaticText("levelCompleted/Record"), "Record: " + std::to_string(GameManager::getInstance()->getTimeFromLevel(level - 1))); //El 1 está de stub, habría que meter un campo level en el componente?
+
 
 			GUI_Manager::getInstance()->setLayoutVisible(0, false);
 
 			GUI_Manager::getInstance()->setLayoutVisible(GUI_Manager::getInstance()->getLayouts().size() - 1, true);
 
 			GameManager::getInstance()->pause();
-			AudioManager::getInstance()->pauseChannel(2);
-			AudioManager::getInstance()->playMusic("assets/sound/victory.mp3", 2, false);
+			AudioManager::getInstance()->playMusic("assets/sound/victory.mp3", 3, false);
 
 			completed = true;
 

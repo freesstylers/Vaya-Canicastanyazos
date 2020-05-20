@@ -28,7 +28,7 @@ void MainMenuInputComponent::update()
 {
 	if (MotorCasaPaco::getInstance()->getTimeDifference(currentTime) > delay)
 	{
-		if (InputManager::getInstance()->GameControllerGetAxisMovement(GameControllerAxis::CONTROLLER_AXIS_LEFTY, true) < -0.7 || InputManager::getInstance()->GameControllerIsButtonDown(GameControllerButton::CONTROLLER_BUTTON_DPAD_DOWN) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_S) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_UP))
+		if (InputManager::getInstance()->GameControllerGetAxisMovement(GameControllerAxis::CONTROLLER_AXIS_LEFTY, true) > 0.7 || InputManager::getInstance()->GameControllerIsButtonDown(GameControllerButton::CONTROLLER_BUTTON_DPAD_DOWN) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_S) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_UP))
 		{
 			if (currenPos < (tam - 1))
 				currenPos++;
@@ -38,7 +38,7 @@ void MainMenuInputComponent::update()
 			MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsX[currenPos], positionsY[currenPos]);
 			currentTime = MotorCasaPaco::getInstance()->getTime();
 		}
-		else if (InputManager::getInstance()->GameControllerGetAxisMovement(GameControllerAxis::CONTROLLER_AXIS_LEFTY, true) > 0.7 || InputManager::getInstance()->GameControllerIsButtonDown(GameControllerButton::CONTROLLER_BUTTON_DPAD_UP) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_W) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_DOWN))
+		else if (InputManager::getInstance()->GameControllerGetAxisMovement(GameControllerAxis::CONTROLLER_AXIS_LEFTY, true) < -0.7 || InputManager::getInstance()->GameControllerIsButtonDown(GameControllerButton::CONTROLLER_BUTTON_DPAD_UP) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_W) || InputManager::getInstance()->IsKeyDown(Scancode::SCANCODE_DOWN))
 		{
 			if (currenPos > 0)
 				currenPos--;
@@ -86,7 +86,7 @@ void MainMenuInputComponent::init(json& j)
 		tam = count;
 		currenPos = 0;
 		
-		std::cout << tam << "\n";
+		//std::cout << tam << "\n";
 		//posX = MotorCasaPaco::getInstance()->getScreenWidth() / 2;
 		//posY = MotorCasaPaco::getInstance()->getScreenHeight() / 2;
 

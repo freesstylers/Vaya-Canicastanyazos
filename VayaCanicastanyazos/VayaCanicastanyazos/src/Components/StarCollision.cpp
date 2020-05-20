@@ -32,7 +32,7 @@ void StarCollision::OnCollision(Entity* ent)
 		EventManager::getInstance()->EmitEvent("estrellaCogida");
 
 		AudioManager::getInstance()->playSound("assets/sound/402Cry.wav", 0);
-		std::cout << GameManager::getInstance()->getStars() << std::endl;
+		//std::cout << GameManager::getInstance()->getStars() << std::endl;
 
 		SceneManager::getInstance()->getCurrentScene()->deleteEntity(getEntity()->getName());
 	}

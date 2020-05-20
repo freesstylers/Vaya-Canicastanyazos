@@ -296,11 +296,6 @@
 			"components" : 
 			[
 				{
-					"type": "ChangeSceneButtonComponent",
-					"buttonName" : "Ingame/Menu",
-					"sceneName" : "Menu"
-				},
-				{
 					"type": "PauseMenuComponent",
 					"buttons" :
 					[

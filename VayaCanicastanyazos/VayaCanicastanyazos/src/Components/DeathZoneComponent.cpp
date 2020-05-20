@@ -24,6 +24,7 @@ void DeathZoneComponent::init(json& args) {
 void DeathZoneComponent::update() {
 	if (marble->getTransform()->getPosition().Y < Component::getEntity()->getTransform()->getPosition().Y) {
 		SceneManager::getInstance()->changeScene(SceneManager::getInstance()->getCurrentScene()->getName());
+		GameManager::getInstance()->resetStars();
 	}
 }
 

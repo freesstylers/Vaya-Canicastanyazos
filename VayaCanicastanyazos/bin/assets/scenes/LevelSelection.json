@@ -104,20 +104,7 @@
 			"name" : "mini_6",
 			"rotation" : [50, 0, 270],
 			"position" : [-10, 10, -22],
-			"scale" : [1, 1, 1],
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "mini6.mesh",
-					"material" : "test"
-				}
-			]
-		},
-		{
-			"name" : "mini_7",
-			"rotation" : [0, 0, 270],
-			"position" : [-10, 10, 25],
-			"scale" : [0.8, 0.2, 0.8],
+			"scale" : [0.6, 0.2, 0.6],
 			"components" : [
 				{
 					"type" : "Mesh",
@@ -127,14 +114,131 @@
 			]
 		},
 		{
-			"name" : "mini_8",
-			"rotation" : [50, 0, 270],
-			"position" : [-10, 10, 70],
-			"scale" : [0.6, 0.6, 0.6],
+			"name" : "mini_7",
+			"rotation" : [0, 0, 270],
+			"position" : [-10, 10, 25],
+			"scale" : [0.8, 0.8, 0.8],
 			"components" : [
 				{
 					"type" : "Mesh",
 					"mesh" : "mini8.mesh",
+					"material" : "test"
+				}
+			]
+		},
+		{
+			"name" : "mini_8",
+			"rotation" : [50, 0, 270],
+			"position" : [-10, 10, 70],
+			"scale" : [0.8, 0.8, 0.8],
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "mini9.mesh",
+					"material" : "test"
+				}
+			]
+		},
+		{
+			"name" : "mini_9",
+			"rotation" : [50, 0, 270],
+			"position" : [40, 10, -70],
+			"scale" : [0.5, 0.5, 0.5],
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "mini10.mesh",
+					"material" : "test"
+				}
+			]
+		},
+		{
+			"name" : "mini_10",
+			"rotation" : [50, 0, 270],
+			"position" : [40, 10, -18],
+			"scale" : [0.8, 0.8, 0.8],
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "mini11.mesh",
+					"material" : "test"
+				}
+			]
+		},
+		{
+			"name" : "mini_11",
+			"rotation" : [50, 0, 270],
+			"position" : [40, 10, 23],
+			"scale" : [0.8, 0.8, 0.8],
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "mini1.mesh",
+					"material" : "test"
+				}
+			]
+		},
+		{
+			"name" : "mini_12",
+			"rotation" : [50, 0, 270],
+			"position" : [40, 10, 70],
+			"scale" : [1, 1, 1],
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "mini2.mesh",
+					"material" : "test"
+				}
+			]
+		},
+		{
+			"name" : "mini_13",
+			"rotation" : [50, 0, 270],
+			"position" : [-10, 10, -75],
+			"scale" : [1, 1, 1],
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "mini3.mesh",
+					"material" : "test"
+				}
+			]
+		},
+		{
+			"name" : "mini_14",
+			"rotation" : [50, 0, 270],
+			"position" : [-8, 10, -28],
+			"scale" : [0.8, 0.8, 0.8],
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "mini4.mesh",
+					"material" : "test"
+				}
+			]
+		},
+		{
+			"name" : "mini_15",
+			"rotation" : [50, 0, 270],
+			"position" : [-10, 10, 23],
+			"scale" : [0.5, 0.5, 0.5],
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "mini5.mesh",
+					"material" : "test"
+				}
+			]
+		},
+		{
+			"name" : "mini_16",
+			"rotation" : [0, 0, 270],
+			"position" : [-5, 10, 75],
+			"scale" : [0.4, 0.4, 0.4],
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "mini7.mesh",
 					"material" : "test"
 				}
 			]

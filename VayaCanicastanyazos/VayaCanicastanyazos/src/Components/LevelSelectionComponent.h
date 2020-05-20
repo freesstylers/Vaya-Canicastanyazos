@@ -52,6 +52,8 @@ private:
 
 	int currentShow;
 
+	bool minis1far = false;
+
 	float delay;
 	float currentTime;
 };
