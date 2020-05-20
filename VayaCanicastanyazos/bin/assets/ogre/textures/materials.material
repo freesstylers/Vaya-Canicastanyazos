@@ -162,3 +162,54 @@ material background{
         }
     }
 }
+
+material island {
+    receive_shadows on
+	
+    technique {
+        pass {
+            lighting on			
+			
+            texture_unit 
+            {
+                texture island.png
+                tex_address_mode wrap
+				colour_op alpha_blend
+            }
+        }
+    }
+}
+
+material fence {
+    receive_shadows on
+	
+    technique {
+        pass {
+            lighting on			
+			
+            texture_unit 
+            {
+                texture fence.png
+                tex_address_mode wrap
+				colour_op alpha_blend
+            }
+        }
+    }
+}
+
+material bridge {
+    receive_shadows on
+	
+    technique {
+        pass {
+            lighting on			
+			
+            texture_unit 
+            {
+                texture bridge.png
+                tex_address_mode wrap
+				colour_op alpha_blend
+            }
+        }
+    }
+}

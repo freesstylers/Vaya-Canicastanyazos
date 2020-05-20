@@ -1,25 +1,24 @@
-10:10:17: Creating resource group General
-10:10:17: Creating resource group OgreInternal
-10:10:17: Creating resource group OgreAutodetect
-10:10:17: Registering ResourceManager for type Material
-10:10:17: Registering ResourceManager for type Skeleton
-10:10:17: Registering ResourceManager for type Mesh
-10:10:17: Warning: conversion is an older format ([MeshSerializer_v1.41]); you should upgrade it as soon as possible using the OgreMeshUpgrade tool.
-10:10:17: MeshSerializer writing mesh data to stream Star.mesh...
-10:10:17: File header written.
-10:10:17: Writing mesh data...
-10:10:17: Writing submesh...
-10:10:17: Exporting submesh texture aliases...
-10:10:17: Submesh texture aliases exported.
-10:10:17: Submesh exported.
-10:10:17: Exporting bounds information....
-10:10:17: Bounds information exported.
-10:10:17: Exporting submesh name table...
-10:10:17: Submesh name table exported.
-10:10:17: Exporting edge lists...
-10:10:17: Edge lists exported
-10:10:17: Mesh data exported.
-10:10:17: MeshSerializer export successful.
-10:10:17: Unregistering ResourceManager for type Mesh
-10:10:17: Unregistering ResourceManager for type Skeleton
-10:10:17: Unregistering ResourceManager for type Material
+16:26:02: Creating resource group General
+16:26:02: Creating resource group OgreInternal
+16:26:02: Creating resource group OgreAutodetect
+16:26:02: Registering ResourceManager for type Material
+16:26:02: Registering ResourceManager for type Skeleton
+16:26:02: Registering ResourceManager for type Mesh
+16:26:02: MeshSerializer writing mesh data to stream Star.mesh...
+16:26:02: File header written.
+16:26:02: Writing mesh data...
+16:26:02: Writing submesh...
+16:26:02: Exporting submesh texture aliases...
+16:26:02: Submesh texture aliases exported.
+16:26:02: Submesh exported.
+16:26:02: Exporting bounds information....
+16:26:02: Bounds information exported.
+16:26:02: Exporting submesh name table...
+16:26:02: Submesh name table exported.
+16:26:02: Exporting edge lists...
+16:26:02: Edge lists exported
+16:26:02: Mesh data exported.
+16:26:02: MeshSerializer export successful.
+16:26:02: Unregistering ResourceManager for type Mesh
+16:26:02: Unregistering ResourceManager for type Skeleton
+16:26:02: Unregistering ResourceManager for type Material
