@@ -4,6 +4,7 @@
     <Window type="DefaultWindow" name="levelCompleted" >
         <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
         <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        <Property name="RiseOnClickEnabled" value="false" />
         <Window type="GWEN/StaticImage" name="Background" >
             <Property name="Area" value="{{0.219531,0},{0.211111,0},{0.789062,0},{0.786111,0}}" />
             <Property name="Image" value="GWEN/Input.Button.Hovered.Middle.Middle" />

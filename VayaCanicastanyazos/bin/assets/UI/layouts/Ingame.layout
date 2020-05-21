@@ -4,6 +4,7 @@
     <Window type="DefaultWindow" name="Ingame" >
         <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
         <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        <Property name="RiseOnClickEnabled" value="false" />
         <Window type="GWEN/StaticImage" name="Timer_Image" >
             <Property name="Area" value="{{0.825781,0},{0.0569444,0},{0.961718,0},{0.181944,0}}" />
             <Property name="Image" value="GWEN/Input.Button.Hovered.Middle.Middle" />

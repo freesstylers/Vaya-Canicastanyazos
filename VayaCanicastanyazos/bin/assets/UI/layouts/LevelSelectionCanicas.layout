@@ -1,1 +1,453 @@
-<?xml version="1.0" encoding="UTF-8"?><GUILayout version="4" ><Window type="DefaultWindow" name="LevelSelection" ><Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Window type="VayaCanicastanhazos/LeftArrow" name="LeftArrow" ><Property name="Area" value="{{0.03,0},{0.388889,0},{0.0690625,0},{0.458333,0}}" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="VayaCanicastanhazos/RightArrow" name="RightArrow" ><Property name="Area" value="{{0.93,0},{0.388889,0},{0.969063,0},{0.458333,0}}" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/Button" name="Atras" ><Property name="Area" value="{{0.417188,0},{0.908334,0},{0.596875,0},{0.990278,0}}" /><Property name="Text" value="ATRÁS" /></Window><Window type="GWEN/Button" name="Boton_Nivel_4" ><Property name="Area" value="{{0.759844,0},{0.25,0},{0.923907,0},{0.336111,0}}" /></Window><Window type="GWEN/Button" name="Boton_Nivel_8" ><Property name="Area" value="{{0.760625,0},{0.680556,0},{0.924688,0},{0.766667,0}}" /></Window><Window type="GWEN/Button" name="Boton_Nivel_7" ><Property name="Area" value="{{0.53875,0},{0.679167,0},{0.702812,0},{0.765278,0}}" /></Window><Window type="GWEN/Button" name="Boton_Nivel_3" ><Property name="Area" value="{{0.53875,0},{0.248611,0},{0.702812,0},{0.334722,0}}" /></Window><Window type="GWEN/Button" name="Boton_Nivel_6" ><Property name="Area" value="{{0.309844,0},{0.680556,0},{0.473906,0},{0.766667,0}}" /></Window><Window type="GWEN/Button" name="Boton_Nivel_2" ><Property name="Area" value="{{0.309844,0},{0.25,0},{0.473906,0},{0.336111,0}}" /></Window><Window type="GWEN/Button" name="Boton_Nivel_5" ><Property name="Area" value="{{0.0739065,0},{0.680556,0},{0.237969,0},{0.766667,0}}" /></Window><Window type="GWEN/Button" name="Boton_Nivel_1" ><Property name="Area" value="{{0.0739065,0},{0.25,0},{0.237969,0},{0.336111,0}}" /></Window><Window type="GWEN/StaticImage" name="Info_1_Back" ><Property name="Area" value="{{0.0804685,0},{0.344444,0},{0.230469,0},{0.448611,0}}" /><Property name="Image" value="GWEN/Input.Button.Disabled.Middle.Middle" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_1_Star_1" ><Property name="Area" value="{{0.114063,0},{0.347222,0},{0.139063,0},{0.391666,0}}" /><Property name="Image" value="VayaCanicastanhazos/Star_No" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_1_Star_2" ><Property name="Area" value="{{0.143749,0},{0.347222,0},{0.168749,0},{0.391666,0}}" /><Property name="Image" value="VayaCanicastanhazos/Star_No" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_1_Star_3" ><Property name="Area" value="{{0.172656,0},{0.347222,0},{0.197656,0},{0.391666,0}}" /><Property name="Image" value="VayaCanicastanhazos/Star_No" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticText" name="Info_1_Text" ><Property name="Area" value="{{0.0812503,0},{0.397222,0},{0.228907,0},{0.444444,0}}" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="HorzFormatting" value="CentreAligned" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_6_Back" ><Property name="Area" value="{{0.317968,0},{0.777777,0},{0.467968,0},{0.881944,0}}" /><Property name="Image" value="GWEN/Input.Button.Disabled.Middle.Middle" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_6_Star_2" ><Property name="Area" value="{{0.381249,0},{0.780556,0},{0.406249,0},{0.825001,0}}" /><Property name="Image" value="VayaCanicastanhazos/Star_No" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_6_Star_3" ><Property name="Area" value="{{0.410156,0},{0.780556,0},{0.435156,0},{0.825001,0}}" /><Property name="Image" value="VayaCanicastanhazos/Star_No" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_6_Star_1" ><Property name="Area" value="{{0.351563,0},{0.780556,0},{0.376563,0},{0.825001,0}}" /><Property name="Image" value="VayaCanicastanhazos/Star_No" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticText" name="Info_6_Text" ><Property name="Area" value="{{0.31875,0},{0.830555,0},{0.466406,0},{0.877777,0}}" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="HorzFormatting" value="CentreAligned" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_3_Back" ><Property name="Area" value="{{0.546875,0},{0.344444,0},{0.696875,0},{0.448611,0}}" /><Property name="Image" value="GWEN/Input.Button.Disabled.Middle.Middle" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_3_Star_2" ><Property name="Area" value="{{0.610155,0},{0.347222,0},{0.635155,0},{0.391666,0}}" /><Property name="Image" value="VayaCanicastanhazos/Star_No" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_3_Star_3" ><Property name="Area" value="{{0.639062,0},{0.347222,0},{0.664062,0},{0.391666,0}}" /><Property name="Image" value="VayaCanicastanhazos/Star_No" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_3_Star_1" ><Property name="Area" value="{{0.580469,0},{0.347222,0},{0.605469,0},{0.391666,0}}" /><Property name="Image" value="VayaCanicastanhazos/Star_No" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticText" name="Info_3_Text" ><Property name="Area" value="{{0.547656,0},{0.397222,0},{0.695312,0},{0.444444,0}}" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="HorzFormatting" value="CentreAligned" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_8_Back" ><Property name="Area" value="{{0.769531,0},{0.777777,0},{0.919531,0},{0.881944,0}}" /><Property name="Image" value="GWEN/Input.Button.Disabled.Middle.Middle" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_8_Star_2" ><Property name="Area" value="{{0.832811,0},{0.780556,0},{0.857811,0},{0.825001,0}}" /><Property name="Image" value="VayaCanicastanhazos/Star_No" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_8_Star_3" ><Property name="Area" value="{{0.861718,0},{0.780556,0},{0.886718,0},{0.825001,0}}" /><Property name="Image" value="VayaCanicastanhazos/Star_No" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_8_Star_1" ><Property name="Area" value="{{0.803126,0},{0.780556,0},{0.828126,0},{0.825001,0}}" /><Property name="Image" value="VayaCanicastanhazos/Star_No" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticText" name="Info_8_Text" ><Property name="Area" value="{{0.770313,0},{0.830555,0},{0.917969,0},{0.877777,0}}" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="HorzFormatting" value="CentreAligned" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_2_Back" ><Property name="Area" value="{{0.317968,0},{0.344444,0},{0.467968,0},{0.448611,0}}" /><Property name="Image" value="GWEN/Input.Button.Disabled.Middle.Middle" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_2_Star_2" ><Property name="Area" value="{{0.381249,0},{0.347222,0},{0.406249,0},{0.391666,0}}" /><Property name="Image" value="VayaCanicastanhazos/Star_No" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_2_Star_1" ><Property name="Area" value="{{0.351563,0},{0.347222,0},{0.376563,0},{0.391666,0}}" /><Property name="Image" value="VayaCanicastanhazos/Star_No" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticText" name="Info_2_Text" ><Property name="Area" value="{{0.31875,0},{0.397222,0},{0.466406,0},{0.444444,0}}" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="HorzFormatting" value="CentreAligned" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_2_Star_3" ><Property name="Area" value="{{0.410156,0},{0.347222,0},{0.435156,0},{0.391666,0}}" /><Property name="Image" value="VayaCanicastanhazos/Star_No" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_4_Back" ><Property name="Area" value="{{0.769531,0},{0.344444,0},{0.919531,0},{0.448611,0}}" /><Property name="Image" value="GWEN/Input.Button.Disabled.Middle.Middle" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_4_Star_2" ><Property name="Area" value="{{0.832811,0},{0.347222,0},{0.857811,0},{0.391666,0}}" /><Property name="Image" value="VayaCanicastanhazos/Star_No" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_4_Star_1" ><Property name="Area" value="{{0.803126,0},{0.347222,0},{0.828126,0},{0.391666,0}}" /><Property name="Image" value="VayaCanicastanhazos/Star_No" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticText" name="Info_4_Text" ><Property name="Area" value="{{0.770313,0},{0.397222,0},{0.917969,0},{0.444444,0}}" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="HorzFormatting" value="CentreAligned" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_4_Star_3" ><Property name="Area" value="{{0.861718,0},{0.347222,0},{0.886718,0},{0.391666,0}}" /><Property name="Image" value="VayaCanicastanhazos/Star_No" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_7_Back" ><Property name="Area" value="{{0.546875,0},{0.777777,0},{0.696875,0},{0.881944,0}}" /><Property name="Image" value="GWEN/Input.Button.Disabled.Middle.Middle" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticText" name="Info_7_Text" ><Property name="Area" value="{{0.547656,0},{0.830555,0},{0.695312,0},{0.877777,0}}" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="HorzFormatting" value="CentreAligned" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_5_Back" ><Property name="Area" value="{{0.0804685,0},{0.777777,0},{0.230469,0},{0.881944,0}}" /><Property name="Image" value="GWEN/Input.Button.Disabled.Middle.Middle" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_5_Star_2" ><Property name="Area" value="{{0.143749,0},{0.780556,0},{0.168749,0},{0.825001,0}}" /><Property name="Image" value="VayaCanicastanhazos/Star_No" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_7_Star_2" ><Property name="Area" value="{{0.610155,0},{0.780556,0},{0.635155,0},{0.825001,0}}" /><Property name="Image" value="VayaCanicastanhazos/Star_No" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_5_Star_3" ><Property name="Area" value="{{0.172656,0},{0.780556,0},{0.197656,0},{0.825001,0}}" /><Property name="Image" value="VayaCanicastanhazos/Star_No" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_7_Star_3" ><Property name="Area" value="{{0.639062,0},{0.780556,0},{0.664062,0},{0.825001,0}}" /><Property name="Image" value="VayaCanicastanhazos/Star_No" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticText" name="Info_5_Text" ><Property name="Area" value="{{0.0812503,0},{0.830555,0},{0.228907,0},{0.877777,0}}" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="HorzFormatting" value="CentreAligned" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_7_Star_1" ><Property name="Area" value="{{0.580469,0},{0.780556,0},{0.605469,0},{0.825001,0}}" /><Property name="Image" value="VayaCanicastanhazos/Star_No" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window><Window type="GWEN/StaticImage" name="Info_5_Star_1" ><Property name="Area" value="{{0.114063,0},{0.780556,0},{0.139063,0},{0.825001,0}}" /><Property name="Image" value="VayaCanicastanhazos/Star_No" /><Property name="MaxSize" value="{{1,0},{1,0}}" /><Property name="FrameEnabled" value="false" /><Property name="BackgroundEnabled" value="false" /><Property name="RiseOnClickEnabled" value="false" /></Window></Window></GUILayout>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GUILayout version="4" >
+    <Window type="DefaultWindow" name="LevelSelection" >
+        <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
+        <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        <Property name="RiseOnClickEnabled" value="false" />
+        <Window type="VayaCanicastanhazos/LeftArrow" name="LeftArrow" >
+            <Property name="Area" value="{{0.03,0},{0.388889,0},{0.0690625,0},{0.458333,0}}" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="VayaCanicastanhazos/RightArrow" name="RightArrow" >
+            <Property name="Area" value="{{0.93,0},{0.388889,0},{0.969063,0},{0.458333,0}}" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/Button" name="Atras" >
+            <Property name="Area" value="{{0.417188,0},{0.908334,0},{0.596875,0},{0.990278,0}}" />
+            <Property name="Text" value="ATRÁS" />
+        </Window>
+        <Window type="GWEN/Button" name="Boton_Nivel_4" >
+            <Property name="Area" value="{{0.759844,0},{0.25,0},{0.923907,0},{0.336111,0}}" />
+        </Window>
+        <Window type="GWEN/Button" name="Boton_Nivel_8" >
+            <Property name="Area" value="{{0.760625,0},{0.680556,0},{0.924688,0},{0.766667,0}}" />
+        </Window>
+        <Window type="GWEN/Button" name="Boton_Nivel_7" >
+            <Property name="Area" value="{{0.53875,0},{0.679167,0},{0.702812,0},{0.765278,0}}" />
+        </Window>
+        <Window type="GWEN/Button" name="Boton_Nivel_3" >
+            <Property name="Area" value="{{0.53875,0},{0.248611,0},{0.702812,0},{0.334722,0}}" />
+        </Window>
+        <Window type="GWEN/Button" name="Boton_Nivel_6" >
+            <Property name="Area" value="{{0.309844,0},{0.680556,0},{0.473906,0},{0.766667,0}}" />
+        </Window>
+        <Window type="GWEN/Button" name="Boton_Nivel_2" >
+            <Property name="Area" value="{{0.309844,0},{0.25,0},{0.473906,0},{0.336111,0}}" />
+        </Window>
+        <Window type="GWEN/Button" name="Boton_Nivel_5" >
+            <Property name="Area" value="{{0.0739065,0},{0.680556,0},{0.237969,0},{0.766667,0}}" />
+        </Window>
+        <Window type="GWEN/Button" name="Boton_Nivel_1" >
+            <Property name="Area" value="{{0.0739065,0},{0.25,0},{0.237969,0},{0.336111,0}}" />
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_1_Back" >
+            <Property name="Area" value="{{0.0804685,0},{0.344444,0},{0.230469,0},{0.448611,0}}" />
+            <Property name="Image" value="GWEN/Input.Button.Disabled.Middle.Middle" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_1_Star_1" >
+            <Property name="Area" value="{{0.114063,0},{0.347222,0},{0.139063,0},{0.391666,0}}" />
+            <Property name="Image" value="VayaCanicastanhazos/Star_No" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_1_Star_2" >
+            <Property name="Area" value="{{0.143749,0},{0.347222,0},{0.168749,0},{0.391666,0}}" />
+            <Property name="Image" value="VayaCanicastanhazos/Star_No" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_1_Star_3" >
+            <Property name="Area" value="{{0.172656,0},{0.347222,0},{0.197656,0},{0.391666,0}}" />
+            <Property name="Image" value="VayaCanicastanhazos/Star_No" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticText" name="Info_1_Text" >
+            <Property name="Area" value="{{0.0812503,0},{0.397222,0},{0.228907,0},{0.444444,0}}" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="HorzFormatting" value="CentreAligned" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+            <AutoWindow namePath="__auto_hscrollbar__" >
+                <AutoWindow namePath="__auto_thumb__" >
+                    <Property name="MouseInputPropagationEnabled" value="true" />
+                </AutoWindow>
+            </AutoWindow>
+            <AutoWindow namePath="__auto_vscrollbar__" >
+                <Property name="VerticalScrollbar" value="true" />
+                <AutoWindow namePath="__auto_thumb__" >
+                    <Property name="MouseInputPropagationEnabled" value="true" />
+                </AutoWindow>
+            </AutoWindow>
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_6_Back" >
+            <Property name="Area" value="{{0.317968,0},{0.777777,0},{0.467968,0},{0.881944,0}}" />
+            <Property name="Image" value="GWEN/Input.Button.Disabled.Middle.Middle" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_6_Star_2" >
+            <Property name="Area" value="{{0.381249,0},{0.780556,0},{0.406249,0},{0.825001,0}}" />
+            <Property name="Image" value="VayaCanicastanhazos/Star_No" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_6_Star_3" >
+            <Property name="Area" value="{{0.410156,0},{0.780556,0},{0.435156,0},{0.825001,0}}" />
+            <Property name="Image" value="VayaCanicastanhazos/Star_No" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_6_Star_1" >
+            <Property name="Area" value="{{0.351563,0},{0.780556,0},{0.376563,0},{0.825001,0}}" />
+            <Property name="Image" value="VayaCanicastanhazos/Star_No" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticText" name="Info_6_Text" >
+            <Property name="Area" value="{{0.31875,0},{0.830555,0},{0.466406,0},{0.877777,0}}" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="HorzFormatting" value="CentreAligned" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+            <AutoWindow namePath="__auto_hscrollbar__" >
+                <AutoWindow namePath="__auto_thumb__" >
+                    <Property name="MouseInputPropagationEnabled" value="true" />
+                </AutoWindow>
+            </AutoWindow>
+            <AutoWindow namePath="__auto_vscrollbar__" >
+                <Property name="VerticalScrollbar" value="true" />
+                <AutoWindow namePath="__auto_thumb__" >
+                    <Property name="MouseInputPropagationEnabled" value="true" />
+                </AutoWindow>
+            </AutoWindow>
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_3_Back" >
+            <Property name="Area" value="{{0.546875,0},{0.344444,0},{0.696875,0},{0.448611,0}}" />
+            <Property name="Image" value="GWEN/Input.Button.Disabled.Middle.Middle" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_3_Star_2" >
+            <Property name="Area" value="{{0.610155,0},{0.347222,0},{0.635155,0},{0.391666,0}}" />
+            <Property name="Image" value="VayaCanicastanhazos/Star_No" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_3_Star_3" >
+            <Property name="Area" value="{{0.639062,0},{0.347222,0},{0.664062,0},{0.391666,0}}" />
+            <Property name="Image" value="VayaCanicastanhazos/Star_No" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_3_Star_1" >
+            <Property name="Area" value="{{0.580469,0},{0.347222,0},{0.605469,0},{0.391666,0}}" />
+            <Property name="Image" value="VayaCanicastanhazos/Star_No" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticText" name="Info_3_Text" >
+            <Property name="Area" value="{{0.547656,0},{0.397222,0},{0.695312,0},{0.444444,0}}" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="HorzFormatting" value="CentreAligned" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+            <AutoWindow namePath="__auto_hscrollbar__" >
+                <AutoWindow namePath="__auto_thumb__" >
+                    <Property name="MouseInputPropagationEnabled" value="true" />
+                </AutoWindow>
+            </AutoWindow>
+            <AutoWindow namePath="__auto_vscrollbar__" >
+                <Property name="VerticalScrollbar" value="true" />
+                <AutoWindow namePath="__auto_thumb__" >
+                    <Property name="MouseInputPropagationEnabled" value="true" />
+                </AutoWindow>
+            </AutoWindow>
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_8_Back" >
+            <Property name="Area" value="{{0.769531,0},{0.777777,0},{0.919531,0},{0.881944,0}}" />
+            <Property name="Image" value="GWEN/Input.Button.Disabled.Middle.Middle" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_8_Star_2" >
+            <Property name="Area" value="{{0.832811,0},{0.780556,0},{0.857811,0},{0.825001,0}}" />
+            <Property name="Image" value="VayaCanicastanhazos/Star_No" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_8_Star_3" >
+            <Property name="Area" value="{{0.861718,0},{0.780556,0},{0.886718,0},{0.825001,0}}" />
+            <Property name="Image" value="VayaCanicastanhazos/Star_No" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_8_Star_1" >
+            <Property name="Area" value="{{0.803126,0},{0.780556,0},{0.828126,0},{0.825001,0}}" />
+            <Property name="Image" value="VayaCanicastanhazos/Star_No" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticText" name="Info_8_Text" >
+            <Property name="Area" value="{{0.770313,0},{0.830555,0},{0.917969,0},{0.877777,0}}" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="HorzFormatting" value="CentreAligned" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+            <AutoWindow namePath="__auto_hscrollbar__" >
+                <AutoWindow namePath="__auto_thumb__" >
+                    <Property name="MouseInputPropagationEnabled" value="true" />
+                </AutoWindow>
+            </AutoWindow>
+            <AutoWindow namePath="__auto_vscrollbar__" >
+                <Property name="VerticalScrollbar" value="true" />
+                <AutoWindow namePath="__auto_thumb__" >
+                    <Property name="MouseInputPropagationEnabled" value="true" />
+                </AutoWindow>
+            </AutoWindow>
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_2_Back" >
+            <Property name="Area" value="{{0.317968,0},{0.344444,0},{0.467968,0},{0.448611,0}}" />
+            <Property name="Image" value="GWEN/Input.Button.Disabled.Middle.Middle" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_2_Star_2" >
+            <Property name="Area" value="{{0.381249,0},{0.347222,0},{0.406249,0},{0.391666,0}}" />
+            <Property name="Image" value="VayaCanicastanhazos/Star_No" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_2_Star_1" >
+            <Property name="Area" value="{{0.351563,0},{0.347222,0},{0.376563,0},{0.391666,0}}" />
+            <Property name="Image" value="VayaCanicastanhazos/Star_No" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticText" name="Info_2_Text" >
+            <Property name="Area" value="{{0.31875,0},{0.397222,0},{0.466406,0},{0.444444,0}}" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="HorzFormatting" value="CentreAligned" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+            <AutoWindow namePath="__auto_hscrollbar__" >
+                <AutoWindow namePath="__auto_thumb__" >
+                    <Property name="MouseInputPropagationEnabled" value="true" />
+                </AutoWindow>
+            </AutoWindow>
+            <AutoWindow namePath="__auto_vscrollbar__" >
+                <Property name="VerticalScrollbar" value="true" />
+                <AutoWindow namePath="__auto_thumb__" >
+                    <Property name="MouseInputPropagationEnabled" value="true" />
+                </AutoWindow>
+            </AutoWindow>
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_2_Star_3" >
+            <Property name="Area" value="{{0.410156,0},{0.347222,0},{0.435156,0},{0.391666,0}}" />
+            <Property name="Image" value="VayaCanicastanhazos/Star_No" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_4_Back" >
+            <Property name="Area" value="{{0.769531,0},{0.344444,0},{0.919531,0},{0.448611,0}}" />
+            <Property name="Image" value="GWEN/Input.Button.Disabled.Middle.Middle" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_4_Star_2" >
+            <Property name="Area" value="{{0.832811,0},{0.347222,0},{0.857811,0},{0.391666,0}}" />
+            <Property name="Image" value="VayaCanicastanhazos/Star_No" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_4_Star_1" >
+            <Property name="Area" value="{{0.803126,0},{0.347222,0},{0.828126,0},{0.391666,0}}" />
+            <Property name="Image" value="VayaCanicastanhazos/Star_No" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticText" name="Info_4_Text" >
+            <Property name="Area" value="{{0.770313,0},{0.397222,0},{0.917969,0},{0.444444,0}}" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="HorzFormatting" value="CentreAligned" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+            <AutoWindow namePath="__auto_hscrollbar__" >
+                <AutoWindow namePath="__auto_thumb__" >
+                    <Property name="MouseInputPropagationEnabled" value="true" />
+                </AutoWindow>
+            </AutoWindow>
+            <AutoWindow namePath="__auto_vscrollbar__" >
+                <Property name="VerticalScrollbar" value="true" />
+                <AutoWindow namePath="__auto_thumb__" >
+                    <Property name="MouseInputPropagationEnabled" value="true" />
+                </AutoWindow>
+            </AutoWindow>
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_4_Star_3" >
+            <Property name="Area" value="{{0.861718,0},{0.347222,0},{0.886718,0},{0.391666,0}}" />
+            <Property name="Image" value="VayaCanicastanhazos/Star_No" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_7_Back" >
+            <Property name="Area" value="{{0.546875,0},{0.777777,0},{0.696875,0},{0.881944,0}}" />
+            <Property name="Image" value="GWEN/Input.Button.Disabled.Middle.Middle" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticText" name="Info_7_Text" >
+            <Property name="Area" value="{{0.547656,0},{0.830555,0},{0.695312,0},{0.877777,0}}" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="HorzFormatting" value="CentreAligned" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+            <AutoWindow namePath="__auto_hscrollbar__" >
+                <AutoWindow namePath="__auto_thumb__" >
+                    <Property name="MouseInputPropagationEnabled" value="true" />
+                </AutoWindow>
+            </AutoWindow>
+            <AutoWindow namePath="__auto_vscrollbar__" >
+                <Property name="VerticalScrollbar" value="true" />
+                <AutoWindow namePath="__auto_thumb__" >
+                    <Property name="MouseInputPropagationEnabled" value="true" />
+                </AutoWindow>
+            </AutoWindow>
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_5_Back" >
+            <Property name="Area" value="{{0.0804685,0},{0.777777,0},{0.230469,0},{0.881944,0}}" />
+            <Property name="Image" value="GWEN/Input.Button.Disabled.Middle.Middle" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_5_Star_2" >
+            <Property name="Area" value="{{0.143749,0},{0.780556,0},{0.168749,0},{0.825001,0}}" />
+            <Property name="Image" value="VayaCanicastanhazos/Star_No" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_7_Star_2" >
+            <Property name="Area" value="{{0.610155,0},{0.780556,0},{0.635155,0},{0.825001,0}}" />
+            <Property name="Image" value="VayaCanicastanhazos/Star_No" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_5_Star_3" >
+            <Property name="Area" value="{{0.172656,0},{0.780556,0},{0.197656,0},{0.825001,0}}" />
+            <Property name="Image" value="VayaCanicastanhazos/Star_No" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_7_Star_3" >
+            <Property name="Area" value="{{0.639062,0},{0.780556,0},{0.664062,0},{0.825001,0}}" />
+            <Property name="Image" value="VayaCanicastanhazos/Star_No" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticText" name="Info_5_Text" >
+            <Property name="Area" value="{{0.0812503,0},{0.830555,0},{0.228907,0},{0.877777,0}}" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="HorzFormatting" value="CentreAligned" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+            <AutoWindow namePath="__auto_hscrollbar__" >
+                <AutoWindow namePath="__auto_thumb__" >
+                    <Property name="MouseInputPropagationEnabled" value="true" />
+                </AutoWindow>
+            </AutoWindow>
+            <AutoWindow namePath="__auto_vscrollbar__" >
+                <Property name="VerticalScrollbar" value="true" />
+                <AutoWindow namePath="__auto_thumb__" >
+                    <Property name="MouseInputPropagationEnabled" value="true" />
+                </AutoWindow>
+            </AutoWindow>
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_7_Star_1" >
+            <Property name="Area" value="{{0.580469,0},{0.780556,0},{0.605469,0},{0.825001,0}}" />
+            <Property name="Image" value="VayaCanicastanhazos/Star_No" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/StaticImage" name="Info_5_Star_1" >
+            <Property name="Area" value="{{0.114063,0},{0.780556,0},{0.139063,0},{0.825001,0}}" />
+            <Property name="Image" value="VayaCanicastanhazos/Star_No" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="false" />
+            <Property name="BackgroundEnabled" value="false" />
+            <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+    </Window>
+</GUILayout>
