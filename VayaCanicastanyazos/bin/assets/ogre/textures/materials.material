@@ -9,6 +9,8 @@ material sphereTest
         {
 			scene_blend alpha_blend
 			lighting on
+            specular 0.5 0.5 0.5 1.0 12.5
+            emissive 0.4 0.4 0.4 1.0
 			
             texture_unit 
             {
@@ -207,6 +209,44 @@ material bridge {
             texture_unit 
             {
                 texture bridge.png
+                tex_address_mode wrap
+				colour_op alpha_blend
+            }
+        }
+    }
+}
+
+material star {
+    receive_shadows on
+	
+    technique {
+        pass {
+            lighting on
+            specular 0.5 0.5 0.5 1.0 12.5
+            emissive 0.4 0.4 0.4 1.0	
+			
+            texture_unit 
+            {
+                texture star.png
+                tex_address_mode wrap
+				colour_op alpha_blend
+            }
+        }
+    }
+}
+
+material goal {
+    receive_shadows on
+	
+    technique {
+        pass {
+            lighting on		
+            specular 0.5 0.5 0.5 1.0 12.5
+            emissive 0.4 0.4 0.4 1.0	
+			
+            texture_unit 
+            {
+                texture goal.png
                 tex_address_mode wrap
 				colour_op alpha_blend
             }

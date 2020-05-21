@@ -186,15 +186,72 @@
 			  ]
 		},
 		{
-			"name" : "goal",
-			"position" : [0, 10, -80],
+			"name" : "1_star.000",
+			"position" : [0, 0, 80],
 			"rotation" : [0, 0, 0],
-			"scale" : [0.1, 0.1, 0.1],
+			"scale" : [10, 10, 10],
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "cube.mesh",
-					"material" : "test"
+					"mesh" : "star.mesh",
+					"material" : "star"
+				},
+				{
+					"type" : "RigidBody"
+				},
+				{
+					"type" : "StarCollision"
+				}
+			]
+		},
+		{
+			"name" : "1_star.001",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "star.mesh",
+					"material" : "star"
+				},
+				{
+					"type" : "RigidBody"
+				},
+				{
+					"type" : "StarCollision"
+				}
+			]
+		},
+		{
+			"name" : "1_star.002",
+			"position" : [0, 0, -55],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "star.mesh",
+					"material" : "star"
+				},
+				{
+					"type" : "RigidBody"
+				},
+				{
+					"type" : "StarCollision"
+				}
+			]
+		},
+		{
+			"name" : "goal",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "1_goal.mesh",
+					"material" : "goal"
 				},
 				{
 					"type" : "RigidBody"
@@ -210,7 +267,7 @@
 		{
 			"prefab" : "marble",
 			"name" : "ball",
-			"position" : [0, 30, 80],
+			"position" : [0, 30, 60],
 			"rotation" : [0, 0, 0]
 		},
 		{
@@ -227,13 +284,13 @@
 		},
 		{
 			"name" : "cameraPivot",
-			"position" : [0, 30, 80],
+			"position" : [0, 30, 60],
 			"rotation" : [0, 0, 0], 
 			"scale" : [1, 1, 1]
 		},
 		{
 			"name" : "camera",
-			"position" : [0, 80, 160],
+			"position" : [0, 80, 140],
 			"rotation" : [0, 0, 0], 
 			"scale" : [1, 1, 1],
 			"parent" : "cameraPivot",

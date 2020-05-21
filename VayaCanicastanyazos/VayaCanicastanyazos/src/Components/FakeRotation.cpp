@@ -23,7 +23,7 @@ FakeRotation::~FakeRotation()
 
 void FakeRotation::init(json& args)
 {
-	speed = 500.0f;
+	speed = 800.0f;
 
 	if (!args["camName"].is_null())
 	{

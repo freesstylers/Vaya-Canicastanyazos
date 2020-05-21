@@ -12,13 +12,13 @@
 				"mesh" : "sphere.mesh",
 				"material" : "sphereTest"
 			},
-      {
-        "type": "RigidBody",
-        "disableDeactivation": true,
-        "mass": 10,
-        "rollingFriction": 0.555,
-        "friction": 0.555
-      },
+			  {
+				"type": "RigidBody",
+				"disableDeactivation": true,
+				"mass": 20,
+				"rollingFriction": 0.75,
+				"friction": 0.75
+			  },
 			{
 				"type" : "FakeRotation"
 			}
@@ -51,7 +51,7 @@
 				{
 					"type" : "Light",
 					"lightType" : "directional",
-					"lightDir"  : [0, -1, 0]
+					"lightDir"  : [0, -1, 0.3]
 				}
 			]
 	},
