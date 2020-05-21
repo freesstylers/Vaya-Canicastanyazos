@@ -65,8 +65,8 @@
 		"components" : [
 			{
 				"type" : "Mesh",
-				"mesh" : "Star.mesh",
-				"material" : "sphereTest"
+				"mesh" : "star.mesh",
+				"material" : "star"
 			},
 			{
 				"type" : "RigidBody"

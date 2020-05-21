@@ -186,61 +186,19 @@
 			  ]
 		},
 		{
+			"prefab" : "star",
 			"name" : "1_star.000",
-			"position" : [0, 0, 80],
-			"rotation" : [0, 0, 0],
-			"scale" : [10, 10, 10],
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "star.mesh",
-					"material" : "star"
-				},
-				{
-					"type" : "RigidBody"
-				},
-				{
-					"type" : "StarCollision"
-				}
-			]
+			"position" : [0, 0, 80]
 		},
 		{
+			"prefab" : "star",
 			"name" : "1_star.001",
-			"position" : [0, 0, 0],
-			"rotation" : [0, 0, 0],
-			"scale" : [10, 10, 10],
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "star.mesh",
-					"material" : "star"
-				},
-				{
-					"type" : "RigidBody"
-				},
-				{
-					"type" : "StarCollision"
-				}
-			]
+			"position" : [0, 0, 0]
 		},
 		{
+			"prefab" : "star",
 			"name" : "1_star.002",
-			"position" : [0, 0, -55],
-			"rotation" : [0, 0, 0],
-			"scale" : [10, 10, 10],
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "star.mesh",
-					"material" : "star"
-				},
-				{
-					"type" : "RigidBody"
-				},
-				{
-					"type" : "StarCollision"
-				}
-			]
+			"position" : [0, 0, -55]
 		},
 		{
 			"name" : "goal",
