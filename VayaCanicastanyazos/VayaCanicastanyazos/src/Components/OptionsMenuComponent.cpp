@@ -165,6 +165,10 @@ bool OptionsMenuComponent::functionGraphicApply(const CEGUI::EventArgs& e)
 {
 	MotorCasaPaco::getInstance()->changeGraphicComponents();
 	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
+
+	updateButtonsPosition();
+	MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsXBotButtonsGraphic[currentPosDownButtons], yGraphicBot);
+
 	return true;
 }
 
@@ -884,7 +888,7 @@ void OptionsMenuComponent::update()
 				else if (advancedTopDown == 0)
 				{
 					if (currentPosDownButtons == 0)
-						currentPosDownButtons = tamAdvancedTop - 1;
+						currentPosDownButtons = tamAdvancedDown - 1;
 					else
 						currentPosDownButtons--;
 
@@ -1102,6 +1106,124 @@ int OptionsMenuComponent::getFSAAPosition(std::string fsaa)
 	}
 }
 
+void OptionsMenuComponent::updateButtonsPosition()
+{
+	//Basic
+	positionsYBasic.clear();
+	positionsXBotButtonsBasic.clear();
+	positionsXTopButtonsBasic.clear();
+
+	int count = 0;
+
+	for (std::string name : buttonsBasic)
+	{
+		if (count < 2)
+		{
+			positionsXTopButtonsBasic.push_back(MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointXAbsolute());
+		}
+
+		if (count % 2 == 0)
+		{
+			positionsYBasic.push_back(MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointYAbsolute());
+		}
+
+		count++;
+	}
+
+	yBasicExtra = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(basicExtraButton).getCenterPointYAbsolute();
+	xBasicExtra = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(basicExtraButton).getCenterPointYAbsolute();
+
+	float y;
+	count = 0;
+
+	for (std::string name : buttonsBasicDown)
+	{
+		if (count == 0)
+			y = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointYAbsolute();
+
+		positionsXBotButtonsBasic.push_back(MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointXAbsolute());
+
+		count++;
+	}
+
+	yBasicBot = y;
+
+	//Graphic
+	positionsYGraphic.clear();
+	positionsXBotButtonsGraphic.clear();
+	positionsXTopButtonsGraphic.clear();
+
+	count = 0;
+
+	for (std::string name : buttonsGraphicDown)
+	{
+		if (count == 0)
+			y = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointYAbsolute();
+
+		positionsXBotButtonsGraphic.push_back(MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointXAbsolute());
+
+		count++;
+	}
+
+	yGraphicBot = y;
+
+	count = 0;
+
+	for (std::string name : buttonsGraphic)
+	{
+		if (count < 2)
+		{
+			positionsXTopButtonsGraphic.push_back(MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointXAbsolute());
+		}
+
+		if (count % 2 == 0)
+		{
+			positionsYGraphic.push_back(MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointYAbsolute());
+		}
+
+		count++;
+	}
+
+	xExtraGraphic = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(graphicExtraButton).getCenterPointXAbsolute();
+	yExtraGraphic = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(graphicExtraButton).getCenterPointYAbsolute();
+
+	//Advanced
+	positionsYAdvanced.clear();
+	positionsXBotButtonsAdvanced.clear();
+	positionsXTopButtonsAdvanced.clear();
+
+	count = 0;
+
+	for (std::string name : buttonsAdvancedDown)
+	{
+		if (count == 0)
+			y = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointYAbsolute();
+
+		positionsXBotButtonsAdvanced.push_back(MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointXAbsolute());
+
+		count++;
+	}
+
+	yAdvancedBot = y;
+
+	count = 0;
+
+	for (std::string name : buttonsAdvanced) //Faltan funciones de los botones
+	{
+		if (count < 2)
+		{
+			positionsXTopButtonsAdvanced.push_back(MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointXAbsolute());
+		}
+
+		if (count % 2 == 0)
+		{
+			positionsYAdvanced.push_back(MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointYAbsolute());
+		}
+
+		count++;
+	}
+}
+
 void OptionsMenuComponent::init(json& j)
 {
 
@@ -1113,6 +1235,7 @@ void OptionsMenuComponent::init(json& j)
 	//Basic Options Stuff
 
 	std::vector<std::string> vec2 = j["basicOptionButtons"];
+	buttonsBasic = vec2;
 
 	int count = 0;
 
@@ -1204,6 +1327,7 @@ void OptionsMenuComponent::init(json& j)
 	}
 
 	std::string interm = j["basicExtraButton"];
+	basicExtraButton = interm;
 	yBasicExtra = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(interm).getCenterPointYAbsolute();
 	xBasicExtra = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(interm).getCenterPointYAbsolute();
 
@@ -1213,6 +1337,7 @@ void OptionsMenuComponent::init(json& j)
 	GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(interm), helperFunction);
 
 	std::vector<std::string> vec7 = j["basicOptionBotButtons"];
+	buttonsBasicDown = vec7;
 
 	float y;
 	count = 0;
@@ -1261,6 +1386,7 @@ void OptionsMenuComponent::init(json& j)
 	//Graphic Options Stuff
 
 	std::vector<std::string> vec3 = j["graphicOptionDownButtons"];
+	buttonsGraphicDown = vec3;
 
 	count = 0;
 
@@ -1313,6 +1439,7 @@ void OptionsMenuComponent::init(json& j)
 	}
 
 	std::vector<std::string> vec4 = j["graphicOptionTopButtons"];
+	buttonsGraphic = vec4;
 
 	count = 0;
 
@@ -1405,6 +1532,8 @@ void OptionsMenuComponent::init(json& j)
 	tamGraphicTop = count / 2;
 		
 	std::string name = j["graphicOptionExtraButton"];
+	graphicExtraButton = name;
+
 	xExtraGraphic = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointXAbsolute();
 	yExtraGraphic = MotorCasaPaco::getInstance()->getGUI_Manager()->getRoot()->getChild(name).getCenterPointYAbsolute();
 
@@ -1415,6 +1544,7 @@ void OptionsMenuComponent::init(json& j)
 	//Advanced Graphic Options Stuff
 
 	std::vector<std::string> vec5 = j["advancedGraphicOptionDownButtons"];
+	buttonsAdvancedDown = vec5;
 
 	count = 0;
 
@@ -1468,6 +1598,7 @@ void OptionsMenuComponent::init(json& j)
 	}
 
 	std::vector<std::string> vec6 = j["advancedGraphicOptionTopButtons"];
+	buttonsAdvanced = vec6;
 
 	count = 0;
 

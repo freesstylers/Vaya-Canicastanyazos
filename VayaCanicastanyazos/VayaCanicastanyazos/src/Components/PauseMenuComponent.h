@@ -50,7 +50,6 @@ public:
 	bool functionAdvancedFSAALess(const CEGUI::EventArgs& e);
 	bool functionAdvancedFSAAMore(const CEGUI::EventArgs& e);
 
-
 	void update() override;
 	void pausedUpdate() override;
 
@@ -121,6 +120,18 @@ private:
 	std::string fsaaValues[4] = { "0" , "2", "4", "8" };
 	int getFSAAPosition(std::string fsaa);
 	int fsaaPos;
+
+	//Para actualizar posiciones de botones al reescalar la pantalla
+	void updateButtonsPosition();
+	std::vector<std::string> buttonsPause;
+	std::vector<std::string> buttonsBasic;
+	std::string basicExtraButton;
+	std::vector<std::string> buttonsBasicDown;
+	std::vector<std::string> buttonsGraphic;
+	std::string graphicExtraButton;
+	std::vector<std::string> buttonsGraphicDown;
+	std::vector<std::string> buttonsAdvanced;
+	std::vector<std::string> buttonsAdvancedDown;
 
 	//Datos de escenas
 	std::string mainMenu;

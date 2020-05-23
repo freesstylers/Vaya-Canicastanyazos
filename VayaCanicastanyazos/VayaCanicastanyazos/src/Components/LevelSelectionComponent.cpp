@@ -5,6 +5,7 @@
 #include "Components/GameManager.h"
 #include "Scene/SceneManager.h"
 #include "Graphics/Mesh.h"
+#include "GUI/GUI_Manager.h"
 
 LevelSelectionComponent::LevelSelectionComponent(json& args): Component(args)
 {
@@ -24,6 +25,7 @@ bool LevelSelectionComponent::functionLoader1(const CEGUI::EventArgs& e)
 	AudioManager::getInstance()->pauseChannel(1);
 	AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 2, true);
 	EventManager::getInstance()->EmitEvent("inicioNivel");
+	GUI_Manager::getInstance()->hideMouseCursor();
 	return true;
 }
 
@@ -34,6 +36,7 @@ bool LevelSelectionComponent::functionLoader2(const CEGUI::EventArgs& e)
 	AudioManager::getInstance()->pauseChannel(1);
 	AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 2, true);
 	EventManager::getInstance()->EmitEvent("inicioNivel");
+	GUI_Manager::getInstance()->hideMouseCursor();
 	return true;
 }
 
@@ -44,6 +47,7 @@ bool LevelSelectionComponent::functionLoader3(const CEGUI::EventArgs& e)
 	AudioManager::getInstance()->pauseChannel(1);
 	AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 2, true);
 	EventManager::getInstance()->EmitEvent("inicioNivel");
+	GUI_Manager::getInstance()->hideMouseCursor();
 	return true;
 }
 
@@ -54,6 +58,7 @@ bool LevelSelectionComponent::functionLoader4(const CEGUI::EventArgs& e)
 	AudioManager::getInstance()->pauseChannel(1);
 	AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 2, true);
 	EventManager::getInstance()->EmitEvent("inicioNivel");
+	GUI_Manager::getInstance()->hideMouseCursor();
 	return true;
 }
 
@@ -64,6 +69,7 @@ bool LevelSelectionComponent::functionLoader5(const CEGUI::EventArgs& e)
 	AudioManager::getInstance()->pauseChannel(1);
 	AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 2, true);
 	EventManager::getInstance()->EmitEvent("inicioNivel");
+	GUI_Manager::getInstance()->hideMouseCursor();
 	return true;
 }
 
@@ -74,6 +80,7 @@ bool LevelSelectionComponent::functionLoader6(const CEGUI::EventArgs& e)
 	AudioManager::getInstance()->pauseChannel(1);
 	AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 2, true);
 	EventManager::getInstance()->EmitEvent("inicioNivel");
+	GUI_Manager::getInstance()->hideMouseCursor();
 	return true;
 }
 
@@ -84,6 +91,7 @@ bool LevelSelectionComponent::functionLoader7(const CEGUI::EventArgs& e)
 	AudioManager::getInstance()->pauseChannel(1);
 	AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 2, true);
 	EventManager::getInstance()->EmitEvent("inicioNivel");
+	GUI_Manager::getInstance()->hideMouseCursor();
 	return true;
 }
 
@@ -94,6 +102,7 @@ bool LevelSelectionComponent::functionLoader8(const CEGUI::EventArgs& e)
 	AudioManager::getInstance()->pauseChannel(1);
 	AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 2, true);
 	EventManager::getInstance()->EmitEvent("inicioNivel");
+	GUI_Manager::getInstance()->hideMouseCursor();
 	return true;
 }
 
@@ -101,13 +110,13 @@ bool LevelSelectionComponent::functionLeftArrow(const CEGUI::EventArgs& e)
 {
 	if (currentShow == 0)
 	{
-		levels = { "nivel 10", "nivel 11", "nivel 1", "nivel 2", "nivel 3", "nivel 4", "nivel 5", "nivel 7" };
+		levels = { "nivel 9", "nivel 10", "nivel 11", "nivel 12", "nivel 13", "nivel 14", "nivel 15", "nivel 16" };
 		currentShow = 1;
 	}
 
 	else if (currentShow == 1)
 	{
-		levels = { "nivel 1", "nivel 2", "nivel 3", "nivel 4", "nivel 5", "nivel 7", "nivel 8", "nivel 9" };
+		levels = { "nivel 1", "nivel 2", "nivel 3", "nivel 4", "nivel 5", "nivel 6", "nivel 7", "nivel 8" };
 		currentShow = 0;
 	}
 
@@ -120,7 +129,7 @@ bool LevelSelectionComponent::functionRightArrow(const CEGUI::EventArgs& e)
 {
 	if (currentShow == 0)
 	{
-		levels = { "nivel 10", "nivel 11", "nivel 1", "nivel 2", "nivel 3", "nivel 4", "nivel 5", "nivel 7" };
+		levels = { "nivel 9", "nivel 10", "nivel 11", "nivel 12", "nivel 13", "nivel 14", "nivel 15", "nivel 16" };
 		currentShow = 1;
 	}
 
@@ -585,7 +594,7 @@ void LevelSelectionComponent::init(json& j)
 		currentTime = MotorCasaPaco::getInstance()->getTime();
 		
 		currentShow = 0;
-		levels = { "nivel 1", "nivel 2", "nivel 3", "nivel 4", "nivel 5", "nivel 7", "nivel 8", "nivel 9" };
+		levels = { "nivel 1", "nivel 2", "nivel 3", "nivel 4", "nivel 5", "nivel 6", "nivel 7", "nivel 8" };
 
 		updateTexts(currentShow);
 		//std::cout << tam << "\n";

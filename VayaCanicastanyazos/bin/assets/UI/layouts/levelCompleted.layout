@@ -6,7 +6,7 @@
         <Property name="MaxSize" value="{{1,0},{1,0}}" />
         <Property name="RiseOnClickEnabled" value="false" />
         <Window type="GWEN/StaticImage" name="Background" >
-            <Property name="Area" value="{{0.219531,0},{0.211111,0},{0.789062,0},{0.786111,0}}" />
+            <Property name="Area" value="{{0.219531,0},{0.170833,0},{0.789062,0},{0.840278,0}}" />
             <Property name="Image" value="GWEN/Input.Button.Hovered.Middle.Middle" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="FrameEnabled" value="false" />
@@ -14,12 +14,12 @@
             <Property name="RiseOnClickEnabled" value="false" />
         </Window>
         <Window type="GWEN/Button" name="Selection" >
-            <Property name="Area" value="{{0.227344,0},{0.704167,0},{0.471875,0},{0.773611,0}}" />
+            <Property name="Area" value="{{0.228125,0},{0.670834,0},{0.472656,0},{0.740278,0}}" />
             <Property name="Font" value="shump-48" />
             <Property name="Text" value="ELEGIR NIVEL" />
         </Window>
         <Window type="GWEN/StaticImage" name="Star2" >
-            <Property name="Area" value="{{0.458594,0},{0.322222,0},{0.573438,0},{0.498611,0}}" />
+            <Property name="Area" value="{{0.458594,0},{0.288889,0},{0.573438,0},{0.465278,0}}" />
             <Property name="Image" value="VayaCanicastanhazos/Star_No" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="FrameEnabled" value="false" />
@@ -27,7 +27,7 @@
             <Property name="RiseOnClickEnabled" value="false" />
         </Window>
         <Window type="GWEN/StaticText" name="LevelCompleted" >
-            <Property name="Area" value="{{0.3375,0},{0.223611,0},{0.69375,0},{0.305555,0}}" />
+            <Property name="Area" value="{{0.339063,0},{0.191667,0},{0.695313,0},{0.273611,0}}" />
             <Property name="Font" value="shump-48" />
             <Property name="Text" value="nivel completado" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
@@ -46,7 +46,7 @@
             </AutoWindow>
         </Window>
         <Window type="GWEN/StaticImage" name="Star1" >
-            <Property name="Area" value="{{0.3375,0},{0.322222,0},{0.452344,0},{0.498611,0}}" />
+            <Property name="Area" value="{{0.3375,0},{0.288889,0},{0.452344,0},{0.465278,0}}" />
             <Property name="Image" value="VayaCanicastanhazos/Star_No" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="FrameEnabled" value="false" />
@@ -54,12 +54,12 @@
             <Property name="RiseOnClickEnabled" value="false" />
         </Window>
         <Window type="GWEN/Button" name="NextLevel" >
-            <Property name="Area" value="{{0.482031,0},{0.704167,0},{0.782812,0},{0.773611,0}}" />
+            <Property name="Area" value="{{0.48125,0},{0.673611,0},{0.782031,0},{0.743056,0}}" />
             <Property name="Font" value="shump-48" />
             <Property name="Text" value="SIGUIENTE NIVEL" />
         </Window>
         <Window type="GWEN/StaticText" name="Time" >
-            <Property name="Area" value="{{0.342969,0},{0.509722,0},{0.699219,0},{0.591666,0}}" />
+            <Property name="Area" value="{{0.342969,0},{0.481944,0},{0.699219,0},{0.563889,0}}" />
             <Property name="Font" value="shump-48" />
             <Property name="Text" value="TIEMPO 00:00" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
@@ -79,7 +79,7 @@
             </AutoWindow>
         </Window>
         <Window type="GWEN/StaticText" name="Record" >
-            <Property name="Area" value="{{0.341406,0},{0.602778,0},{0.697656,0},{0.684722,0}}" />
+            <Property name="Area" value="{{0.342187,0},{0.573611,0},{0.698437,0},{0.655556,0}}" />
             <Property name="Font" value="shump-48" />
             <Property name="Text" value="RECORD 00:00" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
@@ -99,7 +99,7 @@
             </AutoWindow>
         </Window>
         <Window type="GWEN/StaticImage" name="Star3" >
-            <Property name="Area" value="{{0.58125,0},{0.322222,0},{0.696094,0},{0.498611,0}}" />
+            <Property name="Area" value="{{0.58125,0},{0.288889,0},{0.696094,0},{0.465278,0}}" />
             <Property name="Image" value="VayaCanicastanhazos/Star_No" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="FrameEnabled" value="false" />
@@ -107,12 +107,13 @@
             <Property name="RiseOnClickEnabled" value="false" />
         </Window>
         <Window type="GWEN/StaticImage" name="Yayo1" >
-            <Property name="Area" value="{{0.00078125,0},{0.404166,0},{0.242969,0},{0.998611,0}}" />
+            <Property name="Area" value="{{0.00078125,0},{0.404166,0},{0.242969,0},{0.99861,0}}" />
             <Property name="Image" value="VayaCanicastanhazos/Yayo 1" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="FrameEnabled" value="false" />
             <Property name="BackgroundEnabled" value="false" />
             <Property name="RiseOnClickEnabled" value="false" />
+            <Property name="MousePassThroughEnabled" value="true" />
         </Window>
         <Window type="GWEN/StaticImage" name="Yayo2" >
             <Property name="Area" value="{{0.786718,0},{0.427778,0},{1.00078,0},{1.00139,0}}" />
@@ -137,6 +138,11 @@
             <Property name="FrameEnabled" value="false" />
             <Property name="BackgroundEnabled" value="false" />
             <Property name="RiseOnClickEnabled" value="false" />
+        </Window>
+        <Window type="GWEN/Button" name="Repeat" >
+            <Property name="Area" value="{{0.364843,0},{0.755556,0},{0.665625,0},{0.825,0}}" />
+            <Property name="Font" value="shump-48" />
+            <Property name="Text" value="Repetir Nivel" />
         </Window>
     </Window>
 </GUILayout>
