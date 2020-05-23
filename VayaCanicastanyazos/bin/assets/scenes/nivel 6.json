@@ -458,6 +458,7 @@
 					"type" : "GoalComponent",
 					"nextLevel" : "nivel 7",
 					"levelSelection" : "LevelSelection",
+					"level": "nivel 6",
 					"delay" : 0.20
 				}
 			]

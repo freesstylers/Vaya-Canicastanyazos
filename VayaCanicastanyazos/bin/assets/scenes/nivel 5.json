@@ -330,8 +330,9 @@
 				},
 				{
 					"type" : "GoalComponent",
-					"nextLevel" : "nivel 7",
+					"nextLevel" : "nivel 6",
 					"levelSelection" : "LevelSelection",
+					"level": "nivel 5",
 					"delay" : 0.20
 				}
 			]
