@@ -36,7 +36,7 @@
 				{
 					"type" : "Mesh",
 					"mesh" : "NaveWiterico.mesh",
-					"material" : "NaveWiterico"
+					"material" : "test"
 				},
 				{
 					"type" : "RigidBody",
