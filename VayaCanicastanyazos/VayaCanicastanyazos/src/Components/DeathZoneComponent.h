@@ -12,4 +12,5 @@ public:
 
 private:
 	Entity* marble;
+	bool dead = true;
 };

@@ -294,6 +294,7 @@
 					"type" : "GoalComponent",
 					"nextLevel" : "nivel 5",
 					"levelSelection" : "LevelSelection",
+					"level": "nivel 4",
 					"delay" : 0.20
 				}
 			]
@@ -398,8 +399,6 @@
 					],
 					"basicOptionButtons" :
 					[
-					 "BasicOptions/LeftArrow_5",
-					 "BasicOptions/RightArrow_5",
 					 "BasicOptions/LeftArrow_4",
 					 "BasicOptions/RightArrow_4",
 					 "BasicOptions/LeftArrow_3",
@@ -414,8 +413,7 @@
 					 "BasicOptions/Text_Selector_1",
 					 "BasicOptions/Text_Selector_2",
 					 "BasicOptions/Text_Selector_3",
-					 "BasicOptions/Text_Selector_4",
-					 "BasicOptions/Text_Selector_5"
+					 "BasicOptions/Text_Selector_4"
 					],
 					"basicExtraButton" : "BasicOptions/GraphicOptions",
 					"basicOptionBotButtons" :

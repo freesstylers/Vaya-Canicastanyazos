@@ -186,15 +186,30 @@
 			  ]
 		},
 		{
+			"prefab" : "star",
+			"name" : "1_star.000",
+			"position" : [0, 0, 80]
+		},
+		{
+			"prefab" : "star",
+			"name" : "1_star.001",
+			"position" : [0, 0, 0]
+		},
+		{
+			"prefab" : "star",
+			"name" : "1_star.002",
+			"position" : [0, 0, -55]
+		},
+		{
 			"name" : "goal",
-			"position" : [0, 10, -80],
+			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
-			"scale" : [0.1, 0.1, 0.1],
+			"scale" : [10, 10, 10],
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "cube.mesh",
-					"material" : "test"
+					"mesh" : "1_goal.mesh",
+					"material" : "goal"
 				},
 				{
 					"type" : "RigidBody"
@@ -203,6 +218,7 @@
 					"type" : "GoalComponent",
 					"nextLevel" : "nivel 2",
 					"levelSelection" : "LevelSelection",
+					"level": "nivel 1",
 					"delay" : 0.20
 				}
 			]
@@ -210,7 +226,7 @@
 		{
 			"prefab" : "marble",
 			"name" : "ball",
-			"position" : [0, 30, 80],
+			"position" : [0, 30, 60],
 			"rotation" : [0, 0, 0]
 		},
 		{
@@ -227,13 +243,13 @@
 		},
 		{
 			"name" : "cameraPivot",
-			"position" : [0, 30, 80],
+			"position" : [0, 30, 60],
 			"rotation" : [0, 0, 0], 
 			"scale" : [1, 1, 1]
 		},
 		{
 			"name" : "camera",
-			"position" : [0, 80, 160],
+			"position" : [0, 80, 140],
 			"rotation" : [0, 0, 0], 
 			"scale" : [1, 1, 1],
 			"parent" : "cameraPivot",
@@ -307,8 +323,6 @@
 					],
 					"basicOptionButtons" :
 					[
-					 "BasicOptions/LeftArrow_5",
-					 "BasicOptions/RightArrow_5",
 					 "BasicOptions/LeftArrow_4",
 					 "BasicOptions/RightArrow_4",
 					 "BasicOptions/LeftArrow_3",
@@ -323,8 +337,7 @@
 					 "BasicOptions/Text_Selector_1",
 					 "BasicOptions/Text_Selector_2",
 					 "BasicOptions/Text_Selector_3",
-					 "BasicOptions/Text_Selector_4",
-					 "BasicOptions/Text_Selector_5"
+					 "BasicOptions/Text_Selector_4"
 					],
 					"basicExtraButton" : "BasicOptions/GraphicOptions",
 					"basicOptionBotButtons" :
@@ -372,19 +385,10 @@
 					 "AdvancedGraphicOptions/Text_Selector_1",
 					 "AdvancedGraphicOptions/Text_Selector_2",
 					 "AdvancedGraphicOptions/Text_Selector_3",
-					 "AdvancedGraphicOptions/Text_Selector_4"
-											   
-											   
-											  
+					 "AdvancedGraphicOptions/Text_Selector_4"					  
 					],
 					"advancedGraphicOptionTopButtons" :
-					[
-										   
-											
-										   
-											
-										   
-											
+					[			
 					 "AdvancedGraphicOptions/LeftArrow_4",
 					 "AdvancedGraphicOptions/RightArrow_4",
 					 "AdvancedGraphicOptions/LeftArrow_3",

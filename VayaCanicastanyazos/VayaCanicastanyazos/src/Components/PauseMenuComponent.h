@@ -27,6 +27,10 @@ public:
 	bool functionBasicRevert(const CEGUI::EventArgs& e);
 	bool functionInvertAxisX(const CEGUI::EventArgs& e);
 	bool functionInvertAxisY(const CEGUI::EventArgs& e);
+	bool functionVolumeMusicDown(const CEGUI::EventArgs& e);
+	bool functionVolumeMusicUp(const CEGUI::EventArgs& e);
+	bool functionVolumeSFXDown(const CEGUI::EventArgs& e);
+	bool functionVolumeSFXUp(const CEGUI::EventArgs& e);
 
 	//Graphic Options
 	bool functionGraphicAdvancedOptions(const CEGUI::EventArgs& e);
@@ -44,12 +48,9 @@ public:
 	bool functionAdvancedApply(const CEGUI::EventArgs& e);
 	bool functionAdvancedRevert(const CEGUI::EventArgs& e);
 	bool functionAdvancedBack(const CEGUI::EventArgs& e);
-	bool functionAdvancedShadowsLess(const CEGUI::EventArgs& e);
-	bool functionAdvancedShadowsMore(const CEGUI::EventArgs& e);
 	bool functionAdvancedGamma(const CEGUI::EventArgs& e);
 	bool functionAdvancedFSAALess(const CEGUI::EventArgs& e);
 	bool functionAdvancedFSAAMore(const CEGUI::EventArgs& e);
-
 
 	void update() override;
 	void pausedUpdate() override;
@@ -88,6 +89,8 @@ private:
 	int tamBasicTop;
 	int tamBasicBot;
 	int basicTopDown = 2;
+	float volumeMusic;
+	float volumeSFX;
 
 	//Graphic
 	std::vector<float> positionsYGraphic;
@@ -114,13 +117,22 @@ private:
 	int tamAdvancedTop;
 	int tamAdvancedDown;
 	int advancedTopDown = 1;
-	std::string shadowValues[4] = { "No" , "Bajo", "Medio", "Alto" };
-	int getShadowsPosition(std::string shadow);
-	int shadowsPos;
 	std::vector<CEGUI::Window*> advancedTexts; //fullscreenText, formatText, resolutionText, vSyncText
 	std::string fsaaValues[4] = { "0" , "2", "4", "8" };
 	int getFSAAPosition(std::string fsaa);
 	int fsaaPos;
+
+	//Para actualizar posiciones de botones al reescalar la pantalla
+	void updateButtonsPosition();
+	std::vector<std::string> buttonsPause;
+	std::vector<std::string> buttonsBasic;
+	std::string basicExtraButton;
+	std::vector<std::string> buttonsBasicDown;
+	std::vector<std::string> buttonsGraphic;
+	std::string graphicExtraButton;
+	std::vector<std::string> buttonsGraphicDown;
+	std::vector<std::string> buttonsAdvanced;
+	std::vector<std::string> buttonsAdvancedDown;
 
 	//Datos de escenas
 	std::string mainMenu;
