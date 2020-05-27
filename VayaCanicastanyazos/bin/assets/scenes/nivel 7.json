@@ -147,6 +147,21 @@
 			]
 		},
 		{
+			"prefab" : "star",
+			"name" : "1_star.000",
+			"position" : [0, 50, -200]
+		},
+		{
+			"prefab" : "star",
+			"name" : "1_star.001",
+			"position" : [0, 0, -220]
+		},
+		{
+			"prefab" : "star",
+			"name" : "1_star.002",
+			"position" : [0, -50, -240]
+		},
+		{
 			"name" : "cameraPivot",
 			"position" : [0, 215, -90],
 			"rotation" : [0, 0, 0], 
