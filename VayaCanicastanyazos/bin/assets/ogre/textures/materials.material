@@ -122,6 +122,28 @@ material sky
 	}
 }
 
+
+material sky2
+{
+
+    receive_shadows off
+	
+    technique
+    {
+        pass
+        {
+			lighting off
+			depth_write off
+			
+            texture_unit 
+            {
+                cubic_texture dusk_front5.png dusk_back6.png dusk_left2.png dusk_right1.png dusk_top3.png dusk_bottom4.png separateUV
+                tex_address_mode wrap
+            }
+		}
+	}
+}
+
 material Star {
     receive_shadows on
     technique {
