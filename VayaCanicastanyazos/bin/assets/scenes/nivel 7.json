@@ -26,26 +26,8 @@
 			[
 			]
 		},
-		{
-			"name" : "7_1",
-			"position" : [0, 0, 0],
-			"rotation" : [0, 0, 0],
-			"scale" : [10, 10, 10],
-			"parent" : "centro",
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "7_1.mesh",
-					"material" : "test"
-				},
-				{
-					"type" : "RigidBody",
-					"friction": 0.75
-				}
-			]
-        },
         {
-			"name" : "7_2",
+			"name" : "7_bridge.000",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -53,98 +35,8 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "7_2.mesh",
-					"material" : "test"
-				},
-				{
-					"type" : "RigidBody",
-					"friction": 0.75
-				}
-			]
-        },
-        {
-			"name" : "7_3",
-			"position" : [0, 0, 0],
-			"rotation" : [0, 0, 0],
-			"scale" : [10, 10, 10],
-			"parent" : "centro",
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "7_3.mesh",
-					"material" : "test"
-				},
-				{
-					"type" : "RigidBody",
-					"friction": 0.75
-				}
-			]
-        },
-        {
-			"name" : "7_4",
-			"position" : [0, 0, 0],
-			"rotation" : [0, 0, 0],
-			"scale" : [10, 10, 10],
-			"parent" : "centro",
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "7_4.mesh",
-					"material" : "test"
-				},
-				{
-					"type" : "RigidBody",
-					"friction": 0.75
-				}
-			]
-        },
-        {
-			"name" : "7_5",
-			"position" : [0, 0, 0],
-			"rotation" : [0, 0, 0],
-			"scale" : [10, 10, 10],
-			"parent" : "centro",
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "7_5.mesh",
-					"material" : "test"
-				},
-				{
-					"type" : "RigidBody",
-					"friction": 0.75
-				}
-			]
-        },
-        {
-			"name" : "7_6",
-			"position" : [0, 0, 0],
-			"rotation" : [0, 0, 0],
-			"scale" : [10, 10, 10],
-			"parent" : "centro",
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "7_6.mesh",
-					"material" : "test"
-				},
-				{
-					"type" : "RigidBody",
-					"friction": 0.75
-				}
-			]
-        },
-        {
-			"name" : "7_7",
-			"position" : [0, 0, 0],
-			"rotation" : [0, 0, 0],
-			"scale" : [10, 10, 10],
-			"parent" : "centro",
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "7_7.mesh",
-					"material" : "test"
+					"mesh" : "7_bridge.000.mesh",
+					"material" : "bridge"
 				},
 				{
 					"type" : "RigidBody",
@@ -153,15 +45,15 @@
 			]
 		},
 		{
-			"name" : "goal",
-			"position" : [0, -290, 0],
+			"name" : "7_goal.001",
+			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
-			"scale" : [0.1, 0.1, 0.1],
+			"scale" : [10, 10, 10],
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "cube.mesh",
-					"material" : "test"
+					"mesh" : "7_goal.001.mesh",
+					"material" : "goal"
 				},
 				{
 					"type" : "RigidBody"
@@ -176,9 +68,70 @@
 			]
 		},
 		{
+			"name" : "7_goal",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "7_goal.mesh",
+					"material" : "goal"
+				},
+				{
+					"type" : "RigidBody"
+				},
+				{
+					"type" : "GoalComponent",
+					"nextLevel" : "nivel 8",
+					"levelSelection" : "LevelSelection",
+					"level": "nivel 7",
+					"delay" : 0.20
+				}
+			]
+		},
+        {
+			"name" : "7_island.000",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "7_island.000.mesh",
+					"material" : "island"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "7_island.001",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "7_island.001.mesh",
+					"material" : "island"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+
+
+		{
 			"prefab" : "marble",
 			"name" : "ball",
-			"position" : [0, 250, -100],
+			"position" : [0, 215, -90],
 			"rotation" : [0, 0, 0]
 		},
 		{
@@ -195,13 +148,13 @@
 		},
 		{
 			"name" : "cameraPivot",
-			"position" : [0, 250, -100],
+			"position" : [0, 215, -90],
 			"rotation" : [0, 0, 0], 
 			"scale" : [1, 1, 1]
 		},
 		{
 			"name" : "camera",
-			"position" : [0, 300, -20],
+			"position" : [0, 265, -10],
 			"rotation" : [0, 0, 0], 
 			"scale" : [1, 1, 1],
 			"parent" : "cameraPivot",

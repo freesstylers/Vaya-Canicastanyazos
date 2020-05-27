@@ -26,8 +26,8 @@
 			[
 			]
 		},
-		{
-			"name" : "5_1",
+        {
+			"name" : "5_bridge.000",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -35,17 +35,17 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "5_1.mesh",
-					"material" : "test"
+					"mesh" : "5_bridge.000.mesh",
+					"material" : "bridge"
 				},
 				{
 					"type" : "RigidBody",
 					"friction": 0.75
 				}
 			]
-        },
+		},
         {
-			"name" : "5_2",
+			"name" : "5_fence.000",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -53,17 +53,17 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "5_2.mesh",
-					"material" : "test"
+					"mesh" : "5_fence.000.mesh",
+					"material" : "fence"
 				},
 				{
 					"type" : "RigidBody",
 					"friction": 0.75
 				}
 			]
-        },
+		},
         {
-			"name" : "5_3",
+			"name" : "5_fence.001",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -71,17 +71,17 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "5_3.mesh",
-					"material" : "test"
+					"mesh" : "5_fence.001.mesh",
+					"material" : "fence"
 				},
 				{
 					"type" : "RigidBody",
 					"friction": 0.75
 				}
 			]
-        },
+		},
         {
-			"name" : "5_4",
+			"name" : "5_fence.002",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -89,17 +89,17 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "5_4.mesh",
-					"material" : "test"
+					"mesh" : "5_fence.002.mesh",
+					"material" : "fence"
 				},
 				{
 					"type" : "RigidBody",
 					"friction": 0.75
 				}
 			]
-        },
+		},
         {
-			"name" : "5_5",
+			"name" : "5_fence.003",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -107,17 +107,17 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "5_5.mesh",
-					"material" : "test"
+					"mesh" : "5_fence.003.mesh",
+					"material" : "fence"
 				},
 				{
 					"type" : "RigidBody",
 					"friction": 0.75
 				}
 			]
-        },
+		},
         {
-			"name" : "5_6",
+			"name" : "5_fence.004",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -125,17 +125,17 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "5_6.mesh",
-					"material" : "test"
+					"mesh" : "5_fence.004.mesh",
+					"material" : "fence"
 				},
 				{
 					"type" : "RigidBody",
 					"friction": 0.75
 				}
 			]
-        },
+		},
         {
-			"name" : "5_7",
+			"name" : "5_fence.005",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -143,17 +143,17 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "5_7.mesh",
-					"material" : "test"
+					"mesh" : "5_fence.005.mesh",
+					"material" : "fence"
 				},
 				{
 					"type" : "RigidBody",
 					"friction": 0.75
 				}
 			]
-        },
+		},
         {
-			"name" : "5_8",
+			"name" : "5_fence.006",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -161,17 +161,17 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "5_8.mesh",
-					"material" : "test"
+					"mesh" : "5_fence.006.mesh",
+					"material" : "fence"
 				},
 				{
 					"type" : "RigidBody",
 					"friction": 0.75
 				}
 			]
-        },
+		},
         {
-			"name" : "5_9",
+			"name" : "5_fence.007",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -179,17 +179,17 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "5_9.mesh",
-					"material" : "test"
+					"mesh" : "5_fence.007.mesh",
+					"material" : "fence"
 				},
 				{
 					"type" : "RigidBody",
 					"friction": 0.75
 				}
 			]
-        },
+		},
         {
-			"name" : "5_10",
+			"name" : "5_fence.008",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -197,17 +197,17 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "5_10.mesh",
-					"material" : "test"
+					"mesh" : "5_fence.008.mesh",
+					"material" : "fence"
 				},
 				{
 					"type" : "RigidBody",
 					"friction": 0.75
 				}
 			]
-        },
+		},
         {
-			"name" : "5_11",
+			"name" : "5_fence.009",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -215,17 +215,17 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "5_11.mesh",
-					"material" : "test"
+					"mesh" : "5_fence.009.mesh",
+					"material" : "fence"
 				},
 				{
 					"type" : "RigidBody",
 					"friction": 0.75
 				}
 			]
-        },
+		},
         {
-			"name" : "5_12",
+			"name" : "5_fence.010",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -233,17 +233,17 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "5_12.mesh",
-					"material" : "test"
+					"mesh" : "5_fence.010.mesh",
+					"material" : "fence"
 				},
 				{
 					"type" : "RigidBody",
 					"friction": 0.75
 				}
 			]
-        },
+		},
         {
-			"name" : "5_13",
+			"name" : "5_fence.011",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -251,17 +251,17 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "5_13.mesh",
-					"material" : "test"
+					"mesh" : "5_fence.011.mesh",
+					"material" : "fence"
 				},
 				{
 					"type" : "RigidBody",
 					"friction": 0.75
 				}
 			]
-        },
+		},
         {
-			"name" : "5_14",
+			"name" : "5_fence.012",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -269,44 +269,8 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "5_14.mesh",
-					"material" : "test"
-				},
-				{
-					"type" : "RigidBody",
-					"friction": 0.75
-				}
-			]
-        },
-        {
-			"name" : "5_15",
-			"position" : [0, 0, 0],
-			"rotation" : [0, 0, 0],
-			"scale" : [10, 10, 10],
-			"parent" : "centro",
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "5_15.mesh",
-					"material" : "test"
-				},
-				{
-					"type" : "RigidBody",
-					"friction": 0.75
-				}
-			]
-        },
-        {
-			"name" : "5_16",
-			"position" : [0, 0, 0],
-			"rotation" : [0, 0, 0],
-			"scale" : [10, 10, 10],
-			"parent" : "centro",
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "5_16.mesh",
-					"material" : "test"
+					"mesh" : "5_fence.012.mesh",
+					"material" : "fence"
 				},
 				{
 					"type" : "RigidBody",
@@ -315,15 +279,15 @@
 			]
 		},
 		{
-			"name" : "goal",
-			"position" : [200, -190, 0],
+			"name" : "5_goal",
+			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
-			"scale" : [0.1, 0.1, 0.1],
+			"scale" : [10, 10, 10],
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "cube.mesh",
-					"material" : "test"
+					"mesh" : "5_goal.mesh",
+					"material" : "goal"
 				},
 				{
 					"type" : "RigidBody"
@@ -337,6 +301,44 @@
 				}
 			]
 		},
+        {
+			"name" : "5_island.000",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "5_island.000.mesh",
+					"material" : "island"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "5_island.001",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "5_island.001.mesh",
+					"material" : "island"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+
+
 		{
 			"prefab" : "marble",
 			"name" : "ball",

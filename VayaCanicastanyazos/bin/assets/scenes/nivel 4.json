@@ -1,8 +1,7 @@
 {
 	"name" : "nivel 4",
 	"entities" :
-	[
-		
+	[		
 		{
 			"name" : "bg",
 			"components" : [
@@ -24,17 +23,6 @@
 			]
 		},
 		{
-			"name" : "light2",
-			"position" : [-80, -20, 20],
-			"components" : [
-				{
-					"type" : "Light",
-					"lightType" : "point",
-					"lightDir"  : [-0.7, -0.7, 0]
-				}
-			]
-		},
-		{
 			"name" : "centro",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
@@ -43,25 +31,8 @@
 			[
 			]
 		},
-		{
-			"name" : "4_1",
-			"position" : [0, 0, 0],
-			"rotation" : [0, 0, 0],
-			"scale" : [10, 10, 10],
-			"parent" : "centro",
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "4_1.mesh",
-					"material" : "test"
-				},
-				{
-					"type" : "RigidBody"
-				}
-			]
-        },
         {
-			"name" : "4_2",
+			"name" : "4_bridge.000",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -69,17 +40,17 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "4_2.mesh",
-					"material" : "test"
+					"mesh" : "4_bridge.000.mesh",
+					"material" : "bridge"
 				},
 				{
 					"type" : "RigidBody",
 					"friction": 0.75
 				}
 			]
-        },
+		},
         {
-			"name" : "4_3",
+			"name" : "4_bridge.001",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -87,17 +58,17 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "4_3.mesh",
-					"material" : "test"
+					"mesh" : "4_bridge.001.mesh",
+					"material" : "bridge"
 				},
 				{
 					"type" : "RigidBody",
 					"friction": 0.75
 				}
 			]
-        },
+		},
         {
-			"name" : "4_4",
+			"name" : "4_bridge.002",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -105,17 +76,17 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "4_4.mesh",
-					"material" : "test"
+					"mesh" : "4_bridge.002.mesh",
+					"material" : "bridge"
 				},
 				{
 					"type" : "RigidBody",
 					"friction": 0.75
 				}
 			]
-        },
+		},
         {
-			"name" : "4_5",
+			"name" : "4_bridge.003",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -123,17 +94,17 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "4_5.mesh",
-					"material" : "test"
+					"mesh" : "4_bridge.003.mesh",
+					"material" : "bridge"
 				},
 				{
 					"type" : "RigidBody",
 					"friction": 0.75
 				}
 			]
-        },
+		},
         {
-			"name" : "4_6",
+			"name" : "4_bridge.004",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -141,17 +112,17 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "4_6.mesh",
-					"material" : "test"
+					"mesh" : "4_bridge.004.mesh",
+					"material" : "bridge"
 				},
 				{
 					"type" : "RigidBody",
 					"friction": 0.75
 				}
 			]
-        },
+		},
         {
-			"name" : "4_7",
+			"name" : "4_bridge.005",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -159,17 +130,17 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "4_7.mesh",
-					"material" : "test"
+					"mesh" : "4_bridge.005.mesh",
+					"material" : "bridge"
 				},
 				{
 					"type" : "RigidBody",
 					"friction": 0.75
 				}
 			]
-        },
+		},
         {
-			"name" : "4_8",
+			"name" : "4_bridge.006",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -177,17 +148,17 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "4_8.mesh",
-					"material" : "test"
+					"mesh" : "4_bridge.006.mesh",
+					"material" : "bridge"
 				},
 				{
 					"type" : "RigidBody",
 					"friction": 0.75
 				}
 			]
-        },
+		},
         {
-			"name" : "4_9",
+			"name" : "4_fence.000",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -195,17 +166,17 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "4_9.mesh",
-					"material" : "test"
+					"mesh" : "4_fence.000.mesh",
+					"material" : "fence"
 				},
 				{
 					"type" : "RigidBody",
 					"friction": 0.75
 				}
 			]
-        },
+		},
         {
-			"name" : "4_10",
+			"name" : "4_fence.001",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -213,17 +184,17 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "4_10.mesh",
-					"material" : "test"
+					"mesh" : "4_fence.001.mesh",
+					"material" : "fence"
 				},
 				{
 					"type" : "RigidBody",
 					"friction": 0.75
 				}
 			]
-        },
+		},
         {
-			"name" : "4_11",
+			"name" : "4_fence.002",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -231,26 +202,8 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "4_11.mesh",
-					"material" : "test"
-				},
-				{
-					"type" : "RigidBody",
-					"friction": 0.75
-				}
-			]
-        },
-        {
-			"name" : "4_12",
-			"position" : [0, 0, 0],
-			"rotation" : [0, 0, 0],
-			"scale" : [10, 10, 10],
-			"parent" : "centro",
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "4_12.mesh",
-					"material" : "test"
+					"mesh" : "4_fence.002.mesh",
+					"material" : "fence"
 				},
 				{
 					"type" : "RigidBody",
@@ -259,33 +212,15 @@
 			]
 		},
 		{
-			"name" : "4_13",
+			"name" : "4_goal",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
-			"parent" : "centro",
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "4_13.mesh",
-					"material" : "test"
-				},
-				{
-					"type" : "RigidBody",
-					"friction": 0.75
-				}
-			]
-		},
-		{
-			"name" : "goal",
-			"position" : [-180, -65, 30],
-			"rotation" : [0, 0, 0],
-			"scale" : [0.1, 0.1, 0.1],
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "cube.mesh",
-					"material" : "test"
+					"mesh" : "4_goal.mesh",
+					"material" : "goal"
 				},
 				{
 					"type" : "RigidBody"
@@ -299,10 +234,65 @@
 				}
 			]
 		},
+        {
+			"name" : "4_island.000",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "4_island.000.mesh",
+					"material" : "island"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "4_island.001",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "4_island.001.mesh",
+					"material" : "island"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "4_island.002",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "4_island.002.mesh",
+					"material" : "island"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+
 		{
 			"prefab" : "marble",
 			"name" : "ball",
-			"position" : [-80, 0, 0],
+			"position" : [-85, 20, 0],
 			"rotation" : [0, 0, 0]
 		},
 		{
@@ -319,13 +309,13 @@
 		},
 		{
 			"name" : "cameraPivot",
-			"position" : [-80, 0, 0],
+			"position" : [-85, 20, 0],
 			"rotation" : [0, 0, 0], 
 			"scale" : [1, 1, 1]
 		},
 		{
 			"name" : "camera",
-			"position" : [-80, 50, 80],
+			"position" : [-85, 70, 80],
 			"rotation" : [0, 0, 0], 
 			"scale" : [1, 1, 1],
 			"parent" : "cameraPivot",
