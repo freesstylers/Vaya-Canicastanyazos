@@ -1316,7 +1316,6 @@ void OptionsMenuComponent::init(json& j)
 			auto helperFunction = std::bind(&OptionsMenuComponent::functionVolumeMusicUp, this, std::placeholders::_1);
 			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
 		}
-		break;
 		}
 			
 		count++;

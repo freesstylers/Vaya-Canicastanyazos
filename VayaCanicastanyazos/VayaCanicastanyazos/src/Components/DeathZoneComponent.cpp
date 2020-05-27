@@ -30,9 +30,10 @@ void DeathZoneComponent::update() {
 			dead = false;
 			AudioManager::getInstance()->pauseChannel(2);
 			AudioManager::getInstance()->playSound("assets/sound/castanazo.mp3", 5);
+			time = MotorCasaPaco::getInstance()->getTime();
 		}
 
-			if (!AudioManager::getInstance()->isPlayingChannel(5))
+			if (MotorCasaPaco::getInstance()->getTimeDifference(time) > 4)
 			{
 				SceneManager::getInstance()->changeScene(SceneManager::getInstance()->getCurrentScene()->getName());
 				AudioManager::getInstance()->pauseChannel(2);

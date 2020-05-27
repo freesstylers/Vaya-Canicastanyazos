@@ -13,4 +13,5 @@ public:
 private:
 	Entity* marble;
 	bool dead = true;
+	int time = 0;
 };
