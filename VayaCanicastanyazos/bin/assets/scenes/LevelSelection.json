@@ -31,7 +31,7 @@
 				{
 					"type" : "Mesh",
 					"mesh" : "cube.mesh",
-					"material" : "background"
+					"material" : "good_background"
 				}
 			]
 		},

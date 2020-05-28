@@ -187,6 +187,19 @@ material background{
     }
 }
 
+material good_background{
+    technique {
+        pass {
+            texture_unit  {
+                texture poggerinos_bottom4.png
+                tex_address_mode wrap 
+                scale 1.0 1.0 
+                colour_op alpha_blend 
+            }
+        }
+    }
+}
+
 material island {
     receive_shadows on
 	

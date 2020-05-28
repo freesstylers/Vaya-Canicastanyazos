@@ -1,0 +1,669 @@
+{
+	"name" : "nivel 15",
+	"entities" :
+	[
+		
+		{
+			"name" : "bg",
+			"components" : [
+				{
+					"type" : "Skybox",
+					"material" : "sky2",
+					"skyType" : "box"
+				}
+			]
+		},
+		{
+			"name" : "centro",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [1, 1, 1],
+			"components" :
+			[
+			]
+		},
+        {
+			"name" : "15_bridge.000",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "15_bridge.000.mesh",
+					"material" : "bridge"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "15_bridge.001",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "15_bridge.001.mesh",
+					"material" : "bridge"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "15_bridge.002",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "15_bridge.002.mesh",
+					"material" : "bridge"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "15_bridge.003",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "15_bridge.003.mesh",
+					"material" : "bridge"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "15_bridge.004",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "15_bridge.004.mesh",
+					"material" : "bridge"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "15_bridge.005",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "15_bridge.005.mesh",
+					"material" : "bridge"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+		{
+			"name" : "15_goal",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "15_goal.mesh",
+					"material" : "goal"
+				},
+				{
+					"type" : "RigidBody"
+				},
+				{
+					"type" : "GoalComponent",
+					"nextLevel" : "nivel 16",
+					"levelSelection" : "LevelSelection",
+					"level": "nivel 15",
+					"delay" : 0.20
+				}
+			]
+		},
+        {
+			"name" : "15_island.000",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "15_island.000.mesh",
+					"material" : "island"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "15_island.001",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "15_island.001.mesh",
+					"material" : "island"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "15_island.002",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "15_island.002.mesh",
+					"material" : "island"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "15_island.003",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "15_island.003.mesh",
+					"material" : "island"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "15_island.004",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "15_island.004.mesh",
+					"material" : "island"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "15_island.005",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "15_island.005.mesh",
+					"material" : "island"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "15_island.006",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "15_island.006.mesh",
+					"material" : "island"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "15_island.007",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "15_island.007.mesh",
+					"material" : "island"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "15_island.008",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "15_island.008.mesh",
+					"material" : "island"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "15_island.009",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "15_island.009.mesh",
+					"material" : "island"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "15_island.010",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "15_island.010.mesh",
+					"material" : "island"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "15_island.011",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "15_island.011.mesh",
+					"material" : "island"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "15_island.012",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "15_island.012.mesh",
+					"material" : "island"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "15_island.013",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "15_island.013.mesh",
+					"material" : "island"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "15_island.014",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "15_island.014.mesh",
+					"material" : "island"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "15_island.015",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "15_island.015.mesh",
+					"material" : "island"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "15_island.016",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "15_island.016.mesh",
+					"material" : "island"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "15_island.017",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "15_island.017.mesh",
+					"material" : "island"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+		
+		
+		{
+			"prefab" : "marble",
+			"name" : "ball",
+			"position" : [0, 810, 400],
+			"rotation" : [0, 0, 0]
+		},
+		{
+			"name" : "cameraPivot",
+			"position" : [0, 810, 400],
+			"rotation" : [0, 0, 0], 
+			"scale" : [1, 1, 1]
+		},
+		{
+			"name" : "camera",
+			"position" : [0, 860, 470],
+			"rotation" : [0, 0, 0],
+			"scale" : [1, 1, 1],
+			"parent" : "cameraPivot",
+			"components" : [
+				{
+					"type" : "Camera",
+					"lookAt" : [0, 0, 0],
+					"bgColour" : [0, 0, 1, 1]
+				},
+				{
+					"type": "AudioListenerComponent"
+				},
+				{
+					"type": "CameraController",
+					"marble" : "ball"
+				}
+			]
+		},
+		{
+			"name" : "death",
+			"position" : [0, -350, 0],
+			"rotation" : [0,0,0],
+			"scale" : [0,0,0],
+			"components" : [
+				{
+					"type" : "DeathZoneComponent",
+					"marble" : "ball"
+				}
+			]
+		},
+		{
+			"name" : "light",
+			"prefab" : "sunlight"
+		},
+		{
+			"name": "GM",
+			"prefab" : "gameManager"
+		}
+	],
+	
+	"UI" :
+	[
+		{
+			"type" : "layout", 
+			"name" : "Ingame.layout",
+			"visible": true
+		},		
+		{
+			"type" : "layout", 
+			"name" : "MenuPausaCanicas.layout",
+			"visible": false
+		},
+		{
+			"type" : "layout", 
+			"name" : "BasicOptions.layout",
+			"visible": false
+		},
+		{
+			"type" : "layout", 
+			"name" : "GraphicOptionsMenu.layout",
+			"visible": false
+		},
+		{
+			"type" : "layout", 
+			"name" : "AdvancedOptionsMenu.layout",
+			"visible": false
+		},
+		{
+			"type" : "layout", 
+			"name" : "levelCompleted.layout",
+			"visible": false
+		},
+		{
+			"type" : "entity",
+			"name" : "UI",
+			"components" : 
+			[
+				{
+					"type": "PauseMenuComponent",
+					"buttons" :
+					[
+					 "PauseMenu/Return",
+					 "PauseMenu/Reset",
+					 "PauseMenu/Settings",
+					 "PauseMenu/MainMenu",
+					 "PauseMenu/Exit"
+					],
+					"basicOptionButtons" :
+					[
+					 "BasicOptions/LeftArrow_4",
+					 "BasicOptions/RightArrow_4",
+					 "BasicOptions/LeftArrow_3",
+					 "BasicOptions/RightArrow_3",
+					 "BasicOptions/LeftArrow_2",
+					 "BasicOptions/RightArrow_2",
+					 "BasicOptions/LeftArrow_1",
+					 "BasicOptions/RightArrow_1"
+					],
+					"basicOptionTexts":
+					[
+					 "BasicOptions/Text_Selector_1",
+					 "BasicOptions/Text_Selector_2",
+					 "BasicOptions/Text_Selector_3",
+					 "BasicOptions/Text_Selector_4"
+					],
+					"basicExtraButton" : "BasicOptions/GraphicOptions",
+					"basicOptionBotButtons" :
+					[
+					 "BasicOptions/Apply",
+					 "BasicOptions/Revert",
+					 "BasicOptions/Back"
+					],
+					"graphicOptionDownButtons" :
+					[
+					 "GraphicOptions/Apply",
+					 "GraphicOptions/Revert",
+					 "GraphicOptions/Back"
+					],
+					"graphicOptionTopButtons" :
+					[
+					 "GraphicOptions/LeftArrow_5",
+					 "GraphicOptions/RightArrow_5",
+					 "GraphicOptions/LeftArrow_4",
+					 "GraphicOptions/RightArrow_4",
+					 "GraphicOptions/LeftArrow_3",
+					 "GraphicOptions/RightArrow_3",
+					 "GraphicOptions/LeftArrow_2",
+			 		 "GraphicOptions/RightArrow_2",
+				 	 "GraphicOptions/LeftArrow_1",
+					 "GraphicOptions/RightArrow_1"
+					],
+					"graphicOptionExtraButton": "GraphicOptions/AdvancedOptions",
+					"graphicOptionTexts" :
+					[
+					 "GraphicOptions/Text_Selector_1",
+					 "GraphicOptions/Text_Selector_2",
+					 "GraphicOptions/Text_Selector_3",
+					 "GraphicOptions/Text_Selector_4",
+					 "GraphicOptions/Text_Selector_5"
+					],
+					"advancedGraphicOptionDownButtons" :
+					[
+					 "AdvancedGraphicOptions/Apply",
+					 "AdvancedGraphicOptions/Revert",
+					 "AdvancedGraphicOptions/Back"
+					],
+					"advancedOptionTexts" :
+					[
+					 "AdvancedGraphicOptions/Text_Selector_1",
+					 "AdvancedGraphicOptions/Text_Selector_2",
+					 "AdvancedGraphicOptions/Text_Selector_3",
+					 "AdvancedGraphicOptions/Text_Selector_4"
+					],
+					"advancedGraphicOptionTopButtons" :
+					[
+					 "AdvancedGraphicOptions/LeftArrow_4",
+					 "AdvancedGraphicOptions/RightArrow_4",
+					 "AdvancedGraphicOptions/LeftArrow_3",
+					 "AdvancedGraphicOptions/RightArrow_3",
+					 "AdvancedGraphicOptions/LeftArrow_2",
+					 "AdvancedGraphicOptions/RightArrow_2",
+					 "AdvancedGraphicOptions/LeftArrow_1",
+					 "AdvancedGraphicOptions/RightArrow_1"
+					],
+					"Level" : "nivel 15",
+					"MainMenu" : "LevelSelection",
+					"delay" : 0.20,
+					"delayPause" : 0.5					
+				}		
+			]
+		}
+	]
+}
