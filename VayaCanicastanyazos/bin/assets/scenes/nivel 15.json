@@ -2,7 +2,6 @@
 	"name" : "nivel 15",
 	"entities" :
 	[
-		
 		{
 			"name" : "bg",
 			"components" : [
@@ -380,9 +379,9 @@
 				},
 				{
 					"type" : "GoalComponent",
-					"nextLevel" : "nivel 1",
+					"nextLevel" : "nivel 16",
 					"levelSelection" : "LevelSelection",
-					"level": "nivel 16",
+					"level": "nivel 15",
 					"delay" : 0.20
 				}
 			]
@@ -653,17 +652,17 @@
 		{
 			"prefab" : "star",
 			"name" : "1_star.000",
-			"position" : [0, 0, 0]
+			"position" : [30, 100, 50]
 		},
 		{
 			"prefab" : "star",
 			"name" : "1_star.001",
-			"position" : [0, 0, 0]
+			"position" : [-210, 0, -60]
 		},
 		{
 			"prefab" : "star",
 			"name" : "1_star.002",
-			"position" : [0, 0, 0]
+			"position" : [-630, -10, 0]
 		},
 		{
 			"name" : "light",
@@ -799,7 +798,7 @@
 					 "AdvancedGraphicOptions/LeftArrow_1",
 					 "AdvancedGraphicOptions/RightArrow_1"
 					],
-					"Level" : "nivel 16",
+					"Level" : "nivel 15",
 					"MainMenu" : "LevelSelection",
 					"delay" : 0.20,
 					"delayPause" : 0.5					
