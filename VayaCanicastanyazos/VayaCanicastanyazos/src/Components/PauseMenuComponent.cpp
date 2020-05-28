@@ -89,15 +89,11 @@ bool PauseMenuComponent::ReceiveEvent(Event& event)
 		GUI_Manager::getInstance()->changeText(basicTexts[1], std::to_string(int(volumeSFX)));
 
 
-		if (MotorCasaPaco::getInstance()->getInvertedAxisYInput())
+		if (MotorCasaPaco::getInstance()->getInvertedAxisXInput())
 			GUI_Manager::getInstance()->changeText(basicTexts[2], "Si");
 		else
 			GUI_Manager::getInstance()->changeText(basicTexts[2], "No");
 
-		if (MotorCasaPaco::getInstance()->getInvertedAxisYInput())
-			GUI_Manager::getInstance()->changeText(basicTexts[3], "Si");
-		else
-			GUI_Manager::getInstance()->changeText(basicTexts[3], "No");
 	}
 	
 	else if (event.type == "finNivel")
@@ -188,6 +184,8 @@ bool PauseMenuComponent::functionBasicBack(const CEGUI::EventArgs& e)
 	currenPos = 2;
 	MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(xPause, positionsYPause[currenPos]);
 
+	MotorCasaPaco::getInstance()->revertBasicOptions();
+
 	Event evt = Event("RESET_BASIC_INFO");
 	EventManager::getInstance()->EmitEvent(evt);
 
@@ -224,21 +222,6 @@ bool PauseMenuComponent::functionInvertAxisX(const CEGUI::EventArgs& e)
 		GUI_Manager::getInstance()->changeText(basicTexts[2], "Si");
 	else
 		GUI_Manager::getInstance()->changeText(basicTexts[2], "No");
-
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 2, false);
-
-	return true;
-}
-
-bool PauseMenuComponent::functionInvertAxisY(const CEGUI::EventArgs& e)
-{
-	MotorCasaPaco::getInstance()->setInvertedAxisY(!MotorCasaPaco::getInstance()->getInvertedAxisYTemp());
-
-	//Update Text
-	if (MotorCasaPaco::getInstance()->getInvertedAxisYTemp())
-		GUI_Manager::getInstance()->changeText(basicTexts[3], "Si");
-	else
-		GUI_Manager::getInstance()->changeText(basicTexts[3], "No");
 
 	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 2, false);
 
@@ -1481,47 +1464,35 @@ void PauseMenuComponent::init(json& j)
 		{
 		case 0:
 		{
-			auto helperFunction = std::bind(&PauseMenuComponent::functionInvertAxisY, this, std::placeholders::_1);
+			auto helperFunction = std::bind(&PauseMenuComponent::functionInvertAxisX, this, std::placeholders::_1);
 			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
 		}
 		break;
 		case 1:
 		{
-			auto helperFunction = std::bind(&PauseMenuComponent::functionInvertAxisY, this, std::placeholders::_1);
+			auto helperFunction = std::bind(&PauseMenuComponent::functionInvertAxisX, this, std::placeholders::_1);
 			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
 		}
 		break;
 		case 2:
 		{
-			auto helperFunction = std::bind(&PauseMenuComponent::functionInvertAxisX, this, std::placeholders::_1);
+			auto helperFunction = std::bind(&PauseMenuComponent::functionVolumeSFXDown, this, std::placeholders::_1);
 			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
 		}
 		break;
 		case 3:
 		{
-			auto helperFunction = std::bind(&PauseMenuComponent::functionInvertAxisX, this, std::placeholders::_1);
+			auto helperFunction = std::bind(&PauseMenuComponent::functionVolumeSFXUp, this, std::placeholders::_1);
 			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
 		}
 		break;
 		case 4:
 		{
-			auto helperFunction = std::bind(&PauseMenuComponent::functionVolumeSFXDown, this, std::placeholders::_1);
-			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
-		}
-		break;
-		case 5:
-		{
-			auto helperFunction = std::bind(&PauseMenuComponent::functionVolumeSFXUp, this, std::placeholders::_1);
-			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
-		}
-		break;
-		case 6:
-		{
 			auto helperFunction = std::bind(&PauseMenuComponent::functionVolumeMusicDown, this, std::placeholders::_1);
 			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
 		}
 		break;
-		case 7:
+		case 5:
 		{
 			auto helperFunction = std::bind(&PauseMenuComponent::functionVolumeMusicUp, this, std::placeholders::_1);
 			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
@@ -1918,15 +1889,10 @@ void PauseMenuComponent::init(json& j)
 	GUI_Manager::getInstance()->changeText(basicTexts[0], std::to_string(int(volumeMusic)));
 	GUI_Manager::getInstance()->changeText(basicTexts[1], std::to_string(int(volumeSFX)));
 
-	if (MotorCasaPaco::getInstance()->getInvertedAxisYInput())
+	if (MotorCasaPaco::getInstance()->getInvertedAxisXInput())
 		GUI_Manager::getInstance()->changeText(basicTexts[2], "Si");
 	else
 		GUI_Manager::getInstance()->changeText(basicTexts[2], "No");
-
-	if (MotorCasaPaco::getInstance()->getInvertedAxisYInput())
-		GUI_Manager::getInstance()->changeText(basicTexts[3], "Si");
-	else
-		GUI_Manager::getInstance()->changeText(basicTexts[3], "No");
 
 	fsaaPos = getFSAAPosition(MotorCasaPaco::getInstance()->getFSAA());
 	GUI_Manager::getInstance()->changeText(advancedTexts[0], "X " + MotorCasaPaco::getInstance()->getFSAA());

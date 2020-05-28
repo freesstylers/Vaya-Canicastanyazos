@@ -404,8 +404,6 @@
 					],
 					"basicOptionButtons" :
 					[
-					 "BasicOptions/LeftArrow_4",
-					 "BasicOptions/RightArrow_4",
 					 "BasicOptions/LeftArrow_3",
 					 "BasicOptions/RightArrow_3",
 					 "BasicOptions/LeftArrow_2",
@@ -417,8 +415,7 @@
 					[
 					 "BasicOptions/Text_Selector_1",
 					 "BasicOptions/Text_Selector_2",
-					 "BasicOptions/Text_Selector_3",
-					 "BasicOptions/Text_Selector_4"
+					 "BasicOptions/Text_Selector_3"
 					],
 					"basicExtraButton" : "BasicOptions/GraphicOptions",
 					"basicOptionBotButtons" :

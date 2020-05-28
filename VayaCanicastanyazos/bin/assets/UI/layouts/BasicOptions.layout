@@ -13,15 +13,6 @@
             <Property name="BackgroundEnabled" value="false" />
             <Property name="RiseOnClickEnabled" value="false" />
         </Window>
-        <Window type="GWEN/StaticImage" name="Image_Selector_4" >
-            <Property name="Area" value="{{0.659375,0},{0.577778,0},{0.901563,0},{0.647222,0}}" />
-            <Property name="Text" value="Sincronizacion vertical" />
-            <Property name="Image" value="GWEN/Input.Button.Normal.Middle.Middle" />
-            <Property name="MaxSize" value="{{1,0},{1,0}}" />
-            <Property name="FrameEnabled" value="false" />
-            <Property name="BackgroundEnabled" value="false" />
-            <Property name="RiseOnClickEnabled" value="false" />
-        </Window>
         <Window type="GWEN/StaticImage" name="Image_Selector_3" >
             <Property name="Area" value="{{0.659375,0},{0.431944,0},{0.901563,0},{0.501389,0}}" />
             <Property name="Text" value="Sincronizacion vertical" />
@@ -43,14 +34,6 @@
         <Window type="GWEN/StaticImage" name="Image_Selector_1" >
             <Property name="Area" value="{{0.659375,0},{0.161111,0},{0.901563,0},{0.230555,0}}" />
             <Property name="Text" value="Sincronizacion vertical" />
-            <Property name="Image" value="GWEN/Input.Button.Normal.Middle.Middle" />
-            <Property name="MaxSize" value="{{1,0},{1,0}}" />
-            <Property name="FrameEnabled" value="false" />
-            <Property name="BackgroundEnabled" value="false" />
-            <Property name="RiseOnClickEnabled" value="false" />
-        </Window>
-        <Window type="GWEN/StaticImage" name="Image_Option_4" >
-            <Property name="Area" value="{{0.0539063,0},{0.577778,0},{0.546094,0},{0.647222,0}}" />
             <Property name="Image" value="GWEN/Input.Button.Normal.Middle.Middle" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="FrameEnabled" value="false" />
@@ -112,25 +95,6 @@
                 </AutoWindow>
             </AutoWindow>
         </Window>
-        <Window type="GWEN/StaticText" name="Text_Selector_4" >
-            <Property name="Area" value="{{0.659375,0},{0.577778,0},{0.901563,0},{0.645834,0}}" />
-            <Property name="MaxSize" value="{{1,0},{1,0}}" />
-            <Property name="FrameEnabled" value="false" />
-            <Property name="HorzFormatting" value="CentreAligned" />
-            <Property name="BackgroundEnabled" value="false" />
-            <Property name="RiseOnClickEnabled" value="false" />
-            <AutoWindow namePath="__auto_hscrollbar__" >
-                <AutoWindow namePath="__auto_thumb__" >
-                    <Property name="MouseInputPropagationEnabled" value="true" />
-                </AutoWindow>
-            </AutoWindow>
-            <AutoWindow namePath="__auto_vscrollbar__" >
-                <Property name="VerticalScrollbar" value="true" />
-                <AutoWindow namePath="__auto_thumb__" >
-                    <Property name="MouseInputPropagationEnabled" value="true" />
-                </AutoWindow>
-            </AutoWindow>
-        </Window>
         <Window type="GWEN/StaticText" name="Text_Selector_3" >
             <Property name="Area" value="{{0.659375,0},{0.431944,0},{0.901563,0},{0.5,0}}" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
@@ -173,26 +137,6 @@
         <Window type="GWEN/StaticText" name="Text_Selector_1" >
             <Property name="Area" value="{{0.659375,0},{0.161111,0},{0.901563,0},{0.229167,0}}" />
             <Property name="Text" value="SI" />
-            <Property name="MaxSize" value="{{1,0},{1,0}}" />
-            <Property name="FrameEnabled" value="false" />
-            <Property name="HorzFormatting" value="CentreAligned" />
-            <Property name="BackgroundEnabled" value="false" />
-            <Property name="RiseOnClickEnabled" value="false" />
-            <AutoWindow namePath="__auto_hscrollbar__" >
-                <AutoWindow namePath="__auto_thumb__" >
-                    <Property name="MouseInputPropagationEnabled" value="true" />
-                </AutoWindow>
-            </AutoWindow>
-            <AutoWindow namePath="__auto_vscrollbar__" >
-                <Property name="VerticalScrollbar" value="true" />
-                <AutoWindow namePath="__auto_thumb__" >
-                    <Property name="MouseInputPropagationEnabled" value="true" />
-                </AutoWindow>
-            </AutoWindow>
-        </Window>
-        <Window type="GWEN/StaticText" name="Text_Option_4" >
-            <Property name="Area" value="{{0.0539063,0},{0.577778,0},{0.545313,0},{0.645834,0}}" />
-            <Property name="Text" value="invertir eje y" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="FrameEnabled" value="false" />
             <Property name="HorzFormatting" value="CentreAligned" />
@@ -283,9 +227,6 @@
         <Window type="VayaCanicastanhazos/LeftArrow" name="LeftArrow_3" >
             <Property name="Area" value="{{0.604688,0},{0.431944,0},{0.64375,0},{0.501389,0}}" />
         </Window>
-        <Window type="VayaCanicastanhazos/LeftArrow" name="LeftArrow_4" >
-            <Property name="Area" value="{{0.604688,0},{0.577778,0},{0.64375,0},{0.647222,0}}" />
-        </Window>
         <Window type="VayaCanicastanhazos/RightArrow" name="RightArrow_1" >
             <Property name="Area" value="{{0.913281,0},{0.161111,0},{0.952344,0},{0.230555,0}}" />
         </Window>
@@ -294,9 +235,6 @@
         </Window>
         <Window type="VayaCanicastanhazos/RightArrow" name="RightArrow_3" >
             <Property name="Area" value="{{0.913281,0},{0.431944,0},{0.952344,0},{0.501389,0}}" />
-        </Window>
-        <Window type="VayaCanicastanhazos/RightArrow" name="RightArrow_4" >
-            <Property name="Area" value="{{0.913281,0},{0.577778,0},{0.952344,0},{0.647222,0}}" />
         </Window>
         <Window type="GWEN/Button" name="Apply" >
             <Property name="Area" value="{{0.109375,0},{0.873611,0},{0.296875,0},{0.968055,0}}" />

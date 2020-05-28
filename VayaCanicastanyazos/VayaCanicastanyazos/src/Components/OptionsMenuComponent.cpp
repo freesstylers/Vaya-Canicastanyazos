@@ -91,11 +91,6 @@ bool OptionsMenuComponent::ReceiveEvent(Event& event)
 			GUI_Manager::getInstance()->changeText(basicTexts[2], "Si");
 		else
 			GUI_Manager::getInstance()->changeText(basicTexts[2], "No");
-
-		if (MotorCasaPaco::getInstance()->getInvertedAxisYInput())
-			GUI_Manager::getInstance()->changeText(basicTexts[3], "Si");
-		else
-			GUI_Manager::getInstance()->changeText(basicTexts[3], "No");
 	}
 	return false;
 }
@@ -151,21 +146,6 @@ bool OptionsMenuComponent::functionInvertAxisX(const CEGUI::EventArgs& e)
 		GUI_Manager::getInstance()->changeText(basicTexts[2], "Si");
 	else
 		GUI_Manager::getInstance()->changeText(basicTexts[2], "No");
-
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 2, false);
-
-	return true;
-}
-
-bool OptionsMenuComponent::functionInvertAxisY(const CEGUI::EventArgs& e)
-{
-	MotorCasaPaco::getInstance()->setInvertedAxisY(!MotorCasaPaco::getInstance()->getInvertedAxisYTemp());
-
-	//Update Text
-	if (MotorCasaPaco::getInstance()->getInvertedAxisYTemp())
-		GUI_Manager::getInstance()->changeText(basicTexts[3], "Si");
-	else
-		GUI_Manager::getInstance()->changeText(basicTexts[3], "No");
 
 	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 2, false);
 
@@ -1275,47 +1255,35 @@ void OptionsMenuComponent::init(json& j)
 		{
 		case 0:
 		{
-			auto helperFunction = std::bind(&OptionsMenuComponent::functionInvertAxisY, this, std::placeholders::_1);
+			auto helperFunction = std::bind(&OptionsMenuComponent::functionInvertAxisX, this, std::placeholders::_1);
 			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
 		}
 		break;
 		case 1:
 		{
-			auto helperFunction = std::bind(&OptionsMenuComponent::functionInvertAxisY, this, std::placeholders::_1);
+			auto helperFunction = std::bind(&OptionsMenuComponent::functionInvertAxisX, this, std::placeholders::_1);
 			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
 		}
 		break;
 		case 2:
 		{
-			auto helperFunction = std::bind(&OptionsMenuComponent::functionInvertAxisX, this, std::placeholders::_1);
+			auto helperFunction = std::bind(&OptionsMenuComponent::functionVolumeSFXDown, this, std::placeholders::_1);
 			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
 		}
 		break;
 		case 3:
 		{
-			auto helperFunction = std::bind(&OptionsMenuComponent::functionInvertAxisX, this, std::placeholders::_1);
+			auto helperFunction = std::bind(&OptionsMenuComponent::functionVolumeSFXUp, this, std::placeholders::_1);
 			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
 		}
 		break;
 		case 4:
 		{
-			auto helperFunction = std::bind(&OptionsMenuComponent::functionVolumeSFXDown, this, std::placeholders::_1);
-			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
-		}
-		break;
-		case 5:
-		{
-			auto helperFunction = std::bind(&OptionsMenuComponent::functionVolumeSFXUp, this, std::placeholders::_1);
-			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
-		}
-		break;
-		case 6:
-		{
 			auto helperFunction = std::bind(&OptionsMenuComponent::functionVolumeMusicDown, this, std::placeholders::_1);
 			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
 		}
 		break;
-		case 7:
+		case 5:
 		{
 			auto helperFunction = std::bind(&OptionsMenuComponent::functionVolumeMusicUp, this, std::placeholders::_1);
 			GUI_Manager::getInstance()->setEvents(GUI_Manager::getInstance()->getPushButton(name), helperFunction);
@@ -1719,11 +1687,6 @@ void OptionsMenuComponent::init(json& j)
 		GUI_Manager::getInstance()->changeText(basicTexts[2], "Si");
 	else
 		GUI_Manager::getInstance()->changeText(basicTexts[2], "No");
-
-	if (MotorCasaPaco::getInstance()->getInvertedAxisYInput())
-		GUI_Manager::getInstance()->changeText(basicTexts[3], "Si");
-	else
-		GUI_Manager::getInstance()->changeText(basicTexts[3], "No");
 
 	MotorCasaPaco::getInstance()->getGUI_Manager()->injectPosition(positionsXTopButtonsBasic[currentXTopButtons], positionsYBasic[currentYTopButtons]);
 }
