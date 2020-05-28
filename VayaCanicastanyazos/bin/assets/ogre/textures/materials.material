@@ -24,23 +24,18 @@ material sphereTest
 material test
 {
 
-    receive_shadows on
+    receive_shadows off
 	
     technique
     {
         pass
         {
 			scene_blend alpha_blend
-			
 			lighting on
-			depth_bias 1
 			
-            texture_unit 
-            {
-                texture white_plaster.png
-                tex_address_mode wrap
-				colour_op alpha_blend
-            }
+			ambient 1 1 1 1
+			diffuse 1 1 1 1
+			emissive 0.05 0.05 0.05 1
 		}
 	}
 }
