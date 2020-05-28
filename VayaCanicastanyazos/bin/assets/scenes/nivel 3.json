@@ -466,7 +466,7 @@
 				   "AdvancedGraphicOptions/LeftArrow_1",
 				   "AdvancedGraphicOptions/RightArrow_1"
 				  ],
-				  "Level" : "nivel 1",
+				  "Level" : "nivel 3",
 				  "MainMenu" : "LevelSelection",
 				  "delay" : 0.20,
 				  "delayPause" : 0.5					
