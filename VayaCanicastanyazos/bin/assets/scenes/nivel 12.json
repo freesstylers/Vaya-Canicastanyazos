@@ -304,8 +304,6 @@
 					],
 					"graphicOptionTopButtons" :
 					[
-					 "GraphicOptions/LeftArrow_5",
-					 "GraphicOptions/RightArrow_5",
 					 "GraphicOptions/LeftArrow_4",
 					 "GraphicOptions/RightArrow_4",
 					 "GraphicOptions/LeftArrow_3",
@@ -321,8 +319,7 @@
 					 "GraphicOptions/Text_Selector_1",
 					 "GraphicOptions/Text_Selector_2",
 					 "GraphicOptions/Text_Selector_3",
-					 "GraphicOptions/Text_Selector_4",
-					 "GraphicOptions/Text_Selector_5"
+					 "GraphicOptions/Text_Selector_4"
 					],
 					"advancedGraphicOptionDownButtons" :
 					[
@@ -333,22 +330,16 @@
 					"advancedOptionTexts" :
 					[
 					 "AdvancedGraphicOptions/Text_Selector_1",
-					 "AdvancedGraphicOptions/Text_Selector_2",
-					 "AdvancedGraphicOptions/Text_Selector_3",
-					 "AdvancedGraphicOptions/Text_Selector_4"
+					 "AdvancedGraphicOptions/Text_Selector_2"				  
 					],
 					"advancedGraphicOptionTopButtons" :
-					[
-					 "AdvancedGraphicOptions/LeftArrow_4",
-					 "AdvancedGraphicOptions/RightArrow_4",
-					 "AdvancedGraphicOptions/LeftArrow_3",
-					 "AdvancedGraphicOptions/RightArrow_3",
+					[			
 					 "AdvancedGraphicOptions/LeftArrow_2",
 					 "AdvancedGraphicOptions/RightArrow_2",
 					 "AdvancedGraphicOptions/LeftArrow_1",
 					 "AdvancedGraphicOptions/RightArrow_1"
 					],
-					"Level" : "nivel 12",
+					"Level" : "nivel 1",
 					"MainMenu" : "LevelSelection",
 					"delay" : 0.20,
 					"delayPause" : 0.5					

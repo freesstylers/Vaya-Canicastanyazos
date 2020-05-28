@@ -24,7 +24,7 @@ std::string tostring(const std::string& name) {
 bool GoalComponent::functionBasicNextLevel(const CEGUI::EventArgs& e)
 {
 	GameManager::getInstance()->pause();
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 2, false);
 	MotorCasaPaco::getInstance()->changeScene(nextLevel);
 	GUI_Manager::getInstance()->hideMouseCursor();
 	return true;
@@ -33,9 +33,9 @@ bool GoalComponent::functionBasicNextLevel(const CEGUI::EventArgs& e)
 bool GoalComponent::functionBasicLevelSelection(const CEGUI::EventArgs& e)
 {
 	GameManager::getInstance()->pause();
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 2, false);
 	MotorCasaPaco::getInstance()->changeScene(levelSelection);
-	AudioManager::getInstance()->pauseChannel(2);
+	AudioManager::getInstance()->pauseChannel(1);
 	AudioManager::getInstance()->playMusic("assets/sound/Menu_Music.mp3", 1, true);
 	return true;
 }
@@ -45,7 +45,7 @@ bool GoalComponent::functionBasicRepeatLevel(const CEGUI::EventArgs& e)
 	MotorCasaPaco::getInstance()->changeScene(level);
 	GameManager::getInstance()->pause();
 	EventManager::getInstance()->EmitEvent("inicioNivel");
-	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 0, false);
+	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 2, false);
 	GUI_Manager::getInstance()->hideMouseCursor();
 	return true;
 }
