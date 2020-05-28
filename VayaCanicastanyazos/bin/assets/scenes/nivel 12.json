@@ -1,8 +1,7 @@
 {
 	"name" : "nivel 12",
 	"entities" :
-	[
-		
+	[		
 		{
 			"name" : "bg",
 			"components" : [
@@ -256,91 +255,81 @@
 			"name" : "levelCompleted.layout",
 			"visible": false
 		},
-		{
-			"type" : "entity",
-			"name" : "UI",
-			[
-				{
-					"type": "PauseMenuComponent",
-					"buttons" :
-					[
-					 "PauseMenu/Return",
-					 "PauseMenu/Reset",
-					 "PauseMenu/Settings",
-					 "PauseMenu/MainMenu",
-					 "PauseMenu/Exit"
-					],
-					"basicOptionButtons" :
-					[
-					 "BasicOptions/LeftArrow_3",
-					 "BasicOptions/RightArrow_3",
-					 "BasicOptions/LeftArrow_2",
-					 "BasicOptions/RightArrow_2",
-					 "BasicOptions/LeftArrow_1",
-					 "BasicOptions/RightArrow_1"
-					],
-					"basicOptionTexts":
-					[
-					 "BasicOptions/Text_Selector_1",
-					 "BasicOptions/Text_Selector_2",
-					 "BasicOptions/Text_Selector_3"
-					],
-					"basicExtraButton" : "BasicOptions/GraphicOptions",
-					"basicOptionBotButtons" :
-					[
-					 "BasicOptions/Apply",
-					 "BasicOptions/Revert",
-					 "BasicOptions/Back"
-					],
-					"graphicOptionDownButtons" :
-					[
-					 "GraphicOptions/Apply",
-					 "GraphicOptions/Revert",
-					 "GraphicOptions/Back"
-					],
-					"graphicOptionTopButtons" :
-					[
-					 "GraphicOptions/LeftArrow_4",
-					 "GraphicOptions/RightArrow_4",
-					 "GraphicOptions/LeftArrow_3",
-					 "GraphicOptions/RightArrow_3",
-					 "GraphicOptions/LeftArrow_2",
-			 		 "GraphicOptions/RightArrow_2",
-				 	 "GraphicOptions/LeftArrow_1",
-					 "GraphicOptions/RightArrow_1"
-					],
-					"graphicOptionExtraButton": "GraphicOptions/AdvancedOptions",
-					"graphicOptionTexts" :
-					[
-					 "GraphicOptions/Text_Selector_1",
-					 "GraphicOptions/Text_Selector_2",
-					 "GraphicOptions/Text_Selector_3",
-					 "GraphicOptions/Text_Selector_4"
-					],
-					"advancedGraphicOptionDownButtons" :
-					[
-					 "AdvancedGraphicOptions/Apply",
-					 "AdvancedGraphicOptions/Revert",
-					 "AdvancedGraphicOptions/Back"
-					],
-					"advancedOptionTexts" :
-					[
-					 "AdvancedGraphicOptions/Text_Selector_1",
-					 "AdvancedGraphicOptions/Text_Selector_2"				  
-					],
-					"advancedGraphicOptionTopButtons" :
-					[			
-					 "AdvancedGraphicOptions/LeftArrow_2",
-					 "AdvancedGraphicOptions/RightArrow_2",
-					 "AdvancedGraphicOptions/LeftArrow_1",
-					 "AdvancedGraphicOptions/RightArrow_1"
-					],
-					"Level" : "nivel 12",
-					"MainMenu" : "LevelSelection",
-					"delay" : 0.20,
-					"delayPause" : 0.5					
-				}		
-			]
-		}
+    {
+      "type": "entity",
+      "name": "UI",
+      "components": [
+        {
+          "type": "PauseMenuComponent",
+          "buttons": [
+            "PauseMenu/Return",
+            "PauseMenu/Reset",
+            "PauseMenu/Settings",
+            "PauseMenu/MainMenu",
+            "PauseMenu/Exit"
+          ],
+          "basicOptionButtons": [
+            "BasicOptions/LeftArrow_3",
+            "BasicOptions/RightArrow_3",
+            "BasicOptions/LeftArrow_2",
+            "BasicOptions/RightArrow_2",
+            "BasicOptions/LeftArrow_1",
+            "BasicOptions/RightArrow_1"
+          ],
+          "basicOptionTexts": [
+            "BasicOptions/Text_Selector_1",
+            "BasicOptions/Text_Selector_2",
+            "BasicOptions/Text_Selector_3"
+          ],
+          "basicExtraButton": "BasicOptions/GraphicOptions",
+          "basicOptionBotButtons": [
+            "BasicOptions/Apply",
+            "BasicOptions/Revert",
+            "BasicOptions/Back"
+          ],
+          "graphicOptionDownButtons": [
+            "GraphicOptions/Apply",
+            "GraphicOptions/Revert",
+            "GraphicOptions/Back"
+          ],
+          "graphicOptionTopButtons": [
+            "GraphicOptions/LeftArrow_4",
+            "GraphicOptions/RightArrow_4",
+            "GraphicOptions/LeftArrow_3",
+            "GraphicOptions/RightArrow_3",
+            "GraphicOptions/LeftArrow_2",
+            "GraphicOptions/RightArrow_2",
+            "GraphicOptions/LeftArrow_1",
+            "GraphicOptions/RightArrow_1"
+          ],
+          "graphicOptionExtraButton": "GraphicOptions/AdvancedOptions",
+          "graphicOptionTexts": [
+            "GraphicOptions/Text_Selector_1",
+            "GraphicOptions/Text_Selector_2",
+            "GraphicOptions/Text_Selector_3",
+            "GraphicOptions/Text_Selector_4"
+          ],
+          "advancedGraphicOptionDownButtons": [
+            "AdvancedGraphicOptions/Apply",
+            "AdvancedGraphicOptions/Revert",
+            "AdvancedGraphicOptions/Back"
+          ],
+          "advancedOptionTexts": [
+            "AdvancedGraphicOptions/Text_Selector_1",
+            "AdvancedGraphicOptions/Text_Selector_2"
+          ],
+          "advancedGraphicOptionTopButtons": [
+            "AdvancedGraphicOptions/LeftArrow_2",
+            "AdvancedGraphicOptions/RightArrow_2",
+            "AdvancedGraphicOptions/LeftArrow_1",
+            "AdvancedGraphicOptions/RightArrow_1"
+          ],
+          "Level": "nivel 12",
+          "MainMenu": "LevelSelection",
+          "delay": 0.20,
+          "delayPause": 0.5
+        }
+      ]
+    }
 	]
 }
