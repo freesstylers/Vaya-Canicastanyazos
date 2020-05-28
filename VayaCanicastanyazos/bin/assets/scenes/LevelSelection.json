@@ -220,7 +220,7 @@
 		{
 			"name" : "mini_15",
 			"rotation" : [50, 0, 270],
-			"position" : [-17, 10, 25],
+			"position" : [-17, 10, 70],
 			"scale" : [0.25, 0.25, 0.25],
 			"components" : [
 				{
@@ -233,7 +233,7 @@
 		{
 			"name" : "mini_16",
 			"rotation" : [60, 0, 270],
-			"position" : [-5, 10, 65],
+			"position" : [-5, 10, 15],
 			"scale" : [0.3, 0.3, 0.3],
 			"components" : [
 				{

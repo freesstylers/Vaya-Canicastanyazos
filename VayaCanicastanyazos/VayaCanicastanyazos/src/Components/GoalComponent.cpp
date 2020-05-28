@@ -249,7 +249,9 @@ void GoalComponent::OnCollision(Entity* ent) {
 			std::string levelNumber = nextLevel.substr(position);
 			int level = std::stoi(levelNumber);
 
-			GUI_Manager::getInstance()->changeText(GUI_Manager::getInstance()->getStaticText("levelCompleted/Record"), "Record: " + std::to_string(GameManager::getInstance()->getTimeFromLevel(level - 1)));
+			int newLevel = level - 1 > 1 ? level - 1 : 16;
+
+			GUI_Manager::getInstance()->changeText(GUI_Manager::getInstance()->getStaticText("levelCompleted/Record"), "Record: " + std::to_string(GameManager::getInstance()->getTimeFromLevel(newLevel)));
 
 
 			GUI_Manager::getInstance()->setLayoutVisible(0, false);
