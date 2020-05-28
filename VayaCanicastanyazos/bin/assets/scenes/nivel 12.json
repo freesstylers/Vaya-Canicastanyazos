@@ -173,6 +173,21 @@
 			]
 		},
 		{
+			"prefab" : "star",
+			"name" : "1_star.000",
+			"position" : [-100, 10, 0]
+		},
+		{
+			"prefab" : "star",
+			"name" : "1_star.001",
+			"position" : [100, 10, 0]
+		},
+		{
+			"prefab" : "star",
+			"name" : "1_star.002",
+			"position" : [190, -75, -260]
+		},
+		{
 			"name" : "cameraPivot",
 			"position" : [0, 119, 300],
 			"rotation" : [0, 0, 0], 
@@ -180,7 +195,7 @@
 		},
 		{
 			"name" : "camera",
-			"position" : [0, 200, 370],
+			"position" : [0, 160, 370],
 			"rotation" : [0, 0, 0], 
 			"scale" : [1, 1, 1],
 			"parent" : "cameraPivot",

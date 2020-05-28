@@ -360,17 +360,17 @@
 		{
 			"prefab" : "star",
 			"name" : "1_star.000",
-			"position" : [0, 0, 20]
+			"position" : [-180, -10, -200]
 		},
 		{
 			"prefab" : "star",
 			"name" : "1_star.001",
-			"position" : [-90, 140, -20]
+			"position" : [-220, 70, -150]
 		},
 		{
 			"prefab" : "star",
 			"name" : "1_star.002",
-			"position" : [200, -205, -20]
+			"position" : [-220, -205, -380]
 		},
 		{
 			"name" : "cameraPivot",

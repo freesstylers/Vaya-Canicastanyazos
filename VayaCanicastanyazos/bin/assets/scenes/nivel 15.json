@@ -23,7 +23,7 @@
 			]
 		},
         {
-			"name" : "15_bridge.000",
+			"name" : "16_bridge.000",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -31,7 +31,7 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "15_bridge.000.mesh",
+					"mesh" : "16_bridge.000.mesh",
 					"material" : "bridge"
 				},
 				{
@@ -41,7 +41,7 @@
 			]
 		},
         {
-			"name" : "15_bridge.001",
+			"name" : "16_bridge.001",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -49,7 +49,7 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "15_bridge.001.mesh",
+					"mesh" : "16_bridge.001.mesh",
 					"material" : "bridge"
 				},
 				{
@@ -59,7 +59,7 @@
 			]
 		},
         {
-			"name" : "15_bridge.002",
+			"name" : "16_bridge.002",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -67,7 +67,7 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "15_bridge.002.mesh",
+					"mesh" : "16_bridge.002.mesh",
 					"material" : "bridge"
 				},
 				{
@@ -77,7 +77,7 @@
 			]
 		},
         {
-			"name" : "15_bridge.003",
+			"name" : "16_bridge.003",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -85,7 +85,7 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "15_bridge.003.mesh",
+					"mesh" : "16_bridge.003.mesh",
 					"material" : "bridge"
 				},
 				{
@@ -95,7 +95,7 @@
 			]
 		},
         {
-			"name" : "15_bridge.004",
+			"name" : "16_bridge.004",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -103,7 +103,7 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "15_bridge.004.mesh",
+					"mesh" : "16_bridge.004.mesh",
 					"material" : "bridge"
 				},
 				{
@@ -113,7 +113,7 @@
 			]
 		},
         {
-			"name" : "15_bridge.005",
+			"name" : "16_bridge.005",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -121,8 +121,242 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "15_bridge.005.mesh",
+					"mesh" : "16_bridge.005.mesh",
 					"material" : "bridge"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "16_bridge.006",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "16_bridge.006.mesh",
+					"material" : "bridge"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "16_bridge.007",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "16_bridge.007.mesh",
+					"material" : "bridge"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "16_bridge.008",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "16_bridge.008.mesh",
+					"material" : "bridge"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "16_bridge.009",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "16_bridge.009.mesh",
+					"material" : "bridge"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "16_bridge.010",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "16_bridge.010.mesh",
+					"material" : "bridge"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "16_bridge.011",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "16_bridge.011.mesh",
+					"material" : "bridge"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "16_bridge.012",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "16_bridge.012.mesh",
+					"material" : "bridge"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "16_bridge.013",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "16_bridge.013.mesh",
+					"material" : "bridge"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "16_bridge.014",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "16_bridge.014.mesh",
+					"material" : "bridge"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "16_bridge.015",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "16_bridge.015.mesh",
+					"material" : "bridge"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "16_bridge.016",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "16_bridge.016.mesh",
+					"material" : "bridge"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "16_bridge.017",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "16_bridge.017.mesh",
+					"material" : "bridge"
+				},
+				{
+					"type" : "RigidBody",
+					"friction": 0.75
+				}
+			]
+		},
+        {
+			"name" : "16_fence.000",
+			"position" : [0, 0, 0],
+			"rotation" : [0, 0, 0],
+			"scale" : [10, 10, 10],
+			"parent" : "centro",
+			"components" : [
+				{
+					"type" : "Mesh",
+					"mesh" : "16_fence.000.mesh",
+					"material" : "fence"
 				},
 				{
 					"type" : "RigidBody",
@@ -131,14 +365,14 @@
 			]
 		},
 		{
-			"name" : "15_goal",
+			"name" : "16_goal",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "15_goal.mesh",
+					"mesh" : "16_goal.mesh",
 					"material" : "goal"
 				},
 				{
@@ -146,15 +380,15 @@
 				},
 				{
 					"type" : "GoalComponent",
-					"nextLevel" : "nivel 16",
+					"nextLevel" : "nivel 1",
 					"levelSelection" : "LevelSelection",
-					"level": "nivel 15",
+					"level": "nivel 16",
 					"delay" : 0.20
 				}
 			]
 		},
         {
-			"name" : "15_island.000",
+			"name" : "16_island.000",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -162,7 +396,7 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "15_island.000.mesh",
+					"mesh" : "16_island.000.mesh",
 					"material" : "island"
 				},
 				{
@@ -172,7 +406,7 @@
 			]
 		},
         {
-			"name" : "15_island.001",
+			"name" : "16_island.001",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -180,7 +414,7 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "15_island.001.mesh",
+					"mesh" : "16_island.001.mesh",
 					"material" : "island"
 				},
 				{
@@ -190,7 +424,7 @@
 			]
 		},
         {
-			"name" : "15_island.002",
+			"name" : "16_island.002",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -198,7 +432,7 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "15_island.002.mesh",
+					"mesh" : "16_island.002.mesh",
 					"material" : "island"
 				},
 				{
@@ -208,7 +442,7 @@
 			]
 		},
         {
-			"name" : "15_island.003",
+			"name" : "16_island.003",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -216,7 +450,7 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "15_island.003.mesh",
+					"mesh" : "16_island.003.mesh",
 					"material" : "island"
 				},
 				{
@@ -226,7 +460,7 @@
 			]
 		},
         {
-			"name" : "15_island.004",
+			"name" : "16_island.004",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -234,7 +468,7 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "15_island.004.mesh",
+					"mesh" : "16_island.004.mesh",
 					"material" : "island"
 				},
 				{
@@ -244,7 +478,7 @@
 			]
 		},
         {
-			"name" : "15_island.005",
+			"name" : "16_island.005",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -252,7 +486,7 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "15_island.005.mesh",
+					"mesh" : "16_island.005.mesh",
 					"material" : "island"
 				},
 				{
@@ -262,7 +496,7 @@
 			]
 		},
         {
-			"name" : "15_island.006",
+			"name" : "16_island.006",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -270,7 +504,7 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "15_island.006.mesh",
+					"mesh" : "16_island.006.mesh",
 					"material" : "island"
 				},
 				{
@@ -280,7 +514,7 @@
 			]
 		},
         {
-			"name" : "15_island.007",
+			"name" : "16_island.007",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -288,7 +522,7 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "15_island.007.mesh",
+					"mesh" : "16_island.007.mesh",
 					"material" : "island"
 				},
 				{
@@ -298,7 +532,7 @@
 			]
 		},
         {
-			"name" : "15_island.008",
+			"name" : "16_island.008",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -306,7 +540,7 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "15_island.008.mesh",
+					"mesh" : "16_island.008.mesh",
 					"material" : "island"
 				},
 				{
@@ -316,7 +550,7 @@
 			]
 		},
         {
-			"name" : "15_island.009",
+			"name" : "16_island.009",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -324,7 +558,7 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "15_island.009.mesh",
+					"mesh" : "16_island.009.mesh",
 					"material" : "island"
 				},
 				{
@@ -334,7 +568,7 @@
 			]
 		},
         {
-			"name" : "15_island.010",
+			"name" : "16_island.010",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -342,7 +576,7 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "15_island.010.mesh",
+					"mesh" : "16_island.010.mesh",
 					"material" : "island"
 				},
 				{
@@ -352,7 +586,7 @@
 			]
 		},
         {
-			"name" : "15_island.011",
+			"name" : "16_island.011",
 			"position" : [0, 0, 0],
 			"rotation" : [0, 0, 0],
 			"scale" : [10, 10, 10],
@@ -360,7 +594,7 @@
 			"components" : [
 				{
 					"type" : "Mesh",
-					"mesh" : "15_island.011.mesh",
+					"mesh" : "16_island.011.mesh",
 					"material" : "island"
 				},
 				{
@@ -369,132 +603,24 @@
 				}
 			]
 		},
-        {
-			"name" : "15_island.012",
-			"position" : [0, 0, 0],
-			"rotation" : [0, 0, 0],
-			"scale" : [10, 10, 10],
-			"parent" : "centro",
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "15_island.012.mesh",
-					"material" : "island"
-				},
-				{
-					"type" : "RigidBody",
-					"friction": 0.75
-				}
-			]
-		},
-        {
-			"name" : "15_island.013",
-			"position" : [0, 0, 0],
-			"rotation" : [0, 0, 0],
-			"scale" : [10, 10, 10],
-			"parent" : "centro",
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "15_island.013.mesh",
-					"material" : "island"
-				},
-				{
-					"type" : "RigidBody",
-					"friction": 0.75
-				}
-			]
-		},
-        {
-			"name" : "15_island.014",
-			"position" : [0, 0, 0],
-			"rotation" : [0, 0, 0],
-			"scale" : [10, 10, 10],
-			"parent" : "centro",
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "15_island.014.mesh",
-					"material" : "island"
-				},
-				{
-					"type" : "RigidBody",
-					"friction": 0.75
-				}
-			]
-		},
-        {
-			"name" : "15_island.015",
-			"position" : [0, 0, 0],
-			"rotation" : [0, 0, 0],
-			"scale" : [10, 10, 10],
-			"parent" : "centro",
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "15_island.015.mesh",
-					"material" : "island"
-				},
-				{
-					"type" : "RigidBody",
-					"friction": 0.75
-				}
-			]
-		},
-        {
-			"name" : "15_island.016",
-			"position" : [0, 0, 0],
-			"rotation" : [0, 0, 0],
-			"scale" : [10, 10, 10],
-			"parent" : "centro",
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "15_island.016.mesh",
-					"material" : "island"
-				},
-				{
-					"type" : "RigidBody",
-					"friction": 0.75
-				}
-			]
-		},
-        {
-			"name" : "15_island.017",
-			"position" : [0, 0, 0],
-			"rotation" : [0, 0, 0],
-			"scale" : [10, 10, 10],
-			"parent" : "centro",
-			"components" : [
-				{
-					"type" : "Mesh",
-					"mesh" : "15_island.017.mesh",
-					"material" : "island"
-				},
-				{
-					"type" : "RigidBody",
-					"friction": 0.75
-				}
-			]
-		},
-		
-		
+
+
 		{
 			"prefab" : "marble",
 			"name" : "ball",
-			"position" : [0, 810, 400],
+			"position" : [90, 311, 0],
 			"rotation" : [0, 0, 0]
 		},
 		{
 			"name" : "cameraPivot",
-			"position" : [0, 810, 400],
+			"position" : [90, 311, 0],
 			"rotation" : [0, 0, 0], 
 			"scale" : [1, 1, 1]
 		},
 		{
 			"name" : "camera",
-			"position" : [0, 860, 470],
-			"rotation" : [0, 0, 0],
+			"position" : [90, 361, 70],
+			"rotation" : [0, 0, 0], 
 			"scale" : [1, 1, 1],
 			"parent" : "cameraPivot",
 			"components" : [
@@ -514,7 +640,7 @@
 		},
 		{
 			"name" : "death",
-			"position" : [0, -350, 0],
+			"position" : [0, -450, 0],
 			"rotation" : [0,0,0],
 			"scale" : [0,0,0],
 			"components" : [
@@ -523,6 +649,21 @@
 					"marble" : "ball"
 				}
 			]
+		},
+		{
+			"prefab" : "star",
+			"name" : "1_star.000",
+			"position" : [0, 0, 0]
+		},
+		{
+			"prefab" : "star",
+			"name" : "1_star.001",
+			"position" : [0, 0, 0]
+		},
+		{
+			"prefab" : "star",
+			"name" : "1_star.002",
+			"position" : [0, 0, 0]
 		},
 		{
 			"name" : "light",
@@ -658,7 +799,7 @@
 					 "AdvancedGraphicOptions/LeftArrow_1",
 					 "AdvancedGraphicOptions/RightArrow_1"
 					],
-					"Level" : "nivel 15",
+					"Level" : "nivel 16",
 					"MainMenu" : "LevelSelection",
 					"delay" : 0.20,
 					"delayPause" : 0.5					
