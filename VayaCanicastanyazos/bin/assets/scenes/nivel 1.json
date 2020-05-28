@@ -2,7 +2,6 @@
 	"name" : "nivel 1",
 	"entities" :
 	[
-		
 		{
 			"name" : "bg",
 			"components" : [

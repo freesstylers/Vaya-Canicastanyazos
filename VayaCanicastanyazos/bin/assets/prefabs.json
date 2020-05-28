@@ -1,5 +1,18 @@
 {
-	"marble" : 
+	"winEffect": {
+		"scale" : [0.35, 0.35, 0.35],
+		"components": [
+			{
+				"type": "ParticleSystem",
+				"name": "winEffect",
+				"template": "Spiral",
+				"timeLimit" : 1.5,
+				"destroyOnTimeLImit": true
+			}
+		]
+	},
+	
+	"marble" :
 	{
 		"name" : "ball",
 		"tag" : "marble",
@@ -24,7 +37,7 @@
 			}
 		]
 	},
-	
+
 	"floor" :
 	{
 		"position" : [0, 0, 0],
@@ -43,7 +56,7 @@
 			}
 		]
 	},
-	
+
 	"sunlight" :
 	{
 		"position" : [0, 0, 0],
@@ -55,7 +68,7 @@
 				}
 			]
 	},
-	
+
 	"star" :
 	{
 		"tag" : "star",
@@ -76,7 +89,7 @@
 			}
 		]
 	},
-	
+
 	"gameManager": {
 		"position": [ 0, 0, 0 ],
 		"dontDestroyOnLoad": true,
