@@ -474,8 +474,7 @@ void LevelSelectionComponent::updateTexts(int num)
 			levelNumber.erase(levelNumber.begin());
 
 
-			if (level > 8)
-			{
+
 				int stars = it->second.stars;
 
 				std::string str = "LevelSelection/Info_" + std::to_string(level) + "_Star_";
@@ -484,7 +483,6 @@ void LevelSelectionComponent::updateTexts(int num)
 				{
 					GUI_Manager::getInstance()->changeImage(str + std::to_string(k), "VayaCanicastanhazos/Star_Yes");
 				}
-			}
 		}
 
 		//Texts
