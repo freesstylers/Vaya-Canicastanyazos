@@ -144,10 +144,10 @@ bool PauseMenuComponent::functionPauseMainMenu(const CEGUI::EventArgs& e)
 	MotorCasaPaco::getInstance()->changeScene(mainMenu);
 	GameManager::getInstance()->pause();
 	EventManager::getInstance()->EmitEvent("finNivel");
-	AudioManager::getInstance()->pauseChannel(1);
-
+	//AudioManager::getInstance()->pauseChannel(1);
+	AudioManager::getInstance()->stopEvent("InLevel");
 	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 2, false);
-	AudioManager::getInstance()->playMusic("assets/sound/Menu_Music.mp3", 1, true);
+	//AudioManager::getInstance()->playMusic("assets/sound/Menu_Music.mp3", 1, true);
 
 	return true;
 }

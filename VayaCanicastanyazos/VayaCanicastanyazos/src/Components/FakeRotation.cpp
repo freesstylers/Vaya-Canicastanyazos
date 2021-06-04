@@ -58,4 +58,8 @@ void FakeRotation::update()
 
 	getEntity()->getComponent<RigidBody>("RigidBody")->applyForce(ForceType::FORCE, camLook * speed * y);
 	getEntity()->getComponent<RigidBody>("RigidBody")->applyForce(ForceType::FORCE, camOrthoLook * speed * x);
+
+
+	AudioManager::getInstance()->setEventParameter("InLevel", "x", x);
+	AudioManager::getInstance()->setEventParameter("InLevel", "y", y);
 }

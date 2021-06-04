@@ -190,8 +190,6 @@ WinMain(HINSTANCE hinstance, HINSTANCE prevInstance, LPSTR lpCmdLine, int nCmdSh
 	motorCasaPaco->getGUI_Manager()->getInstance()->loadScheme("VayaCanicastanhazos.scheme");
 	motorCasaPaco->getGUI_Manager()->getInstance()->setMouseCursor("VayaCanicastanhazos/Mouse_Arrow");
 
-	motorCasaPaco->getAudioManager()->getInstance()->playMusic("assets/sound/Menu_Music.mp3", 1, true);
-
 	motorCasaPaco->start("Menu");
 
 	delete motorCasaPaco;

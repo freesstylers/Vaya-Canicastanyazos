@@ -36,7 +36,10 @@ bool GoalComponent::functionBasicLevelSelection(const CEGUI::EventArgs& e)
 	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 2, false);
 	MotorCasaPaco::getInstance()->changeScene(levelSelection);
 	AudioManager::getInstance()->pauseChannel(1);
-	AudioManager::getInstance()->playMusic("assets/sound/Menu_Music.mp3", 1, true);
+	AudioManager::getInstance()->stopEvent("InLevel");
+
+	//AudioManager::getInstance()->playMusic("assets/sound/Menu_Music.mp3", 1, true);
+	//AudioManager::getInstance()->playEvent("MenuNiveles");
 	return true;
 }
 
@@ -249,7 +252,7 @@ void GoalComponent::OnCollision(Entity* ent) {
 			std::string levelNumber = nextLevel.substr(position);
 			int level = std::stoi(levelNumber);
 
-			int newLevel = level - 1 > 1 ? level - 1 : 16;
+			int newLevel = level - 1 >= 1 ? level - 1 : 16;
 
 			GUI_Manager::getInstance()->changeText(GUI_Manager::getInstance()->getStaticText("levelCompleted/Record"), "Record: " + std::to_string(GameManager::getInstance()->getTimeFromLevel(newLevel)));
 

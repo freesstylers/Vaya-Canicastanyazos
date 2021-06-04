@@ -4,6 +4,7 @@
 #include <fstream>
 #include "Scene/SceneManager.h"
 #include "GUI/GUI_Manager.h"
+#include "Audio/AudioManager.h"
 
 GameManager* GameManager::instance = 0;
 
@@ -150,11 +151,17 @@ int GameManager::getStars()
 void GameManager::addStars(int s)
 {
 	stars_ += s;
+
+	//parametro
+	AudioManager::getInstance()->setEventParameter("InLevel", "Stars", stars_);
 }
 
 void GameManager::resetStars()
 {
 	stars_ = 0;
+
+	//parametro
+	AudioManager::getInstance()->setEventParameter("InLevel", "Stars", stars_);
 }
 void GameManager::saveData(std::string name)
 {

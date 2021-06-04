@@ -22,8 +22,10 @@ bool LevelSelectionComponent::functionLoader1(const CEGUI::EventArgs& e)
 {
 	MotorCasaPaco::getInstance()->changeScene(levels[0]);
 	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 2, false);
-	AudioManager::getInstance()->pauseChannel(1);
-	AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 1, true);
+	AudioManager::getInstance()->stopEvent("MenuNiveles");
+	//AudioManager::getInstance()->pauseChannel(1);
+	//AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 1, true);
+	AudioManager::getInstance()->playEvent("InLevel");
 	EventManager::getInstance()->EmitEvent("inicioNivel");
 	GUI_Manager::getInstance()->hideMouseCursor();
 	return true;
@@ -33,8 +35,11 @@ bool LevelSelectionComponent::functionLoader2(const CEGUI::EventArgs& e)
 {
 	MotorCasaPaco::getInstance()->changeScene(levels[1]);	
 	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 2, false);
-	AudioManager::getInstance()->pauseChannel(1);
-	AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 1, true);
+	AudioManager::getInstance()->stopEvent("MenuNiveles");
+	//AudioManager::getInstance()->pauseChannel(1);
+	//AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 1, true);
+	AudioManager::getInstance()->playEvent("InLevel");
+
 	EventManager::getInstance()->EmitEvent("inicioNivel");
 	GUI_Manager::getInstance()->hideMouseCursor();
 	return true;
@@ -44,8 +49,11 @@ bool LevelSelectionComponent::functionLoader3(const CEGUI::EventArgs& e)
 {
 	MotorCasaPaco::getInstance()->changeScene(levels[2]);	
 	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 2, false);
-	AudioManager::getInstance()->pauseChannel(1);
-	AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 1, true);
+	AudioManager::getInstance()->stopEvent("MenuNiveles");
+	//AudioManager::getInstance()->pauseChannel(1);
+	//AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 1, true);
+	AudioManager::getInstance()->playEvent("InLevel");
+
 	EventManager::getInstance()->EmitEvent("inicioNivel");
 	GUI_Manager::getInstance()->hideMouseCursor();
 	return true;
@@ -55,8 +63,11 @@ bool LevelSelectionComponent::functionLoader4(const CEGUI::EventArgs& e)
 {
 	MotorCasaPaco::getInstance()->changeScene(levels[3]);
 	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 2, false);
-	AudioManager::getInstance()->pauseChannel(1);
-	AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 1, true);
+	AudioManager::getInstance()->stopEvent("MenuNiveles"); 
+	//AudioManager::getInstance()->pauseChannel(1);
+	//AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 1, true);
+	AudioManager::getInstance()->playEvent("InLevel");
+
 	EventManager::getInstance()->EmitEvent("inicioNivel");
 	GUI_Manager::getInstance()->hideMouseCursor();
 	return true;
@@ -66,8 +77,10 @@ bool LevelSelectionComponent::functionLoader5(const CEGUI::EventArgs& e)
 {
 	MotorCasaPaco::getInstance()->changeScene(levels[4]);
 	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 2, false);
-	AudioManager::getInstance()->pauseChannel(1);
-	AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 1, true);
+	AudioManager::getInstance()->stopEvent("MenuNiveles"); 
+	//AudioManager::getInstance()->pauseChannel(1);
+	//AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 1, true);
+	AudioManager::getInstance()->playEvent("InLevel");
 	EventManager::getInstance()->EmitEvent("inicioNivel");
 	GUI_Manager::getInstance()->hideMouseCursor();
 	return true;
@@ -77,8 +90,11 @@ bool LevelSelectionComponent::functionLoader6(const CEGUI::EventArgs& e)
 {
 	MotorCasaPaco::getInstance()->changeScene(levels[5]);
 	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 2, false);
-	AudioManager::getInstance()->pauseChannel(1);
-	AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 1, true);
+	AudioManager::getInstance()->stopEvent("MenuNiveles"); 
+	//AudioManager::getInstance()->pauseChannel(1);
+	//AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 1, true);
+	AudioManager::getInstance()->playEvent("InLevel");
+
 	EventManager::getInstance()->EmitEvent("inicioNivel");
 	GUI_Manager::getInstance()->hideMouseCursor();
 	return true;
@@ -88,8 +104,11 @@ bool LevelSelectionComponent::functionLoader7(const CEGUI::EventArgs& e)
 {
 	MotorCasaPaco::getInstance()->changeScene(levels[6]);
 	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 2, false);
-	AudioManager::getInstance()->pauseChannel(1);
-	AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 1, true);
+	AudioManager::getInstance()->stopEvent("MenuNiveles"); 
+	//AudioManager::getInstance()->pauseChannel(1);
+	//AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 1, true);
+	AudioManager::getInstance()->playEvent("InLevel");
+
 	EventManager::getInstance()->EmitEvent("inicioNivel");
 	GUI_Manager::getInstance()->hideMouseCursor();
 	return true;
@@ -99,8 +118,11 @@ bool LevelSelectionComponent::functionLoader8(const CEGUI::EventArgs& e)
 {
 	MotorCasaPaco::getInstance()->changeScene(levels[7]);
 	AudioManager::getInstance()->playMusic("assets/sound/buttonSound.mp3", 2, false);
-	AudioManager::getInstance()->pauseChannel(1);
-	AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 1, true);
+	AudioManager::getInstance()->stopEvent("MenuNiveles"); 
+	//AudioManager::getInstance()->pauseChannel(1);
+	//AudioManager::getInstance()->playMusic("assets/sound/Ingame_Music.mp3", 1, true);
+	AudioManager::getInstance()->playEvent("InLevel");
+
 	EventManager::getInstance()->EmitEvent("inicioNivel");
 	GUI_Manager::getInstance()->hideMouseCursor();
 	return true;
@@ -345,6 +367,8 @@ void LevelSelectionComponent::storeTexts()
 {
 	std::map <std::string, LevelInfo> levels_ = GameManager::getInstance()->getLevels();
 
+	//if levels_ size ...
+
 	for (auto it = levels_.begin(); it != levels_.end(); it++)
 	{
 		std::string name = it->first;
@@ -520,6 +544,11 @@ void LevelSelectionComponent::init(json& j)
 {
 	if (!j["topButtons"].is_null() && j["topButtons"].is_array() && !j["botButtons"].is_null() && j["botButtons"].is_array() && !j["leftArrow"].is_null() && !j["rightArrow"].is_null() && !j["delay"].is_null() && !j["extraButton"].is_null())
 	{
+		int a = GameManager::getInstance()->getLevels().size();
+
+		AudioManager::getInstance()->setEventParameter("MenuNiveles", "NivelesCompletados", a);
+		AudioManager::getInstance()->playEvent("MenuNiveles");
+
 		float x;
 		float y;
 
@@ -595,6 +624,7 @@ void LevelSelectionComponent::init(json& j)
 		levels = { "nivel 1", "nivel 2", "nivel 3", "nivel 4", "nivel 5", "nivel 6", "nivel 7", "nivel 8" };
 
 		updateTexts(currentShow);
+
 		//std::cout << tam << "\n";
 		
 		posX = 0;
