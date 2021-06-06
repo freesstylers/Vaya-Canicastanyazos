@@ -505,7 +505,7 @@ void LevelSelectionComponent::updateTexts(int num)
 
 				for (int k = 1; k <= stars; k++)
 				{
-					GUI_Manager::getInstance()->changeImage(str + std::to_string(k), "VayaCanicastanhazos/Star_Yes");
+					//GUI_Manager::getInstance()->changeImage(str + std::to_string(k), "VayaCanicastanhazos/Star_Yes");
 				}
 		}
 

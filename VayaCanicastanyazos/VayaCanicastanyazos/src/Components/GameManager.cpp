@@ -153,7 +153,9 @@ void GameManager::addStars(int s)
 	stars_ += s;
 
 	//parametro
+	AudioManager::getInstance()->stopEvent("InLevel");
 	AudioManager::getInstance()->setEventParameter("InLevel", "Stars", stars_);
+	AudioManager::getInstance()->playEvent("InLevel");
 }
 
 void GameManager::resetStars()
@@ -161,7 +163,9 @@ void GameManager::resetStars()
 	stars_ = 0;
 
 	//parametro
+	AudioManager::getInstance()->stopEvent("InLevel");
 	AudioManager::getInstance()->setEventParameter("InLevel", "Stars", stars_);
+	AudioManager::getInstance()->playEvent("InLevel");
 }
 void GameManager::saveData(std::string name)
 {
